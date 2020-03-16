@@ -1,0 +1,19 @@
+{
+  "name": "@io-arc/types",
+  "version": "0.0.0",
+  "description": "",
+  "author": "arc one",
+  "homepage": "https://github.com/io-arc/io-arc/packages/types",
+  "license": "MIT",
+  "main": "index.ts",
+  "directories": {},
+  "files": [],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/io-arc/io-arc.git"
+  },
+  "scripts": {}
+}
