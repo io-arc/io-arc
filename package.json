@@ -1,5 +1,5 @@
 {
-  "name": "io-arc",
+  "name": "root",
   "private": true,
   "license": "MIT",
   "author": "arc one",
@@ -8,6 +8,9 @@
     "npm": ">= 5.8.0",
     "yarn": ">= 1.7.0"
   },
+  "workspaces": [
+    "packages/*"
+  ],
   "devDependencies": {
     "lerna": "^3.20.2"
   }
