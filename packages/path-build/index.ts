@@ -1,40 +1,41 @@
-import { TDirNameKey } from '@io-arc/types'
+import { TDirName, TDirNameKey } from '@io-arc/types'
 import config from 'config'
+import path from 'path'
 
-export const BUILD_ENV = {
-  DEVELOPMENT: 'development',
-  PRODUCTION: 'production',
-  TEST: 'test',
-  NONE: 'none'
-} as const
+function dir(arr: TDirNameKey[], isAbsolute = false): TDirNameKey {
+  const p = isAbsolute ? path.resolve : path.join
+  let res: TDirNameKey = ''
 
-export type BUILD_ENV = typeof BUILD_ENV[keyof typeof BUILD_ENV]
+  arr.forEach((d: TDirNameKey): void => {
+    res = p(res, d)
+  })
 
-export const MODE = {
-  ONCE: 'once',
-  WATCH: 'watch'
-} as const
+  return res
+}
 
-export type MODE = typeof MODE[keyof typeof MODE]
-
-/** Working space directory */
-export const WS_ROOT: TDirNameKey = 'src'
-
-/**
- * Output directory
- * @default dist
- */
-export const DIST: TDirNameKey = config.has('outputDir')
-  ? config.get('outputDir')
-  : 'dist'
-
-const _env = ((): BUILD_ENV => {
-  if (config.has('overrideEnv')) {
-    return config.get<BUILD_ENV>('overrideEnv')
+export default class PathBuild {
+  /**
+   * relative path build
+   * @param arr - Array for directory name
+   */
+  public static relative(arr: TDirNameKey[]): TDirNameKey {
+    return dir(arr)
   }
 
-  return (process.env.NODE_ENV as BUILD_ENV) || BUILD_ENV.DEVELOPMENT
-})()
+  /**
+   * absolute path build
+   * @param arr - Array for directory name
+   */
+  public static absolute(arr: TDirNameKey[]): TDirNameKey {
+    return dir(arr, true)
+  }
 
-/** Build environment */
-export const NODE_ENV = _env
+  /**
+   * Root relative path build
+   * @param arr - Array for directory name
+   */
+  public static rootRelative(arr: TDirNameKey[]): TDirName {
+    const root = config.get<TDirName>('siteRoot')
+    return arr.length === 0 ? root : `${root + PathBuild.relative(arr)}/`
+  }
+}
