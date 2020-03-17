@@ -19,7 +19,7 @@ const ab = PathBuild.absolute(['abc', 'def'])
 No `new` instance.  
 This class is static function.
 
-### `PathBuild.relative(arr: string[])`
+### `PathBuild.relative(arr: string[]): string`
 
 Create path join.
 
@@ -29,10 +29,10 @@ arr | string[] | String of path to join
 
 #### Return
 
-*string*  
-ex. 'abc/def'
+**string**  
+ex. `abc/def`
 
-### `PathBuild.absolute(arr: string[])`
+### `PathBuild.absolute(arr: string[]): string`
 
 Create absolute path from root.
 
@@ -42,10 +42,10 @@ arr | string[] | String of path
 
 #### Return
 
-*string*  
-ex. '/Users/xxxx/xxxx/abc/def'
+**string**  
+ex. `/Users/xxxx/xxxx/abc/def`
 
-### `PathBuild.rootRelative(arr: string[])`
+### `PathBuild.rootRelative(arr: string[]): string`
 
 Create relative path from site root.
 `siteRoot` property + string[]    
@@ -57,5 +57,5 @@ arr | string[] | String of path
 
 #### Return
 
-*string*  
-ex. '/abc/def/'
+**string**  
+ex. `/abc/def/`
