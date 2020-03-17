@@ -1,0 +1,22 @@
+{
+  "name": "@io-arc/env",
+  "version": "0.0.0",
+  "description": "Build environment",
+  "author": "arc one",
+  "homepage": "https://github.com/io-arc/io-arc/packages/env",
+  "license": "MIT",
+  "main": "index.ts",
+  "directories": {},
+  "files": [],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/io-arc/io-arc.git"
+  },
+  "scripts": {},
+  "devDependencies": {
+    "config": "^3.3.0"
+  }
+}

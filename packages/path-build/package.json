@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "Path create to relative or absolute",
   "author": "arc one",
-  "homepage": "",
+  "homepage": "https://github.com/io-arc/io-arc/packages/path-build",
   "license": "MIT",
   "main": "index.ts",
   "directories": {},
