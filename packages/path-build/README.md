@@ -25,7 +25,7 @@ Create path join.
 
 #### Params
 
-##### arr
+**arr**
 
 Type: `string[]`  
 Directory name array. 
@@ -41,7 +41,7 @@ Create absolute path from root.
 
 #### Params
 
-##### arr
+**arr**  
 
 Type: `string[]`  
 Directory name array. 
@@ -59,7 +59,7 @@ Create relative path from site root.
 
 #### Params
 
-##### arr
+**arr**  
 
 Type: `string[]`  
 Directory name array. 
