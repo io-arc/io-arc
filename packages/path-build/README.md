@@ -14,7 +14,7 @@ const ab = PathBuild.absolute(['abc', 'def'])
 // -> '/Users/xxxx/xxxx/abc/def'
 ```
 
-## Functions
+## Methods
 
 No `new` instance.  
 This class is static function.
@@ -23,11 +23,15 @@ This class is static function.
 
 Create path join.
 
-parameter | type | description
---- | --- | ---
-arr | string[] | String of path to join
+#### Params
+
+##### arr
+
+Type: `string[]`  
+Directory name array. 
 
 #### Return
+
 `string`    
 ex. 'abc/def'
 
@@ -35,11 +39,15 @@ ex. 'abc/def'
 
 Create absolute path from root.
 
-parameter | type | description
---- | --- | ---
-arr | string[] | String of path
+#### Params
+
+##### arr
+
+Type: `string[]`  
+Directory name array. 
 
 #### Return
+
 `string`  
 ex. '/Users/xxxx/xxxx/abc/def'
 
@@ -49,10 +57,14 @@ Create relative path from site root.
 `siteRoot` property + string[]    
 `siteRoot` is defined using [config](https://www.npmjs.com/package/node-config)
 
-parameter | type | description
---- | --- | ---
-arr | string[] | String of path
+#### Params
+
+##### arr
+
+Type: `string[]`  
+Directory name array. 
 
 #### Return
+
 `string`    
 ex. '/abc/def/'
