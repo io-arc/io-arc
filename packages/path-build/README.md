@@ -4,10 +4,10 @@ Path create to relative or absolute.
 
 ## Usage
 
-```
+```typescript
 import PathBuild from '@io-arc/path-build'
 
-const dist = PathBuild.relative(['abc', 'def])
+const dist = PathBuild.relative(['abc', 'def'])
 // -> 'abc/def'
 
 const ab = PathBuild.absolute(['abc', 'def'])
@@ -23,48 +23,44 @@ This class is static function.
 
 Create path join.
 
-#### Params
+#### example
 
-**arr**
+```typescript
+import PathBuild from '@io-arc/path-build'
 
-Type: `string[]`  
-Directory name array. 
-
-#### Return
-
-`string`    
-ex. 'abc/def'
+const result = PathBuild.relative(['abc', 'def'])
+// -> 'abc/def'
+```
 
 ### `PathBuild.absolute(arr: string[]): string`
 
-Create absolute path from root.
+Create absolute path from root.  
 
-#### Params
+#### example
 
-**arr**  
+```typescript
+import PathBuild from '@io-arc/path-build'
 
-Type: `string[]`  
-Directory name array. 
-
-#### Return
-
-`string`  
-ex. '/Users/xxxx/xxxx/abc/def'
+const result = PathBuild.absolute(['abc', 'def'])
+// -> '/Users/foo/bar/abc/def'
+```
 
 ### `PathBuild.rootRelative(arr: string[]): string`
 
 Create relative path from site root.  
-`siteRoot` property + string[]    
-`siteRoot` is defined using [config](https://www.npmjs.com/package/node-config)
+`siteRoot` property + string[] = '/xxx/xxx/'    
+`siteRoot` is defined using [config](https://www.npmjs.com/package/node-config)  
+(`siteRoot` default to `/`)
 
-#### Params
+#### example
 
-**arr**  
+```typescript
+import PathBuild from '@io-arc/path-build'
+// siteRoot is '/'
 
-Type: `string[]`  
-Directory name array. 
+const result1 = PathBuild.rootRelative([])
+// -> '/'
 
-#### Return
-
-`string`    
-ex. '/abc/def/'
+const result2 = PathBuild.rootRelative(['abc', 'def'])
+// -> '/abc/def/'
+```
