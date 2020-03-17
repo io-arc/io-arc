@@ -17,12 +17,11 @@
   },
   "scripts": {},
   "devDependencies": {
-    "@types/config": "^0.0.36",
-    "config": "^3.3.0",
     "prettier": "^1.19.1",
     "typescript": "^3.8.3"
   },
   "dependencies": {
+    "@io-arc/env": "^0.0.0",
     "@io-arc/types": "^0.0.0"
   }
 }

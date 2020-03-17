@@ -1,5 +1,5 @@
+import { SITE_ROOT } from '@io-arc/env'
 import { TDirName, TDirNameKey } from '@io-arc/types'
-import config from 'config'
 import path from 'path'
 
 function dir(arr: TDirNameKey[], isAbsolute = false): TDirNameKey {
@@ -35,7 +35,6 @@ export default class PathBuild {
    * @param arr - Array for directory name
    */
   public static rootRelative(arr: TDirNameKey[]): TDirName {
-    const root = config.get<TDirName>('siteRoot')
-    return arr.length === 0 ? root : `${root + PathBuild.relative(arr)}/`
+    return arr.length === 0 ? SITE_ROOT : `${SITE_ROOT + PathBuild.relative(arr)}/`
   }
 }

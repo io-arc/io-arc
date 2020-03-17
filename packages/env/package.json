@@ -16,7 +16,8 @@
     "url": "https://github.com/io-arc/io-arc.git"
   },
   "scripts": {},
-  "devDependencies": {
+  "dependencies": {
+    "@types/config": "^0.0.36",
     "config": "^3.3.0"
   }
 }
