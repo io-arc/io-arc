@@ -28,9 +28,8 @@ parameter | type | description
 arr | string[] | String of path to join
 
 #### Return
-
-**string**  
-ex. `abc/def`
+`string`    
+ex. 'abc/def'
 
 ### `PathBuild.absolute(arr: string[]): string`
 
@@ -41,13 +40,12 @@ parameter | type | description
 arr | string[] | String of path
 
 #### Return
-
-**string**  
-ex. `/Users/xxxx/xxxx/abc/def`
+`string`  
+ex. '/Users/xxxx/xxxx/abc/def'
 
 ### `PathBuild.rootRelative(arr: string[]): string`
 
-Create relative path from site root.
+Create relative path from site root.  
 `siteRoot` property + string[]    
 `siteRoot` is defined using [config](https://www.npmjs.com/package/node-config)
 
@@ -56,6 +54,5 @@ parameter | type | description
 arr | string[] | String of path
 
 #### Return
-
-**string**  
-ex. `/abc/def/`
+`string`    
+ex. '/abc/def/'
