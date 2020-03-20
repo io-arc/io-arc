@@ -92,7 +92,7 @@ process.env.NODE_ENV = 'production'
 if npm scripts `NODE_ENV=foo XXX`.  
 
 ```yaml
-# config/foo.json
+# config/foo.yml
 
 overrideEnv: development
 ```
