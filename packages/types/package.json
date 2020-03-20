@@ -16,7 +16,7 @@
     "url": "https://github.com/io-arc/io-arc.git"
   },
   "scripts": {},
-  "dependencies": {
+  "devDependencies": {
     "prettier": "^1.19.1"
   }
 }
