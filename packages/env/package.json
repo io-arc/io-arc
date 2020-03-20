@@ -1,9 +1,9 @@
 {
-  "name": "@io-arc/path-build",
+  "name": "@io-arc/env",
   "version": "0.0.0",
-  "description": "Path create to relative or absolute",
+  "description": "Build environment",
   "author": "arc one",
-  "homepage": "https://github.com/io-arc/io-arc/packages/path-build",
+  "homepage": "https://github.com/io-arc/io-arc/packages/env",
   "license": "MIT",
   "main": "index.ts",
   "directories": {},
@@ -16,12 +16,8 @@
     "url": "https://github.com/io-arc/io-arc.git"
   },
   "scripts": {},
-  "devDependencies": {
-    "prettier": "^1.19.1",
-    "typescript": "^3.8.3"
-  },
   "dependencies": {
-    "@io-arc/env": "^0.0.0",
-    "@io-arc/types": "^0.0.0"
+    "@types/config": "^0.0.36",
+    "config": "^3.3.0"
   }
 }

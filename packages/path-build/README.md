@@ -48,15 +48,13 @@ const result = PathBuild.absolute(['abc', 'def'])
 ### `PathBuild.rootRelative(arr: string[]): string`
 
 Create relative path from site root.  
-`siteRoot` property + string[] = '/xxx/xxx/'    
-`siteRoot` is defined using [config](https://www.npmjs.com/package/node-config)  
-(`siteRoot` default to `/`)
+Site root define is `SITE_ROOT` for `@arc-one/env`.
 
 #### example
 
 ```typescript
 import PathBuild from '@io-arc/path-build'
-// siteRoot is '/'
+// SITE_ROOT is '/'
 
 const result1 = PathBuild.rootRelative([])
 // -> '/'
