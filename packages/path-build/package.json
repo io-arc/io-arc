@@ -4,7 +4,7 @@
   "description": "Path create to relative or absolute",
   "author": "arc one",
   "homepage": "https://github.com/io-arc/io-arc/packages/path-build",
-  "license": "MIT",
+  "license": "ISC",
   "main": "index.ts",
   "directories": {},
   "files": [],

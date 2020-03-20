@@ -4,7 +4,7 @@
   "description": "",
   "author": "arc one",
   "homepage": "https://github.com/io-arc/io-arc/packages/types",
-  "license": "MIT",
+  "license": "ISC",
   "main": "index.ts",
   "directories": {},
   "files": [],
