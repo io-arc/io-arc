@@ -5,35 +5,33 @@
   "author": "arc one",
   "homepage": "https://github.com/io-arc/io-arc/packages/read-yaml",
   "license": "ISC",
-  "main": "src/index.ts",
+  "main": "index.js",
+  "types": "types/index.d.ts",
   "directories": {
     "src": "src",
-    "tests": "tests"
+    "test": "tests"
   },
   "files": [
-    "src",
-    "tests"
+    "src"
   ],
   "publishConfig": {
     "access": "public"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/io-arc/io-arc.git"
+    "url": "https://github.com//io-arc/io-arc.git"
   },
   "scripts": {
+    "prebuild": "eslint src/*.ts",
+    "build": "rollup -c",
+    "postbuild": "tsc --emitDeclarationOnly",
     "test": "jest"
   },
   "dependencies": {
-    "@io-arc/path-build": "^0.0.0",
-    "js-yaml": "^3.13.1"
+    "js-yaml": "^3.13.1",
+    "@io-arc/path-build": "^0.0.0"
   },
   "devDependencies": {
-    "@types/jest": "^25.1.4",
-    "@types/js-yaml": "^3.12.2",
-    "jest": "^25.1.0",
-    "prettier": "^1.19.1",
-    "ts-jest": "^25.2.1",
-    "typescript": "^3.8.3"
+    "@types/js-yaml": "^3.12.2"
   }
 }

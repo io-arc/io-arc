@@ -35,6 +35,8 @@ export default class PathBuild {
    * @param arr - Array for directory name
    */
   public static rootRelative(arr: TDirNameKey[]): TDirName {
-    return arr.length === 0 ? SITE_ROOT : `${SITE_ROOT + PathBuild.relative(arr)}/`
+    return arr.length === 0
+      ? SITE_ROOT
+      : `${SITE_ROOT + PathBuild.relative(arr)}/`
   }
 }

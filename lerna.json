@@ -4,5 +4,6 @@
   "packages": [
     "packages/*"
   ],
+  "year": 2020,
   "version": "0.0.0"
 }
