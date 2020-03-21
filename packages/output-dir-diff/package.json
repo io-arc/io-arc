@@ -6,6 +6,7 @@
   "homepage": "https://github.com/io-arc/io-arc/packages/output-dir-diff",
   "license": "ISC",
   "main": "index.js",
+  "types": "types/index.d.ts",
   "directories": {
     "src": "src",
     "test": "tests"

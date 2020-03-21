@@ -11,8 +11,8 @@ export default class OutputDirDiff {
    * @param base
    * @param target
    */
-  constructor (base: TDirNameKey[], target: TDirNameKey[]) {
-    this.#matchDepth = ((depth = 0) => {
+  constructor(base: TDirNameKey[], target: TDirNameKey[]) {
+    this.#matchDepth = ((depth = 0): number => {
       const num = base.length
       for (let i = 0; i < num; i++) {
         if (base[i] !== target[i]) break
