@@ -1,0 +1,29 @@
+{
+  "name": "@io-arc/file-list",
+  "version": "0.0.0",
+  "description": "Get file list",
+  "author": "Nobuyuki Kondo <kondo@arc-one.jp>",
+  "homepage": "https://github.com/io-arc/io-arc/packages/file-list",
+  "license": "ISC",
+  "main": "index.js",
+  "types": "types/index.d.ts",
+  "directories": {
+    "src": "src",
+    "test": "test"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com//io-arc/io-arc.git"
+  },
+  "scripts": {},
+  "devDependencies": {
+    "glob": "^7.1.6",
+    "@io-arc/types": "^0.0.0"
+  }
+}
