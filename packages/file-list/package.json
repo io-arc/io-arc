@@ -2,7 +2,7 @@
   "name": "@io-arc/file-list",
   "version": "0.0.0",
   "description": "Get file list",
-  "author": "Nobuyuki Kondo <kondo@arc-one.jp>",
+  "author": "arc one",
   "homepage": "https://github.com/io-arc/io-arc/packages/file-list",
   "license": "ISC",
   "main": "index.js",
@@ -22,6 +22,9 @@
     "url": "https://github.com//io-arc/io-arc.git"
   },
   "scripts": {
+    "prebuild": "eslint src/*.ts",
+    "build": "rollup -c",
+    "postbuild": "tsc --emitDeclarationOnly",
     "test": "jest"
   },
   "devDependencies": {
