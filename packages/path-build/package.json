@@ -5,9 +5,15 @@
   "author": "arc one",
   "homepage": "https://github.com/io-arc/io-arc/packages/path-build",
   "license": "ISC",
-  "main": "index.ts",
-  "directories": {},
-  "files": [],
+  "main": "index.js",
+  "types": "types/index.d.ts",
+  "directories": {
+    "src": "src",
+    "test": "tests"
+  },
+  "files": [
+    "src"
+  ],
   "publishConfig": {
     "access": "public"
   },
@@ -15,12 +21,13 @@
     "type": "git",
     "url": "https://github.com/io-arc/io-arc.git"
   },
-  "scripts": {},
-  "devDependencies": {
-    "prettier": "^1.19.1",
-    "typescript": "^3.8.3"
+  "scripts": {
+    "prebuild": "eslint src/*.ts",
+    "build": "rollup -c",
+    "postbuild": "tsc --emitDeclarationOnly",
+    "test": "jest"
   },
-  "dependencies": {
+  "devDependencies": {
     "@io-arc/env": "^0.0.0",
     "@io-arc/types": "^0.0.0"
   }
