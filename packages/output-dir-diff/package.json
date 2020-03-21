@@ -1,0 +1,35 @@
+{
+  "name": "@io-arc/output-dir-diff",
+  "version": "0.0.0",
+  "description": "Relative path to another directory from one directory",
+  "author": "arc obe",
+  "homepage": "https://github.com/io-arc/io-arc/packages/output-dir-diff",
+  "license": "ISC",
+  "main": "index.js",
+  "directories": {
+    "src": "src",
+    "test": "tests"
+  },
+  "files": [
+    "src"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/io-arc/io-arc.git"
+  },
+  "scripts": {
+    "prebuild": "eslint src/*.ts",
+    "build": "rollup -c",
+    "postbuild": "tsc --emitDeclarationOnly",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@io-arc/path-build": "^0.0.0"
+  },
+  "devDependencies": {
+    "@io-arc/types": "^0.0.0"
+  }
+}
