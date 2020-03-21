@@ -21,7 +21,9 @@
     "type": "git",
     "url": "https://github.com//io-arc/io-arc.git"
   },
-  "scripts": {},
+  "scripts": {
+    "test": "jest"
+  },
   "devDependencies": {
     "glob": "^7.1.6",
     "@io-arc/types": "^0.0.0"

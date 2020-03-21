@@ -8,7 +8,7 @@ import { TDirNameKey, TFilePath } from '@io-arc/types'
  * @param rootOnly - one level only
  * @constructor
  */
-export const FileList = (
+export const FileListObject = (
   dir: TDirNameKey,
   ext: string,
   rootOnly = false
