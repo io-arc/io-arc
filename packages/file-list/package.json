@@ -1,0 +1,34 @@
+{
+  "name": "@io-arc/file-list",
+  "version": "0.0.0",
+  "description": "Get file list",
+  "author": "arc one",
+  "homepage": "https://github.com/io-arc/io-arc/packages/file-list",
+  "license": "ISC",
+  "main": "index.js",
+  "types": "types/index.d.ts",
+  "directories": {
+    "src": "src",
+    "test": "test"
+  },
+  "files": [
+    "src"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com//io-arc/io-arc.git"
+  },
+  "scripts": {
+    "prebuild": "eslint src/*.ts",
+    "build": "rollup -c",
+    "postbuild": "tsc --emitDeclarationOnly",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "glob": "^7.1.6",
+    "@io-arc/types": "^0.0.0"
+  }
+}
