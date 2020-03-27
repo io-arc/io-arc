@@ -6,3 +6,4 @@ wsDir:
   html: html
   imgLoader: img
   js: js # 'typescript','babel','vue'
+  unknown: ''

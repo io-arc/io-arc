@@ -6,7 +6,7 @@ import config from 'config'
 export default class TargetDirectory {
   /**
    * Get working directory array name
-   * @param key - local.yml > wsDir > "Key Name"
+   * @param key - config property
    * @param defaultDir - Default directory name if key name does not exist or empty
    */
   public static wsArray(key: string, defaultDir: TDirNameKey): TDirNameKey[] {
@@ -21,12 +21,12 @@ export default class TargetDirectory {
     return [WS_ROOT, d]
   }
 
-  /**
+  /**open
    * Get working directory path
-   * @param key - local.yml > wsDir > "Key Name"
+   * @param key - config property
    * @param defaultDir - Default directory name if key name does not exist or empty
    */
-  public static wsName(key: string, defaultDir: TDirNameKey): TDirNameKey {
+  public static wsPath(key: string, defaultDir: TDirNameKey): TDirNameKey {
     return PathBuild.relative(TargetDirectory.wsArray(key, defaultDir))
   }
 }
