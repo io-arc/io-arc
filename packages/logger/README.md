@@ -20,13 +20,13 @@ This class is static function.
 General purpose log.  
 `color` use the [kluer](https://github.com/lukeed/kleur)
 
-### `Logger.start(task: string[, isBr: boolean = false]): void`
+### `Logger.start(task: string[,isBr: boolean = false]): void`
 
 Task started log.  
 `isBr` is optional whether to start a new line.  
 Default: `false`
 
-### `Logger.completed(task: string[, isBr: boolean = false]): void`
+### `Logger.completed(task: string[,isBr: boolean = false]): void`
 
 Task completed log in all green.  
 `isBr` is optional whether to start a new line.  
