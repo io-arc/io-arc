@@ -1,9 +1,9 @@
 {
-  "name": "@io-arc/target-directory",
+  "name": "@io-arc/logger",
   "version": "0.0.0",
-  "description": "Get directory name array or path",
+  "description": "console logging",
   "author": "arc one",
-  "homepage": "https://github.com/io-arc/io-arc/packages/target-directory",
+  "homepage": "https://github.com/io-arc/io-arc/packages/logger",
   "license": "ISC",
   "main": "index.js",
   "types": "types/index.d.ts",
@@ -24,13 +24,13 @@
   "scripts": {
     "prebuild": "eslint src/*.ts",
     "build": "rollup -c",
-    "postbuild": "tsc --emitDeclarationOnly",
-    "test": "jest"
+    "postbuild": "tsc --emitDeclarationOnly"
   },
   "dependencies": {
-    "@io-arc/path-build": "^0.0.0",
     "@io-arc/types": "^0.0.0",
-    "@types/config": "^0.0.36",
-    "config": "^3.3.1"
+    "@types/node-notifier": "^6.0.0",
+    "kleur": "^3.0.3",
+    "moment": "^2.24.0",
+    "node-notifier": "^6.0.0"
   }
 }
