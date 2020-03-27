@@ -15,6 +15,5 @@
     "type": "git",
     "url": "https://github.com/io-arc/io-arc.git"
   },
-  "scripts": {},
-  "devDependencies": {}
+  "scripts": {}
 }

@@ -27,7 +27,7 @@
     "postbuild": "tsc --emitDeclarationOnly",
     "test": "jest"
   },
-  "devDependencies": {
+  "dependencies": {
     "glob": "^7.1.6",
     "@io-arc/types": "^0.0.0"
   }

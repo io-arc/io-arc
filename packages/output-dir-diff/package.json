@@ -28,9 +28,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@io-arc/path-build": "^0.0.0"
-  },
-  "devDependencies": {
+    "@io-arc/path-build": "^0.0.0",
     "@io-arc/types": "^0.0.0"
   }
 }
