@@ -23,8 +23,8 @@ Get working directory name array.
 
 #### example
 
-ex. default.yml  
 ```yaml
+# ex. default.yml
 wsDir:
   js: js
 ```
@@ -51,8 +51,8 @@ Get working directory path.
 
 #### example
 
-ex. default.yml  
 ```yaml
+# ex. default.yml
 wsDir:
   js: js
 ```
