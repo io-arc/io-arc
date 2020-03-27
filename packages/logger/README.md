@@ -32,7 +32,7 @@ Task completed log in all green.
 `isBr` is optional whether to start a new line.  
 Default: `false`
 
-### `Logger.failed(task: string, error: Error | string | null[, isNotify: boolean = true]): void`
+### `Logger.failed(task: string, error: Error | string | null[,isNotify: boolean = true]): void`
 
 Task error log. 
 `error` is Error object or string or null.  
