@@ -1,5 +1,5 @@
 /*!
-Environment
+Get Target Directory
 Get directory name array or path
 
 https://github.com/io-arc/io-arc/packages/target-directory

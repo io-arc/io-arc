@@ -13,7 +13,7 @@ export default {
     name: 'Env',
     sourcemap: false,
     banner: `/*!
-Get Target Directory
+Logger
 ${pkg.description}
 
 ${pkg.homepage}

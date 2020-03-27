@@ -6,13 +6,12 @@
   "homepage": "https://github.com/io-arc/io-arc/packages/target-directory",
   "license": "ISC",
   "main": "index.js",
+  "types": "types/index.d.ts",
   "directories": {
-    "config": "config",
     "src": "src",
     "test": "tests"
   },
   "files": [
-    "config",
     "src"
   ],
   "publishConfig": {
