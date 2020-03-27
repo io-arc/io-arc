@@ -1,7 +1,7 @@
 {
   "name": "@io-arc/logger",
   "version": "0.0.0",
-  "description": "Original logging",
+  "description": "console logging",
   "author": "arc one",
   "homepage": "https://github.com/io-arc/io-arc/packages/logger",
   "license": "ISC",

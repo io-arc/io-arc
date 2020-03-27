@@ -40,12 +40,22 @@ export default class Logger {
     Logger.message(prefix + _template(task, 'completed :)'), Kleur.green)
   }
 
+  /**
+   * Task error
+   * @param task - task name
+   * @param error - error information
+   * @param isNotify - notify flg
+   */
   public static failed(
     task: TTaskName,
     error: Error | string | null,
     isNotify = true
   ): void {
     if (typeof error === 'string') {
+      if (error === '') {
+        Logger.message(_template(task, 'error is empty X('), Kleur.red)
+        return
+      }
       Logger.message(_template(task, error), Kleur.red)
     } else if (error === null) {
       Logger.message(_template(task, 'Oops...'))
