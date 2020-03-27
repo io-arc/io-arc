@@ -1,0 +1,35 @@
+{
+  "name": "@io-arc/logger",
+  "version": "0.0.0",
+  "description": "Original logging",
+  "author": "arc one",
+  "homepage": "https://github.com/io-arc/io-arc/packages/logger",
+  "license": "ISC",
+  "main": "index.js",
+  "directories": {
+    "src": "src",
+    "test": "tests"
+  },
+  "files": [
+    "src"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/io-arc/io-arc.git"
+  },
+  "scripts": {
+    "prebuild": "eslint src/*.ts",
+    "build": "rollup -c",
+    "postbuild": "tsc --emitDeclarationOnly"
+  },
+  "dependencies": {
+    "@io-arc/types": "^0.0.0",
+    "@types/node-notifier": "^6.0.0",
+    "kleur": "^3.0.3",
+    "moment": "^2.24.0",
+    "node-notifier": "^6.0.0"
+  }
+}
