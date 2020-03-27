@@ -1,0 +1,37 @@
+{
+  "name": "@io-arc/target-directory",
+  "version": "0.0.0",
+  "description": "Get directory name array or path",
+  "author": "arc one",
+  "homepage": "https://github.com/io-arc/io-arc/packages/target-directory",
+  "license": "ISC",
+  "main": "index.js",
+  "directories": {
+    "config": "config",
+    "src": "src",
+    "test": "tests"
+  },
+  "files": [
+    "config",
+    "src"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/io-arc/io-arc.git"
+  },
+  "scripts": {
+    "prebuild": "eslint src/*.ts",
+    "build": "rollup -c",
+    "postbuild": "tsc --emitDeclarationOnly",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@io-arc/path-build": "^0.0.0",
+    "@io-arc/types": "^0.0.0",
+    "@types/config": "^0.0.36",
+    "config": "^3.3.1"
+  }
+}
