@@ -16,6 +16,7 @@ The output destination is set by `outputDir`.
 ### example
 
 ```yaml
+# default.yml
 outputDir: dist
 ```
 
