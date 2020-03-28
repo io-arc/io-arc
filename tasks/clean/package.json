@@ -1,0 +1,39 @@
+{
+  "name": "@io-arc/clean",
+  "version": "0.0.0",
+  "description": "Clean build directory",
+  "author": "arc one",
+  "homepage": "https://github.com/io-arc/io-arc/tasks/clean",
+  "license": "ISC",
+  "main": "",
+  "directories": {
+    "bin": "bin",
+    "lib": "lib",
+    "test": "tests"
+  },
+  "files": [
+    "bin",
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/io-arc/io-arc.git"
+  },
+  "scripts": {
+    "prebuild": "eslint lib/*.ts",
+    "build": "rollup -c",
+    "clean": "ia-clean"
+  },
+  "bin": {
+    "ia-clean": "bin/index.js"
+  },
+  "dependencies": {
+    "@io-arc/env": "file:../../packages/env",
+    "@io-arc/logger": "file:../../packages/logger",
+    "@types/rimraf": "^3.0.0",
+    "rimraf": "^3.0.2"
+  }
+}
