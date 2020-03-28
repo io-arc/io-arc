@@ -46,3 +46,6 @@ const _env = ((): BUILD_ENV => {
 
 /** Build environment */
 export const NODE_ENV = _env
+
+/** Run environment */
+export const MODE_ENV: MODE = (process.env.MODE as MODE) || MODE.ONCE

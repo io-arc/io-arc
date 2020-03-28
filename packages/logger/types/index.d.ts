@@ -19,5 +19,11 @@ export default class Logger {
      * @param isBr - whether to start a new line
      */
     static complete(task: TTaskName, isBr?: boolean): void;
+    /**
+     * Task error
+     * @param task - task name
+     * @param error - error information
+     * @param isNotify - notify flg
+     */
     static failed(task: TTaskName, error: Error | string | null, isNotify?: boolean): void;
 }

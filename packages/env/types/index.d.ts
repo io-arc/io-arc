@@ -25,3 +25,5 @@ export declare const SITE_ROOT: TDirName;
 export declare const DIST: TDirNameKey;
 /** Build environment */
 export declare const NODE_ENV: "none" | "development" | "production" | "test";
+/** Run environment */
+export declare const MODE_ENV: MODE;
