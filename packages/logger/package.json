@@ -27,7 +27,7 @@
     "postbuild": "tsc --emitDeclarationOnly"
   },
   "dependencies": {
-    "@io-arc/types": "file:../types",
+    "@io-arc/types": "^0.0.0",
     "@types/node-notifier": "^6.0.0",
     "kleur": "^3.0.3",
     "moment": "^2.24.0",

@@ -32,10 +32,10 @@
     "ia-copy": "bin/index.js"
   },
   "dependencies": {
-    "@io-arc/env": "file:../../packages/env",
-    "@io-arc/logger": "file:../../packages/logger",
-    "@io-arc/target-directory": "file:../../packages/target-directory",
-    "@io-arc/types": "file:../../packages/types",
+    "@io-arc/env": "^0.0.0",
+    "@io-arc/logger": "^0.0.0",
+    "@io-arc/target-directory": "^0.0.0",
+    "@io-arc/types": "^0.0.0",
     "@types/cpx": "^1.5.1",
     "core-js": "3",
     "cpx": "^1.5.0",
