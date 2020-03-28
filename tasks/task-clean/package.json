@@ -1,5 +1,5 @@
 {
-  "name": "@io-arc/clean",
+  "name": "@io-arc/task-clean",
   "version": "0.0.0",
   "description": "Clean build directory",
   "author": "arc one",

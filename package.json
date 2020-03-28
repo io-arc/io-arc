@@ -29,7 +29,6 @@
     "typescript": "3.8.3"
   },
   "dependencies": {
-    "@io-arc/clean": "^0.0.0",
     "@io-arc/env": "^0.0.0",
     "@io-arc/file-list": "^0.0.0",
     "@io-arc/logger": "^0.0.0",
@@ -37,6 +36,7 @@
     "@io-arc/path-build": "^0.0.0",
     "@io-arc/read-yaml": "^0.0.0",
     "@io-arc/target-directory": "^0.0.0",
+    "@io-arc/task-clean": "^0.0.0",
     "@io-arc/task-copy": "^0.0.0",
     "@io-arc/types": "^0.0.0"
   }
