@@ -1,9 +1,9 @@
 {
-  "name": "@io-arc/task-copy",
+  "name": "@io-arc/clean",
   "version": "0.0.0",
-  "description": "Copying files in a directory",
+  "description": "Clean build directory",
   "author": "arc one",
-  "homepage": "https://github.com/io-arc/io-arc/tasks/copy",
+  "homepage": "https://github.com/io-arc/io-arc/tasks/clean",
   "license": "ISC",
   "main": "",
   "directories": {
@@ -25,21 +25,15 @@
   "scripts": {
     "prebuild": "eslint lib/*.ts",
     "build": "rollup -c",
-    "copy:once": "NODE_ENV=development MODE=once ia-copy",
-    "copy:watch": "NODE_ENV=development MODE=watch ia-copy"
+    "clean": "ia-clean"
   },
   "bin": {
-    "ia-copy": "bin/index.js"
+    "ia-clean": "bin/index.js"
   },
   "dependencies": {
     "@io-arc/env": "^0.0.0",
     "@io-arc/logger": "^0.0.0",
-    "@io-arc/target-directory": "^0.0.0",
-    "@io-arc/types": "^0.0.0",
-    "@types/cpx": "^1.5.1",
-    "core-js": "3",
-    "cpx": "^1.5.0",
-    "kleur": "^3.0.3",
-    "moment": "^2.24.0"
+    "@types/rimraf": "^3.0.0",
+    "rimraf": "^3.0.2"
   }
 }

@@ -29,14 +29,15 @@
     "typescript": "3.8.3"
   },
   "dependencies": {
-    "@io-arc/env": "file:packages/env",
-    "@io-arc/file-list": "file:packages/file-list",
-    "@io-arc/logger": "file:packages/logger",
-    "@io-arc/output-dir-diff": "file:packages/output-dir-diff",
-    "@io-arc/path-build": "file:packages/path-build",
-    "@io-arc/read-yaml": "file:packages/read-yaml",
-    "@io-arc/target-directory": "file:packages/target-directory",
-    "@io-arc/task-copy": "file:tasks/task-copy",
-    "@io-arc/types": "file:packages/types"
+    "@io-arc/clean": "^0.0.0",
+    "@io-arc/env": "^0.0.0",
+    "@io-arc/file-list": "^0.0.0",
+    "@io-arc/logger": "^0.0.0",
+    "@io-arc/output-dir-diff": "^0.0.0",
+    "@io-arc/path-build": "^0.0.0",
+    "@io-arc/read-yaml": "^0.0.0",
+    "@io-arc/target-directory": "^0.0.0",
+    "@io-arc/task-copy": "^0.0.0",
+    "@io-arc/types": "^0.0.0"
   }
 }

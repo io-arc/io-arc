@@ -28,7 +28,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@io-arc/types": "file:../types",
+    "@io-arc/types": "^0.0.0",
     "@types/config": "^0.0.36",
     "config": "^3.3.0"
   }
