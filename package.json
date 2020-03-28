@@ -9,7 +9,8 @@
     "yarn": ">= 1.7.0"
   },
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "tasks/*"
   ],
   "devDependencies": {
     "@types/jest": "25.1.4",
@@ -26,5 +27,16 @@
     "rollup-plugin-typescript2": "0.26.0",
     "ts-jest": "25.2.1",
     "typescript": "3.8.3"
+  },
+  "dependencies": {
+    "@io-arc/env": "file:packages/env",
+    "@io-arc/file-list": "file:packages/file-list",
+    "@io-arc/logger": "file:packages/logger",
+    "@io-arc/output-dir-diff": "file:packages/output-dir-diff",
+    "@io-arc/path-build": "file:packages/path-build",
+    "@io-arc/read-yaml": "file:packages/read-yaml",
+    "@io-arc/target-directory": "file:packages/target-directory",
+    "@io-arc/task-copy": "file:tasks/task-copy",
+    "@io-arc/types": "file:packages/types"
   }
 }

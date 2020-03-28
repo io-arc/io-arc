@@ -4,16 +4,17 @@ import pkg from './package.json'
 import lerna from '../../lerna.json'
 
 export default {
-  input: 'src/index.ts',
+  input: 'lib/index.ts',
 
   output: {
-    file: 'index.js',
-    format: 'umd',
+    file: 'bin/index.js',
+    format: 'commonjs',
     indent: false,
-    name: 'OutputDirDiff',
+    name: 'Copy',
     sourcemap: false,
-    banner: `/*!
-Output directory diff
+    banner: `#!/usr/bin/env node
+/*!
+File copy
 ${pkg.description}
 
 ${pkg.homepage}

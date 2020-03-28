@@ -86,7 +86,7 @@ console.log(NODE_ENV)
 // -> 'development'
 
 process.env.NODE_ENV = 'production'
-// -> 'production
+// -> 'production'
 ```
 
 if npm scripts `NODE_ENV=foo XXX`.  
@@ -103,3 +103,25 @@ result below.
 console.log(NODE_ENV)
 // -> 'development
 ```
+
+### `MODE_ENV`
+
+Run environment.  
+Using `process.env.MODE`.  
+Default is `MODE.ONCE`.
+
+#### Type
+
+`MODE`
+
+#### example
+
+```js
+console.log(MODE_ENV)
+// -> 'once'
+
+process.env.MODE = 'watch'
+// -> 'watch'
+```
+
+if npm scripts `MODE_ENV=foo XXX`.  

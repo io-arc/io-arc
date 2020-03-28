@@ -10,7 +10,7 @@ export default {
     file: 'index.js',
     format: 'umd',
     indent: false,
-    name: 'Env',
+    name: 'TargetDirectory',
     sourcemap: false,
     banner: `/*!
 Get Target Directory
