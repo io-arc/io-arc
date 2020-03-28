@@ -17,7 +17,7 @@ $ NODE_ENV=development MODE=once ia-copy
 
 The directory where the file is copied from uses [config](https://www.npmjs.com/package/node-config).  
 
-example:  
+### example
 
 ```yaml
 # default.yml
