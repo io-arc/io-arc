@@ -18,3 +18,6 @@ export type TTaskName = string
 
 /** Glob pattern */
 export type TGlobPattern = string
+
+/** JSON.stringify */
+export type TJsonString = string
