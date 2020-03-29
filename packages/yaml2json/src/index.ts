@@ -1,7 +1,7 @@
 import PathBuild from '@io-arc/path-build'
 import {
   TDirNameKey,
-  TFileName,
+  TFileName, TFileNameKey,
   TGlobPattern,
   TJsonString
 } from '@io-arc/types'
@@ -30,11 +30,11 @@ export default class Yaml2Json {
    * @param outputDir - JSON convert directory
    */
   constructor(targetDir: TDirNameKey[], outputDir: TDirNameKey[]) {
-    this.#regTarget = new RegExp(`${targetDir}/`)
-    this.#regExt = new RegExp('.ya?ml$')
-
     this.#targetDir = PathBuild.relative(targetDir)
     this.#outputDirArr = outputDir
+
+    this.#regTarget = new RegExp(`${this.#targetDir}/`)
+    this.#regExt = new RegExp('.ya?ml$')
   }
 
   /**
@@ -84,13 +84,13 @@ export default class Yaml2Json {
 
   /**
    * Single file deleting
-   * @param filepath
+   * @param key
    */
-  public remove(filepath: TFileName): Observable<TFileName> {
-    return of(filepath).pipe(
+  public remove(key: TFileNameKey): Observable<TFileName> {
+    return of(key).pipe(
       // search output json
       map(
-        (filename: TFileName): TFileName => {
+        (filename: TFileNameKey): TFileName => {
           const target = filename
             .replace(this.#regTarget, '')
             .replace(this.#regExt, '')
