@@ -1,0 +1,38 @@
+{
+  "name": "@io-arc/yaml2json",
+  "version": "0.0.0",
+  "description": "YAML to JSON conversion",
+  "author": "arc one",
+  "homepage": "https://github.com/io-arc/io-arc/packages/yaml2json",
+  "license": "ISC",
+  "main": "index.js",
+  "directories": {
+    "src": "src",
+    "test": "tests"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/io-arc/io-arc.git"
+  },
+  "scripts": {
+    "prebuild": "eslint src/*.ts",
+    "build": "rollup -c",
+    "postbuild": "tsc --emitDeclarationOnly",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@io-arc/path-build": "^0.0.0",
+    "@io-arc/types": "^0.0.0",
+    "@types/js-yaml": "^3.12.3",
+    "glob": "^7.1.6",
+    "js-yaml": "^3.13.1",
+    "make-dir": "^3.0.2",
+    "rxjs": "^6.5.4"
+  }
+}
