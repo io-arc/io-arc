@@ -1,4 +1,4 @@
-import { TDirNameKey, TFileName, TGlobPattern } from '@io-arc/types';
+import { TDirNameKey, TFileName, TFileNameKey, TGlobPattern } from '@io-arc/types';
 import { Observable } from 'rxjs';
 export default class Yaml2Json {
     #private;
@@ -26,7 +26,7 @@ export default class Yaml2Json {
     removeAll(target?: TGlobPattern): Observable<TFileName>;
     /**
      * Single file deleting
-     * @param filepath
+     * @param key
      */
-    remove(filepath: TFileName): Observable<TFileName>;
+    remove(key: TFileNameKey): Observable<TFileName>;
 }

@@ -1,7 +1,8 @@
 import PathBuild from '@io-arc/path-build'
 import {
   TDirNameKey,
-  TFileName, TFileNameKey,
+  TFileName,
+  TFileNameKey,
   TGlobPattern,
   TJsonString
 } from '@io-arc/types'
