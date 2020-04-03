@@ -11,9 +11,13 @@ import path from 'path'
 
 // workspace and output directory
 const ws = TargetDirectory.wsArray('wsDir.yaml2json', 'yaml2json')
-const dist: TDirNameKey[] = config.get('deployDir.json')
+const dist: TDirNameKey[] = config.has('deployDir.json')
+  ? config.get('deployDir.json')
+  : ['common', 'json']
 const y2j = new Yaml2Json(ws, [DIST, ...dist])
-const minify = config.get<boolean>('options.json.minify')
+const minify = config.has('options.json.minify')
+  ? config.get<boolean>('options.json.minify')
+  : false
 
 // log
 const createLog = (v: TFilePath): void =>
