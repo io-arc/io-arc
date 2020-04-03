@@ -1,0 +1,14 @@
+type: default
+
+# working directory
+wsDir:
+  yaml2json: yaml2json
+
+# directory configuration
+# array is hierarchy
+deployDir:
+  json: [common, data]
+
+options:
+  json:
+    minify: true
