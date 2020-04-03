@@ -15,7 +15,14 @@ $ NODE_ENV=development MODE=once ia-copy
 
 ## Specification
 
-The directory where the file is copied from uses [config](https://www.npmjs.com/package/node-config).  
+The directory where the file is copied from uses [config](https://www.npmjs.com/package/node-config).
+
+### Default
+
+Default settings when no definition is made.
+
+- Working space: `<project>/src/static`
+- Output directory: `<project>/dist`
 
 ### example
 
@@ -23,6 +30,11 @@ The directory where the file is copied from uses [config](https://www.npmjs.com/
 # default.yml
 wsDir:
   static: static
+
+outputDir: dist
 ```
 
-Result: `src/static`
+Result:
+
+- Working space: `<project>/src/static`
+- Output directory: `<project>/dist`

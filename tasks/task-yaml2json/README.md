@@ -22,7 +22,8 @@ The directory where the file is copied from uses [config](https://www.npmjs.com/
 Default settings when no definition is made.
 
 - Working space: `<project>/src/yaml2json`
-- Output directory: `<project>/dist/common/json`
+- Output directory: `dist`
+- Deploy directory: `<project>/dist/common/json`
 - Minify: `false`
 
 ### example
@@ -31,6 +32,8 @@ Default settings when no definition is made.
 # default.yml
 wsDir:
   yaml2json: y2j
+
+outputDir: dist
 
 deployDir:
   json: [json] 
@@ -41,8 +44,8 @@ options:
 ```
 
 Result:  
+
 - Working space: `<project>/src/y2j`
-- Output directory: `<project>/dist/json`
+- Output directory: `<project>/dist`
+- Deploy directory: `<project>/dist/json`
 - Minify convert: `true`
-
-
