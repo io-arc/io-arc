@@ -1,14 +1,12 @@
-import { DIST, MODE, MODE_ENV } from '@io-arc/env'
+import { DIST, MODE, MODE_ENV, WS_STATIC_PATH } from '@io-arc/env'
 import Logger from '@io-arc/logger'
-import TargetDirectory from '@io-arc/target-directory'
 import { TGlobPattern } from '@io-arc/types'
 import cpx from 'cpx'
 import { green, yellow } from 'kleur'
 import moment from 'moment'
 
 const task = 'copy'
-const ws = TargetDirectory.wsPath('wsDir.static', 'static')
-const source: TGlobPattern = `${ws}/**/!(_*|README.md)`
+const source: TGlobPattern = `${WS_STATIC_PATH}/**/!(_*|README.md)`
 
 if (MODE_ENV === MODE.WATCH) {
   const format = 'HH:mm:ss'
