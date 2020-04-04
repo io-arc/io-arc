@@ -1,4 +1,4 @@
-import { TDirName, TDirNameKey } from '@io-arc/types';
+import { TDirNameKey } from '@io-arc/types';
 export default class PathBuild {
     /**
      * relative path build
@@ -10,9 +10,4 @@ export default class PathBuild {
      * @param arr - Array for directory name
      */
     static absolute(arr: TDirNameKey[]): TDirNameKey;
-    /**
-     * Root relative path build
-     * @param arr - Array for directory name
-     */
-    static rootRelative(arr: TDirNameKey[]): TDirName;
 }

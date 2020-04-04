@@ -28,7 +28,6 @@
     "test": "jest"
   },
   "dependencies": {
-    "@io-arc/env": "^0.0.0",
     "@io-arc/types": "^0.0.0"
   }
 }
