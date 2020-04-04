@@ -1,22 +1,19 @@
-import { DIST, MODE, MODE_ENV } from '@io-arc/env'
+import {
+  DEPLOY_YAML2JSON_ARR,
+  JSON_MINIFY,
+  MODE,
+  MODE_ENV,
+  WS_YAML2JSON_ARRAY,
+  WS_YAML2JSON_PATH
+} from '@io-arc/env'
 import Logger from '@io-arc/logger'
-import PathBuild from '@io-arc/path-build'
-import TargetDirectory from '@io-arc/target-directory'
-import { TDirNameKey, TFilePath } from '@io-arc/types'
+import { TFilePath } from '@io-arc/types'
 import Yaml2Json from '@io-arc/yaml2json'
 import { green, red } from 'kleur'
 import watch from 'node-watch'
 import path from 'path'
 
-// workspace and output directory
-const ws = TargetDirectory.wsArray('wsDir.yaml2json', 'yaml2json')
-const dist: TDirNameKey[] = config.has('deployDir.json')
-  ? config.get('deployDir.json')
-  : ['common', 'json']
-const y2j = new Yaml2Json(ws, [DIST, ...dist])
-const minify = config.has('options.json.minify')
-  ? config.get<boolean>('options.json.minify')
-  : false
+const y2j = new Yaml2Json(WS_YAML2JSON_ARRAY, DEPLOY_YAML2JSON_ARR)
 
 // log
 const createLog = (v: TFilePath): void =>
@@ -28,7 +25,7 @@ const errorLog = (e: Error): void => Logger.failed('yaml2json', e)
 // watch
 const y2jWatch = (): void => {
   watch(
-    PathBuild.relative(ws),
+    WS_YAML2JSON_PATH,
     {
       recursive: true,
       filter: (f: TFilePath): boolean =>
@@ -38,7 +35,7 @@ const y2jWatch = (): void => {
       switch (evt) {
         // new / update / when a file goes from underscored to underscored
         case 'update':
-          y2j.convert(filepath, minify).subscribe(createLog, errorLog)
+          y2j.convert(filepath, JSON_MINIFY).subscribe(createLog, errorLog)
           return
 
         // delete / rename the file with underscores
@@ -65,10 +62,10 @@ if (MODE_ENV === MODE.WATCH) {
       Logger.message('remove for exist json files')
 
       // rebuild
-      y2j.convertAll(minify).subscribe(createLog, errorLog, y2jWatch)
+      y2j.convertAll(JSON_MINIFY).subscribe(createLog, errorLog, y2jWatch)
     }
   })
 } else {
   // once
-  y2j.convertAll(minify).subscribe(createLog, errorLog, completeLog)
+  y2j.convertAll(JSON_MINIFY).subscribe(createLog, errorLog, completeLog)
 }
