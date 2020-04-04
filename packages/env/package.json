@@ -9,10 +9,12 @@
   "types": "types/index.d.ts",
   "directories": {
     "src": "src",
+    "config": "config",
     "test": "tests"
   },
   "files": [
-    "src"
+    "src",
+    "config"
   ],
   "publishConfig": {
     "access": "public"
@@ -28,6 +30,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@io-arc/path-build": "^0.0.0",
     "@io-arc/types": "^0.0.0",
     "@types/config": "^0.0.36",
     "config": "^3.3.0"

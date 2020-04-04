@@ -1,0 +1,19 @@
+# Build settings
+
+# build output
+outputDir: dist
+
+# working directory
+wsDir:
+  static: static
+  yaml2json: yaml2json
+
+# directory configuration
+# array is hierarchy
+deployDir:
+  json: [common, data]
+
+# build option
+options:
+  json:
+    minify: true

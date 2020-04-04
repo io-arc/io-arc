@@ -25,8 +25,8 @@
   "scripts": {
     "prebuild": "eslint lib/*.ts",
     "build": "rollup -c",
-    "copy:once": "NODE_ENV=development MODE=once ia-copy",
-    "copy:watch": "NODE_ENV=development MODE=watch ia-copy"
+    "copy:once": "NODE_ENV=development MODE_ENV=once ia-copy",
+    "copy:watch": "NODE_ENV=development MODE_ENV=watch ia-copy"
   },
   "bin": {
     "ia-copy": "bin/index.js"
@@ -34,7 +34,6 @@
   "dependencies": {
     "@io-arc/env": "^0.0.0",
     "@io-arc/logger": "^0.0.0",
-    "@io-arc/target-directory": "^0.0.0",
     "@io-arc/types": "^0.0.0",
     "@types/cpx": "^1.5.1",
     "core-js": "3",

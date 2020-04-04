@@ -7,11 +7,3 @@ test('Relative', () => {
 test('Absolute', () => {
   expect(PathBuild.absolute(['abc', 'def'])).toBe(`${process.cwd()}/abc/def`)
 })
-
-test('RootAbsolute no array', () => {
-  expect(PathBuild.rootRelative([])).toBe('/')
-})
-
-test('RootAbsolute', () => {
-  expect(PathBuild.rootRelative(['abc'])).toBe('/abc/')
-})

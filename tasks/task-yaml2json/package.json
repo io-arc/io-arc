@@ -28,18 +28,14 @@
   "scripts": {
     "prebuild": "eslint lib/*.ts",
     "build": "rollup -c",
-    "yaml2json:once": "NODE_ENV=development MODE=once ia-yaml2json",
-    "yaml2json:watch": "NODE_ENV=development MODE=watch ia-yaml2json"
+    "yaml2json:once": "NODE_ENV=development MODE_ENV=once ia-yaml2json",
+    "yaml2json:watch": "NODE_ENV=development MODE_ENV=watch ia-yaml2json"
   },
   "dependencies": {
     "@io-arc/env": "^0.0.0",
     "@io-arc/logger": "^0.0.0",
-    "@io-arc/path-build": "^0.0.0",
-    "@io-arc/target-directory": "^0.0.0",
     "@io-arc/types": "^0.0.0",
     "@io-arc/yaml2json": "^0.0.0",
-    "@types/config": "^0.0.36",
-    "config": "^3.3.1",
     "kleur": "^3.0.3",
     "node-watch": "^0.6.3",
     "watch": "^1.0.2"
