@@ -34,7 +34,7 @@ const result = PathBuild.relative(['abc', 'def'])
 
 ### `PathBuild.absolute(arr: string[]): string`
 
-Create absolute path from root.  
+Create absolute path from root.
 
 #### example
 
@@ -43,22 +43,4 @@ import PathBuild from '@io-arc/path-build'
 
 const result = PathBuild.absolute(['abc', 'def'])
 // -> '/Users/foo/bar/abc/def'
-```
-
-### `PathBuild.rootRelative(arr: string[]): string`
-
-Create relative path from site root.  
-Site root define is `SITE_ROOT` for `@arc-one/env`.
-
-#### example
-
-```typescript
-import PathBuild from '@io-arc/path-build'
-// SITE_ROOT is '/'
-
-const result1 = PathBuild.rootRelative([])
-// -> '/'
-
-const result2 = PathBuild.rootRelative(['abc', 'def'])
-// -> '/abc/def/'
 ```
