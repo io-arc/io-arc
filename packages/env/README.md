@@ -114,7 +114,7 @@ return `src`
 ### `DIST`
 
 Build output directory.  
-Define using [config](https://www.npmjs.com/package/node-config)  
+Define using [config](https://www.npmjs.com/package/node-config).  
 [config](https://www.npmjs.com/package/node-config) property is `outputDir`.  
 If not defined then `dist`
 
@@ -128,7 +128,7 @@ If not defined then `dist`
 Working space for copy directory name array.  
 Array first is `WS_ROOT` constant.
 
-Define using [config](https://www.npmjs.com/package/node-config)  
+Define using [config](https://www.npmjs.com/package/node-config).  
 [config](https://www.npmjs.com/package/node-config) property is `wsDir.static`.  
 If not defined then `static`
 
@@ -143,7 +143,7 @@ If not defined then `static`
 Working space for copy directory path.  
 First string is `WS_ROOT` constant.
 
-Define using [config](https://www.npmjs.com/package/node-config)  
+Define using [config](https://www.npmjs.com/package/node-config).  
 [config](https://www.npmjs.com/package/node-config) property is `wsDir.static`.  
 If not defined then `static`
 
@@ -158,7 +158,7 @@ If not defined then `static`
 Working space YAML to JSON directory path.  
 Array first is `WS_ROOT` constant.
 
-Define using [config](https://www.npmjs.com/package/node-config)  
+Define using [config](https://www.npmjs.com/package/node-config).  
 [config](https://www.npmjs.com/package/node-config) property is `wsDir.uaml2json`.  
 If not defined then `yaml2json`
 
@@ -173,7 +173,7 @@ If not defined then `yaml2json`
 Working space YAML to JSON directory path.  
 First string is `WS_ROOT` constant.
 
-Define using [config](https://www.npmjs.com/package/node-config)  
+Define using [config](https://www.npmjs.com/package/node-config).  
 [config](https://www.npmjs.com/package/node-config) property is `wsDir.yaml2json`.  
 If not defined then `yaml2json`
 
@@ -187,7 +187,7 @@ If not defined then `yaml2json`
 
 YAML to JSON convert minify option.
 
-Define using [config](https://www.npmjs.com/package/node-config)  
+Define using [config](https://www.npmjs.com/package/node-config).  
 [config](https://www.npmjs.com/package/node-config) property is `options.json.minify`.  
 If not defined then `false`
 
