@@ -61,6 +61,9 @@ export const DIST: TDirNameKey = getConfig('outputDir', 'dist')
 const getWsPath = (key: string, defaultDir: TDirNameKey): TDirNameKey =>
   PathBuild.relative(getWsArr(key, defaultDir))
 
+const getWsAbsolutePath = (key: string, defaultDir: TDirNameKey): TDirNameKey =>
+  PathBuild.absolute(getWsArr(key, defaultDir))
+
 const getDeployArr = (
   key: string,
   defaultDir: TDirNameKey[]
@@ -132,6 +135,27 @@ export const DEPLOY_YAML2JSON_ARR: TDirNameKey[] = getDeployArr(
   'deployDir.json',
   ['common', 'data']
 )
+
+/**
+ * Image directory absolute path for file-loader
+ * First string is '<OS root>/src/' to absolutely
+ */
+export const WS_IMG_PATH_ABSOLUTE: TDirNameKey = getWsAbsolutePath(
+  'wsDir.imgLoader',
+  'img'
+)
+
+/**
+ * Image deploy directory array for using file-loader
+ * Array first is DIST constant
+ *
+ * config key: deployDir.img
+ * @default [DIST, 'common', 'img']
+ */
+export const DEPLOY_IMG_ARRAY: TDirNameKey[] = getDeployArr('deployDir.img', [
+  'common',
+  'img'
+])
 
 /**
  * WebSite root

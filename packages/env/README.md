@@ -211,6 +211,36 @@ If not defined then `['common', 'data']`
 | default directory | `['common', 'data']`      |
 | default result    | `[DIST, 'common', 'data]` |
 
+### `WS_IMG_PATH_ABSOLUTE`
+
+Image directory path for using [file-loader](https://github.com/webpack-contrib/file-loader).  
+First string is `process.cwd()` and `WS_ROOT` constant.
+
+Define using [config](https://www.npmjs.com/package/node-config)  
+[config](https://www.npmjs.com/package/node-config) property is `wsDir.img`.  
+If not defined then `img`
+
+| data              | value                             |
+| ----------------- | --------------------------------- |
+| config key        | `wsDir.img`                       |
+| default directory | `img`                             |
+| default result    | `${process.cwd()}/${WS_ROOT}/img` |
+
+### `DEPLOY_IMG_ARRAY`
+
+Image deploy directory array for using file-loader.  
+Array first is `DIST` constant.
+
+Define using [config](https://www.npmjs.com/package/node-config)  
+[config](https://www.npmjs.com/package/node-config) property is `deployDir.img`.  
+If not defined then `['common', 'img']`
+
+| data              | value                     |
+| ----------------- | ------------------------- |
+| config key        | `deployDir.img`           |
+| default directory | `['common', 'img']`       |
+| default result    | `[DIST, 'common', 'img']` |
+
 ### `SITE_ROOT`
 
 Website root.  

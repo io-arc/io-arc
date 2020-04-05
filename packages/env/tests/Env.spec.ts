@@ -1,10 +1,12 @@
 import {
+  DEPLOY_IMG_ARRAY,
   DEPLOY_YAML2JSON_ARR,
   DIST,
   JSON_MINIFY,
   NODE_ENV,
   SITE_ROOT,
   siteRootRelative,
+  WS_IMG_PATH_ABSOLUTE,
   WS_ROOT,
   WS_STATIC_ARRAY,
   WS_STATIC_PATH,
@@ -54,4 +56,12 @@ test('YAML to JSON convert minify option', () => {
 
 test('YAML to JSON deploy directory array', () => {
   expect(DEPLOY_YAML2JSON_ARR).toEqual([DIST, 'common', 'data'])
+})
+
+test('Image directory absolute path', () => {
+  expect(WS_IMG_PATH_ABSOLUTE).toBe(`${process.cwd()}/src/img`)
+})
+
+test('Image deploy directory array', () => {
+  expect(DEPLOY_IMG_ARRAY).toEqual([DIST, 'common', 'img'])
 })
