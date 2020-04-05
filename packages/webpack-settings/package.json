@@ -1,0 +1,38 @@
+{
+  "name": "@io-arc/webpack-settings",
+  "version": "0.0.0",
+  "description": "Webpack build settings",
+  "keywords": [
+    "webpack"
+  ],
+  "author": "arc one",
+  "homepage": "https://github.com/io-arc/io-arc/packages/webpack-settings",
+  "license": "ISC",
+  "main": "index.js",
+  "types": "types/index.d.ts",
+  "directories": {
+    "src": "src",
+    "test": "tests"
+  },
+  "files": [
+    "src"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/io-arc/io-arc.git"
+  },
+  "scripts": {
+    "prebuild": "eslint src/*.ts",
+    "build": "rollup -c",
+    "postbuild": "tsc --emitDeclarationOnly"
+  },
+  "dependencies": {
+    "@io-arc/types": "^0.0.0",
+    "@types/webpack": "^4.41.10",
+    "kleur": "^3.0.3",
+    "webpack": "^4.42.1"
+  }
+}
