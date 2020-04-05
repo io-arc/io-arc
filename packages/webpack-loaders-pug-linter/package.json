@@ -18,7 +18,8 @@
   },
   "files": [
     "src",
-    "types"
+    "types",
+    "index.js"
   ],
   "publishConfig": {
     "access": "public"

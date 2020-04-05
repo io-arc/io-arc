@@ -5,3 +5,4 @@ node_modules
 dist
 rollup.config.js
 tsconfig.json
+jest.config.js

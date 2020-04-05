@@ -7,7 +7,9 @@
   "license": "ISC",
   "main": "index.d.ts",
   "directories": {},
-  "files": [],
+  "files": [
+    "index.d.ts"
+  ],
   "publishConfig": {
     "access": "public"
   },

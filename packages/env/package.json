@@ -8,13 +8,13 @@
   "main": "index.js",
   "types": "types/index.d.ts",
   "directories": {
-    "src": "src",
-    "config": "config",
+    "lib": "src",
     "test": "tests"
   },
   "files": [
     "src",
-    "config"
+    "types",
+    "index.js"
   ],
   "publishConfig": {
     "access": "public"

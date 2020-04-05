@@ -1,9 +1,0 @@
-# working directory
-wsDir:
-  static: static
-  yaml2json: yaml2json
-  css: css
-  html: html
-  imgLoader: img
-  js: js # 'typescript','babel','vue'
-  unknown: ''

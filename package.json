@@ -35,7 +35,6 @@
     "@io-arc/output-dir-diff": "^0.0.0",
     "@io-arc/path-build": "^0.0.0",
     "@io-arc/read-yaml": "^0.0.0",
-    "@io-arc/target-directory": "^0.0.0",
     "@io-arc/task-clean": "^0.0.0",
     "@io-arc/task-copy": "^0.0.0",
     "@io-arc/types": "^0.0.0"

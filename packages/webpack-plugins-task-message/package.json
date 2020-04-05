@@ -12,11 +12,13 @@
   "main": "index.js",
   "types": "types/index.d.ts",
   "directories": {
-    "src": "src",
+    "lib": "src",
     "test": "tests"
   },
   "files": [
-    "src"
+    "src",
+    "types",
+    "index.js"
   ],
   "publishConfig": {
     "access": "public"
