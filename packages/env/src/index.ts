@@ -1,5 +1,5 @@
 import PathBuild from '@io-arc/path-build'
-import { TDirName, TDirNameKey } from '@io-arc/types'
+import { TDirName, TDirNameKey, TDirPathKey } from '@io-arc/types'
 import config from 'config'
 
 export const BUILD = {
@@ -195,5 +195,5 @@ export const SITE_ROOT: TDirName = getConfig<TDirName>('siteRoot', '/')
  * Site root relative path build
  * @param arr - Array for directory name
  */
-export const siteRootRelative = (arr: TDirNameKey[]): TDirNameKey =>
+export const siteRootRelative = (arr: TDirNameKey[]): TDirPathKey =>
   arr.length === 0 ? SITE_ROOT : `${SITE_ROOT + PathBuild.relative(arr)}/`

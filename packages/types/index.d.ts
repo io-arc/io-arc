@@ -4,6 +4,9 @@ export type TDirName = string
 /** Directory name with no slash for last */
 export type TDirNameKey = string
 
+/** Directory path with no slash for last */
+export type TDirPathKey = string
+
 /** Filename with extension */
 export type TFileName = string
 
