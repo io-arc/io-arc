@@ -72,13 +72,6 @@ export declare const JSON_MINIFY: boolean;
  */
 export declare const DEPLOY_YAML2JSON_ARR: TDirNameKey[];
 /**
- * Image directory path for using file-loader
- * First string is 'src/' to absolutely
- *
- * config key: wsDir.img
- * @default 'src/img'
- */
-/**
  * Image directory absolute path for file-loader
  * First string is '<OS root>/src/' to absolutely
  */
