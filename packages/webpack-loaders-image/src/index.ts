@@ -14,7 +14,7 @@ const svgo = require('imagemin-svgo')
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const imageminLoader = require('imagemin-webpack').loader
 
-export const imageLoader = (
+export const ImageLoader = (
   base: TDirNameKey[],
   target: TDirNameKey[],
   isHash: boolean

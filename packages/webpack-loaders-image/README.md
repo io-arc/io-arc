@@ -6,14 +6,14 @@ Auto insert image path to HTML, CSS.
 ## Usage
 
 ```typescript
-import { imageLoader } from '@io-arc/webpack-loaders-image'
+import { ImageLoader } from '@io-arc/webpack-loaders-image'
 import { DEPLOY_IMG_ARRAY } from '@io-arc/env'
 
 export default {
   // (abbreviation)
   module: {
     rules: [
-      imageLoader([], DEPLOY_IMG_ARRAY, true)
+      ImageLoader([], DEPLOY_IMG_ARRAY, true)
     ]
   }
 }
@@ -21,7 +21,7 @@ export default {
 
 ## Functions
 
-### `imageLoader(base: string[], target: [], isHash: boolean): RuleSetRule`
+### `ImageLoader(base: string[], target: [], isHash: boolean): RuleSetRule`
 
 Use [file-loader](https://github.com/webpack-contrib/file-loader) to get and build images with a specific extension.  
 Return types `RuleSetRule` for [webpack](https://webpack.js.org/)
