@@ -116,7 +116,7 @@ return `src`
 Build output directory.  
 Define using [config](https://www.npmjs.com/package/node-config).  
 [config](https://www.npmjs.com/package/node-config) property is `outputDir`.  
-If not defined then `dist`
+If not defined then `dist`.
 
 | data       | value       |
 | ---------- | ----------- |
@@ -130,7 +130,7 @@ Array first is `WS_ROOT` constant.
 
 Define using [config](https://www.npmjs.com/package/node-config).  
 [config](https://www.npmjs.com/package/node-config) property is `wsDir.static`.  
-If not defined then `static`
+If not defined then `static`.
 
 | data              | value                 |
 | ----------------- | --------------------- |
@@ -145,7 +145,7 @@ First string is `WS_ROOT` constant.
 
 Define using [config](https://www.npmjs.com/package/node-config).  
 [config](https://www.npmjs.com/package/node-config) property is `wsDir.static`.  
-If not defined then `static`
+If not defined then `static`.
 
 | data              | value               |
 | ----------------- | ------------------- |
@@ -160,7 +160,7 @@ Array first is `WS_ROOT` constant.
 
 Define using [config](https://www.npmjs.com/package/node-config).  
 [config](https://www.npmjs.com/package/node-config) property is `wsDir.uaml2json`.  
-If not defined then `yaml2json`
+If not defined then `yaml2json`.
 
 | data              | value                    |
 | ----------------- | ------------------------ |
@@ -175,7 +175,7 @@ First string is `WS_ROOT` constant.
 
 Define using [config](https://www.npmjs.com/package/node-config).  
 [config](https://www.npmjs.com/package/node-config) property is `wsDir.yaml2json`.  
-If not defined then `yaml2json`
+If not defined then `yaml2json`.
 
 | data              | value                  |
 | ----------------- | ---------------------- |
@@ -189,7 +189,7 @@ YAML to JSON convert minify option.
 
 Define using [config](https://www.npmjs.com/package/node-config).  
 [config](https://www.npmjs.com/package/node-config) property is `options.json.minify`.  
-If not defined then `false`
+If not defined then `false`.
 
 | data       | value                 |
 | ---------- | --------------------- |
@@ -203,7 +203,7 @@ Array first is `DIST` constant.
 
 Define using [config](https://www.npmjs.com/package/node-config).  
 [config](https://www.npmjs.com/package/node-config) property is `deployDir.json`.  
-If not defined then `['common', 'data']`
+If not defined then `['common', 'data']`.
 
 | data              | value                     |
 | ----------------- | ------------------------- |
@@ -218,7 +218,7 @@ First string is `process.cwd()` and `WS_ROOT` constant.
 
 Define using [config](https://www.npmjs.com/package/node-config).  
 [config](https://www.npmjs.com/package/node-config) property is `wsDir.img`.  
-If not defined then `img`
+If not defined then `img`.
 
 | data              | value                             |
 | ----------------- | --------------------------------- |
@@ -233,7 +233,7 @@ Array first is `DIST` constant.
 
 Define using [config](https://www.npmjs.com/package/node-config).  
 [config](https://www.npmjs.com/package/node-config) property is `deployDir.img`.  
-If not defined then `['common', 'img']`
+If not defined then `['common', 'img']`.
 
 | data              | value                     |
 | ----------------- | ------------------------- |
@@ -246,14 +246,14 @@ If not defined then `['common', 'img']`
 Website root.  
 Define using [config](https://www.npmjs.com/package/node-config).  
 [config](https://www.npmjs.com/package/node-config) property is `siteRoot`.  
-If not defined then `/`
+If not defined then `/`.
 
 ## Functions
 
 ### `siteRootRelative(arr: string[])`
 
 Create relative path from site root.  
-Site root define is `SITE_ROOT`
+Site root define is `SITE_ROOT`.
 
 #### example
 
