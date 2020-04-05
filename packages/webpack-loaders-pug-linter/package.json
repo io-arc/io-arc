@@ -1,0 +1,39 @@
+{
+  "name": "@io-arc/webpack-loaders-pug-linter",
+  "version": "0.0.0",
+  "description": "Pug linter for webpack loader",
+  "keywords": [
+    "webpack",
+    "pug",
+    "linter"
+  ],
+  "author": "arc one",
+  "homepage": "https://github.com/io-arc/io-arc/packages/webpack-loaders-pug-linter",
+  "license": "ISC",
+  "main": "index.js",
+  "types": "types/index.d.ts",
+  "directories": {
+    "lib": "src",
+    "test": "test"
+  },
+  "files": [
+    "src",
+    "types"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/io-arc/io-arc.git"
+  },
+  "scripts": {
+    "prebuild": "eslint src/*.ts",
+    "build": "rollup -c",
+    "postbuild": "tsc --emitDeclarationOnly"
+  },
+  "dependencies": {
+    "@types/webpack": "^4.41.10",
+    "webpack": "^4.42.1"
+  }
+}
