@@ -35,9 +35,27 @@ export const MODE_ENV: MODE = (process.env.MODE_ENV as MODE) || MODE.ONCE
 /** Working space directory */
 export const WS_ROOT: TDirNameKey = 'src'
 
+/**
+ * config data
+ * @param key
+ * @param def
+ */
 const getConfig = <T>(key: string, def: T): T =>
   config.has(key) ? config.get<T>(key) : def
 
+/**
+ * Output directory
+ *
+ * config key: 'outputDir'
+ * @default 'dist'
+ */
+export const DIST: TDirNameKey = getConfig<TDirNameKey>('outputDir', 'dist')
+
+/**
+ * Working directory name array
+ * @param key
+ * @param defaultDir
+ */
 const getWsArr = (key: string, defaultDir: TDirNameKey): TDirNameKey[] => {
   // use default directory name
   if (!config.has(key)) return [WS_ROOT, defaultDir]
@@ -51,19 +69,26 @@ const getWsArr = (key: string, defaultDir: TDirNameKey): TDirNameKey[] => {
 }
 
 /**
- * Output directory
- *
- * config key: 'outputDir'
- * @default 'dist'
+ * Working space path
+ * @param key
+ * @param defaultDir
  */
-export const DIST: TDirNameKey = getConfig('outputDir', 'dist')
-
 const getWsPath = (key: string, defaultDir: TDirNameKey): TDirNameKey =>
   PathBuild.relative(getWsArr(key, defaultDir))
 
+/**
+ * Working space absolute path
+ * @param key
+ * @param defaultDir
+ */
 const getWsAbsolutePath = (key: string, defaultDir: TDirNameKey): TDirNameKey =>
   PathBuild.absolute(getWsArr(key, defaultDir))
 
+/**
+ * Deploying directory array
+ * @param key
+ * @param defaultDir
+ */
 const getDeployArr = (
   key: string,
   defaultDir: TDirNameKey[]
@@ -122,7 +147,10 @@ export const WS_YAML2JSON_PATH: TDirNameKey = getWsPath(
  * config key: options.json.minify
  * @default false
  */
-export const JSON_MINIFY: boolean = getConfig('options.json.minify', false)
+export const JSON_MINIFY: boolean = getConfig<boolean>(
+  'options.json.minify',
+  false
+)
 
 /**
  * YAML to JSON deploy directory array
@@ -161,7 +189,7 @@ export const DEPLOY_IMG_ARRAY: TDirNameKey[] = getDeployArr('deployDir.img', [
  * WebSite root
  * @default '/'
  */
-export const SITE_ROOT: TDirName = getConfig('siteRoot', '/')
+export const SITE_ROOT: TDirName = getConfig<TDirName>('siteRoot', '/')
 
 /**
  * Site root relative path build
