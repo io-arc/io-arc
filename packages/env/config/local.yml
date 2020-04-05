@@ -7,11 +7,13 @@ outputDir: dist
 wsDir:
   static: static
   yaml2json: yaml2json
+  img: img
 
 # directory configuration
 # array is hierarchy
 deployDir:
   json: [common, data]
+  img: [common, img]
 
 # build option
 options:

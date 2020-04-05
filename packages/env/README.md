@@ -114,9 +114,9 @@ return `src`
 ### `DIST`
 
 Build output directory.  
-Define using [config](https://www.npmjs.com/package/node-config)  
+Define using [config](https://www.npmjs.com/package/node-config).  
 [config](https://www.npmjs.com/package/node-config) property is `outputDir`.  
-If not defined then `dist`
+If not defined then `dist`.
 
 | data       | value       |
 | ---------- | ----------- |
@@ -128,9 +128,9 @@ If not defined then `dist`
 Working space for copy directory name array.  
 Array first is `WS_ROOT` constant.
 
-Define using [config](https://www.npmjs.com/package/node-config)  
+Define using [config](https://www.npmjs.com/package/node-config).  
 [config](https://www.npmjs.com/package/node-config) property is `wsDir.static`.  
-If not defined then `static`
+If not defined then `static`.
 
 | data              | value                 |
 | ----------------- | --------------------- |
@@ -143,9 +143,9 @@ If not defined then `static`
 Working space for copy directory path.  
 First string is `WS_ROOT` constant.
 
-Define using [config](https://www.npmjs.com/package/node-config)  
+Define using [config](https://www.npmjs.com/package/node-config).  
 [config](https://www.npmjs.com/package/node-config) property is `wsDir.static`.  
-If not defined then `static`
+If not defined then `static`.
 
 | data              | value               |
 | ----------------- | ------------------- |
@@ -158,9 +158,9 @@ If not defined then `static`
 Working space YAML to JSON directory path.  
 Array first is `WS_ROOT` constant.
 
-Define using [config](https://www.npmjs.com/package/node-config)  
+Define using [config](https://www.npmjs.com/package/node-config).  
 [config](https://www.npmjs.com/package/node-config) property is `wsDir.uaml2json`.  
-If not defined then `yaml2json`
+If not defined then `yaml2json`.
 
 | data              | value                    |
 | ----------------- | ------------------------ |
@@ -173,9 +173,9 @@ If not defined then `yaml2json`
 Working space YAML to JSON directory path.  
 First string is `WS_ROOT` constant.
 
-Define using [config](https://www.npmjs.com/package/node-config)  
+Define using [config](https://www.npmjs.com/package/node-config).  
 [config](https://www.npmjs.com/package/node-config) property is `wsDir.yaml2json`.  
-If not defined then `yaml2json`
+If not defined then `yaml2json`.
 
 | data              | value                  |
 | ----------------- | ---------------------- |
@@ -187,9 +187,9 @@ If not defined then `yaml2json`
 
 YAML to JSON convert minify option.
 
-Define using [config](https://www.npmjs.com/package/node-config)  
+Define using [config](https://www.npmjs.com/package/node-config).  
 [config](https://www.npmjs.com/package/node-config) property is `options.json.minify`.  
-If not defined then `false`
+If not defined then `false`.
 
 | data       | value                 |
 | ---------- | --------------------- |
@@ -201,9 +201,9 @@ If not defined then `false`
 YAML to JSON deploy directory array.  
 Array first is `DIST` constant.
 
-Define using [config](https://www.npmjs.com/package/node-config)  
+Define using [config](https://www.npmjs.com/package/node-config).  
 [config](https://www.npmjs.com/package/node-config) property is `deployDir.json`.  
-If not defined then `['common', 'data']`
+If not defined then `['common', 'data']`.
 
 | data              | value                     |
 | ----------------- | ------------------------- |
@@ -211,19 +211,49 @@ If not defined then `['common', 'data']`
 | default directory | `['common', 'data']`      |
 | default result    | `[DIST, 'common', 'data]` |
 
+### `WS_IMG_PATH_ABSOLUTE`
+
+Image directory path for using [file-loader](https://github.com/webpack-contrib/file-loader).  
+First string is `process.cwd()` and `WS_ROOT` constant.
+
+Define using [config](https://www.npmjs.com/package/node-config).  
+[config](https://www.npmjs.com/package/node-config) property is `wsDir.img`.  
+If not defined then `img`.
+
+| data              | value                             |
+| ----------------- | --------------------------------- |
+| config key        | `wsDir.img`                       |
+| default directory | `img`                             |
+| default result    | `${process.cwd()}/${WS_ROOT}/img` |
+
+### `DEPLOY_IMG_ARRAY`
+
+Image deploy directory array for using file-loader.  
+Array first is `DIST` constant.
+
+Define using [config](https://www.npmjs.com/package/node-config).  
+[config](https://www.npmjs.com/package/node-config) property is `deployDir.img`.  
+If not defined then `['common', 'img']`.
+
+| data              | value                     |
+| ----------------- | ------------------------- |
+| config key        | `deployDir.img`           |
+| default directory | `['common', 'img']`       |
+| default result    | `[DIST, 'common', 'img']` |
+
 ### `SITE_ROOT`
 
 Website root.  
-Define using [config](https://www.npmjs.com/package/node-config)  
+Define using [config](https://www.npmjs.com/package/node-config).  
 [config](https://www.npmjs.com/package/node-config) property is `siteRoot`.  
-If not defined then `/`
+If not defined then `/`.
 
 ## Functions
 
 ### `siteRootRelative(arr: string[])`
 
 Create relative path from site root.  
-Site root define is `SITE_ROOT`
+Site root define is `SITE_ROOT`.
 
 #### example
 
