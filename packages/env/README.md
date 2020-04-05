@@ -201,7 +201,7 @@ If not defined then `false`
 YAML to JSON deploy directory array.  
 Array first is `DIST` constant.
 
-Define using [config](https://www.npmjs.com/package/node-config)  
+Define using [config](https://www.npmjs.com/package/node-config).  
 [config](https://www.npmjs.com/package/node-config) property is `deployDir.json`.  
 If not defined then `['common', 'data']`
 
@@ -216,7 +216,7 @@ If not defined then `['common', 'data']`
 Image directory path for using [file-loader](https://github.com/webpack-contrib/file-loader).  
 First string is `process.cwd()` and `WS_ROOT` constant.
 
-Define using [config](https://www.npmjs.com/package/node-config)  
+Define using [config](https://www.npmjs.com/package/node-config).  
 [config](https://www.npmjs.com/package/node-config) property is `wsDir.img`.  
 If not defined then `img`
 
@@ -231,7 +231,7 @@ If not defined then `img`
 Image deploy directory array for using file-loader.  
 Array first is `DIST` constant.
 
-Define using [config](https://www.npmjs.com/package/node-config)  
+Define using [config](https://www.npmjs.com/package/node-config).  
 [config](https://www.npmjs.com/package/node-config) property is `deployDir.img`.  
 If not defined then `['common', 'img']`
 
@@ -244,7 +244,7 @@ If not defined then `['common', 'img']`
 ### `SITE_ROOT`
 
 Website root.  
-Define using [config](https://www.npmjs.com/package/node-config)  
+Define using [config](https://www.npmjs.com/package/node-config).  
 [config](https://www.npmjs.com/package/node-config) property is `siteRoot`.  
 If not defined then `/`
 
