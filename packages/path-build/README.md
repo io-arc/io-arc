@@ -34,7 +34,7 @@ const result = PathBuild.relative(['abc', 'def'])
 
 ### `PathBuild.absolute(arr: string[]): string`
 
-Create absolute path from root.
+Create a absolute path from root.
 
 #### example
 

@@ -1,6 +1,6 @@
 # `@io-arc/output-dir-diff`
 
-Relative path to another directory from one directory
+A relative path to another directory from one directory.
 
 ## Usage
 

@@ -15,15 +15,15 @@ $ NODE_ENV=development MODE=once ia-yaml2json
 
 ## Specification
 
-The directory where the file is copied from uses [config](https://www.npmjs.com/package/node-config).  
+The directory where the file copied from uses [config](https://www.npmjs.com/package/node-config).  
 
 ### Default
 
-Default settings when no definition is made.
+Default settings when no definition made.
 
 - Working space: `<project>/src/yaml2json`
 - Output directory: `dist`
-- Deploy directory: `<project>/dist/common/json`
+- Deploy a directory: `<project>/dist/common/json`
 - Minify: `false`
 
 ### example
@@ -47,5 +47,5 @@ Result:
 
 - Working space: `<project>/src/y2j`
 - Output directory: `<project>/dist`
-- Deploy directory: `<project>/dist/json`
-- Minify convert: `true`
+- Deploy a directory: `<project>/dist/json`
+- Minify a convert: `true`

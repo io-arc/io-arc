@@ -252,7 +252,7 @@ If not defined then `/`.
 
 ### `siteRootRelative(arr: string[]): string[]`
 
-Create relative path from site root.  
+Create a relative path from site root.  
 Site root define is `SITE_ROOT`.
 
 #### example

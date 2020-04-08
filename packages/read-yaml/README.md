@@ -1,6 +1,6 @@
 # `@io-arc/read-yaml`
 
-Transpile YAML to JSON
+Transpile YAML to JSON.
 
 ## Usage
 

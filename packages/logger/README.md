@@ -1,6 +1,6 @@
 # `@io-arc/logger`
 
-Console logging
+Console logging.
 
 ## Usage
 

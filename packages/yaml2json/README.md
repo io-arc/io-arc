@@ -76,7 +76,7 @@ y2j.convert('src/foo.yml', false).subscribe(
 
 ### `removeAll([target: string]): Observable<string>`
 
-If `target` is not specified, the output directory specified by constructor.  
+If `target` is not specified, the output directory specified by a constructor.  
 If you want to specify a location different from the destination, use the Glob pattern (ex. `foo/bar/**/*.json`).
 
 #### example
@@ -103,8 +103,8 @@ y2j2.removeAll('dist/data/**/*.json').subscribe(
 
 ### `remove(key: string): Observable<string>`
 
-Deletes the specified file from the output destination specified by constructor.  
-`key` is a file name only and no extension is required.
+Deletes the specified file from the output destination specified by a constructor.  
+`key` is a file name only and no extension is be required.
 
 #### example
 

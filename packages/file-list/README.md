@@ -1,6 +1,6 @@
 # `@io-arc/file-list`
 
-Get file list
+Get file list.
 
 ## Usage
 
