@@ -76,6 +76,27 @@ export declare const TARGET_HTML_FILE_LOADER: string[];
  */
 export declare const HTML_MINIFY: boolean;
 /**
+ * CSS output (including AltCSS) directory name array
+ *
+ * config key: deployDir.css
+ * @default ['common', 'css']
+ */
+export declare const OUTPUT_CSS_ARRAY: TDirNameKey[];
+/**
+ * JavaScript output (including AltJS) directory name array
+ *
+ * config key: deployDir.js
+ * @default ['common', 'js']
+ */
+export declare const OUTPUT_JS_ARRAY: TDirNameKey[];
+/**
+ * Json output directory name array
+ *
+ * config key: deployDir.json
+ * @default ['common', 'json']
+ */
+export declare const OUTPUT_JSON_ARRAY: TDirNameKey[];
+/**
  * Working space for YAML to JSON directory name array
  * Array first is 'src' to absolutely
  *
@@ -101,9 +122,6 @@ export declare const JSON_MINIFY: boolean;
 /**
  * YAML to JSON deploy directory array
  * Array first is DIST constant
- *
- * config key: deployDir.json
- * @default [DIST, 'common', 'data']
  */
 export declare const DEPLOY_YAML2JSON_ARR: TDirNameKey[];
 /**
@@ -112,11 +130,15 @@ export declare const DEPLOY_YAML2JSON_ARR: TDirNameKey[];
  */
 export declare const WS_IMG_PATH_ABSOLUTE: TDirNameKey;
 /**
- * Image deploy directory array for using file-loader
- * Array first is DIST constant
+ * Image output directory name array.
  *
  * config key: deployDir.img
- * @default [DIST, 'common', 'img']
+ * @default ['common', 'img']
+ */
+export declare const OUTPUT_IMG_ARRAY: TDirNameKey[];
+/**
+ * Image deploy directory array for using file-loader
+ * Array first is DIST constant
  */
 export declare const DEPLOY_IMG_ARRAY: TDirNameKey[];
 /**

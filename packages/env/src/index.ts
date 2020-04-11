@@ -88,21 +88,6 @@ const getWsAbsolutePath = (key: string, defaultDir: TDirNameKey): TDirNameKey =>
   PathBuild.absolute(getWsArr(key, defaultDir))
 
 /**
- * Deploying directory array
- * @param key
- * @param defaultDir
- */
-const getDeployArr = (
-  key: string,
-  defaultDir: TDirNameKey[]
-): TDirNameKey[] => {
-  if (!config.has(key)) return [DIST, ...defaultDir]
-
-  const d = config.get<TDirNameKey[]>(key)
-  return [DIST, ...d]
-}
-
-/**
  * Working space for copy directory name array
  * Array first is 'src' to absolutely
  *
@@ -171,6 +156,39 @@ export const HTML_MINIFY: boolean = getConfig<boolean>(
 )
 
 /**
+ * CSS output (including AltCSS) directory name array
+ *
+ * config key: deployDir.css
+ * @default ['common', 'css']
+ */
+export const OUTPUT_CSS_ARRAY: TDirNameKey[] = getConfig<TDirNameKey[]>(
+  'deployDir.css',
+  ['common', 'css']
+)
+
+/**
+ * JavaScript output (including AltJS) directory name array
+ *
+ * config key: deployDir.js
+ * @default ['common', 'js']
+ */
+export const OUTPUT_JS_ARRAY: TDirNameKey[] = getConfig<TDirNameKey[]>(
+  'deployDir.js',
+  ['common', 'js']
+)
+
+/**
+ * Json output directory name array
+ *
+ * config key: deployDir.json
+ * @default ['common', 'json']
+ */
+export const OUTPUT_JSON_ARRAY: TDirNameKey[] = getConfig<TDirNameKey[]>(
+  'deployDir.json',
+  ['common', 'data']
+)
+
+/**
  * Working space for YAML to JSON directory name array
  * Array first is 'src' to absolutely
  *
@@ -208,14 +226,8 @@ export const JSON_MINIFY: boolean = getConfig<boolean>(
 /**
  * YAML to JSON deploy directory array
  * Array first is DIST constant
- *
- * config key: deployDir.json
- * @default [DIST, 'common', 'data']
  */
-export const DEPLOY_YAML2JSON_ARR: TDirNameKey[] = getDeployArr(
-  'deployDir.json',
-  ['common', 'data']
-)
+export const DEPLOY_YAML2JSON_ARR: TDirNameKey[] = [DIST, ...OUTPUT_JSON_ARRAY]
 
 /**
  * Image directory absolute path for file-loader
@@ -227,16 +239,21 @@ export const WS_IMG_PATH_ABSOLUTE: TDirNameKey = getWsAbsolutePath(
 )
 
 /**
- * Image deploy directory array for using file-loader
- * Array first is DIST constant
+ * Image output directory name array.
  *
  * config key: deployDir.img
- * @default [DIST, 'common', 'img']
+ * @default ['common', 'img']
  */
-export const DEPLOY_IMG_ARRAY: TDirNameKey[] = getDeployArr('deployDir.img', [
-  'common',
-  'img'
-])
+export const OUTPUT_IMG_ARRAY: TDirNameKey[] = getConfig<TDirNameKey[]>(
+  'deployDir.img',
+  ['common', 'img']
+)
+
+/**
+ * Image deploy directory array for using file-loader
+ * Array first is DIST constant
+ */
+export const DEPLOY_IMG_ARRAY: TDirNameKey[] = [DIST, ...OUTPUT_IMG_ARRAY]
 
 /**
  * Website domain url

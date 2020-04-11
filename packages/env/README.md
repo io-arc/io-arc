@@ -170,7 +170,7 @@ Define using [config](https://www.npmjs.com/package/node-config).
 HTML build using file-loader.  
 \* Including Compiler
 
-Define using [config](https://www.npmjs.com/package/node-config).  
+Define using [config](https://www.npmjs.com/package/node-config).
 
 | data       | value                         |
 | ---------- | ----------------------------- |
@@ -182,7 +182,7 @@ Define using [config](https://www.npmjs.com/package/node-config).
 HTML build using file-loader then judgment to adding 6-digit hash for image path.  
 \* Including Compiler
 
-Define using [config](https://www.npmjs.com/package/node-config).  
+Define using [config](https://www.npmjs.com/package/node-config).
 
 | data       | value                          |
 | ---------- | ------------------------------ |
@@ -194,7 +194,7 @@ Define using [config](https://www.npmjs.com/package/node-config).
 Image build target for file-loader at HTML.  
 \* Including Compiler
 
-Define using [config](https://www.npmjs.com/package/node-config).  
+Define using [config](https://www.npmjs.com/package/node-config).
 
 | data       | value                                                            |
 | ---------- | ---------------------------------------------------------------- |
@@ -206,12 +206,47 @@ Define using [config](https://www.npmjs.com/package/node-config).
 HTML build minify option.  
 \* Including Compiler
 
-Define using [config](https://www.npmjs.com/package/node-config).  
+Define using [config](https://www.npmjs.com/package/node-config).
 
 | data       | value                 |
 | ---------- | --------------------- |
 | config key | `options.html.minify` |
 | default    | `false`               |
+
+### `OUTPUT_CSS_ARRAY`
+
+CSS output directory name array.  
+\* Including AltCSS (e.g. Stylus)
+
+Define using [config](https://www.npmjs.com/package/node-config).
+
+| data       | value               |
+| ---------- | ------------------- |
+| config key | `deployDir.css`     |
+| default    | `['common', 'css']` |
+
+### `OUTPUT_JS_ARRAY`
+
+JavaScript output directory name array.  
+\* Including AltJS (e.g. TypeScript)
+
+Define using [config](https://www.npmjs.com/package/node-config).
+
+| data       | value              |
+| ---------- | ------------------ |
+| config key | `deployDir.js`     |
+| default    | `['common', 'js']` |
+
+### `OUTPUT_JSON_ARRAY`
+
+JSON output directory name array.
+
+Define using [config](https://www.npmjs.com/package/node-config).
+
+| data       | value                |
+| ---------- | -------------------- |
+| config key | `deployDir.json`     |
+| default    | `['common', 'data']` |
 
 ### `WS_YAML2JSON_ARRAY`
 
@@ -253,15 +288,8 @@ Define using [config](https://www.npmjs.com/package/node-config).
 ### `DEPLOY_YAML2JSON_ARR`
 
 YAML to JSON deploy directory array.  
-Array first is `DIST` constant.
-
-Define using [config](https://www.npmjs.com/package/node-config).
-
-| data              | value                     |
-| ----------------- | ------------------------- |
-| config key        | `deployDir.json`          |
-| default directory | `['common', 'data']`      |
-| default result    | `[DIST, 'common', 'data]` |
+Array first is `DIST` constant.  
+Result to `DIST` + `OUTPUT_JSON_ARRAY`.
 
 ### `WS_IMG_PATH_ABSOLUTE`
 
@@ -276,18 +304,22 @@ Define using [config](https://www.npmjs.com/package/node-config).
 | default directory | `img`                             |
 | default result    | `${process.cwd()}/${WS_ROOT}/img` |
 
-### `DEPLOY_IMG_ARRAY`
+### `OUTPUT_IMG_ARRAY`
 
-Image deploy directory array for using file-loader.  
-Array first is `DIST` constant.
+Image output directory name array for using file-loader.
 
 Define using [config](https://www.npmjs.com/package/node-config).
 
-| data              | value                     |
-| ----------------- | ------------------------- |
-| config key        | `deployDir.img`           |
-| default directory | `['common', 'img']`       |
-| default result    | `[DIST, 'common', 'img']` |
+| data       | value               |
+| ---------- | ------------------- |
+| config key | `deployDir.img`     |
+| default    | `['common', 'img']` |
+
+### `DEPLOY_IMG_ARRAY`
+
+Image deploy directory array for using file-loader.  
+Array first is `DIST` constant.  
+Result to `DIST` + `OUTPUT_IMG_ARRAY`.
 
 ### `SITE_DOMAIN`
 

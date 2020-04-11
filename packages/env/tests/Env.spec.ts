@@ -7,6 +7,10 @@ import {
   IS_PRODUCTION,
   JSON_MINIFY,
   NODE_ENV,
+  OUTPUT_CSS_ARRAY,
+  OUTPUT_IMG_ARRAY,
+  OUTPUT_JS_ARRAY,
+  OUTPUT_JSON_ARRAY,
   SITE_AUTHOR,
   SITE_DESCRIPTION,
   SITE_DOMAIN,
@@ -83,6 +87,18 @@ test('HTML minify', () => {
   expect(HTML_MINIFY).toBe(false)
 })
 
+test('Output CSS directory name array', () => {
+  expect(OUTPUT_CSS_ARRAY).toEqual(['common', 'css'])
+})
+
+test('Output JavaScript directory name array', () => {
+  expect(OUTPUT_JS_ARRAY).toEqual(['common', 'js'])
+})
+
+test('Output JSON directory name array', () => {
+  expect(OUTPUT_JSON_ARRAY).toEqual(['common', 'data'])
+})
+
 test('YAML to JSON directory array', () => {
   expect(WS_YAML2JSON_ARRAY).toEqual([WS_ROOT, 'yaml2json'])
 })
@@ -101,6 +117,10 @@ test('YAML to JSON deploy directory array', () => {
 
 test('Image directory absolute path', () => {
   expect(WS_IMG_PATH_ABSOLUTE).toBe(`${process.cwd()}/src/img`)
+})
+
+test('Image output directory array', () => {
+  expect(OUTPUT_IMG_ARRAY).toEqual(['common', 'img'])
 })
 
 test('Image deploy directory array', () => {
