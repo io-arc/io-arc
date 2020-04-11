@@ -171,7 +171,6 @@ HTML build using file-loader.
 \* Including Compiler
 
 Define using [config](https://www.npmjs.com/package/node-config).  
-[config](https://www.npmjs.com/package/node-config) property is `options.fileLoader.html.use`.
 
 | data       | value                         |
 | ---------- | ----------------------------- |
@@ -180,12 +179,10 @@ Define using [config](https://www.npmjs.com/package/node-config).
 
 ### `IS_HASH_HTML_FILE_LOADER`
 
-HTML build using file-loader then judgment to adding 6-digit hash for image path.
-
-- Including Compiler
+HTML build using file-loader then judgment to adding 6-digit hash for image path.  
+\* Including Compiler
 
 Define using [config](https://www.npmjs.com/package/node-config).  
-[config](https://www.npmjs.com/package/node-config) property is `options.fileLoader.html.hash`.
 
 | data       | value                          |
 | ---------- | ------------------------------ |
@@ -198,7 +195,6 @@ Image build target for file-loader at HTML.
 \* Including Compiler
 
 Define using [config](https://www.npmjs.com/package/node-config).  
-[config](https://www.npmjs.com/package/node-config) property is `options.fileLoader.html.target`.
 
 | data       | value                                                            |
 | ---------- | ---------------------------------------------------------------- |
@@ -211,7 +207,6 @@ HTML build minify option.
 \* Including Compiler
 
 Define using [config](https://www.npmjs.com/package/node-config).  
-[config](https://www.npmjs.com/package/node-config) property is `options.html.minify`.
 
 | data       | value                 |
 | ---------- | --------------------- |
@@ -333,6 +328,7 @@ Define using [config](https://www.npmjs.com/package/node-config).
 # Site root is directly below the URL
 siteRoot: /
 
+---
 # Site root isn't directly below the URL
 # Slash the front and back.
 siteRoot: /io-arc/
@@ -340,7 +336,7 @@ siteRoot: /io-arc/
 
 ### `SITE_URL`
 
-Website root url.
+Website root url.  
 Using `SITE_DOMAIN` + `SITE_ROOT`.  
 `SITE_DOMAIN` is empty then `SITE_URL` to empty.
 
@@ -398,6 +394,8 @@ Define using [config](https://www.npmjs.com/package/node-config).
 ### `SITE_DESCRIPTION`
 
 Website description.
+
+Define using [config](https://www.npmjs.com/package/node-config).
 
 | data       | value         |
 | ---------- | ------------- |
