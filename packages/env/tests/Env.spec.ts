@@ -2,6 +2,7 @@ import {
   DEPLOY_IMG_ARRAY,
   DEPLOY_YAML2JSON_ARR,
   DIST,
+  DIST_ABSOLUTE,
   HTML_MINIFY,
   IS_HASH_HTML_FILE_LOADER,
   IS_PRODUCTION,
@@ -21,6 +22,8 @@ import {
   TARGET_HTML_FILE_LOADER,
   USE_HTML_FILE_LOADER,
   WS_HTML_ARRAY,
+  WS_HTML_PATH,
+  WS_HTML_PATH_ABSOLUTE,
   WS_IMG_PATH_ABSOLUTE,
   WS_ROOT,
   WS_STATIC_ARRAY,
@@ -49,6 +52,10 @@ test('Output directory', () => {
   expect(DIST).toBe('dist')
 })
 
+test('Output directory path', () => {
+  expect(DIST_ABSOLUTE).toBe(`${process.cwd()}/${DIST}`)
+})
+
 test('Current environment', () => {
   expect(NODE_ENV).toBe('test')
 })
@@ -65,6 +72,14 @@ test('HTML directory array', () => {
   expect(WS_HTML_ARRAY).toEqual([WS_ROOT, 'html'])
 })
 
+test('HTML workspace path', () => {
+  expect(WS_HTML_PATH).toBe(`${WS_ROOT}/html`)
+})
+
+test('HTML workspace absolute path', () => {
+  expect(WS_HTML_PATH_ABSOLUTE).toBe(`${process.cwd()}/${WS_ROOT}/html`)
+})
+
 test('HTML build using file-loader', () => {
   expect(USE_HTML_FILE_LOADER).toBe(true)
 })
@@ -75,11 +90,31 @@ test('Is hash html loader', () => {
 
 test('Image build target for file-loader at HTML', () => {
   expect(TARGET_HTML_FILE_LOADER).toEqual([
-    ':srcset',
-    'img:src',
-    'audio:src',
-    'video:src',
-    'source:src'
+    {
+      tag: 'img',
+      attribute: 'src',
+      type: 'src'
+    },
+    {
+      tag: 'img',
+      attribute: 'srcset',
+      type: 'srcset'
+    },
+    {
+      tag: 'img',
+      attribute: 'data-src',
+      type: 'src'
+    },
+    {
+      tag: 'img',
+      attribute: 'data-srcset',
+      type: 'srcset'
+    },
+    {
+      tag: 'source',
+      attribute: 'src',
+      type: 'src'
+    }
   ])
 })
 

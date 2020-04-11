@@ -55,6 +55,11 @@ const getConfig = <T>(key: string, def: T): T =>
 export const DIST: TDirNameKey = getConfig<TDirNameKey>('outputDir', 'dist')
 
 /**
+ * Output directory path
+ */
+export const DIST_ABSOLUTE: TDirPathKey = PathBuild.absolute([DIST])
+
+/**
  * Working directory name array
  * @param key
  * @param defaultDir
@@ -103,16 +108,28 @@ export const WS_STATIC_ARRAY: TDirNameKey[] = getWsArr('wsDir.static', 'static')
  * config key: wsDir.static
  * @default `src/static`
  */
-export const WS_STATIC_PATH: TDirNameKey = getWsPath('wsDir.static', 'static')
+export const WS_STATIC_PATH: TDirPathKey = getWsPath('wsDir.static', 'static')
 
 /**
- * Working space HTML (including Compiler) directory name array
+ * Working space HTML (including AltHTML) directory name array
  * Array first is 'src' is absolutely
  *
  * config key: wsDir.html
  * @default ['src', 'html']
  */
 export const WS_HTML_ARRAY: TDirNameKey[] = getWsArr('wsDir.html', 'html')
+
+/**
+ * Working space HTML (including AltHTML) directory path
+ */
+export const WS_HTML_PATH: TDirPathKey = PathBuild.relative(WS_HTML_ARRAY)
+
+/**
+ * Working space HTML (including AltHTML) directory absolute path
+ */
+export const WS_HTML_PATH_ABSOLUTE: TDirPathKey = PathBuild.absolute(
+  WS_HTML_ARRAY
+)
 
 /**
  * HTML build using file-loader
@@ -137,11 +154,17 @@ export const IS_HASH_HTML_FILE_LOADER = getConfig<boolean>(
 /**
  * Target for file-loader
  *
- * @default [':srcset', 'img:src', 'audio:src', 'video:src', 'source:src']
+ * @default [{tag: 'img',attribute: 'src',type: 'src'},{tag: 'img',attribute: 'srcset',type: 'srcset'},{tag: 'img',attribute: 'data-src',type: 'src'},{tag: 'img',attribute: 'data-srcset',type: 'srcset'},{tag:'source',attribute: 'src',type: 'src'}]
  */
-export const TARGET_HTML_FILE_LOADER = getConfig<string[]>(
+export const TARGET_HTML_FILE_LOADER = getConfig<{ [p: string]: string }[]>(
   'options.fileLoader.html.target',
-  [':srcset', 'img:src', 'audio:src', 'video:src', 'source:src']
+  [
+    { tag: 'img', attribute: 'src', type: 'src' },
+    { tag: 'img', attribute: 'srcset', type: 'srcset' },
+    { tag: 'img', attribute: 'data-src', type: 'src' },
+    { tag: 'img', attribute: 'data-srcset', type: 'srcset' },
+    { tag: 'source', attribute: 'src', type: 'src' }
+  ]
 )
 
 /**
@@ -207,7 +230,7 @@ export const WS_YAML2JSON_ARRAY: TDirNameKey[] = getWsArr(
  * config key: wsDir.yaml2json
  * @default 'src/yaml2json'
  */
-export const WS_YAML2JSON_PATH: TDirNameKey = getWsPath(
+export const WS_YAML2JSON_PATH: TDirPathKey = getWsPath(
   'wsDir.yaml2json',
   'yaml2json'
 )

@@ -32,8 +32,18 @@ options:
       use: true
       hash: true
       target:
-        - :srcset
-        - img:src
-        - audio:src
-        - video:src
-        - source:src
+        - tag: img
+          attribute: src
+          type: src
+        - tag: img
+          attribute: srcset
+          type: srcset
+        - tag: img
+          attribute: data-src
+          type: src
+        - tag: img
+          attribute: data-srcset
+          type: srcset
+        - tag: source
+          attribute: src
+          type: src

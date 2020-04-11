@@ -1,4 +1,4 @@
-import { TDirName, TDirNameKey, TUrl } from '@io-arc/types';
+import { TDirName, TDirNameKey, TDirPathKey, TUrl } from '@io-arc/types';
 export declare const BUILD: {
     readonly DEVELOPMENT: "development";
     readonly PRODUCTION: "production";
@@ -27,6 +27,10 @@ export declare const IS_PRODUCTION: boolean;
  */
 export declare const DIST: TDirNameKey;
 /**
+ * Output directory path
+ */
+export declare const DIST_ABSOLUTE: TDirPathKey;
+/**
  * Working space for copy directory name array
  * Array first is 'src' to absolutely
  *
@@ -41,9 +45,9 @@ export declare const WS_STATIC_ARRAY: TDirNameKey[];
  * config key: wsDir.static
  * @default `src/static`
  */
-export declare const WS_STATIC_PATH: TDirNameKey;
+export declare const WS_STATIC_PATH: TDirPathKey;
 /**
- * Working space HTML (including Compiler) directory name array
+ * Working space HTML (including AltHTML) directory name array
  * Array first is 'src' is absolutely
  *
  * config key: wsDir.html
@@ -65,9 +69,11 @@ export declare const IS_HASH_HTML_FILE_LOADER: boolean;
 /**
  * Target for file-loader
  *
- * @default [':srcset', 'img:src', 'audio:src', 'video:src', 'source:src']
+ * @default [{tag: 'img',attribute: 'src',type: 'src'},{tag: 'img',attribute: 'srcset',type: 'srcset'},{tag: 'img',attribute: 'data-src',type: 'src'},{tag: 'img',attribute: 'data-srcset',type: 'srcset'},{tag:'source',attribute: 'src',type: 'src'}]
  */
-export declare const TARGET_HTML_FILE_LOADER: string[];
+export declare const TARGET_HTML_FILE_LOADER: {
+    [p: string]: string;
+}[];
 /**
  * HTML build minify option
  *
@@ -111,7 +117,7 @@ export declare const WS_YAML2JSON_ARRAY: TDirNameKey[];
  * config key: wsDir.yaml2json
  * @default 'src/yaml2json'
  */
-export declare const WS_YAML2JSON_PATH: TDirNameKey;
+export declare const WS_YAML2JSON_PATH: TDirPathKey;
 /**
  * YAML to JSON convert minify option
  *

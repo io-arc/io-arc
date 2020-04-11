@@ -126,6 +126,11 @@ Define using [config](https://www.npmjs.com/package/node-config).
 | config key | `outputDir` |
 | default    | `dist`      |
 
+### `DIST_ABSOLUTE`
+
+Output directory path.  
+First string is `process.cwd()` and `DIST` constant.
+
 ### `WS_STATIC_ARRAY`
 
 Working space for copy directory name array.  
@@ -154,7 +159,7 @@ Define using [config](https://www.npmjs.com/package/node-config).
 
 ### `WS_HTML_ARRAY`
 
-Working space for HTML (including Compiler) directory name array.  
+Working space for HTML (including AltHTML) directory name array.  
 Array first is `WS_ROOT` constant.
 
 Define using [config](https://www.npmjs.com/package/node-config).
@@ -165,10 +170,20 @@ Define using [config](https://www.npmjs.com/package/node-config).
 | default directory | `html`              |
 | default result    | `[WS_ROOT, 'html']` |
 
+### `WS_HTML_PATH`
+
+Working space for HTML (including AltHTML) directory path.  
+Build for `WS_HTML_ARRAY` to path.
+
+### `WS_HTML_PATH_ABSOLUTE`
+
+Working space for HTML (including AltHTML) directory absolute path.  
+First string is `process.cwd()` and build for `WS_HTML_ARRAY` constant.
+
 ### `USE_HTML_FILE_LOADER`
 
 HTML build using file-loader.  
-\* Including Compiler
+\* Including AltHTML
 
 Define using [config](https://www.npmjs.com/package/node-config).
 
@@ -180,7 +195,7 @@ Define using [config](https://www.npmjs.com/package/node-config).
 ### `IS_HASH_HTML_FILE_LOADER`
 
 HTML build using file-loader then judgment to adding 6-digit hash for image path.  
-\* Including Compiler
+\* Including AltHTML
 
 Define using [config](https://www.npmjs.com/package/node-config).
 
@@ -192,19 +207,31 @@ Define using [config](https://www.npmjs.com/package/node-config).
 ### `TARGET_HTML_FILE_LOADER`
 
 Image build target for file-loader at HTML.  
-\* Including Compiler
+\* Including AltHTML
 
 Define using [config](https://www.npmjs.com/package/node-config).
 
-| data       | value                                                            |
-| ---------- | ---------------------------------------------------------------- |
-| config key | `options.fileLoader.html.target`                                 |
-| default    | `[':srcset', 'img:src', 'audio:src', 'video:src', 'source:src']` |
+| data       | value                            |
+| ---------- | -------------------------------- |
+| config key | `options.fileLoader.html.target` |
+| default    | below                            |
+
+#### Default
+
+```javascript
+[
+  { tag: 'img', attribute: 'src', type: 'src' },
+  { tag: 'img', attribute: 'srcset', type: 'srcset' },
+  { tag: 'img', attribute: 'data-src', type: 'src' },
+  { tag: 'img', attribute: 'data-srcset', type: 'srcset' },
+  { tag: 'source', attribute: 'src', type: 'src' }
+]
+```
 
 ### `HTML_MINIFY`
 
 HTML build minify option.  
-\* Including Compiler
+\* Including AltHTML
 
 Define using [config](https://www.npmjs.com/package/node-config).
 
@@ -236,7 +263,6 @@ Define using [config](https://www.npmjs.com/package/node-config).
 | ---------- | ------------------ |
 | config key | `deployDir.js`     |
 | default    | `['common', 'js']` |
-
 
 ### `WS_YAML2JSON_ARRAY`
 
