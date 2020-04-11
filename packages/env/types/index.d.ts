@@ -1,4 +1,4 @@
-import { TDirName, TDirNameKey } from '@io-arc/types';
+import { TDirName, TDirNameKey, TUrl } from '@io-arc/types';
 export declare const BUILD: {
     readonly DEVELOPMENT: "development";
     readonly PRODUCTION: "production";
@@ -17,6 +17,8 @@ export declare const NODE_ENV: "none" | "development" | "production" | "test";
 export declare const MODE_ENV: MODE;
 /** Working space directory */
 export declare const WS_ROOT: TDirNameKey;
+/** Production build mode */
+export declare const IS_PRODUCTION: boolean;
 /**
  * Output directory
  *
@@ -40,6 +42,39 @@ export declare const WS_STATIC_ARRAY: TDirNameKey[];
  * @default `src/static`
  */
 export declare const WS_STATIC_PATH: TDirNameKey;
+/**
+ * Working space HTML (including Compiler) directory name array
+ * Array first is 'src' is absolutely
+ *
+ * config key: wsDir.html
+ * @default ['src', 'html']
+ */
+export declare const WS_HTML_ARRAY: TDirNameKey[];
+/**
+ * HTML build using file-loader
+ *
+ * @default true
+ */
+export declare const USE_HTML_FILE_LOADER: boolean;
+/**
+ * Judgement to adding 6-digit hash for image path
+ *
+ * @default true
+ */
+export declare const IS_HASH_HTML_FILE_LOADER: boolean;
+/**
+ * Target for file-loader
+ *
+ * @default [':srcset', 'img:src', 'audio:src', 'video:src', 'source:src']
+ */
+export declare const TARGET_HTML_FILE_LOADER: string[];
+/**
+ * HTML build minify option
+ *
+ * config key: options.html.minify
+ * @default false
+ */
+export declare const HTML_MINIFY: boolean;
 /**
  * Working space for YAML to JSON directory name array
  * Array first is 'src' to absolutely
@@ -85,6 +120,13 @@ export declare const WS_IMG_PATH_ABSOLUTE: TDirNameKey;
  */
 export declare const DEPLOY_IMG_ARRAY: TDirNameKey[];
 /**
+ * Website domain url
+ *
+ * config key: url
+ * @default ''
+ */
+export declare const SITE_DOMAIN: TUrl;
+/**
  * WebSite root
  * @default '/'
  */
@@ -94,3 +136,29 @@ export declare const SITE_ROOT: TDirName;
  * @param arr - Array for directory name
  */
 export declare const siteRootRelative: (arr: string[]) => string;
+/**
+ * Website root url
+ * `SITE_DOMAIN` + `SITE_ROOT` with no slash for last
+ *
+ * @default ''
+ */
+export declare const SITE_URL: TUrl;
+/**
+ * Website title
+ *
+ * config key: title
+ * @default ''
+ */
+export declare const SITE_TITLE: string;
+/**
+ * Website author
+ *
+ * @default ''
+ */
+export declare const SITE_AUTHOR: string;
+/**
+ * Website description
+ *
+ * @default ''
+ */
+export declare const SITE_DESCRIPTION: string;

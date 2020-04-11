@@ -106,6 +106,11 @@ process.env.MODE = 'watch'
 
 if npm scripts `MODE_ENV=foo XXX`.
 
+### `IS_PRODUCTION`
+
+`NODE_ENV` is `BUILD.PRODUCTION` ?  
+Result `boolean` type.
+
 ### `WS_ROOT`
 
 Project working space directory.  
@@ -114,9 +119,7 @@ return `src`
 ### `DIST`
 
 Build output directory.  
-Define using [config](https://www.npmjs.com/package/node-config).  
-[config](https://www.npmjs.com/package/node-config) property is `outputDir`.  
-If not defined then `dist`.
+Define using [config](https://www.npmjs.com/package/node-config).
 
 | data       | value       |
 | ---------- | ----------- |
@@ -128,9 +131,7 @@ If not defined then `dist`.
 Working space for copy directory name array.  
 Array first is `WS_ROOT` constant.
 
-Define using [config](https://www.npmjs.com/package/node-config).  
-[config](https://www.npmjs.com/package/node-config) property is `wsDir.static`.  
-If not defined then `static`.
+Define using [config](https://www.npmjs.com/package/node-config).
 
 | data              | value                 |
 | ----------------- | --------------------- |
@@ -143,9 +144,7 @@ If not defined then `static`.
 Working space for copy directory path.  
 First string is `WS_ROOT` constant.
 
-Define using [config](https://www.npmjs.com/package/node-config).  
-[config](https://www.npmjs.com/package/node-config) property is `wsDir.static`.  
-If not defined then `static`.
+Define using [config](https://www.npmjs.com/package/node-config).
 
 | data              | value               |
 | ----------------- | ------------------- |
@@ -153,14 +152,78 @@ If not defined then `static`.
 | default directory | `static`            |
 | default result    | `${WS_ROOT}/static` |
 
+### `WS_HTML_ARRAY`
+
+Working space for HTML (including Compiler) directory name array.  
+Array first is `WS_ROOT` constant.
+
+Define using [config](https://www.npmjs.com/package/node-config).
+
+| data              | value               |
+| ----------------- | ------------------- |
+| config key        | `wsDir.html`        |
+| default directory | `html`              |
+| default result    | `[WS_ROOT, 'html']` |
+
+### `USE_HTML_FILE_LOADER`
+
+HTML build using file-loader.  
+\* Including Compiler
+
+Define using [config](https://www.npmjs.com/package/node-config).  
+[config](https://www.npmjs.com/package/node-config) property is `options.fileLoader.html.use`.
+
+| data       | value                         |
+| ---------- | ----------------------------- |
+| config key | `options.fileLoader.html.use` |
+| default    | `true`                        |
+
+### `IS_HASH_HTML_FILE_LOADER`
+
+HTML build using file-loader then judgment to adding 6-digit hash for image path.
+
+- Including Compiler
+
+Define using [config](https://www.npmjs.com/package/node-config).  
+[config](https://www.npmjs.com/package/node-config) property is `options.fileLoader.html.hash`.
+
+| data       | value                          |
+| ---------- | ------------------------------ |
+| config key | `options.fileLoader.html.hash` |
+| default    | `true`                         |
+
+### `TARGET_HTML_FILE_LOADER`
+
+Image build target for file-loader at HTML.  
+\* Including Compiler
+
+Define using [config](https://www.npmjs.com/package/node-config).  
+[config](https://www.npmjs.com/package/node-config) property is `options.fileLoader.html.target`.
+
+| data       | value                                                            |
+| ---------- | ---------------------------------------------------------------- |
+| config key | `options.fileLoader.html.target`                                 |
+| default    | `[':srcset', 'img:src', 'audio:src', 'video:src', 'source:src']` |
+
+### `HTML_MINIFY`
+
+HTML build minify option.  
+\* Including Compiler
+
+Define using [config](https://www.npmjs.com/package/node-config).  
+[config](https://www.npmjs.com/package/node-config) property is `options.html.minify`.
+
+| data       | value                 |
+| ---------- | --------------------- |
+| config key | `options.html.minify` |
+| default    | `false`               |
+
 ### `WS_YAML2JSON_ARRAY`
 
 Working space YAML to JSON directory path.  
 Array first is `WS_ROOT` constant.
 
-Define using [config](https://www.npmjs.com/package/node-config).  
-[config](https://www.npmjs.com/package/node-config) property is `wsDir.uaml2json`.  
-If not defined then `yaml2json`.
+Define using [config](https://www.npmjs.com/package/node-config).
 
 | data              | value                    |
 | ----------------- | ------------------------ |
@@ -173,9 +236,7 @@ If not defined then `yaml2json`.
 Working space YAML to JSON directory path.  
 First string is `WS_ROOT` constant.
 
-Define using [config](https://www.npmjs.com/package/node-config).  
-[config](https://www.npmjs.com/package/node-config) property is `wsDir.yaml2json`.  
-If not defined then `yaml2json`.
+Define using [config](https://www.npmjs.com/package/node-config).
 
 | data              | value                  |
 | ----------------- | ---------------------- |
@@ -187,9 +248,7 @@ If not defined then `yaml2json`.
 
 YAML to JSON convert minify option.
 
-Define using [config](https://www.npmjs.com/package/node-config).  
-[config](https://www.npmjs.com/package/node-config) property is `options.json.minify`.  
-If not defined then `false`.
+Define using [config](https://www.npmjs.com/package/node-config).
 
 | data       | value                 |
 | ---------- | --------------------- |
@@ -201,9 +260,7 @@ If not defined then `false`.
 YAML to JSON deploy directory array.  
 Array first is `DIST` constant.
 
-Define using [config](https://www.npmjs.com/package/node-config).  
-[config](https://www.npmjs.com/package/node-config) property is `deployDir.json`.  
-If not defined then `['common', 'data']`.
+Define using [config](https://www.npmjs.com/package/node-config).
 
 | data              | value                     |
 | ----------------- | ------------------------- |
@@ -216,9 +273,7 @@ If not defined then `['common', 'data']`.
 Image directory path for using [file-loader](https://github.com/webpack-contrib/file-loader).  
 First string is `process.cwd()` and `WS_ROOT` constant.
 
-Define using [config](https://www.npmjs.com/package/node-config).  
-[config](https://www.npmjs.com/package/node-config) property is `wsDir.img`.  
-If not defined then `img`.
+Define using [config](https://www.npmjs.com/package/node-config).
 
 | data              | value                             |
 | ----------------- | --------------------------------- |
@@ -231,9 +286,7 @@ If not defined then `img`.
 Image deploy directory array for using file-loader.  
 Array first is `DIST` constant.
 
-Define using [config](https://www.npmjs.com/package/node-config).  
-[config](https://www.npmjs.com/package/node-config) property is `deployDir.img`.  
-If not defined then `['common', 'img']`.
+Define using [config](https://www.npmjs.com/package/node-config).
 
 | data              | value                     |
 | ----------------- | ------------------------- |
@@ -241,12 +294,115 @@ If not defined then `['common', 'img']`.
 | default directory | `['common', 'img']`       |
 | default result    | `[DIST, 'common', 'img']` |
 
+### `SITE_DOMAIN`
+
+Website domain url.  
+Site URL with no slash for last.
+
+Define using [config](https://www.npmjs.com/package/node-config).
+
+| data       | value |
+| ---------- | ----- |
+| config key | `url` |
+| default    | `''`  |
+
+#### example
+
+```
+# default.yml
+
+# Site URL with no slash for last
+url: https://arc-one.jp
+```
+
 ### `SITE_ROOT`
 
 Website root.  
-Define using [config](https://www.npmjs.com/package/node-config).  
-[config](https://www.npmjs.com/package/node-config) property is `siteRoot`.  
-If not defined then `/`.
+Slash the front and back.
+
+Define using [config](https://www.npmjs.com/package/node-config).
+
+| data       | value      |
+| ---------- | ---------- |
+| config key | `siteRoot` |
+| default    | `/`        |
+
+#### example
+
+```
+# Site root is directly below the URL
+siteRoot: /
+
+# Site root isn't directly below the URL
+# Slash the front and back.
+siteRoot: /io-arc/
+```
+
+### `SITE_URL`
+
+Website root url.
+Using `SITE_DOMAIN` + `SITE_ROOT`.  
+`SITE_DOMAIN` is empty then `SITE_URL` to empty.
+
+#### example
+
+```
+# default.yml
+
+# Site URL with no slash for last
+url: https://arc-one.jp
+siteRoot: /
+
+# result
+-> https://arc-one.jp
+
+---
+# default.yml
+url: https://arc-one.jp
+siteRoot: /io-arc/
+
+# result
+-> https://arc-one.jp/io-arc
+
+---
+# default.yml
+url: ''
+siteRoot: /io-arc/
+
+# result
+-> ''
+```
+
+### `SITE_TITLE`
+
+Website title.
+
+Define using [config](https://www.npmjs.com/package/node-config).
+
+| data       | value   |
+| ---------- | ------- |
+| config key | `title` |
+| default    | `''`    |
+
+### `SITE_AUTHOR`
+
+Website author.
+
+Define using [config](https://www.npmjs.com/package/node-config).
+
+| data       | value    |
+| ---------- | -------- |
+| config key | `author` |
+| default    | `''`     |
+
+### `SITE_DESCRIPTION`
+
+Website description.
+
+| data       | value         |
+| ---------- | ------------- |
+| config key | `description` |
+| default    | `''`          |
 
 ## Functions
 

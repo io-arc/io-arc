@@ -1,5 +1,5 @@
 import PathBuild from '@io-arc/path-build'
-import { TDirName, TDirNameKey, TDirPathKey } from '@io-arc/types'
+import { TDirName, TDirNameKey, TDirPathKey, TUrl } from '@io-arc/types'
 import config from 'config'
 
 export const BUILD = {
@@ -34,6 +34,9 @@ export const MODE_ENV: MODE = (process.env.MODE_ENV as MODE) || MODE.ONCE
 
 /** Working space directory */
 export const WS_ROOT: TDirNameKey = 'src'
+
+/** Production build mode */
+export const IS_PRODUCTION: boolean = NODE_ENV === BUILD.PRODUCTION
 
 /**
  * config data
@@ -118,6 +121,56 @@ export const WS_STATIC_ARRAY: TDirNameKey[] = getWsArr('wsDir.static', 'static')
 export const WS_STATIC_PATH: TDirNameKey = getWsPath('wsDir.static', 'static')
 
 /**
+ * Working space HTML (including Compiler) directory name array
+ * Array first is 'src' is absolutely
+ *
+ * config key: wsDir.html
+ * @default ['src', 'html']
+ */
+export const WS_HTML_ARRAY: TDirNameKey[] = getWsArr('wsDir.html', 'html')
+
+/**
+ * HTML build using file-loader
+ *
+ * @default true
+ */
+export const USE_HTML_FILE_LOADER = getConfig<boolean>(
+  'options.fileLoader.html.use',
+  true
+)
+
+/**
+ * Judgement to adding 6-digit hash for image path
+ *
+ * @default true
+ */
+export const IS_HASH_HTML_FILE_LOADER = getConfig<boolean>(
+  'options.fileLoader.html.hash',
+  true
+)
+
+/**
+ * Target for file-loader
+ *
+ * @default [':srcset', 'img:src', 'audio:src', 'video:src', 'source:src']
+ */
+export const TARGET_HTML_FILE_LOADER = getConfig<string[]>(
+  'options.fileLoader.html.target',
+  [':srcset', 'img:src', 'audio:src', 'video:src', 'source:src']
+)
+
+/**
+ * HTML build minify option
+ *
+ * config key: options.html.minify
+ * @default false
+ */
+export const HTML_MINIFY: boolean = getConfig<boolean>(
+  'options.html.minify',
+  false
+)
+
+/**
  * Working space for YAML to JSON directory name array
  * Array first is 'src' to absolutely
  *
@@ -186,6 +239,14 @@ export const DEPLOY_IMG_ARRAY: TDirNameKey[] = getDeployArr('deployDir.img', [
 ])
 
 /**
+ * Website domain url
+ *
+ * config key: url
+ * @default ''
+ */
+export const SITE_DOMAIN: TUrl = getConfig<TUrl>('url', '')
+
+/**
  * WebSite root
  * @default '/'
  */
@@ -197,3 +258,34 @@ export const SITE_ROOT: TDirName = getConfig<TDirName>('siteRoot', '/')
  */
 export const siteRootRelative = (arr: TDirNameKey[]): TDirPathKey =>
   arr.length === 0 ? SITE_ROOT : `${SITE_ROOT + PathBuild.relative(arr)}/`
+
+/**
+ * Website root url
+ * `SITE_DOMAIN` + `SITE_ROOT` with no slash for last
+ *
+ * @default ''
+ */
+export const SITE_URL: TUrl =
+  SITE_DOMAIN !== '' ? SITE_DOMAIN + SITE_ROOT.replace(/\/$/, '') : ''
+
+/**
+ * Website title
+ *
+ * config key: title
+ * @default ''
+ */
+export const SITE_TITLE: string = getConfig<string>('title', '')
+
+/**
+ * Website author
+ *
+ * @default ''
+ */
+export const SITE_AUTHOR: string = getConfig<string>('author', '')
+
+/**
+ * Website description
+ *
+ * @default ''
+ */
+export const SITE_DESCRIPTION: string = getConfig<string>('description', '')

@@ -6,6 +6,7 @@ outputDir: dist
 # working directory
 wsDir:
   static: static
+  html: html
   yaml2json: yaml2json
   img: img
 
@@ -17,5 +18,20 @@ deployDir:
 
 # build option
 options:
+  html:
+    minify: false
+
   json:
     minify: true
+
+  # use file-loader
+  fileLoader:
+    html:
+      use: true
+      hash: true
+      target:
+        - :srcset
+        - img:src
+        - audio:src
+        - video:src
+        - source:src
