@@ -4,14 +4,6 @@ import { TDirNameKey, TFileName } from '@io-arc/types'
 import { RuleSetRule } from 'webpack'
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const pngquant = require('imagemin-pngquant')
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const gifscale = require('imagemin-gifsicle')
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const jpegtran = require('imagemin-jpegtran')
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const svgo = require('imagemin-svgo')
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const imageminLoader = require('imagemin-webpack').loader
 
 export const ImageLoader = (
@@ -50,10 +42,10 @@ export const ImageLoader = (
           bail: false,
           imageminOptions: {
             plugins: [
-              gifscale({ interlaced: true }),
-              jpegtran({ progressive: true }),
-              pngquant({ quality: [0.8, 1] }),
-              svgo({ removeViewBox: true })
+              ['gifsicle', { interlaced: true }],
+              ['jpegtran', { progressive: true }],
+              ['pngquant', { quality: [0.8, 1] }],
+              ['svgo', { removeViewBox: true }]
             ]
           }
         }
