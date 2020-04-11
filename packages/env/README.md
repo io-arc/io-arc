@@ -237,16 +237,6 @@ Define using [config](https://www.npmjs.com/package/node-config).
 | config key | `deployDir.js`     |
 | default    | `['common', 'js']` |
 
-### `OUTPUT_JSON_ARRAY`
-
-JSON output directory name array.
-
-Define using [config](https://www.npmjs.com/package/node-config).
-
-| data       | value                |
-| ---------- | -------------------- |
-| config key | `deployDir.json`     |
-| default    | `['common', 'data']` |
 
 ### `WS_YAML2JSON_ARRAY`
 
@@ -285,6 +275,17 @@ Define using [config](https://www.npmjs.com/package/node-config).
 | config key | `options.json.minify` |
 | default    | `false`               |
 
+### `OUTPUT_JSON_ARRAY`
+
+JSON output directory name array.
+
+Define using [config](https://www.npmjs.com/package/node-config).
+
+| data       | value                |
+| ---------- | -------------------- |
+| config key | `deployDir.json`     |
+| default    | `['common', 'data']` |
+
 ### `DEPLOY_YAML2JSON_ARR`
 
 YAML to JSON deploy directory array.  
@@ -317,7 +318,7 @@ Define using [config](https://www.npmjs.com/package/node-config).
 
 ### `DEPLOY_IMG_ARRAY`
 
-Image deploy directory array for using file-loader.  
+Image deploy directory name array for using file-loader.  
 Array first is `DIST` constant.  
 Result to `DIST` + `OUTPUT_IMG_ARRAY`.
 
