@@ -51,19 +51,19 @@ Constants configure to [config](https://www.npmjs.com/package/node-config).
 
 ### Example
 
-*default.yml*
+**default.yml**
 
 ```yaml
 title: io-arc
 ```
 
-*src/html/index.html*
+**src/html/index.html**
 
 ```html
 <title>{{TITLE}}</title>
 ```
 
-*dist/index.html*(build)
+**dist/index.html**(build)
 
 ```html
 <title>io-arc</title>
