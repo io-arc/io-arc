@@ -312,7 +312,7 @@ Define using [config](https://www.npmjs.com/package/node-config).
 | config key | `deployDir.json`     |
 | default    | `['common', 'data']` |
 
-### `DEPLOY_YAML2JSON_ARR`
+### `DEPLOY_YAML2JSON_ARRAY`
 
 YAML to JSON deploy directory array.  
 Array first is `DIST` constant.  

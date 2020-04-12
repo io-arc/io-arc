@@ -250,7 +250,10 @@ export const JSON_MINIFY: boolean = getConfig<boolean>(
  * YAML to JSON deploy directory array
  * Array first is DIST constant
  */
-export const DEPLOY_YAML2JSON_ARR: TDirNameKey[] = [DIST, ...OUTPUT_JSON_ARRAY]
+export const DEPLOY_YAML2JSON_ARRAY: TDirNameKey[] = [
+  DIST,
+  ...OUTPUT_JSON_ARRAY
+]
 
 /**
  * Image directory absolute path for file-loader

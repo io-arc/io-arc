@@ -1,5 +1,5 @@
 import {
-  DEPLOY_YAML2JSON_ARR,
+  DEPLOY_YAML2JSON_ARRAY,
   JSON_MINIFY,
   MODE,
   MODE_ENV,
@@ -13,7 +13,7 @@ import { green, red } from 'kleur'
 import watch from 'node-watch'
 import path from 'path'
 
-const y2j = new Yaml2Json(WS_YAML2JSON_ARRAY, DEPLOY_YAML2JSON_ARR)
+const y2j = new Yaml2Json(WS_YAML2JSON_ARRAY, DEPLOY_YAML2JSON_ARRAY)
 
 // log
 const createLog = (v: TFilePath): void =>

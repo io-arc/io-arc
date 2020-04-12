@@ -1,6 +1,6 @@
 import {
   DEPLOY_IMG_ARRAY,
-  DEPLOY_YAML2JSON_ARR,
+  DEPLOY_YAML2JSON_ARRAY,
   DIST,
   DIST_ABSOLUTE,
   HTML_MINIFY,
@@ -138,7 +138,7 @@ test('YAML to JSON convert minify option', () => {
 })
 
 test('YAML to JSON deploy directory array', () => {
-  expect(DEPLOY_YAML2JSON_ARR).toEqual([DIST, 'common', 'data'])
+  expect(DEPLOY_YAML2JSON_ARRAY).toEqual([DIST, 'common', 'data'])
 })
 
 test('Image directory absolute path', () => {

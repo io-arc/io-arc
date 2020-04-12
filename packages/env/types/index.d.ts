@@ -137,7 +137,7 @@ export declare const JSON_MINIFY: boolean;
  * YAML to JSON deploy directory array
  * Array first is DIST constant
  */
-export declare const DEPLOY_YAML2JSON_ARR: TDirNameKey[];
+export declare const DEPLOY_YAML2JSON_ARRAY: TDirNameKey[];
 /**
  * Image directory absolute path for file-loader
  * First string is '<OS root>/src/' to absolutely
