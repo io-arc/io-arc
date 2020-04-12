@@ -3,17 +3,7 @@ import { terser } from 'rollup-plugin-terser'
 import pkg from './package.json'
 import lerna from '../../lerna.json'
 
-export default {
-  input: 'lib/index.ts',
-
-  output: {
-    file: 'bin/index.js',
-    format: 'commonjs',
-    indent: false,
-    name: 'Clean',
-    sourcemap: false,
-    banner: `#!/usr/bin/env node
-/*!
+const banner = `/*!
 Clean directory
 ${pkg.description}
 
@@ -22,7 +12,27 @@ Version: ${lerna.version}
 License: ${pkg.license}
 Copyright (c) ${lerna.year} ${pkg.author}
 */`
-  },
+
+export default {
+  input: 'lib/index.ts',
+
+  output: [
+    {
+      file: 'bin/index.js',
+      format: 'commonjs',
+      indent: false,
+      name: 'Clean',
+      sourcemap: false,
+      banner: `#!/usr/bin/env node
+${banner}`
+    },
+    {
+      file: 'index.js',
+      format: 'umd',
+      indent: false,
+      banner
+    }
+  ],
 
   plugins: [
     typescript({

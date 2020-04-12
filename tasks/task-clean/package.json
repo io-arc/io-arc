@@ -5,7 +5,7 @@
   "author": "arc one",
   "homepage": "https://github.com/io-arc/io-arc/tasks/clean",
   "license": "ISC",
-  "main": "",
+  "main": "index.js",
   "directories": {
     "bin": "bin",
     "lib": "lib",
@@ -13,7 +13,8 @@
   },
   "files": [
     "bin",
-    "lib"
+    "lib",
+    "index.js"
   ],
   "publishConfig": {
     "access": "public"
