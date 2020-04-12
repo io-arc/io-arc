@@ -137,7 +137,7 @@ export declare const JSON_MINIFY: boolean;
  * YAML to JSON deploy directory array
  * Array first is DIST constant
  */
-export declare const DEPLOY_YAML2JSON_ARR: TDirNameKey[];
+export declare const DEPLOY_YAML2JSON_ARRAY: TDirNameKey[];
 /**
  * Image directory absolute path for file-loader
  * First string is '<OS root>/src/' to absolutely
@@ -167,11 +167,6 @@ export declare const SITE_DOMAIN: TUrl;
  * @default '/'
  */
 export declare const SITE_ROOT: TDirName;
-/**
- * Site root relative path build
- * @param arr - Array for directory name
- */
-export declare const siteRootRelative: (arr: string[]) => string;
 /**
  * Website root url
  * `SITE_DOMAIN` + `SITE_ROOT` with no slash for last

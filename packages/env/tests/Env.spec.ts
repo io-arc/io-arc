@@ -1,6 +1,6 @@
 import {
   DEPLOY_IMG_ARRAY,
-  DEPLOY_YAML2JSON_ARR,
+  DEPLOY_YAML2JSON_ARRAY,
   DIST,
   DIST_ABSOLUTE,
   HTML_MINIFY,
@@ -18,7 +18,6 @@ import {
   SITE_ROOT,
   SITE_TITLE,
   SITE_URL,
-  siteRootRelative,
   TARGET_HTML_FILE_LOADER,
   USE_HTML_FILE_LOADER,
   WS_HTML_ARRAY,
@@ -38,14 +37,6 @@ test('Build mode is not production', () => {
 
 test('Site root', () => {
   expect(SITE_ROOT).toBe('/test/')
-})
-
-test('Site root relative - unspecified', () => {
-  expect(siteRootRelative([])).toBe(SITE_ROOT)
-})
-
-test('Site root relative - specified', () => {
-  expect(siteRootRelative(['abc'])).toBe(`${SITE_ROOT}abc/`)
 })
 
 test('Output directory', () => {
@@ -147,7 +138,7 @@ test('YAML to JSON convert minify option', () => {
 })
 
 test('YAML to JSON deploy directory array', () => {
-  expect(DEPLOY_YAML2JSON_ARR).toEqual([DIST, 'common', 'data'])
+  expect(DEPLOY_YAML2JSON_ARRAY).toEqual([DIST, 'common', 'data'])
 })
 
 test('Image directory absolute path', () => {

@@ -250,7 +250,10 @@ export const JSON_MINIFY: boolean = getConfig<boolean>(
  * YAML to JSON deploy directory array
  * Array first is DIST constant
  */
-export const DEPLOY_YAML2JSON_ARR: TDirNameKey[] = [DIST, ...OUTPUT_JSON_ARRAY]
+export const DEPLOY_YAML2JSON_ARRAY: TDirNameKey[] = [
+  DIST,
+  ...OUTPUT_JSON_ARRAY
+]
 
 /**
  * Image directory absolute path for file-loader
@@ -291,13 +294,6 @@ export const SITE_DOMAIN: TUrl = getConfig<TUrl>('url', '')
  * @default '/'
  */
 export const SITE_ROOT: TDirName = getConfig<TDirName>('siteRoot', '/')
-
-/**
- * Site root relative path build
- * @param arr - Array for directory name
- */
-export const siteRootRelative = (arr: TDirNameKey[]): TDirPathKey =>
-  arr.length === 0 ? SITE_ROOT : `${SITE_ROOT + PathBuild.relative(arr)}/`
 
 /**
  * Website root url

@@ -1,7 +1,8 @@
-import { siteRootRelative, WS_IMG_PATH_ABSOLUTE } from '@io-arc/env'
+import { WS_IMG_PATH_ABSOLUTE } from '@io-arc/env'
 import OutputDirDiff from '@io-arc/output-dir-diff'
 import { TDirNameKey, TFileName } from '@io-arc/types'
 import { RuleSetRule } from 'webpack'
+import { siteRootRelative } from '@io-arc/utils'
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const imageminLoader = require('imagemin-webpack').loader
