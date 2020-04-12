@@ -168,11 +168,6 @@ export declare const SITE_DOMAIN: TUrl;
  */
 export declare const SITE_ROOT: TDirName;
 /**
- * Site root relative path build
- * @param arr - Array for directory name
- */
-export declare const siteRootRelative: (arr: string[]) => string;
-/**
  * Website root url
  * `SITE_DOMAIN` + `SITE_ROOT` with no slash for last
  *

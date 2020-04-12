@@ -18,7 +18,6 @@ import {
   SITE_ROOT,
   SITE_TITLE,
   SITE_URL,
-  siteRootRelative,
   TARGET_HTML_FILE_LOADER,
   USE_HTML_FILE_LOADER,
   WS_HTML_ARRAY,
@@ -38,14 +37,6 @@ test('Build mode is not production', () => {
 
 test('Site root', () => {
   expect(SITE_ROOT).toBe('/test/')
-})
-
-test('Site root relative - unspecified', () => {
-  expect(siteRootRelative([])).toBe(SITE_ROOT)
-})
-
-test('Site root relative - specified', () => {
-  expect(siteRootRelative(['abc'])).toBe(`${SITE_ROOT}abc/`)
 })
 
 test('Output directory', () => {

@@ -293,13 +293,6 @@ export const SITE_DOMAIN: TUrl = getConfig<TUrl>('url', '')
 export const SITE_ROOT: TDirName = getConfig<TDirName>('siteRoot', '/')
 
 /**
- * Site root relative path build
- * @param arr - Array for directory name
- */
-export const siteRootRelative = (arr: TDirNameKey[]): TDirPathKey =>
-  arr.length === 0 ? SITE_ROOT : `${SITE_ROOT + PathBuild.relative(arr)}/`
-
-/**
  * Website root url
  * `SITE_DOMAIN` + `SITE_ROOT` with no slash for last
  *

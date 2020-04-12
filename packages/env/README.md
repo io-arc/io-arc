@@ -460,22 +460,3 @@ Define using [config](https://www.npmjs.com/package/node-config).
 | ---------- | ------------- |
 | config key | `description` |
 | default    | `''`          |
-
-## Functions
-
-### `siteRootRelative(arr: string[]): string[]`
-
-Create a relative path from site root.  
-Site root define is `SITE_ROOT`.
-
-#### example
-
-```typescript
-import { siteRootRelative } from '@io-arc/env'
-
-const result1 = siteRootRelative([])
-// -> '/'
-
-const result2 = siteRootRelative(['abc', 'def'])
-// -> '/abc/def/'
-```
