@@ -55,6 +55,14 @@ export declare const WS_STATIC_PATH: TDirPathKey;
  */
 export declare const WS_HTML_ARRAY: TDirNameKey[];
 /**
+ * Working space HTML (including AltHTML) directory path
+ */
+export declare const WS_HTML_PATH: TDirPathKey;
+/**
+ * Working space HTML (including AltHTML) directory absolute path
+ */
+export declare const WS_HTML_PATH_ABSOLUTE: TDirPathKey;
+/**
  * HTML build using file-loader
  *
  * @default true

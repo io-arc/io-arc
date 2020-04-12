@@ -27,3 +27,6 @@ export type TJsonString = string
 
 /** URL */
 export type TUrl = string
+
+/** webpack mode */
+export type TWebpackMode = 'none' | 'development' | 'production'

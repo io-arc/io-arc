@@ -24,7 +24,7 @@ export const ImageLoader = (
             const arr = file.replace(inputPath, '').split('/')
             arr.pop()
 
-            return `${arr.join('/')}/[name].[ext]${isHash ? '?[hash6]' : ''}`
+            return `${arr.join('/')}/[name].[ext]${isHash ? '?[hash:6]' : ''}`
           },
           outputPath: dirDiff.targetRelativePath(),
           publicPath(url: string): TFileName {
