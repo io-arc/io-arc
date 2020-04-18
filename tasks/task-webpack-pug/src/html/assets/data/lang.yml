@@ -1,0 +1,8 @@
+# Language setting
+en:
+  code: en
+  region: US # ex. google maps api
+
+ja:
+  code: ja
+  region: JP

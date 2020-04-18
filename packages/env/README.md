@@ -180,6 +180,17 @@ Build for `WS_HTML_ARRAY` to path.
 Working space for HTML (including AltHTML) directory absolute path.  
 First string is `process.cwd()` and build for `WS_HTML_ARRAY` constant.
 
+### `OUTPUT_IN_PHP`
+
+[pug](https://pugjs.org/) compile output to PHP.
+
+Define using [config](https://www.npmjs.com/package/node-config).
+
+| data       | value             |
+| ---------- | ----------------- |
+| config key | `options.pug.php` |
+| default    | `false`           |
+
 ### `USE_HTML_FILE_LOADER`
 
 HTML build using file-loader.  

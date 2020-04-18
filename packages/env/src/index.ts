@@ -132,6 +132,13 @@ export const WS_HTML_PATH_ABSOLUTE: TDirPathKey = PathBuild.absolute(
 )
 
 /**
+ * pug compile output to PHP
+ *
+ * @default false
+ */
+export const OUTPUT_IN_PHP = getConfig<boolean>('options.pug.php', false)
+
+/**
  * HTML build using file-loader
  *
  * @default true

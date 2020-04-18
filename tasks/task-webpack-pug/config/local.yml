@@ -1,34 +1,17 @@
-# Build settings
-
-# build output
-outputDir: dist
+type: default
 
 # working directory
 wsDir:
-  static: static
   html: html
-  yaml2json: yaml2json
-  img: img
 
-# directory configuration
-# array is hierarchy
-deployDir:
-  json: [common, data]
-  img: [common, img]
-  css: [common, css]
-  js: [common, js]
+outputDir: dist
 
-# build option
 options:
   html:
     minify: false
 
   pug:
-    # php file output
     php: false
-
-  json:
-    minify: true
 
   # use file-loader
   fileLoader:

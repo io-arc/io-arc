@@ -1,0 +1,15 @@
+if $ogp && $ogp.use
+  meta(property="og:type", content=`${$ogp.type || 'website'}`)
+
+  if $ogp.url
+    meta(property="og:url", content=$ogp.url)
+
+  if $ogp.title
+    meta(property="og:title", content=$ogp.title)
+
+  meta(property="og:site_title", content=TITLE)
+
+  if $ogp.image
+    meta(property="og:image", content=$ogp.image)
+
+  meta(property="og:description", content=_description_)

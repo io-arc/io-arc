@@ -1,0 +1,10 @@
+- const prefetch = readYAML('assets/data/prefetch.yml')
+
+if prefetch.dns && prefetch.dns.length > 0
+  meta(http-equiv="x-dns-prefetch-control", content="on")
+  each v in prefetch.dns
+    link(rel="dns-prefetch", href=v)
+
+if prefetch.local && prefetch.local.length > 0
+  each v in prefetch.local
+    link(rel="prefetch", href=SITE_ROOT + v)
