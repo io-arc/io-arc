@@ -10,6 +10,7 @@
   "homepage": "https://github.com/io-arc/io-arc/tasks/task-webpack-html",
   "license": "ISC",
   "main": "index.js",
+  "types": "types/index.d.ts",
   "directories": {
     "lib": "lib",
     "test": "tests"

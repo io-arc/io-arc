@@ -10,6 +10,7 @@ import {
   NODE_ENV,
   OUTPUT_CSS_ARRAY,
   OUTPUT_IMG_ARRAY,
+  OUTPUT_IN_PHP,
   OUTPUT_JS_ARRAY,
   OUTPUT_JSON_ARRAY,
   SITE_AUTHOR,
@@ -69,6 +70,10 @@ test('HTML workspace path', () => {
 
 test('HTML workspace absolute path', () => {
   expect(WS_HTML_PATH_ABSOLUTE).toBe(`${process.cwd()}/${WS_ROOT}/html`)
+})
+
+test('Pug compile output to PHP', () => {
+  expect(OUTPUT_IN_PHP).toBe(false)
 })
 
 test('HTML build using file-loader', () => {

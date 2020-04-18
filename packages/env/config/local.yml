@@ -23,6 +23,10 @@ options:
   html:
     minify: false
 
+  pug:
+    # php file output
+    php: false
+
   json:
     minify: true
 
