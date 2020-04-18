@@ -1,0 +1,25 @@
+extends assets/layouts/_base
+
+prepend consts
+  -
+    // Language key for 'assets/data/lang.yml'
+    const $lang = 'ja'
+
+    // Page title
+    const $title = TITLE
+
+    // Page description
+    const $description = DESCRIPTION
+
+    // OGP settings
+    const $ogp = {
+      use: true, // insert flag (require)
+      type: 'website',
+      url: `${URL}/`,
+      title: TITLE,
+      image: `${URL}/ogp.png`
+    }
+
+block body
+  p= TITLE
+  //-p: img(src="../img/arc-one-logo.png", alt="")

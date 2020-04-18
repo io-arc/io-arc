@@ -1,0 +1,8 @@
+# DNS Prefetch(https is not do prefetch)
+dns: []
+#  - //fonts.googleapis.com
+
+# Local Prefetch
+# Specify a path below the root (no slash at the beginning)
+local: []
+#  - common/img/foo.jpg
