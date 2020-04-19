@@ -186,6 +186,58 @@ export const HTML_MINIFY: boolean = getConfig<boolean>(
 )
 
 /**
+ * Working space CSS (including AltCSS) directory name array
+ * Array first is 'src' is absolutely
+ *
+ * config key: wsDir.css
+ * @default ['src', 'css']
+ */
+export const WS_CSS_ARRAY: TDirNameKey[] = getWsArr('wsDir.css', 'css')
+
+/**
+ * Working space CSS (including AltCSS) directory path
+ */
+export const WS_CSS_PATH: TDirPathKey = PathBuild.relative(WS_CSS_ARRAY)
+
+/**
+ * Working space CSS (including AltCSS) directory absolute path
+ */
+export const WS_CSS_PATH_ABSOLUTE: TDirPathKey = PathBuild.absolute(
+  WS_CSS_ARRAY
+)
+
+/**
+ * CSS build using file-loader
+ *
+ * @default true
+ */
+export const USE_CSS_FILE_LOADER = getConfig<boolean>(
+  'options.fileLoader.css.use',
+  true
+)
+
+/**
+ * Judgement to adding 6-digit hash for image path
+ *
+ * @default true
+ */
+export const IS_HASH_CSS_FILE_LOADER = getConfig<boolean>(
+  'options.fileLoader.css.hash',
+  true
+)
+
+/**
+ * CSS build minify option
+ *
+ * config key: options.css.minify
+ * @default false
+ */
+export const CSS_MINIFY: boolean = getConfig<boolean>(
+  'options.css.minify',
+  false
+)
+
+/**
  * CSS output (including AltCSS) directory name array
  *
  * config key: deployDir.css
@@ -195,6 +247,14 @@ export const OUTPUT_CSS_ARRAY: TDirNameKey[] = getConfig<TDirNameKey[]>(
   'deployDir.css',
   ['common', 'css']
 )
+
+/**
+ * CSS output (including AltCSS) absolute directory path
+ */
+export const OUTPUT_CSS_PATH_ABSOLUTE: TDirPathKey = PathBuild.absolute([
+  DIST,
+  ...OUTPUT_CSS_ARRAY
+])
 
 /**
  * JavaScript output (including AltJS) directory name array

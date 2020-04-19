@@ -251,6 +251,53 @@ Define using [config](https://www.npmjs.com/package/node-config).
 | config key | `options.html.minify` |
 | default    | `false`               |
 
+### `WS_CSS_ARRAY`
+
+Working space for CSS (including AltCSS) directory name array.  
+Array first is `WS_ROOT` constant.
+
+Define using [config](https://www.npmjs.com/package/node-config).
+
+| data              | value               |
+| ----------------- | ------------------- |
+| config key        | `wsDir.css`        |
+| default directory | `css`              |
+| default result    | `[WS_ROOT, 'css']` |
+
+### `WS_CSS_PATH`
+
+Working space for CSS (including AltCSS) directory path.  
+Build for `WS_CSS_ARRAY` to path.
+
+### `WS_CSS_PATH_ABSOLUTE`
+
+Working space for CSS (including AltCSS) directory absolute path.  
+First string is `process.cwd()` and build for `WS_CSS_ARRAY` constant.
+
+### `USE_CSS_FILE_LOADER`
+
+CSS build using file-loader.  
+\* Including AltCSS
+
+Define using [config](https://www.npmjs.com/package/node-config).
+
+| data       | value                         |
+| ---------- | ----------------------------- |
+| config key | `options.fileLoader.css.use` |
+| default    | `true`                        |
+
+### `IS_HASH_CSS_FILE_LOADER`
+
+CSS build using file-loader then judgment to adding 6-digit hash for image path.  
+\* Including AltCSS
+
+Define using [config](https://www.npmjs.com/package/node-config).
+
+| data       | value                          |
+| ---------- | ------------------------------ |
+| config key | `options.fileLoader.css.hash` |
+| default    | `true`                         |
+
 ### `OUTPUT_CSS_ARRAY`
 
 CSS output directory name array.  
@@ -262,6 +309,11 @@ Define using [config](https://www.npmjs.com/package/node-config).
 | ---------- | ------------------- |
 | config key | `deployDir.css`     |
 | default    | `['common', 'css']` |
+
+### `OUTPUT_CSS_PATH_ABSOLUTE`
+
+CSS output directory path.  
+First string is `process.cwd()` and `DIST` constant.
 
 ### `OUTPUT_JS_ARRAY`
 
