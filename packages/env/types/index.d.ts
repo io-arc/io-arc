@@ -96,12 +96,51 @@ export declare const TARGET_HTML_FILE_LOADER: {
  */
 export declare const HTML_MINIFY: boolean;
 /**
+ * Working space CSS (including AltCSS) directory name array
+ * Array first is 'src' is absolutely
+ *
+ * config key: wsDir.css
+ * @default ['src', 'css']
+ */
+export declare const WS_CSS_ARRAY: TDirNameKey[];
+/**
+ * Working space CSS (including AltCSS) directory path
+ */
+export declare const WS_CSS_PATH: TDirPathKey;
+/**
+ * Working space CSS (including AltCSS) directory absolute path
+ */
+export declare const WS_CSS_PATH_ABSOLUTE: TDirPathKey;
+/**
+ * CSS build using file-loader
+ *
+ * @default true
+ */
+export declare const USE_CSS_FILE_LOADER: boolean;
+/**
+ * Judgement to adding 6-digit hash for image path
+ *
+ * @default true
+ */
+export declare const IS_HASH_CSS_FILE_LOADER: boolean;
+/**
+ * CSS build minify option
+ *
+ * config key: options.css.minify
+ * @default false
+ */
+export declare const CSS_MINIFY: boolean;
+/**
  * CSS output (including AltCSS) directory name array
  *
  * config key: deployDir.css
  * @default ['common', 'css']
  */
 export declare const OUTPUT_CSS_ARRAY: TDirNameKey[];
+/**
+ * CSS output (including AltCSS) absolute directory path
+ */
+export declare const OUTPUT_CSS_PATH_ABSOLUTE: TDirPathKey;
 /**
  * JavaScript output (including AltJS) directory name array
  *

@@ -7,6 +7,7 @@ outputDir: dist
 wsDir:
   static: static
   html: html
+  css: css
   yaml2json: yaml2json
   img: img
 
@@ -26,6 +27,9 @@ options:
   pug:
     # php file output
     php: false
+
+  css:
+    minify: false
 
   json:
     minify: true
@@ -51,3 +55,7 @@ options:
         - tag: source
           attribute: src
           type: src
+
+    css:
+      use: true
+      hash: true

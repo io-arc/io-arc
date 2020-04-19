@@ -1,14 +1,17 @@
 import {
+  CSS_MINIFY,
   DEPLOY_IMG_ARRAY,
   DEPLOY_YAML2JSON_ARRAY,
   DIST,
   DIST_ABSOLUTE,
   HTML_MINIFY,
+  IS_HASH_CSS_FILE_LOADER,
   IS_HASH_HTML_FILE_LOADER,
   IS_PRODUCTION,
   JSON_MINIFY,
   NODE_ENV,
   OUTPUT_CSS_ARRAY,
+  OUTPUT_CSS_PATH_ABSOLUTE,
   OUTPUT_IMG_ARRAY,
   OUTPUT_IN_PHP,
   OUTPUT_JS_ARRAY,
@@ -20,7 +23,11 @@ import {
   SITE_TITLE,
   SITE_URL,
   TARGET_HTML_FILE_LOADER,
+  USE_CSS_FILE_LOADER,
   USE_HTML_FILE_LOADER,
+  WS_CSS_ARRAY,
+  WS_CSS_PATH,
+  WS_CSS_PATH_ABSOLUTE,
   WS_HTML_ARRAY,
   WS_HTML_PATH,
   WS_HTML_PATH_ABSOLUTE,
@@ -118,8 +125,36 @@ test('HTML minify', () => {
   expect(HTML_MINIFY).toBe(false)
 })
 
+test('Working space CSS directory name array', () => {
+  expect(WS_CSS_ARRAY).toEqual([WS_ROOT, 'css'])
+})
+
+test('Working space CSS directory path', () => {
+  expect(WS_CSS_PATH).toBe(`${WS_ROOT}/css`)
+})
+
+test('Working space CSS directory absolute path', () => {
+  expect(WS_CSS_PATH_ABSOLUTE).toBe(`${process.cwd()}/${WS_ROOT}/css`)
+})
+
+test('CSS build using file-loader', () => {
+  expect(USE_CSS_FILE_LOADER).toBe(true)
+})
+
+test('Judgement to adding 6-digit hash for image path in CSS', () => {
+  expect(IS_HASH_CSS_FILE_LOADER).toBe(true)
+})
+
+test('CSS build minify option', () => {
+  expect(CSS_MINIFY).toBe(false)
+})
+
 test('Output CSS directory name array', () => {
   expect(OUTPUT_CSS_ARRAY).toEqual(['common', 'css'])
+})
+
+test('Output CSS directory absolute path', () => {
+  expect(OUTPUT_CSS_PATH_ABSOLUTE).toBe(`${process.cwd()}/${DIST}/common/css`)
 })
 
 test('Output JavaScript directory name array', () => {
