@@ -1,12 +1,12 @@
-# `@io-arc/task-webpack-stylus`
+# `@io-arc/task-webpack-sass`
 
-Stylus compile for webpack.
+Sass (SCSS/SASS) compile for webpack.
 
 ## Usage
 
 ```javascript
 // webpack.config.js
-const css = require('@io-arc/task-webpack-stylus').css
+const css = require('@io-arc/task-webpack-sass').css
 
 module.exports = css
 ```
@@ -35,6 +35,6 @@ Reference to [@io-arc/env](https://github.com/io-arc/io-arc/packages/env).
 
 The first path `~` will be `node_modules`.
 
-```stylus
-@require "~bootstrap/dist/css/bootstrap-reboot.min.css"
+```scss
+@import "~bootstrap/dist/css/bootstrap-reboot.min.css";
 ```
