@@ -1,4 +1,4 @@
-import PathBuild from '../src'
+import PathBuild from '../lib'
 
 test('Relative', () => {
   expect(PathBuild.relative(['abc', 'def'])).toBe('abc/def')
