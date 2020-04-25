@@ -1,12 +1,10 @@
-# `@io-arc/task-webpack-sass`
+# `@io-arc/task-webpack-css`
 
-Sass (SCSS/SASS) compile for webpack.
-
-## Usage
+CSS build for webpack.
 
 ```javascript
 // webpack.config.js
-const css = require('@io-arc/task-webpack-sass').css
+const css = require('@io-arc/task-webpack-css').css
 
 module.exports = css
 ```
@@ -42,19 +40,25 @@ Using [css-mqpacker](https://github.com/hail2u/node-css-mqpacker).
 
 #### example
 
-```scss
+```css
 body {
   color: #000000;
-  @media screen and (max-width: 734px) {
-    color: #cc0000;
+}
+
+@media screen and (max-width: 734px) {
+  body {
+    color: #c00;
   }
-  @media screen and (max-width: 1068px) {
+}
+
+@media screen and (max-width: 1068px) {
+  body {
     color: #00cc00;
   }
 }
 
-p {
-  @media screen and (max-width: 1068px) {
+@media screen and (max-width: 1068px) {
+  p {
     color: #00cc00;
   }
 }
@@ -69,7 +73,7 @@ body {
 
 @media screen and (max-width: 734px) {
   body {
-    color: #cc0000;
+    color: #000000;
   }
 }
 
@@ -77,6 +81,9 @@ body {
   body {
     color: #00cc00;
   }
+}
+
+@media screen and (max-width: 1068px) {
   p {
     color: #00cc00;
   }
@@ -89,6 +96,8 @@ body {
 
 The first path `~` will be `node_modules`.
 
-```scss
-@import '~bootstrap/dist/css/bootstrap-reboot.min.css';
+```stylus
+@require "~bootstrap/dist/css/bootstrap-reboot.min.css"
 ```
+
+Result: include node_modules files in CSS.
