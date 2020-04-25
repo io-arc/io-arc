@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import '~bootstrap/dist/css/bootstrap-reboot.min.css';
+/*@import '~bootstrap/dist/css/bootstrap-reboot.min.css';*/
 
 body {
   background: url(../img/arc-one-logo.png);
@@ -21,4 +21,14 @@ body {
   p {
     color: #00cc00;
   }
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 20px 1fr;
+  grid-column-gap: 10px;
 }
