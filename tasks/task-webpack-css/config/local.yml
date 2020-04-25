@@ -1,0 +1,20 @@
+type: default
+
+# working directory
+wsDir:
+  css: css
+
+outputDir: dist
+
+deployDir:
+  css: [common, css]
+
+options:
+  css:
+    minify: false
+
+  # use file-loader
+  fileLoader:
+    css:
+      use: true
+      hash: true
