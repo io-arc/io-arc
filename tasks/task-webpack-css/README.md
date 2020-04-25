@@ -2,6 +2,8 @@
 
 CSS build for webpack.
 
+## Usage
+
 ```javascript
 // webpack.config.js
 const css = require('@io-arc/task-webpack-css').css
