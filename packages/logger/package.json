@@ -8,11 +8,11 @@
   "main": "index.js",
   "types": "types/index.d.ts",
   "directories": {
-    "lib": "src",
+    "lib": "lib",
     "test": "tests"
   },
   "files": [
-    "src",
+    "lib",
     "types",
     "index.js"
   ],
@@ -24,7 +24,7 @@
     "url": "https://github.com/io-arc/io-arc.git"
   },
   "scripts": {
-    "prebuild": "eslint src/*.ts",
+    "prebuild": "eslint lib/*.ts",
     "build": "rollup -c",
     "postbuild": "tsc --emitDeclarationOnly"
   },

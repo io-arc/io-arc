@@ -1,4 +1,4 @@
-import { AssetsDirPath, siteRootRelative } from '../src'
+import { AssetsDirPath, siteRootRelative } from '../lib'
 import { SITE_ROOT } from '@io-arc/env'
 
 test('Assets directory path', () => {

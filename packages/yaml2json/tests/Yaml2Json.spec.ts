@@ -1,4 +1,4 @@
-import Yaml2Json from '../src'
+import Yaml2Json from '../lib'
 
 test('Yaml2Json all convert', (done) => {
   const yaml2json = new Yaml2Json(['tests', 'yaml'], ['dist', 'data'])

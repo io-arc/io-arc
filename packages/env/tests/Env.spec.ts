@@ -37,7 +37,7 @@ import {
   WS_STATIC_PATH,
   WS_YAML2JSON_ARRAY,
   WS_YAML2JSON_PATH
-} from '../src'
+} from '../lib'
 
 test('Build mode is not production', () => {
   expect(IS_PRODUCTION).toBe(false)
