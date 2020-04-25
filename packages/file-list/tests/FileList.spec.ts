@@ -1,4 +1,4 @@
-import { FileListObject } from '../src'
+import { FileListObject } from '../lib'
 
 test('Get all file list', () => {
   expect(FileListObject('tests/list', 'json')).toMatchObject({
