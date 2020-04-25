@@ -29,6 +29,55 @@ Reference to [@io-arc/env](https://github.com/io-arc/io-arc/packages/env).
 | using file-loader | [`USE_CSS_FILE_LOADER`](https://github.com/io-arc/io-arc/packages/env#use_css_file_loader)          |
 | image hash        | [`IS_HASH_CSS_FILE_LOADER`](https://github.com/io-arc/io-arc/packages/env#uis_hash_css_file_loader) |
 
+## Features
+
+### Auto insert Bender Prefix
+
+Using [autoprefixer](https://autoprefixer.github.io/).  
+You can use [browserslist](https://github.com/ai/browserslist) to specify.
+
+### Consolidate to MediaQuery
+
+Using [css-mqpacker](https://github.com/hail2u/node-css-mqpacker).
+
+#### example
+
+```stylus
+body
+  color: #000000
+  @media screen and (max-width: 734px)
+    color: #cc0000
+  @media screen and (max-width: 1068px)
+    color: #00cc00
+
+p
+  @media screen and (max-width: 1068px)
+    color: #00cc00
+```
+
+Compile result below:
+
+```css
+body {
+  color: #000;
+}
+
+@media screen and (max-width: 734px) {
+  body {
+    color: #c00;
+  }
+}
+
+@media screen and (max-width: 1068px) {
+  body {
+    color: #0c0;
+  }
+  p {
+    color: #0c0;
+  }
+}
+```
+
 ## Tips
 
 ### Using `node_modules` file
