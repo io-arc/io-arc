@@ -1,9 +1,9 @@
-# ブラウザのバージョンを指定(npx browserslistで対応するブラウザリストの確認が可能)
-# 公式サイト：https://github.com/ai/browserslist
+# Specify the browser version(You can check the list of supported browsers with `npx browserslist`.)
+# Official：https://github.com/ai/browserslist
 last 2 versions
 not dead
 > 5%
 edge 16
 ie 11
-# Google クローラー
+# Google crawler
 chrome 41
