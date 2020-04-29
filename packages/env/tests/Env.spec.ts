@@ -10,6 +10,7 @@ import {
   IS_HASH_JS_FILE_LOADER,
   IS_PRODUCTION,
   JS_MINIFY,
+  JS_SPLIT_FILENAME,
   JSON_MINIFY,
   NODE_ENV,
   OUTPUT_CSS_ARRAY,
@@ -179,6 +180,10 @@ test('Working space JS directory absolute path', () => {
 
 test('TypeScript config file', () => {
   expect(TSCONFIG).toBe('tsconfig.json')
+})
+
+test('File names for splitting the common logic', () => {
+  expect(JS_SPLIT_FILENAME).toBe('assets')
 })
 
 test('JS build using file-loader', () => {

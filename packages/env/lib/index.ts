@@ -289,6 +289,16 @@ export const TSCONFIG: TFileName = getConfig<TFileName>(
 )
 
 /**
+ * File names for splitting the common logic
+ *
+ * @default null
+ */
+export const JS_SPLIT_FILENAME = getConfig<string | null>(
+  'options.js.splitFilename',
+  null
+)
+
+/**
  * JS build using file-loader
  *
  * @default true

@@ -35,6 +35,7 @@ options:
   js:
     minify: true
     tsconfig: tsconfig.json
+    splitFilename: assets
 
   json:
     minify: true

@@ -340,14 +340,23 @@ First string is `process.cwd()` and build for `WS_JS_ARRAY` constant.
 
 ### `TSCONFIG`
 
-TypeScript config file.
-
+TypeScript config file.  
 Define using [config](https://www.npmjs.com/package/node-config).
 
 | data       | value                 |
 | ---------- | --------------------- |
 | config key | `options.js.tsconfig` |
 | default    | `tsconfig.json`       |
+
+### `JS_SPLIT_FILENAME`
+
+File names for splitting the common logic.  
+Define using [config](https://www.npmjs.com/package/node-config).
+
+| data       | value                      |
+| ---------- | -------------------------- |
+| config key | `options.js.splitFilename` |
+| default    | `null`                     |
 
 ### `USE_JS_FILE_LOADER`
 

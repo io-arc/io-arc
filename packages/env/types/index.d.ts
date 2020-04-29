@@ -161,6 +161,12 @@ export declare const WS_JS_PATH_ABSOLUTE: TDirPathKey;
  */
 export declare const TSCONFIG: TFileName;
 /**
+ * File names for splitting the common logic
+ *
+ * @default null
+ */
+export declare const JS_SPLIT_FILENAME: string | null;
+/**
  * JS build using file-loader
  *
  * @default true
