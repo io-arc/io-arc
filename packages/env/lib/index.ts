@@ -257,6 +257,49 @@ export const OUTPUT_CSS_PATH_ABSOLUTE: TDirPathKey = PathBuild.absolute([
 ])
 
 /**
+ * Working space JS (including AltJS) directory name array
+ * Array first is 'src' is absolutely
+ *
+ * config key: wsDir.js
+ * @default ['src', 'js']
+ */
+export const WS_JS_ARRAY: TDirNameKey[] = getWsArr('wsDir.js', 'js')
+
+/** Working space JS (including AltJS) directory path */
+export const WS_JS_PATH: TDirPathKey = PathBuild.relative(WS_JS_ARRAY)
+
+/** Working space JS (including AltJS) directory absolute path */
+export const WS_JS_PATH_ABSOLUTE: TDirPathKey = PathBuild.absolute(WS_JS_ARRAY)
+
+/**
+ * JS build using file-loader
+ *
+ * @default true
+ */
+export const USE_JS_FILE_LOADER = getConfig<boolean>(
+  'options.fileLoader.js.use',
+  true
+)
+
+/**
+ * Judgement to adding 6-digit hash for image path
+ *
+ * @default true
+ */
+export const IS_HASH_JS_FILE_LOADER = getConfig<boolean>(
+  'options.fileLoader.js.hash',
+  true
+)
+
+/**
+ * JS build minify option
+ *
+ * config key: options.js.minify
+ * @default false
+ */
+export const JS_MINIFY = getConfig<boolean>('options.js.minify', false)
+
+/**
  * JavaScript output (including AltJS) directory name array
  *
  * config key: deployDir.js
@@ -266,6 +309,12 @@ export const OUTPUT_JS_ARRAY: TDirNameKey[] = getConfig<TDirNameKey[]>(
   'deployDir.js',
   ['common', 'js']
 )
+
+/** JS output (including AltJS) absolute directory path */
+export const OUTPUT_JS_PATH_ABSOLUTE: TDirPathKey = PathBuild.absolute([
+  DIST,
+  ...OUTPUT_JS_ARRAY
+])
 
 /**
  * Json output directory name array

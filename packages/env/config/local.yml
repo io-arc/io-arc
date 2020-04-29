@@ -10,6 +10,7 @@ wsDir:
   css: css
   yaml2json: yaml2json
   img: img
+  js: js
 
 # directory configuration
 # array is hierarchy
@@ -30,6 +31,9 @@ options:
 
   css:
     minify: false
+
+  js:
+    minify: true
 
   json:
     minify: true
@@ -57,5 +61,9 @@ options:
           type: src
 
     css:
+      use: true
+      hash: true
+
+    js:
       use: true
       hash: true

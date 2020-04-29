@@ -142,12 +142,45 @@ export declare const OUTPUT_CSS_ARRAY: TDirNameKey[];
  */
 export declare const OUTPUT_CSS_PATH_ABSOLUTE: TDirPathKey;
 /**
+ * Working space JS (including AltJS) directory name array
+ * Array first is 'src' is absolutely
+ *
+ * config key: wsDir.js
+ * @default ['src', 'js']
+ */
+export declare const WS_JS_ARRAY: TDirNameKey[];
+/** Working space JS (including AltJS) directory path */
+export declare const WS_JS_PATH: TDirPathKey;
+/** Working space JS (including AltJS) directory absolute path */
+export declare const WS_JS_PATH_ABSOLUTE: TDirPathKey;
+/**
+ * JS build using file-loader
+ *
+ * @default true
+ */
+export declare const USE_JS_FILE_LOADER: boolean;
+/**
+ * Judgement to adding 6-digit hash for image path
+ *
+ * @default true
+ */
+export declare const IS_HASH_JS_FILE_LOADER: boolean;
+/**
+ * JS build minify option
+ *
+ * config key: options.js.minify
+ * @default false
+ */
+export declare const JS_MINIFY: boolean;
+/**
  * JavaScript output (including AltJS) directory name array
  *
  * config key: deployDir.js
  * @default ['common', 'js']
  */
 export declare const OUTPUT_JS_ARRAY: TDirNameKey[];
+/** JS output (including AltJS) absolute directory path */
+export declare const OUTPUT_JS_PATH_ABSOLUTE: TDirPathKey;
 /**
  * Json output directory name array
  *
