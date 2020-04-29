@@ -34,6 +34,7 @@ options:
 
   js:
     minify: true
+    tsconfig: tsconfig.json
 
   json:
     minify: true

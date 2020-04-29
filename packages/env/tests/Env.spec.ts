@@ -26,6 +26,7 @@ import {
   SITE_TITLE,
   SITE_URL,
   TARGET_HTML_FILE_LOADER,
+  TSCONFIG,
   USE_CSS_FILE_LOADER,
   USE_HTML_FILE_LOADER,
   USE_JS_FILE_LOADER,
@@ -174,6 +175,10 @@ test('Working space JS directory path', () => {
 
 test('Working space JS directory absolute path', () => {
   expect(WS_JS_PATH_ABSOLUTE).toBe(`${process.cwd()}/${WS_ROOT}/js`)
+})
+
+test('TypeScript config file', () => {
+  expect(TSCONFIG).toBe('tsconfig.json')
 })
 
 test('JS build using file-loader', () => {

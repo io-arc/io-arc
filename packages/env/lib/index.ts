@@ -1,5 +1,11 @@
 import PathBuild from '@io-arc/path-build'
-import { TDirName, TDirNameKey, TDirPathKey, TUrl } from '@io-arc/types'
+import {
+  TDirName,
+  TDirNameKey,
+  TDirPathKey,
+  TFileName,
+  TUrl
+} from '@io-arc/types'
 import config from 'config'
 
 export const BUILD = {
@@ -270,6 +276,17 @@ export const WS_JS_PATH: TDirPathKey = PathBuild.relative(WS_JS_ARRAY)
 
 /** Working space JS (including AltJS) directory absolute path */
 export const WS_JS_PATH_ABSOLUTE: TDirPathKey = PathBuild.absolute(WS_JS_ARRAY)
+
+/**
+ * TypeScript Config file
+ *
+ * config key: options.js.tsconfig
+ * @default 'tsconfig.json'
+ */
+export const TSCONFIG: TFileName = getConfig<TFileName>(
+  'options.js.tsconfig',
+  'tsconfig.json'
+)
 
 /**
  * JS build using file-loader

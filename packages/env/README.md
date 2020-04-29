@@ -230,7 +230,7 @@ Define using [config](https://www.npmjs.com/package/node-config).
 #### Default
 
 ```javascript
-[
+;[
   { tag: 'img', attribute: 'src', type: 'src' },
   { tag: 'img', attribute: 'srcset', type: 'srcset' },
   { tag: 'img', attribute: 'data-src', type: 'src' },
@@ -337,6 +337,17 @@ Build for `WS_JS_ARRAY` to path.
 
 Working space for JS (including AltJS) directory absolute path.  
 First string is `process.cwd()` and build for `WS_JS_ARRAY` constant.
+
+### `TSCONFIG`
+
+TypeScript config file.
+
+Define using [config](https://www.npmjs.com/package/node-config).
+
+| data       | value                 |
+| ---------- | --------------------- |
+| config key | `options.js.tsconfig` |
+| default    | `tsconfig.json`       |
 
 ### `USE_JS_FILE_LOADER`
 

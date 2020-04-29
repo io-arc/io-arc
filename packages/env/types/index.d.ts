@@ -1,4 +1,4 @@
-import { TDirName, TDirNameKey, TDirPathKey, TUrl } from '@io-arc/types';
+import { TDirName, TDirNameKey, TDirPathKey, TFileName, TUrl } from '@io-arc/types';
 export declare const BUILD: {
     readonly DEVELOPMENT: "development";
     readonly PRODUCTION: "production";
@@ -153,6 +153,13 @@ export declare const WS_JS_ARRAY: TDirNameKey[];
 export declare const WS_JS_PATH: TDirPathKey;
 /** Working space JS (including AltJS) directory absolute path */
 export declare const WS_JS_PATH_ABSOLUTE: TDirPathKey;
+/**
+ * TypeScript Config file
+ *
+ * config key: options.js.tsconfig
+ * @default 'tsconfig.json'
+ */
+export declare const TSCONFIG: TFileName;
 /**
  * JS build using file-loader
  *
