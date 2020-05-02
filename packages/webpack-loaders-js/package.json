@@ -1,0 +1,43 @@
+{
+  "name": "@io-arc/webpack-loaders-js",
+  "version": "0.0.0",
+  "description": "JS loaders for webpack",
+  "keywords": [
+    "webpack",
+    "javascript",
+    "typescript",
+    "yaml",
+    "json"
+  ],
+  "author": "arc one",
+  "homepage": "https://github.com/io-arc/io-arc/packages/webpack-loaders-js",
+  "license": "ISC",
+  "main": "index.js",
+  "types": "types/index.d.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "files": [
+    "lib",
+    "types",
+    "index.js"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com//io-arc/io-arc.git"
+  },
+  "scripts": {
+    "prebuild": "eslint lib/*.ts",
+    "build": "rollup -c",
+    "postbuild": "tsc --emitDeclarationOnly"
+  },
+  "dependencies": {
+    "@io-arc/types": "^0.0.0",
+    "@io-arc/utils": "^0.0.0",
+    "webpack": "^4.43.0"
+  }
+}
