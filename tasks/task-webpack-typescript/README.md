@@ -58,3 +58,8 @@ Using [webpack-visualizer-plugin](https://github.com/chrisbateman/webpack-visual
 Visualizer build run to mode is "once".
 
 Output is `<project directory>/stats`.
+
+### Web Worker
+
+Create a web worker using [worker-loader](https://github.com/webpack-contrib/worker-loader).  
+This description to [@io-arc/webpack-loader-js](https://github.com/io-arc/io-arc/packages/webpack-loaders-js#variable-workerloader).
