@@ -27,7 +27,7 @@ Reference to [@io-arc/env](https://github.com/io-arc/io-arc/packages/env).
 | ----------------- | --------------------------------------------------------------------------------------------------- |
 | minify            | [`CSS_MINIFY`](https://github.com/io-arc/io-arc/packages/env#css_minify)                            |
 | using file-loader | [`USE_CSS_FILE_LOADER`](https://github.com/io-arc/io-arc/packages/env#use_css_file_loader)          |
-| image hash        | [`IS_HASH_CSS_FILE_LOADER`](https://github.com/io-arc/io-arc/packages/env#uis_hash_css_file_loader) |
+| image hash        | [`IS_HASH_CSS_FILE_LOADER`](https://github.com/io-arc/io-arc/packages/env#use_hash_css_file_loader) |
 
 ## Features
 
