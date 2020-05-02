@@ -10,6 +10,7 @@ import {
   IS_HASH_JS_FILE_LOADER,
   IS_PRODUCTION,
   JS_MINIFY,
+  JS_SOURCE_MAP,
   JS_SPLIT_FILENAME,
   JSON_MINIFY,
   NODE_ENV,
@@ -189,6 +190,10 @@ test('TypeScript config file', () => {
 
 test('File names for splitting the common logic', () => {
   expect(JS_SPLIT_FILENAME).toBe('assets')
+})
+
+test('JS build source map option', () => {
+  expect(JS_SOURCE_MAP).toBe(true)
 })
 
 test('JS build using file-loader', () => {

@@ -36,6 +36,7 @@ options:
     minify: true
     tsconfig: tsconfig.json
     splitFilename: assets
+    sourceMap: true
 
   json:
     minify: true

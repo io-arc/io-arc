@@ -302,6 +302,24 @@ export const JS_SPLIT_FILENAME = getConfig<string | null>(
 )
 
 /**
+ * TypeScript Config file
+ *
+ * config key: options.js.tsconfig
+ * @default 'tsconfig.json'
+ */
+export const TSCONFIG: TFileName = getConfig<TFileName>(
+  'options.js.tsconfig',
+  'tsconfig.json'
+)
+
+/**
+ * JS build source map output option
+ *
+ * @default false
+ */
+export const JS_SOURCE_MAP = getConfig<boolean>('options.js.sourceMap', false)
+
+/**
  * JS build using file-loader
  *
  * @default true

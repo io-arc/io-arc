@@ -156,6 +156,12 @@ export declare const WS_JS_PATH: TDirPathKey;
 /** Working space JS (including AltJS) directory absolute path */
 export declare const WS_JS_PATH_ABSOLUTE: TDirPathKey;
 /**
+ * File names for splitting the common logic
+ *
+ * @default null
+ */
+export declare const JS_SPLIT_FILENAME: string | null;
+/**
  * TypeScript Config file
  *
  * config key: options.js.tsconfig
@@ -163,11 +169,11 @@ export declare const WS_JS_PATH_ABSOLUTE: TDirPathKey;
  */
 export declare const TSCONFIG: TFileName;
 /**
- * File names for splitting the common logic
+ * JS build source map output option
  *
- * @default null
+ * @default false
  */
-export declare const JS_SPLIT_FILENAME: string | null;
+export declare const JS_SOURCE_MAP: boolean;
 /**
  * JS build using file-loader
  *

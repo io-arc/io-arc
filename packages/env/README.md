@@ -363,6 +363,16 @@ Define using [config](https://www.npmjs.com/package/node-config).
 | config key | `options.js.splitFilename` |
 | default    | `null`                     |
 
+### `JS_SOURCE_MAP`
+
+JS build source map output option.  
+Define using [config](https://www.npmjs.com/package/node-config).
+
+| data       | value                  |
+| ---------- | ---------------------- |
+| config key | `options.js.sourceMap` |
+| default    | `false`                |
+
 ### `USE_JS_FILE_LOADER`
 
 JS build using file-loader.  
