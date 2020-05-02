@@ -1,7 +1,7 @@
 import { RuleSetRule } from 'webpack';
 /**
  * Read YAML file
- * Install 'json-loader' and 'yaml-loader'
+ * Install 'yaml-loader'
  */
 export declare const yamlLoader: RuleSetRule;
 /**

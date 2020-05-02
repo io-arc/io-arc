@@ -5,14 +5,12 @@ import { TFileName } from '@io-arc/types'
 
 /**
  * Read YAML file
- * Install 'json-loader' and 'yaml-loader'
+ * Install 'yaml-loader'
  */
 export const yamlLoader: RuleSetRule = {
   test: /\.ya?ml$/,
   type: 'json',
   use: 'yaml-loader'
-  // TODO: remove json-loader ?
-  // use: [{ loader: 'json-loader' }, { loader: 'yaml-loader' }]
 }
 
 /**
