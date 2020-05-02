@@ -19,7 +19,8 @@
     "lib",
     "src",
     "types",
-    "index.js"
+    "index.js",
+    ".browserslistrc"
   ],
   "publishConfig": {
     "access": "public"
