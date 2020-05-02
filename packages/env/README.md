@@ -116,6 +116,11 @@ Result `boolean` type.
 Project working space directory.  
 return `src`
 
+### `WS_ROOT_ABSOLUTE`
+
+Project working space directory absolute path.  
+First string is `process.cwd()` and `WS_ROOT` constant.
+
 ### `DIST`
 
 Build output directory.  

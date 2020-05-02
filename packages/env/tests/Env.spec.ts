@@ -42,6 +42,7 @@ import {
   WS_JS_PATH,
   WS_JS_PATH_ABSOLUTE,
   WS_ROOT,
+  WS_ROOT_ABSOLUTE,
   WS_STATIC_ARRAY,
   WS_STATIC_PATH,
   WS_YAML2JSON_ARRAY,
@@ -54,6 +55,10 @@ test('Build mode is not production', () => {
 
 test('Site root', () => {
   expect(SITE_ROOT).toBe('/test/')
+})
+
+test('Working space absolute path', () => {
+  expect(WS_ROOT_ABSOLUTE).toBe(`${process.cwd()}/${WS_ROOT}`)
 })
 
 test('Output directory', () => {

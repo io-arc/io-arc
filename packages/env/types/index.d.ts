@@ -17,6 +17,8 @@ export declare const NODE_ENV: "none" | "development" | "production" | "test";
 export declare const MODE_ENV: MODE;
 /** Working space directory */
 export declare const WS_ROOT: TDirNameKey;
+/** Working space absolute path */
+export declare const WS_ROOT_ABSOLUTE: TDirPathKey;
 /** Production build mode */
 export declare const IS_PRODUCTION: boolean;
 /**

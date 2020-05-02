@@ -41,6 +41,9 @@ export const MODE_ENV: MODE = (process.env.MODE_ENV as MODE) || MODE.ONCE
 /** Working space directory */
 export const WS_ROOT: TDirNameKey = 'src'
 
+/** Working space absolute path */
+export const WS_ROOT_ABSOLUTE: TDirPathKey = PathBuild.absolute([WS_ROOT])
+
 /** Production build mode */
 export const IS_PRODUCTION: boolean = NODE_ENV === BUILD.PRODUCTION
 
