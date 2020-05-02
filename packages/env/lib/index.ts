@@ -1,5 +1,11 @@
 import PathBuild from '@io-arc/path-build'
-import { TDirName, TDirNameKey, TDirPathKey, TUrl } from '@io-arc/types'
+import {
+  TDirName,
+  TDirNameKey,
+  TDirPathKey,
+  TFileName,
+  TUrl
+} from '@io-arc/types'
 import config from 'config'
 
 export const BUILD = {
@@ -34,6 +40,9 @@ export const MODE_ENV: MODE = (process.env.MODE_ENV as MODE) || MODE.ONCE
 
 /** Working space directory */
 export const WS_ROOT: TDirNameKey = 'src'
+
+/** Working space absolute path */
+export const WS_ROOT_ABSOLUTE: TDirPathKey = PathBuild.absolute([WS_ROOT])
 
 /** Production build mode */
 export const IS_PRODUCTION: boolean = NODE_ENV === BUILD.PRODUCTION
@@ -257,6 +266,77 @@ export const OUTPUT_CSS_PATH_ABSOLUTE: TDirPathKey = PathBuild.absolute([
 ])
 
 /**
+ * Working space JS (including AltJS) directory name array
+ * Array first is 'src' is absolutely
+ *
+ * config key: wsDir.js
+ * @default ['src', 'js']
+ */
+export const WS_JS_ARRAY: TDirNameKey[] = getWsArr('wsDir.js', 'js')
+
+/** Working space JS (including AltJS) directory path */
+export const WS_JS_PATH: TDirPathKey = PathBuild.relative(WS_JS_ARRAY)
+
+/** Working space JS (including AltJS) directory absolute path */
+export const WS_JS_PATH_ABSOLUTE: TDirPathKey = PathBuild.absolute(WS_JS_ARRAY)
+
+/**
+ * File names for splitting the common logic
+ *
+ * @default null
+ */
+export const JS_SPLIT_FILENAME = getConfig<string | null>(
+  'options.js.splitFilename',
+  null
+)
+
+/**
+ * TypeScript Config file
+ *
+ * config key: options.js.tsconfig
+ * @default 'tsconfig.json'
+ */
+export const TSCONFIG: TFileName = getConfig<TFileName>(
+  'options.js.tsconfig',
+  'tsconfig.json'
+)
+
+/**
+ * JS build source map output option
+ *
+ * @default false
+ */
+export const JS_SOURCE_MAP = getConfig<boolean>('options.js.sourceMap', false)
+
+/**
+ * JS build using file-loader
+ *
+ * @default true
+ */
+export const USE_JS_FILE_LOADER = getConfig<boolean>(
+  'options.fileLoader.js.use',
+  true
+)
+
+/**
+ * Judgement to adding 6-digit hash for image path
+ *
+ * @default true
+ */
+export const IS_HASH_JS_FILE_LOADER = getConfig<boolean>(
+  'options.fileLoader.js.hash',
+  true
+)
+
+/**
+ * JS build minify option
+ *
+ * config key: options.js.minify
+ * @default false
+ */
+export const JS_MINIFY = getConfig<boolean>('options.js.minify', false)
+
+/**
  * JavaScript output (including AltJS) directory name array
  *
  * config key: deployDir.js
@@ -266,6 +346,12 @@ export const OUTPUT_JS_ARRAY: TDirNameKey[] = getConfig<TDirNameKey[]>(
   'deployDir.js',
   ['common', 'js']
 )
+
+/** JS output (including AltJS) absolute directory path */
+export const OUTPUT_JS_PATH_ABSOLUTE: TDirPathKey = PathBuild.absolute([
+  DIST,
+  ...OUTPUT_JS_ARRAY
+])
 
 /**
  * Json output directory name array

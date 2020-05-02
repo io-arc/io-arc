@@ -1,4 +1,4 @@
-import { TDirName, TDirNameKey, TDirPathKey, TUrl } from '@io-arc/types';
+import { TDirName, TDirNameKey, TDirPathKey, TFileName, TUrl } from '@io-arc/types';
 export declare const BUILD: {
     readonly DEVELOPMENT: "development";
     readonly PRODUCTION: "production";
@@ -17,6 +17,8 @@ export declare const NODE_ENV: "none" | "development" | "production" | "test";
 export declare const MODE_ENV: MODE;
 /** Working space directory */
 export declare const WS_ROOT: TDirNameKey;
+/** Working space absolute path */
+export declare const WS_ROOT_ABSOLUTE: TDirPathKey;
 /** Production build mode */
 export declare const IS_PRODUCTION: boolean;
 /**
@@ -142,12 +144,64 @@ export declare const OUTPUT_CSS_ARRAY: TDirNameKey[];
  */
 export declare const OUTPUT_CSS_PATH_ABSOLUTE: TDirPathKey;
 /**
+ * Working space JS (including AltJS) directory name array
+ * Array first is 'src' is absolutely
+ *
+ * config key: wsDir.js
+ * @default ['src', 'js']
+ */
+export declare const WS_JS_ARRAY: TDirNameKey[];
+/** Working space JS (including AltJS) directory path */
+export declare const WS_JS_PATH: TDirPathKey;
+/** Working space JS (including AltJS) directory absolute path */
+export declare const WS_JS_PATH_ABSOLUTE: TDirPathKey;
+/**
+ * File names for splitting the common logic
+ *
+ * @default null
+ */
+export declare const JS_SPLIT_FILENAME: string | null;
+/**
+ * TypeScript Config file
+ *
+ * config key: options.js.tsconfig
+ * @default 'tsconfig.json'
+ */
+export declare const TSCONFIG: TFileName;
+/**
+ * JS build source map output option
+ *
+ * @default false
+ */
+export declare const JS_SOURCE_MAP: boolean;
+/**
+ * JS build using file-loader
+ *
+ * @default true
+ */
+export declare const USE_JS_FILE_LOADER: boolean;
+/**
+ * Judgement to adding 6-digit hash for image path
+ *
+ * @default true
+ */
+export declare const IS_HASH_JS_FILE_LOADER: boolean;
+/**
+ * JS build minify option
+ *
+ * config key: options.js.minify
+ * @default false
+ */
+export declare const JS_MINIFY: boolean;
+/**
  * JavaScript output (including AltJS) directory name array
  *
  * config key: deployDir.js
  * @default ['common', 'js']
  */
 export declare const OUTPUT_JS_ARRAY: TDirNameKey[];
+/** JS output (including AltJS) absolute directory path */
+export declare const OUTPUT_JS_PATH_ABSOLUTE: TDirPathKey;
 /**
  * Json output directory name array
  *

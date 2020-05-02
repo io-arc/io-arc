@@ -116,6 +116,11 @@ Result `boolean` type.
 Project working space directory.  
 return `src`
 
+### `WS_ROOT_ABSOLUTE`
+
+Project working space directory absolute path.  
+First string is `process.cwd()` and `WS_ROOT` constant.
+
 ### `DIST`
 
 Build output directory.  
@@ -230,7 +235,7 @@ Define using [config](https://www.npmjs.com/package/node-config).
 #### Default
 
 ```javascript
-[
+;[
   { tag: 'img', attribute: 'src', type: 'src' },
   { tag: 'img', attribute: 'srcset', type: 'srcset' },
   { tag: 'img', attribute: 'data-src', type: 'src' },
@@ -258,8 +263,8 @@ Array first is `WS_ROOT` constant.
 
 Define using [config](https://www.npmjs.com/package/node-config).
 
-| data              | value               |
-| ----------------- | ------------------- |
+| data              | value              |
+| ----------------- | ------------------ |
 | config key        | `wsDir.css`        |
 | default directory | `css`              |
 | default result    | `[WS_ROOT, 'css']` |
@@ -281,10 +286,10 @@ CSS build using file-loader.
 
 Define using [config](https://www.npmjs.com/package/node-config).
 
-| data       | value                         |
-| ---------- | ----------------------------- |
+| data       | value                        |
+| ---------- | ---------------------------- |
 | config key | `options.fileLoader.css.use` |
-| default    | `true`                        |
+| default    | `true`                       |
 
 ### `IS_HASH_CSS_FILE_LOADER`
 
@@ -293,10 +298,10 @@ CSS build using file-loader then judgment to adding 6-digit hash for image path.
 
 Define using [config](https://www.npmjs.com/package/node-config).
 
-| data       | value                          |
-| ---------- | ------------------------------ |
+| data       | value                         |
+| ---------- | ----------------------------- |
 | config key | `options.fileLoader.css.hash` |
-| default    | `true`                         |
+| default    | `true`                        |
 
 ### `OUTPUT_CSS_ARRAY`
 
@@ -315,6 +320,83 @@ Define using [config](https://www.npmjs.com/package/node-config).
 CSS output directory path.  
 First string is `process.cwd()` and `DIST` constant.
 
+### `WS_JS_ARRAY`
+
+Working space for JS (including AltJS) directory name array.  
+Array first is `WS_ROOT` constant.
+
+Define using [config](https://www.npmjs.com/package/node-config).
+
+| data              | value              |
+| ----------------- | ------------------ |
+| config key        | `wsDir.js`         |
+| default directory | `js`               |
+| default result    | `[WS_ROOT, 'css']` |
+
+### `WS_JS_PATH`
+
+Working space for JS (including AltJS) directory path.  
+Build for `WS_JS_ARRAY` to path.
+
+### `WS_JS_PATH_ABSOLUTE`
+
+Working space for JS (including AltJS) directory absolute path.  
+First string is `process.cwd()` and build for `WS_JS_ARRAY` constant.
+
+### `TSCONFIG`
+
+TypeScript config file.  
+Define using [config](https://www.npmjs.com/package/node-config).
+
+| data       | value                 |
+| ---------- | --------------------- |
+| config key | `options.js.tsconfig` |
+| default    | `tsconfig.json`       |
+
+### `JS_SPLIT_FILENAME`
+
+File names for splitting the common logic.  
+Define using [config](https://www.npmjs.com/package/node-config).
+
+| data       | value                      |
+| ---------- | -------------------------- |
+| config key | `options.js.splitFilename` |
+| default    | `null`                     |
+
+### `JS_SOURCE_MAP`
+
+JS build source map output option.  
+Define using [config](https://www.npmjs.com/package/node-config).
+
+| data       | value                  |
+| ---------- | ---------------------- |
+| config key | `options.js.sourceMap` |
+| default    | `false`                |
+
+### `USE_JS_FILE_LOADER`
+
+JS build using file-loader.  
+\* Including AltJS
+
+Define using [config](https://www.npmjs.com/package/node-config).
+
+| data       | value                       |
+| ---------- | --------------------------- |
+| config key | `options.fileLoader.js.use` |
+| default    | `true`                      |
+
+### `IS_HASH_JS_FILE_LOADER`
+
+JS build using file-loader then judgment to adding 6-digit hash for image path.  
+\* Including AltCSS
+
+Define using [config](https://www.npmjs.com/package/node-config).
+
+| data       | value                        |
+| ---------- | ---------------------------- |
+| config key | `options.fileLoader.js.hash` |
+| default    | `true`                       |
+
 ### `OUTPUT_JS_ARRAY`
 
 JavaScript output directory name array.  
@@ -326,6 +408,11 @@ Define using [config](https://www.npmjs.com/package/node-config).
 | ---------- | ------------------ |
 | config key | `deployDir.js`     |
 | default    | `['common', 'js']` |
+
+### `OUTPUT_JS_PATH_ABSOLUTE`
+
+JS output directory path.  
+First string is `process.cwd()` and `DIST` constant.
 
 ### `WS_YAML2JSON_ARRAY`
 

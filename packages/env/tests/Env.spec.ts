@@ -7,7 +7,11 @@ import {
   HTML_MINIFY,
   IS_HASH_CSS_FILE_LOADER,
   IS_HASH_HTML_FILE_LOADER,
+  IS_HASH_JS_FILE_LOADER,
   IS_PRODUCTION,
+  JS_MINIFY,
+  JS_SOURCE_MAP,
+  JS_SPLIT_FILENAME,
   JSON_MINIFY,
   NODE_ENV,
   OUTPUT_CSS_ARRAY,
@@ -15,6 +19,7 @@ import {
   OUTPUT_IMG_ARRAY,
   OUTPUT_IN_PHP,
   OUTPUT_JS_ARRAY,
+  OUTPUT_JS_PATH_ABSOLUTE,
   OUTPUT_JSON_ARRAY,
   SITE_AUTHOR,
   SITE_DESCRIPTION,
@@ -23,8 +28,10 @@ import {
   SITE_TITLE,
   SITE_URL,
   TARGET_HTML_FILE_LOADER,
+  TSCONFIG,
   USE_CSS_FILE_LOADER,
   USE_HTML_FILE_LOADER,
+  USE_JS_FILE_LOADER,
   WS_CSS_ARRAY,
   WS_CSS_PATH,
   WS_CSS_PATH_ABSOLUTE,
@@ -32,7 +39,11 @@ import {
   WS_HTML_PATH,
   WS_HTML_PATH_ABSOLUTE,
   WS_IMG_PATH_ABSOLUTE,
+  WS_JS_ARRAY,
+  WS_JS_PATH,
+  WS_JS_PATH_ABSOLUTE,
   WS_ROOT,
+  WS_ROOT_ABSOLUTE,
   WS_STATIC_ARRAY,
   WS_STATIC_PATH,
   WS_YAML2JSON_ARRAY,
@@ -45,6 +56,10 @@ test('Build mode is not production', () => {
 
 test('Site root', () => {
   expect(SITE_ROOT).toBe('/test/')
+})
+
+test('Working space absolute path', () => {
+  expect(WS_ROOT_ABSOLUTE).toBe(`${process.cwd()}/${WS_ROOT}`)
 })
 
 test('Output directory', () => {
@@ -157,8 +172,48 @@ test('Output CSS directory absolute path', () => {
   expect(OUTPUT_CSS_PATH_ABSOLUTE).toBe(`${process.cwd()}/${DIST}/common/css`)
 })
 
+test('Working space JS directory name array', () => {
+  expect(WS_JS_ARRAY).toEqual([WS_ROOT, 'js'])
+})
+
+test('Working space JS directory path', () => {
+  expect(WS_JS_PATH).toBe(`${WS_ROOT}/js`)
+})
+
+test('Working space JS directory absolute path', () => {
+  expect(WS_JS_PATH_ABSOLUTE).toBe(`${process.cwd()}/${WS_ROOT}/js`)
+})
+
+test('TypeScript config file', () => {
+  expect(TSCONFIG).toBe('tsconfig.json')
+})
+
+test('File names for splitting the common logic', () => {
+  expect(JS_SPLIT_FILENAME).toBe('assets')
+})
+
+test('JS build source map option', () => {
+  expect(JS_SOURCE_MAP).toBe(true)
+})
+
+test('JS build using file-loader', () => {
+  expect(USE_JS_FILE_LOADER).toBe(true)
+})
+
+test('Judgement to adding 6-digit hash for image path in JS', () => {
+  expect(IS_HASH_JS_FILE_LOADER).toBe(true)
+})
+
+test('JS build minify option', () => {
+  expect(JS_MINIFY).toBe(true)
+})
+
 test('Output JavaScript directory name array', () => {
   expect(OUTPUT_JS_ARRAY).toEqual(['common', 'js'])
+})
+
+test('Output JS directory absolute path', () => {
+  expect(OUTPUT_JS_PATH_ABSOLUTE).toBe(`${process.cwd()}/${DIST}/common/js`)
 })
 
 test('Output JSON directory name array', () => {
