@@ -16,3 +16,7 @@ export declare const progressBar: (task: string) => {
     format: string;
     clear: boolean;
 };
+/**
+ * Splitting the common logic
+ */
+export declare const jsSplitChunks: object;

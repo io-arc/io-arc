@@ -16,6 +16,16 @@ export default {
 }
 ```
 
+## Variables
+
+### `jsSplitChunks`
+
+Splitting the common logic for JavaScript.  
+Define using [config](https://www.npmjs.com/package/node-config).  
+config key is `options.js.splitFilename`.
+
+If you don't want to split, delete the config key.
+
 ## Functions
 
 ### `stats(object?: boolean | "normal" | "none" | "verbose" | "errors-only" | "errors-warnings" | "minimal" | Configuration['stats'] | undefined)`

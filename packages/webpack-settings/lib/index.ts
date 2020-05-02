@@ -2,6 +2,7 @@ import { TTaskName } from '@io-arc/types'
 import { Configuration } from 'webpack'
 import { webpackPerformanceDefault, webpackStatsDefault } from './data'
 import { blue, yellow, green } from 'kleur'
+import { BUILD, JS_SPLIT_FILENAME, NODE_ENV } from '@io-arc/env'
 
 /**
  * webpack config stats
@@ -30,3 +31,17 @@ export const progressBar = (
   )} (:elapseds)`,
   clear: true
 })
+
+/**
+ * Splitting the common logic
+ */
+export const jsSplitChunks: object =
+  NODE_ENV === BUILD.TEST || JS_SPLIT_FILENAME === null
+    ? {}
+    : {
+        splitChunks: {
+          name: JS_SPLIT_FILENAME,
+          chunks: 'all',
+          minChunks: 2
+        }
+      }
