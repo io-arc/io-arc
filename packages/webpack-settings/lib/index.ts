@@ -2,7 +2,16 @@ import { TTaskName } from '@io-arc/types'
 import { Configuration } from 'webpack'
 import { webpackPerformanceDefault, webpackStatsDefault } from './data'
 import { blue, yellow, green } from 'kleur'
-import { BUILD, JS_SPLIT_FILENAME, NODE_ENV } from '@io-arc/env'
+import {
+  BUILD,
+  IS_PRODUCTION,
+  JS_SPLIT_FILENAME,
+  NODE_ENV,
+  SITE_AUTHOR,
+  SITE_ROOT,
+  SITE_TITLE,
+  SITE_URL
+} from '@io-arc/env'
 
 /**
  * webpack config stats
@@ -45,3 +54,14 @@ export const jsSplitChunks: object =
           minChunks: 2
         }
       }
+
+/**
+ * Global constant for webpack
+ */
+export const webpackDefine = {
+  IS_PRODUCTION: JSON.stringify(IS_PRODUCTION),
+  TITLE: JSON.stringify(SITE_TITLE),
+  URL: JSON.stringify(SITE_URL),
+  AUTHOR: JSON.stringify(SITE_AUTHOR),
+  SITE_ROOT: JSON.stringify(SITE_ROOT)
+}

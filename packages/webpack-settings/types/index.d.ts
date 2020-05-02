@@ -20,3 +20,13 @@ export declare const progressBar: (task: string) => {
  * Splitting the common logic
  */
 export declare const jsSplitChunks: object;
+/**
+ * Global constant for webpack
+ */
+export declare const webpackDefine: {
+    IS_PRODUCTION: string;
+    TITLE: string;
+    URL: string;
+    AUTHOR: string;
+    SITE_ROOT: string;
+};

@@ -26,6 +26,18 @@ config key is `options.js.splitFilename`.
 
 If you don't want to split, delete the config key.
 
+### `webpackDefine`
+
+Global constant for webpack.
+
+| variable        | @io-arc/env                                                                    |
+| --------------- | ------------------------------------------------------------------------------ |
+| `IS_PRODUCTION` | [`IS_PRODUCTION`](https://github.com/io-arc/io-arc/packages/env#is_production) |
+| `TITLE`         | [`SITE_TITLE`](https://github.com/io-arc/io-arc/packages/env#site_title)       |
+| `URL`           | [`SITE_URL`](https://github.com/io-arc/io-arc/packages/env#site_url)           |
+| `AUTHOR`        | [`SITE_AUTHOR`](https://github.com/io-arc/io-arc/packages/env#site_author)     |
+| `SITE_ROOT`     | [`SITE_ROOT`](https://github.com/io-arc/io-arc/packages/env#site_root)         |
+
 ## Functions
 
 ### `stats(object?: boolean | "normal" | "none" | "verbose" | "errors-only" | "errors-warnings" | "minimal" | Configuration['stats'] | undefined)`
