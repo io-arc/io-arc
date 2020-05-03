@@ -9,3 +9,10 @@ declare module '*.jpeg'
 declare module '*.gif'
 declare module '*.svg'
 declare module '*.webp'
+
+/* webpack define */
+declare const IS_PRODUCTION: boolean
+declare const SITE_TITLE: string
+declare const SITE_URL: string
+declare const SITE_AUTHOR: string
+declare const SITE_ROOT: string

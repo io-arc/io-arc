@@ -18,4 +18,4 @@ worker.onmessage = (event) => {}
 worker.addEventListener('message', (event) => {})
 
 const a = 0
-console.log(TITLE)
+console.log(SITE_TITLE)

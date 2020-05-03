@@ -45,7 +45,7 @@ globals:
   Atomics: readonly
   SharedArrayBuffer: readonly
   IS_PRODUCTION: readonly
-  TITLE: readonly
-  URL: readonly
-  AUTHOR: readonly
+  SITE_TITLE: readonly
+  SITE_URL: readonly
+  SITE_AUTHOR: readonly
   SITE_ROOT: readonly

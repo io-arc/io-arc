@@ -25,8 +25,8 @@ export declare const jsSplitChunks: object;
  */
 export declare const webpackDefine: {
     IS_PRODUCTION: string;
-    TITLE: string;
-    URL: string;
-    AUTHOR: string;
+    SITE_TITLE: string;
+    SITE_URL: string;
+    SITE_AUTHOR: string;
     SITE_ROOT: string;
 };

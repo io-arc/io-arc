@@ -60,8 +60,8 @@ export const jsSplitChunks: object =
  */
 export const webpackDefine = {
   IS_PRODUCTION: JSON.stringify(IS_PRODUCTION),
-  TITLE: JSON.stringify(SITE_TITLE),
-  URL: JSON.stringify(SITE_URL),
-  AUTHOR: JSON.stringify(SITE_AUTHOR),
+  SITE_TITLE: JSON.stringify(SITE_TITLE),
+  SITE_URL: JSON.stringify(SITE_URL),
+  SITE_AUTHOR: JSON.stringify(SITE_AUTHOR),
   SITE_ROOT: JSON.stringify(SITE_ROOT)
 }

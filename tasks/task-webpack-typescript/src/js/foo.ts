@@ -9,3 +9,5 @@ console.log(j.all())
 // console.log(abc)
 
 console.log(logo)
+console.log(SITE_TITLE)
+console.log(IS_PRODUCTION)
