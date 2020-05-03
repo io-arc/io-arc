@@ -52,20 +52,25 @@ export default null as any
 
 ```typescript
 // App.ts
-import Worker from "./workers/Worker";
+import Worker from './workers/Worker'
 
-const worker = new Worker();
+const worker = new Worker()
 
-worker.postMessage({ a: 1 });
-worker.onmessage = (event) => {};
+worker.postMessage({ a: 1 })
+worker.onmessage = (event) => {}
 
-worker.addEventListener("message", (event) => {});
+worker.addEventListener('message', (event) => {})
 ```
+
+## (variable) `babelLoader`
+
+Babel loader.
+Using [babel-loader](https://github.com/babel/babel-loader).
 
 ## `TypescriptLoader(vue: boolean = false)`
 
 TypeScript loader.  
-Using [ts-loader](https://github.com/TypeStrong/ts-loader)  
+Using [ts-loader](https://github.com/TypeStrong/ts-loader).  
 Parameter `true` is adding `.vue`.
 
 ## `EslintLoader(eslint: string = '')`
