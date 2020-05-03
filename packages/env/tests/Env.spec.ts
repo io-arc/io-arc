@@ -4,6 +4,7 @@ import {
   DEPLOY_YAML2JSON_ARRAY,
   DIST,
   DIST_ABSOLUTE,
+  ESLINT,
   HTML_MINIFY,
   IS_HASH_CSS_FILE_LOADER,
   IS_HASH_HTML_FILE_LOADER,
@@ -194,6 +195,10 @@ test('File names for splitting the common logic', () => {
 
 test('JS build source map option', () => {
   expect(JS_SOURCE_MAP).toBe(true)
+})
+
+test('ESLint config file', () => {
+  expect(ESLINT).toBe('.eslintrc')
 })
 
 test('JS build using file-loader', () => {

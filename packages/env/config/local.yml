@@ -37,6 +37,7 @@ options:
     tsconfig: tsconfig.json
     splitFilename: assets
     sourceMap: true
+    eslint: '.eslintrc'
 
   json:
     minify: true

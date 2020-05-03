@@ -309,6 +309,18 @@ export const TSCONFIG: TFileName = getConfig<TFileName>(
 export const JS_SOURCE_MAP = getConfig<boolean>('options.js.sourceMap', false)
 
 /**
+ * ESLint config file
+ * Only specified when not in the ESLint configuration file format
+ *
+ * config key: options.js.eslint
+ * @default undefined
+ */
+export const ESLINT: TFileName | undefined = getConfig<TFileName | undefined>(
+  'options.js.eslint',
+  undefined
+)
+
+/**
  * JS build using file-loader
  *
  * @default true

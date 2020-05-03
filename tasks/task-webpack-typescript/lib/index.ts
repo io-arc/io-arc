@@ -1,5 +1,6 @@
 import {
   DIST,
+  ESLINT,
   IS_HASH_JS_FILE_LOADER,
   JS_MINIFY,
   JS_SOURCE_MAP,
@@ -100,7 +101,7 @@ export const js: Configuration = {
   },
   module: {
     exprContextCritical: false,
-    rules: [workerLoader, ...rules, yamlLoader, EslintLoader()]
+    rules: [workerLoader, ...rules, yamlLoader, EslintLoader(ESLINT)]
   },
   plugins: [
     new TaskMessage('TypeScript'),

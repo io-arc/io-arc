@@ -175,6 +175,14 @@ export declare const TSCONFIG: TFileName;
  */
 export declare const JS_SOURCE_MAP: boolean;
 /**
+ * ESLint config file
+ * Only specified when not in the ESLint configuration file format
+ *
+ * config key: options.js.eslint
+ * @default undefined
+ */
+export declare const ESLINT: TFileName | undefined;
+/**
  * JS build using file-loader
  *
  * @default true
