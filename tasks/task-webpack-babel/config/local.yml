@@ -1,0 +1,23 @@
+type: default
+
+# working directory
+wsDir:
+  js: js
+
+outputDir: dist
+
+deployDir:
+  js: [common, js]
+
+options:
+  js:
+    minify: false
+    splitFilename: assets
+    sourceMap: true
+    eslint: .eslintrc.babel.yml
+
+  # use file-loader
+  fileLoader:
+    js:
+      use: true
+      hash: true

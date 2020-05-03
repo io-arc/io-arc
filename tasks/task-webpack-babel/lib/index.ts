@@ -1,4 +1,10 @@
 import {
+  babelLoader,
+  EslintLoader,
+  workerLoader,
+  yamlLoader
+} from '@io-arc/webpack-loaders-js'
+import {
   DIST,
   ESLINT,
   IS_HASH_JS_FILE_LOADER,
@@ -25,12 +31,6 @@ import {
   stats,
   webpackDefine
 } from '@io-arc/webpack-settings'
-import {
-  EslintLoader,
-  TypescriptLoader,
-  workerLoader,
-  yamlLoader
-} from '@io-arc/webpack-loaders-js'
 import TaskMessage from '@io-arc/webpack-plugins-task-message'
 import OutputDirDiff from '@io-arc/output-dir-diff'
 
@@ -39,11 +39,11 @@ const progressBarPlugin = require('progress-bar-webpack-plugin')
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const TerserPlugin = require('terser-webpack-plugin')
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const PrettierPlugin = require('prettier-webpack-plugin')
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const VisualizerPlugin = require('webpack-visualizer-plugin')
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const PrettierPlugin = require('prettier-webpack-plugin')
 
-const rules = [TypescriptLoader()]
+const rules = [babelLoader]
 
 if (USE_JS_FILE_LOADER) {
   rules.push(
@@ -79,10 +79,9 @@ if (MODE_ENV === MODE.ONCE) {
 
 export const js: Configuration = {
   mode: 'none',
-  context: WS_JS_PATH_ABSOLUTE,
   entry: (): Promise<{ [p: string]: TFileName }> =>
     new Promise<{ [p: string]: TFileName }>((resolve): void => {
-      const files = FileListObject(WS_JS_PATH_ABSOLUTE, 't[s,sx]', true)
+      const files = FileListObject(WS_JS_PATH_ABSOLUTE, 'j[s,sx]', true)
       resolve(files)
     }),
   output: {
@@ -93,7 +92,7 @@ export const js: Configuration = {
   },
   optimization: jsSplitChunks,
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.json'],
+    extensions: ['.js', '.jsx', '.json'],
     alias: {
       '~': WS_ROOT_ABSOLUTE,
       '@': WS_ROOT_ABSOLUTE
@@ -104,11 +103,11 @@ export const js: Configuration = {
     rules: [workerLoader, ...rules, yamlLoader, EslintLoader(ESLINT)]
   },
   plugins: [
-    new TaskMessage('TypeScript'),
+    new TaskMessage('Babel'),
     new webpack.DefinePlugin(webpackDefine),
-    new progressBarPlugin(progressBar('TypeScript')),
+    new progressBarPlugin(progressBar('Babel')),
     new PrettierPlugin({
-      extensions: ['.js', '.jsx', '.ts', '.tsx', '.yaml', '.yml']
+      extensions: ['.js', '.jsx', '.yaml', '.json']
     }),
     ...plugins
   ],

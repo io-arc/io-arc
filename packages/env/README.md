@@ -373,6 +373,16 @@ Define using [config](https://www.npmjs.com/package/node-config).
 | config key | `options.js.sourceMap` |
 | default    | `false`                |
 
+### `ESLINT`
+
+Only specified when not in the [ESLint](https://eslint.org/) configuration file format.  
+Define using [config](https://www.npmjs.com/package/node-config).
+
+| data       | value               |
+| ---------- | ------------------- |
+| config key | `options.js.eslint` |
+| default    | `undefined`         |
+
 ### `USE_JS_FILE_LOADER`
 
 JS build using file-loader.  

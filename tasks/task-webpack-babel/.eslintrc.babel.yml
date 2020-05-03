@@ -1,9 +1,14 @@
 root: true
 
-parser: '@typescript-eslint/parser'
+parser: babel-eslint
 parserOptions:
   ecmaVersion: 2018
   sourceType: module
+  allowImportExportEverywhere: false
+  ecmaFeatures:
+    globalReturn: false
+  babelOptions:
+    configFile: .babelrc
 
 env:
   browser: true
@@ -12,11 +17,20 @@ env:
   node: true
 
 extends:
-  - plugin:@typescript-eslint/recommended
+  - standard
   - plugin:prettier/recommended
-  - prettier/@typescript-eslint
+
+plugins:
+  - babel
 
 rules:
+  no-mixed-spaces-and-tabs: error
+  eol-last: off
+  no-unused-vars: warn
+  semi: off
+
+  space-before-function-paren: off
+
   prettier/prettier:
     - error
     - trailingComma: none
@@ -30,3 +44,8 @@ rules:
 globals:
   Atomics: readonly
   SharedArrayBuffer: readonly
+  IS_PRODUCTION: readonly
+  TITLE: readonly
+  URL: readonly
+  AUTHOR: readonly
+  SITE_ROOT: readonly

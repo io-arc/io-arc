@@ -1,0 +1,17 @@
+{
+  "presets": [["@babel/preset-env", { "useBuiltIns": "usage", "corejs": 3 }]],
+  "plugins": [
+    "@babel/plugin-syntax-dynamic-import",
+    "@babel/plugin-proposal-class-properties",
+    ["@babel/plugin-transform-template-literals", { "loose": true }],
+    "@babel/plugin-proposal-private-methods"
+  ],
+  "ignore": ["node_modules"],
+  "env": {
+    "test": {
+      "presets": [
+        ["@babel/preset-env", { "targets": { "node": "current" } }]
+      ]
+    }
+  }
+}

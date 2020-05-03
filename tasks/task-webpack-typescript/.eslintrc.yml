@@ -1,4 +1,3 @@
-# TypeScriptを利用
 root: true
 
 parser: '@typescript-eslint/parser'

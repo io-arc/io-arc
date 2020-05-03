@@ -10,6 +10,11 @@ export declare const yamlLoader: RuleSetRule;
  */
 export declare const workerLoader: RuleSetRule;
 /**
+ * Babel loader
+ * Install 'babel-loader', '@babel/core' and '@babel/preset-env'
+ */
+export declare const babelLoader: RuleSetRule;
+/**
  * TypeScript loader
  * Install 'ts-loader'
  *

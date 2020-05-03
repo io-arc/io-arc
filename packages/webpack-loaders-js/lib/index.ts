@@ -31,6 +31,15 @@ export const workerLoader: RuleSetRule = {
 }
 
 /**
+ * Babel loader
+ * Install 'babel-loader', '@babel/core' and '@babel/preset-env'
+ */
+export const babelLoader: RuleSetRule = {
+  test: /\.jsx?$/,
+  loader: 'babel-loader'
+}
+
+/**
  * TypeScript loader
  * Install 'ts-loader'
  *
@@ -64,11 +73,16 @@ export const TypescriptLoader = (vue = false): RuleSetRule => {
  * @constructor
  */
 export const EslintLoader = (eslint: TFileName = ''): RuleSetRule => {
-  const options: { failOnError: boolean; configFile?: TFileName } = {
+  const options: {
+    failOnError: boolean
+    configFile?: TFileName
+  } = {
     failOnError: true
   }
 
-  if (eslint !== '') options.configFile = eslint
+  if (eslint !== '') {
+    options.configFile = eslint
+  }
 
   return {
     test: /\.(jsx?|tsx?|vue)$/,
