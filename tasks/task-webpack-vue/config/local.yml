@@ -15,6 +15,7 @@ options:
     tsconfig: tsconfig.json
     splitFilename: assets
     sourceMap: true
+    eslint: lint/.eslintrc.yml
 
   # use file-loader
   fileLoader:

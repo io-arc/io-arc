@@ -1,6 +1,7 @@
 import webpack, { Configuration, RuleSetLoader } from 'webpack'
 import {
   DIST,
+  ESLINT,
   IS_HASH_JS_FILE_LOADER,
   JS_MINIFY,
   JS_SOURCE_MAP,
@@ -27,7 +28,11 @@ import {
 } from '@io-arc/webpack-settings'
 import TaskMessage from '@io-arc/webpack-plugins-task-message'
 import OutputDirDiff from '@io-arc/output-dir-diff'
-import { workerLoader, yamlLoader } from '@io-arc/webpack-loaders-js'
+import {
+  EslintLoader,
+  workerLoader,
+  yamlLoader
+} from '@io-arc/webpack-loaders-js'
 import { ImageLoader } from '@io-arc/webpack-loaders-image'
 import { PugLintLoader } from '@io-arc/webpack-loaders-pug-linter'
 
@@ -202,7 +207,7 @@ export const js: Configuration = {
       },
       ...rules,
       yamlLoader,
-      // TODO: EslintLoader(ESLINT)
+      EslintLoader(ESLINT),
       PugLintLoader(/\.vue$/, 'vue-pug-lint-loader')
     ]
   },
