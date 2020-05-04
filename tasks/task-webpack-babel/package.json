@@ -17,10 +17,10 @@
   "files": [
     "lib",
     "src",
+    "lint",
     "index.js",
     ".babelrc",
-    ".browserslistrc",
-    ".eslintrc.babel.yml"
+    ".browserslistrc"
   ],
   "publishConfig": {
     "access": "public"

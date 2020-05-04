@@ -14,7 +14,7 @@ options:
     minify: false
     splitFilename: assets
     sourceMap: true
-    eslint: .eslintrc.babel.yml
+    eslint: lint/.eslintrc.yml
 
   # use file-loader
   fileLoader:

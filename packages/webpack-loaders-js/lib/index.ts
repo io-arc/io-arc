@@ -75,12 +75,14 @@ export const TypescriptLoader = (vue = false): RuleSetRule => {
 export const EslintLoader = (eslint: TFileName = ''): RuleSetRule => {
   const options: {
     failOnError: boolean
+    useEslintrc?: boolean
     configFile?: TFileName
   } = {
     failOnError: true
   }
 
   if (eslint !== '') {
+    options.useEslintrc = false
     options.configFile = eslint
   }
 
