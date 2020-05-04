@@ -1,11 +1,12 @@
-# `@io-arc/task-webpack-babel`
+# `@io-arc/task-webpack-vue`
 
-Babel compile for webpack
+[Vue.js](https://vuejs.org/) in Babel compile for webpack.  
+Using [vue-loader](https://vue-loader.vuejs.org/)
 
 ## Usage
 
 ```javascript
-const js = require('@io-arc/task-webpack-babel').js
+const js = require('@io-arc/task-webpack-vue').js
 
 module.exports = js
 ```
@@ -32,6 +33,69 @@ Reference to [@io-arc/env](https://github.com/io-arc/io-arc/packages/env).
 | eslint file           | [`ESLINT`](https://github.com/io-arc/io-arc/packages/env#eslint)                                  |
 
 ## Features
+
+### Use AltHTML
+
+Available by default for Plain HTML and [pug](https://pugjs.org/).
+
+#### example
+
+```vue
+// Use PlainHTML
+<template>
+  <div>...</div>
+</template>
+
+// Use pug
+<template lang="pug">
+div
+  p ...
+</template>
+```
+
+### Use AltCSS
+
+Available by default for CSS, [SCSS](https://sass-lang.com/), [SASS](https://sass-lang.com/) and [Stylus](https://stylus-lang.com/).
+
+```vue
+// CSS
+<style scoped>
+.foo {
+  color: #000;
+}
+</style>
+
+// SCSS
+<style lang="scss" scoped>
+$c: #000;
+.foo {
+  color: $c;
+}
+</style>
+
+// SASS
+<style lang="sass" scoped>
+$c: #000
+.foo
+  color: $c
+</style>
+
+// Stylus
+<style lang="stylus" scoped>
+$c = #000
+.foo
+  color: $c
+</style>
+```
+
+#### Auto insert Bender Prefix
+
+Using [autoprefixer](https://autoprefixer.github.io/).  
+You can use [browserslist](https://github.com/ai/browserslist) to specify.
+
+#### Consolidate to MediaQuery
+
+Using [css-mqpacker](https://github.com/hail2u/node-css-mqpacker).
 
 ### Splitting the common logic
 

@@ -113,9 +113,8 @@ export const js: Configuration = {
   context: WS_JS_PATH_ABSOLUTE,
   entry: (): Promise<{ [p: string]: TFileName }> =>
     new Promise<{ [p: string]: TFileName }>((resolve): void => {
-      const files1 = FileListObject(WS_JS_PATH_ABSOLUTE, 'js', true)
-      const files2 = FileListObject(WS_JS_PATH_ABSOLUTE, 'ts', true)
-      resolve({ ...files1, ...files2 })
+      const files = FileListObject(WS_JS_PATH_ABSOLUTE, 'js', true)
+      resolve(files)
     }),
   output: {
     path: OUTPUT_JS_PATH_ABSOLUTE,
@@ -125,7 +124,7 @@ export const js: Configuration = {
   },
   optimization: jsSplitChunks,
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx', '.json', '.vue'],
+    extensions: ['.js', '.jsx', '.json', '.vue'],
     alias: {
       vue$: 'vue/dist/vue.esm.js',
       '~': WS_ROOT_ABSOLUTE,

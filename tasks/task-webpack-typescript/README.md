@@ -30,6 +30,7 @@ Reference to [@io-arc/env](https://github.com/io-arc/io-arc/packages/env).
 | tsconfig              | [`TSCONFIG`](https://github.com/io-arc/io-arc/packages/env#tsconfig)                              |
 | split common filename | [`JS_SPLIT_FILENAME`](https://github.com/io-arc/io-arc/packages/env#js_split_filename)            |
 | source map            | [`JS_SOURCE_MAP`](https://github.com/io-arc/io-arc/packages/env#js_source_map)                    |
+| eslint file           | [`ESLINT`](https://github.com/io-arc/io-arc/packages/env#eslint)                                  |
 
 ## Features
 
