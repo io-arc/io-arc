@@ -27,11 +27,7 @@ import {
 } from '@io-arc/webpack-settings'
 import TaskMessage from '@io-arc/webpack-plugins-task-message'
 import OutputDirDiff from '@io-arc/output-dir-diff'
-import {
-  babelLoader,
-  workerLoader,
-  yamlLoader
-} from '@io-arc/webpack-loaders-js'
+import { workerLoader, yamlLoader } from '@io-arc/webpack-loaders-js'
 import { ImageLoader } from '@io-arc/webpack-loaders-image'
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -142,7 +138,13 @@ export const js: Configuration = {
           transformAssetUrls: VUE_LOADER_ASSETS
         }
       },
-      babelLoader,
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: (file) => /node_modules/.test(file) && !/\.vue\.js/.test(file)
+      },
+      // TODO: TypScript
+      // TODO: pug
       {
         test: /\.css$/,
         use: ['vue-style-loader', cssLoader, postCssLoader]
