@@ -95,8 +95,9 @@ export const css: Configuration = {
   watch: MODE_ENV === MODE.WATCH,
   entry: (): Promise<{ [p: string]: TFileName }> =>
     new Promise<{ [p: string]: TFileName }>((resolve): void => {
-      const files = FileListObject(WS_CSS_PATH_ABSOLUTE, 's[a,c]ss')
-      resolve(files)
+      const files1 = FileListObject(WS_CSS_PATH_ABSOLUTE, 'sass')
+      const files2 = FileListObject(WS_CSS_PATH_ABSOLUTE, 'scss')
+      resolve({ ...files1, ...files2 })
     }),
   output: {
     path: OUTPUT_CSS_PATH_ABSOLUTE

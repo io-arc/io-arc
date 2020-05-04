@@ -81,8 +81,9 @@ export const js: Configuration = {
   mode: 'none',
   entry: (): Promise<{ [p: string]: TFileName }> =>
     new Promise<{ [p: string]: TFileName }>((resolve): void => {
-      const files = FileListObject(WS_JS_PATH_ABSOLUTE, 'j[s,sx]', true)
-      resolve(files)
+      const files1 = FileListObject(WS_JS_PATH_ABSOLUTE, 'js', true)
+      const files2 = FileListObject(WS_JS_PATH_ABSOLUTE, 'jsx', true)
+      resolve({ ...files1, ...files2 })
     }),
   output: {
     path: OUTPUT_JS_PATH_ABSOLUTE,
