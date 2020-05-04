@@ -211,6 +211,15 @@ export declare const OUTPUT_JS_ARRAY: TDirNameKey[];
 /** JS output (including AltJS) absolute directory path */
 export declare const OUTPUT_JS_PATH_ABSOLUTE: TDirPathKey;
 /**
+ * vue-loader transformAssetUrls option
+ * Set options.fileLoader.vue.use to true to enable it
+ *
+ * @default {}
+ */
+export declare const VUE_LOADER_ASSETS: {
+    [p: string]: string | string[];
+};
+/**
  * Json output directory name array
  *
  * config key: deployDir.json

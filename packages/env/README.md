@@ -234,8 +234,8 @@ Define using [config](https://www.npmjs.com/package/node-config).
 
 #### Default
 
-```javascript
-;[
+```
+[
   { tag: 'img', attribute: 'src', type: 'src' },
   { tag: 'img', attribute: 'srcset', type: 'srcset' },
   { tag: 'img', attribute: 'data-src', type: 'src' },
@@ -423,6 +423,33 @@ Define using [config](https://www.npmjs.com/package/node-config).
 
 JS output directory path.  
 First string is `process.cwd()` and `DIST` constant.
+
+### `VUE_LOADER_ASSETS`
+
+[vue-loader](https://vue-loader.vuejs.org/) transformAssetUrls option.  
+If it is not used, set `options.fileLoader.vue.use` to `false` to disable it.
+
+Define using [config](https://www.npmjs.com/package/node-config).
+
+| data                    | value                                          |
+| ----------------------- | ---------------------------------------------- |
+| deactivation/activation | `options.fileLoader.vue.use` (default: `true`) |
+| config key              | `options.fileLoader.vue.loader                 |
+| default                 | below                                          |
+
+#### Default
+
+[vue-loader](https://vue-loader.vuejs.org/options.html#transformasseturls) defaults.
+
+```
+{
+  video: ['src', 'poster'],
+  source: 'src',
+  img: 'src',
+  image: ['xlink:href', 'href'],
+  use: ['xlink:href', 'href']
+}
+```
 
 ### `WS_YAML2JSON_ARRAY`
 

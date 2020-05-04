@@ -33,6 +33,7 @@ import {
   USE_CSS_FILE_LOADER,
   USE_HTML_FILE_LOADER,
   USE_JS_FILE_LOADER,
+  VUE_LOADER_ASSETS,
   WS_CSS_ARRAY,
   WS_CSS_PATH,
   WS_CSS_PATH_ABSOLUTE,
@@ -219,6 +220,14 @@ test('Output JavaScript directory name array', () => {
 
 test('Output JS directory absolute path', () => {
   expect(OUTPUT_JS_PATH_ABSOLUTE).toBe(`${process.cwd()}/${DIST}/common/js`)
+})
+
+test('vue-loader transformAssetUrls', () => {
+  expect(VUE_LOADER_ASSETS).toEqual({
+    video: ['src', 'poster'],
+    source: 'src',
+    img: 'src'
+  })
 })
 
 test('Output JSON directory name array', () => {
