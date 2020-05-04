@@ -142,9 +142,10 @@ export const js: Configuration = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
+        // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
         exclude: (file) => /node_modules/.test(file) && !/\.vue\.js/.test(file)
       },
-      // TODO: TypScript
+      // TODO: TypScriptは@io-arc/task-webpack-vue-typescriptとして分ける
       {
         test: /\.pug$/,
         loader: 'pug-plain-loader',
