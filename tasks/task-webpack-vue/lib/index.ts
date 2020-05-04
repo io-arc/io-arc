@@ -29,6 +29,7 @@ import TaskMessage from '@io-arc/webpack-plugins-task-message'
 import OutputDirDiff from '@io-arc/output-dir-diff'
 import { workerLoader, yamlLoader } from '@io-arc/webpack-loaders-js'
 import { ImageLoader } from '@io-arc/webpack-loaders-image'
+import { PugLintLoader } from '@io-arc/webpack-loaders-pug-linter'
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const progressBarPlugin = require('progress-bar-webpack-plugin')
@@ -144,7 +145,14 @@ export const js: Configuration = {
         exclude: (file) => /node_modules/.test(file) && !/\.vue\.js/.test(file)
       },
       // TODO: TypScript
-      // TODO: pug
+      {
+        test: /\.pug$/,
+        loader: 'pug-plain-loader',
+        options: {
+          doctype: 'html',
+          pretty: true
+        }
+      },
       {
         test: /\.css$/,
         use: ['vue-style-loader', cssLoader, postCssLoader]
@@ -192,8 +200,9 @@ export const js: Configuration = {
         ]
       },
       ...rules,
-      yamlLoader
+      yamlLoader,
       // TODO: EslintLoader(ESLINT)
+      PugLintLoader(/\.vue$/, 'vue-pug-lint-loader')
     ]
   },
   plugins: [

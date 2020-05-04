@@ -1,21 +1,19 @@
-<template>
-  <div>
-    <p class="stt-aaa">{{ stt }}</p>
-    <p>abc</p>
-  </div>
+<template lang="pug">
+  .paa
+    .paa-context {{paa}}
 </template>
 
 <script>
 export default {
   data() {
     return {
-      stt: 'io arc'
+      paa: 'io-arc'
     }
   }
 }
 </script>
 
 <style lang="stylus" scoped>
-.stt
-  color: #bb0000
+.paa
+  color: #ffffff
 </style>
