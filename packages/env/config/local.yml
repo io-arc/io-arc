@@ -71,3 +71,11 @@ options:
     js:
       use: true
       hash: true
+
+    vue:
+      use: true
+      # vue-loader transformAssetUrls
+      loader:
+        video: [src, poster]
+        source: src
+        img: src

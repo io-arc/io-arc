@@ -366,6 +366,39 @@ export const OUTPUT_JS_PATH_ABSOLUTE: TDirPathKey = PathBuild.absolute([
 ])
 
 /**
+ * vue-loader transformAssetUrls option
+ * Set options.fileLoader.vue.use to true to enable it
+ *
+ * @default {}
+ */
+export const VUE_LOADER_ASSETS: { [p: string]: string | string[] } = ((): {
+  [p: string]: string | string[]
+} => {
+  const use = getConfig<boolean>('options.fileLoader.vue.use', true)
+
+  // not use
+  if (!use) return {}
+
+  const loader = getConfig<{ [p: string]: string | string[] } | null>(
+    'options.fileLoader.vue.loader',
+    null
+  )
+
+  if (loader === null) {
+    // vue-loader default
+    return {
+      video: ['src', 'poster'],
+      source: 'src',
+      img: 'src',
+      image: ['xlink:href', 'href'],
+      use: ['xlink:href', 'href']
+    }
+  }
+
+  return loader
+})()
+
+/**
  * Json output directory name array
  *
  * config key: deployDir.json

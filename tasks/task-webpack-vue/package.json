@@ -1,15 +1,19 @@
 {
-  "name": "@io-arc/task-webpack-babel",
+  "name": "@io-arc/task-webpack-vue",
   "version": "0.0.0",
-  "description": "Babel compile for webpack",
+  "description": "Vue.js compile for webpack",
   "keywords": [
     "webpack",
-    "babel"
+    "vue",
+    "TypeScript",
+    "Babel",
+    "JavaScript"
   ],
   "author": "arc one",
-  "homepage": "https://github.com/io-arc/io-arc/tasks/task-webpack-babel",
+  "homepage": "https://github.com/io-arc/io-arc/tasks/tasks-webpack-vue",
   "license": "ISC",
   "main": "index.js",
+  "types": "types/index.d.ts",
   "directories": {
     "lib": "lib",
     "test": "tests"
@@ -17,10 +21,10 @@
   "files": [
     "lib",
     "src",
-    "lint",
-    "index.js",
+    "types",
     ".babelrc",
-    ".browserslistrc"
+    ".browserslistrc",
+    "index.js"
   ],
   "publishConfig": {
     "access": "public"
@@ -33,9 +37,7 @@
     "prebuild": "eslint lib/*.ts",
     "build": "rollup -c",
     "postbuild": "tsc --emitDeclarationOnly",
-    "webpack:once": "NODE_ENV=development MODE_ENV=once webpack",
-    "webpack:watch": "NODE_ENV=development MODE_ENV=watch webpack",
-    "webpack:prod": "NODE_ENV=production MODE_ENV=once webpack"
+    "webpack:once": "NODE_ENV=development MODE_ENV=once TS_NODE_PROJECT=\"tsconfig.webpack.json\" webpack"
   },
   "dependencies": {
     "@babel/core": "^7.9.6",
@@ -51,13 +53,15 @@
     "@io-arc/types": "^0.0.0",
     "@io-arc/webpack-loaders-image": "^0.0.0",
     "@io-arc/webpack-loaders-js": "^0.0.0",
+    "@io-arc/webpack-loaders-pug-linter": "^0.0.0",
     "@io-arc/webpack-plugins-task-message": "^0.0.0",
     "@io-arc/webpack-settings": "^0.0.0",
     "@types/config": "^0.0.36",
-    "babel-eslint": "^10.1.0",
+    "autoprefixer": "^9.7.6",
     "babel-loader": "^8.1.0",
     "config": "^3.3.1",
-    "core-js": "3",
+    "css-loader": "^3.5.3",
+    "css-mqpacker": "^7.0.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-config-standard": "^14.1.1",
@@ -67,15 +71,24 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
+    "eslint-plugin-vue": "^6.2.2",
+    "node-sass": "^4.14.0",
     "prettier": "^2.0.5",
     "prettier-webpack-plugin": "^1.2.0",
+    "pug": "^2.0.4",
+    "pug-plain-loader": "^1.0.0",
+    "sass-loader": "^8.0.2",
+    "stylus": "^0.54.7",
+    "stylus-loader": "^3.0.2",
+    "vue": "^2.6.11",
+    "vue-loader": "^15.9.2",
+    "vue-pug-lint-loader": "^0.0.1",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.6.11",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
     "webpack-visualizer-plugin": "^0.1.11",
     "worker-loader": "^2.0.0",
     "yaml-loader": "^0.6.0"
-  },
-  "devDependencies": {
-    "lodash": "^4.17.15"
   }
 }
