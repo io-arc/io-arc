@@ -4,7 +4,7 @@
   "description": "Vue.js compile for webpack",
   "keywords": [
     "webpack",
-    "vue",
+    "Vue",
     "TypeScript",
     "Babel",
     "JavaScript"
@@ -22,6 +22,7 @@
     "lib",
     "src",
     "types",
+    "lint",
     ".babelrc",
     ".browserslistrc",
     "index.js"
@@ -37,7 +38,7 @@
     "prebuild": "eslint lib/*.ts",
     "build": "rollup -c",
     "postbuild": "tsc --emitDeclarationOnly",
-    "webpack:once": "NODE_ENV=development MODE_ENV=once TS_NODE_PROJECT=\"tsconfig.webpack.json\" webpack"
+    "webpack:once": "NODE_ENV=development MODE_ENV=once webpack"
   },
   "dependencies": {
     "@babel/core": "^7.9.6",
