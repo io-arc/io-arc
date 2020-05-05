@@ -110,10 +110,10 @@ Constants configure to [config](https://www.npmjs.com/package/node-config).
 
 | constants       | config key                                          | description                                   | @io-arc/env                                                                          |
 | --------------- | --------------------------------------------------- | --------------------------------------------- | ------------------------------------------------------------------------------------ |
-| `IS_PRODUCTION` | `NODE_ENV=production(development)` in `npm scripts` | Whether the build mode is "production" or not |                                                                                      |
-| `TITLE`         | `title`                                             | Site title                                    | [`SITE_TITLE`](https://github.com/io-arc/io-arc/packages/env#site_title)             |
-| `URL`           | `url` and `siteRoot`                                | Site URL                                      | [`SITE_URL`](https://github.com/io-arc/io-arc/packages/env#site_url)                 |
-| `AUTHOR`        | `author`                                            | Site author                                   | [`SITE_AUTHOR`](https://github.com/io-arc/io-arc/packages/env#site_author)           |
+| `IS_PRODUCTION` | `NODE_ENV=production(development)` in `npm scripts` | Whether the build mode is "production" or not | [`IS_PRODUCTION`](https://github.com/io-arc/io-arc/packages/env#is_production)       |
+| `SITE_TITLE`    | `title`                                             | Site title                                    | [`SITE_TITLE`](https://github.com/io-arc/io-arc/packages/env#site_title)             |
+| `SITE_URL`      | `url` and `siteRoot`                                | Site URL                                      | [`SITE_URL`](https://github.com/io-arc/io-arc/packages/env#site_url)                 |
+| `SITE_AUTHOR`   | `author`                                            | Site author                                   | [`SITE_AUTHOR`](https://github.com/io-arc/io-arc/packages/env#site_author)           |
 | `SITE_ROOT`     | `siteRoot`                                          | Site root path (e.g. /)                       | [`SITE_DESCRIPTION`](https://github.com/io-arc/io-arc/packages/env#site_description) |
 
 ### Using library visualizer
