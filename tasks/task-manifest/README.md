@@ -24,7 +24,7 @@ Property see is the [MDN](https://developer.mozilla.org/ja/docs/Web/Manifest).
 
 If not specified in manifest.yml  
 Default using [config](https://www.npmjs.com/package/node-config).  
-Reference a [`@io-arc/env`](https://github.com/io-arc/io-arc/packages/env).
+Reference a [@io-arc/env](https://github.com/io-arc/io-arc/packages/env).
 
 | property             | default                                                                   |
 | -------------------- | ------------------------------------------------------------------------- |
