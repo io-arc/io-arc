@@ -28,13 +28,6 @@ interface ManifestJSON {
    */
   name?: string
 
-  /** Display icon */
-  icons: {
-    src: string
-    sizes: string
-    type: string
-  }[]
-
   /** @default [] */
   related_applications?: {
     platform: string
