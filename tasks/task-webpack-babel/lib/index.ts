@@ -34,15 +34,6 @@ import {
 import TaskMessage from '@io-arc/webpack-plugins-task-message'
 import OutputDirDiff from '@io-arc/output-dir-diff'
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const progressBarPlugin = require('progress-bar-webpack-plugin')
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const TerserPlugin = require('terser-webpack-plugin')
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const VisualizerPlugin = require('webpack-visualizer-plugin')
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const PrettierPlugin = require('prettier-webpack-plugin')
-
 const rules = [babelLoader]
 
 if (USE_JS_FILE_LOADER) {
@@ -54,6 +45,9 @@ if (USE_JS_FILE_LOADER) {
 const plugins = []
 
 if (JS_MINIFY) {
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const TerserPlugin = require('terser-webpack-plugin')
+
   plugins.push(
     new TerserPlugin({
       parallel: true,
@@ -70,12 +64,22 @@ if (JS_MINIFY) {
 
 if (MODE_ENV === MODE.ONCE) {
   const root = new OutputDirDiff([DIST, ...OUTPUT_JS_ARRAY], [])
+
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const VisualizerPlugin = require('webpack-visualizer-plugin')
+
   plugins.push(
     new VisualizerPlugin({
       filename: root.targetRelativePath() + 'stats/index.html'
     })
   )
 }
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const progressBarPlugin = require('progress-bar-webpack-plugin')
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const PrettierPlugin = require('prettier-webpack-plugin')
 
 export const js: Configuration = {
   mode: 'none',

@@ -32,21 +32,15 @@ import TaskMessage from '@io-arc/webpack-plugins-task-message'
 import { performance, progressBar, stats } from '@io-arc/webpack-settings'
 import { PugLintLoader } from '@io-arc/webpack-loaders-pug-linter'
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const phpFilter = require('pug-php-filter')
-
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const extractTextPlugin = require('extract-text-webpack-plugin')
-
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const progressBarPlugin = require('progress-bar-webpack-plugin')
-
 const htmlLoader: RuleSetRule = {
   loader: 'html-loader',
   options: {
     attributes: USE_HTML_FILE_LOADER ? { list: TARGET_HTML_FILE_LOADER } : false
   }
 }
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const phpFilter = require('pug-php-filter')
 
 const pugLoader: RuleSetRule = {
   loader: 'pug-html-loader',
@@ -83,6 +77,11 @@ const pugLoader: RuleSetRule = {
 }
 
 const ext = OUTPUT_IN_PHP ? 'php' : 'html'
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const extractTextPlugin = require('extract-text-webpack-plugin')
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const progressBarPlugin = require('progress-bar-webpack-plugin')
 
 export const html: Configuration = {
   mode: NODE_ENV as TWebpackMode,

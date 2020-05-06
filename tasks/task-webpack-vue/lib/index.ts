@@ -36,17 +36,6 @@ import {
 import { ImageLoader } from '@io-arc/webpack-loaders-image'
 import { PugLintLoader } from '@io-arc/webpack-loaders-pug-linter'
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const progressBarPlugin = require('progress-bar-webpack-plugin')
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const TerserPlugin = require('terser-webpack-plugin')
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const PrettierPlugin = require('prettier-webpack-plugin')
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const VisualizerPlugin = require('webpack-visualizer-plugin')
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
-
 const cssLoader: RuleSetLoader = {
   loader: 'css-loader',
   options: {
@@ -85,6 +74,9 @@ if (USE_JS_FILE_LOADER) {
 const plugins = []
 
 if (JS_MINIFY) {
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const TerserPlugin = require('terser-webpack-plugin')
+
   plugins.push(
     new TerserPlugin({
       parallel: true,
@@ -101,12 +93,23 @@ if (JS_MINIFY) {
 
 if (MODE_ENV === MODE.ONCE) {
   const root = new OutputDirDiff([DIST, ...OUTPUT_JS_ARRAY], [])
+
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const VisualizerPlugin = require('webpack-visualizer-plugin')
+
   plugins.push(
     new VisualizerPlugin({
       filename: root.targetRelativePath() + 'stats/index.html'
     })
   )
 }
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const progressBarPlugin = require('progress-bar-webpack-plugin')
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const PrettierPlugin = require('prettier-webpack-plugin')
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 export const js: Configuration = {
   mode: 'none',

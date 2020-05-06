@@ -17,17 +17,6 @@ import { ImageLoader } from '@io-arc/webpack-loaders-image'
 import TaskMessage from '@io-arc/webpack-plugins-task-message'
 import { performance, progressBar, stats } from '@io-arc/webpack-settings'
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const webpackFixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries')
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const miniCssExtractPlugin = require('mini-css-extract-plugin')
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const progressBarPlugin = require('progress-bar-webpack-plugin')
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const optimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const safe = require('postcss-safe-parser')
-
 const cssLoader: RuleSetLoader = {
   loader: 'css-loader',
   options: {
@@ -44,6 +33,9 @@ const resolveUrlLoader: RuleSetLoader = {
     keepQuery: true
   }
 }
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const miniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const miniCssExtractPluginLoader: RuleSetLoader = {
   loader: miniCssExtractPlugin.loader,
@@ -79,6 +71,11 @@ const sassLoader: RuleSetLoader = {
 
 const plugins = []
 if (CSS_MINIFY) {
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const optimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const safe = require('postcss-safe-parser')
+
   plugins.push(
     new optimizeCssAssetsPlugin({
       cssProcessorOptions: {
@@ -88,6 +85,11 @@ if (CSS_MINIFY) {
     })
   )
 }
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const webpackFixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries')
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const progressBarPlugin = require('progress-bar-webpack-plugin')
 
 export const css: Configuration = {
   mode: NODE_ENV as TWebpackMode,
