@@ -16,6 +16,8 @@ import {
   WS_JS_PATH_ABSOLUTE,
   WS_ROOT_ABSOLUTE
 } from '@io-arc/env'
+import { ImageLoader } from '@io-arc/webpack-loaders-image'
+import OutputDirDiff from '@io-arc/output-dir-diff'
 import { TFileName } from '@io-arc/types'
 import { FileListObject } from '@io-arc/file-list'
 import PathBuild from '@io-arc/path-build'
@@ -26,26 +28,14 @@ import {
   stats,
   webpackDefine
 } from '@io-arc/webpack-settings'
-import TaskMessage from '@io-arc/webpack-plugins-task-message'
-import OutputDirDiff from '@io-arc/output-dir-diff'
 import {
   EslintLoader,
+  TypescriptLoader,
   workerLoader,
   yamlLoader
 } from '@io-arc/webpack-loaders-js'
-import { ImageLoader } from '@io-arc/webpack-loaders-image'
 import { PugLintLoader } from '@io-arc/webpack-loaders-pug-linter'
-
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const progressBarPlugin = require('progress-bar-webpack-plugin')
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const TerserPlugin = require('terser-webpack-plugin')
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const PrettierPlugin = require('prettier-webpack-plugin')
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const VisualizerPlugin = require('webpack-visualizer-plugin')
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
+import TaskMessage from '@io-arc/webpack-plugins-task-message'
 
 const cssLoader: RuleSetLoader = {
   loader: 'css-loader',
@@ -85,6 +75,9 @@ if (USE_JS_FILE_LOADER) {
 const plugins = []
 
 if (JS_MINIFY) {
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const TerserPlugin = require('terser-webpack-plugin')
+
   plugins.push(
     new TerserPlugin({
       parallel: true,
@@ -100,6 +93,9 @@ if (JS_MINIFY) {
 }
 
 if (MODE_ENV === MODE.ONCE) {
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const VisualizerPlugin = require('webpack-visualizer-plugin')
+
   const root = new OutputDirDiff([DIST, ...OUTPUT_JS_ARRAY], [])
   plugins.push(
     new VisualizerPlugin({
@@ -108,12 +104,19 @@ if (MODE_ENV === MODE.ONCE) {
   )
 }
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const progressBarPlugin = require('progress-bar-webpack-plugin')
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const PrettierPlugin = require('prettier-webpack-plugin')
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
+
 export const js: Configuration = {
   mode: 'none',
   context: WS_JS_PATH_ABSOLUTE,
   entry: (): Promise<{ [p: string]: TFileName }> =>
     new Promise<{ [p: string]: TFileName }>((resolve): void => {
-      const files = FileListObject(WS_JS_PATH_ABSOLUTE, 'js', true)
+      const files = FileListObject(WS_JS_PATH_ABSOLUTE, 'ts', true)
       resolve(files)
     }),
   output: {
@@ -124,7 +127,7 @@ export const js: Configuration = {
   },
   optimization: jsSplitChunks,
   resolve: {
-    extensions: ['.js', '.jsx', '.json', '.vue'],
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.json', '.vue'],
     alias: {
       vue$: 'vue/dist/vue.esm.js',
       '~': WS_ROOT_ABSOLUTE,
@@ -133,7 +136,6 @@ export const js: Configuration = {
   },
   module: {
     exprContextCritical: false,
-
     rules: [
       workerLoader,
       {
@@ -143,12 +145,7 @@ export const js: Configuration = {
           transformAssetUrls: VUE_LOADER_ASSETS
         }
       },
-      {
-        test: /\.js$/,
-        loader: 'babel-loader',
-        // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-        exclude: (file) => /node_modules/.test(file) && !/\.vue\.js/.test(file)
-      },
+      TypescriptLoader(true),
       {
         test: /\.pug$/,
         loader: 'pug-plain-loader',

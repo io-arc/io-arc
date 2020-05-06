@@ -1,0 +1,51 @@
+root: true
+
+parser: vue-eslint-parser
+parserOptions:
+  parser: babel-eslint
+  ecmaVersion: 2018
+  sourceType: module
+  allowImportExportEverywhere: false
+  ecmaFeatures:
+    globalReturn: false
+
+env:
+  browser: true
+  es6: true
+  worker: true
+  node: true
+
+extends:
+  - plugin:@typescript-eslint/recommended
+  - plugin:prettier/recommended
+  - plugin:vue/recommended
+  - prettier/@typescript-eslint
+  - prettier/vue
+
+overrides:
+  - files: ['*.vue']
+    rules:
+      indent: off
+
+plugins:
+  - vue
+
+rules:
+  no-mixed-spaces-and-tabs: error
+  eol-last: off
+  no-unused-vars: warn
+  semi: off
+
+  prettier/prettier:
+    - error
+    - trailingComma: none
+      tabWidth: 2
+      singleQuote: true
+      semi: false
+      arrowParens: always
+
+  eofline: off
+
+globals:
+  Atomics: readonly
+  SharedArrayBuffer: readonly
