@@ -6,7 +6,7 @@ Using [vue-loader](https://vue-loader.vuejs.org/)
 ## Usage
 
 ```javascript
-const js = require('@io-arc/task-webpack-vue-typescript').js;
+const { js } = require('@io-arc/task-webpack-vue-typescript')
 
 module.exports = js
 ```

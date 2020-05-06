@@ -6,7 +6,7 @@ Sass (SCSS/SASS) compile for webpack.
 
 ```javascript
 // webpack.config.js
-const css = require('@io-arc/task-webpack-sass').css
+const { css } = require('@io-arc/task-webpack-sass')
 
 module.exports = css
 ```

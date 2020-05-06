@@ -10,7 +10,7 @@ export default {
     file: 'index.js',
     format: 'umd',
     indent: false,
-    name: 'html',
+    name: 'BuildWebpackStylus',
     sourcemap: false,
     banner: `/*!
 ${pkg.description}

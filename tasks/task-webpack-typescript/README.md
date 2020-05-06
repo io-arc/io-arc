@@ -5,7 +5,7 @@ Typescript compile for webpack.
 ## Usage
 
 ```javascript
-const js = require('@io-arc/task-webpack-typescript').js
+const { js } = require('@io-arc/task-webpack-typescript')
 
 module.exports = js
 ```
