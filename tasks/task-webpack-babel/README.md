@@ -5,7 +5,7 @@ Babel compile for webpack
 ## Usage
 
 ```javascript
-const js = require('@io-arc/task-webpack-babel').js
+const { js } = require('@io-arc/task-webpack-babel')
 
 module.exports = js
 ```

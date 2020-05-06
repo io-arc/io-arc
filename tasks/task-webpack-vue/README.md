@@ -6,7 +6,7 @@ Using [vue-loader](https://vue-loader.vuejs.org/)
 ## Usage
 
 ```javascript
-const js = require('@io-arc/task-webpack-vue').js
+const { js } = require('@io-arc/task-webpack-vue')
 
 module.exports = js
 ```

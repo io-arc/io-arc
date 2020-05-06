@@ -6,7 +6,7 @@ Stylus compile for webpack.
 
 ```javascript
 // webpack.config.js
-const css = require('@io-arc/task-webpack-stylus').css
+const { css } = require('@io-arc/task-webpack-stylus')
 
 module.exports = css
 ```

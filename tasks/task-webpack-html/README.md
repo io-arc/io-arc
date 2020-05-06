@@ -6,7 +6,7 @@ HTML builds for [webpack](https://webpack.js.org/).
 
 ```typescript
 // webpack.config.js
-const html = require('@io-arc/task-webpack-html').html
+const { html } = require('@io-arc/task-webpack-html')
 
 module.exports = html
 ```
@@ -47,7 +47,6 @@ Constants configure to [config](https://www.npmjs.com/package/node-config).
 | `IMG_DIR`       | `deployDir.img`                                     | Image directory path (e.g. /common/img)       | [`OUTPUT_IMG_ARRAY`](https://github.com/io-arc/io-arc/packages/env#output_img_array)   |
 | `JS_DIR`        | `deployDir.js`                                      | JavaScript directory path (e.g. /common/js)   | [`OUTPUT_JS_ARRAY`](https://github.com/io-arc/io-arc/packages/env#output_js_array)     |
 | `JSON_DIR`      | `deployDir.json`                                    | JSON directory path (e.g. /common/data)       | [`OUTPUT_JSON_ARRAY`](https://github.com/io-arc/io-arc/packages/env#output_json_array) |
-
 
 ### Example
 

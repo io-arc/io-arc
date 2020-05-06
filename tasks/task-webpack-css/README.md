@@ -6,7 +6,7 @@ CSS build for webpack.
 
 ```javascript
 // webpack.config.js
-const css = require('@io-arc/task-webpack-css').css
+const { css } = require('@io-arc/task-webpack-css')
 
 module.exports = css
 ```
