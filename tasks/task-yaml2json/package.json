@@ -37,6 +37,7 @@
     "@io-arc/logger": "^0.0.0",
     "@io-arc/types": "^0.0.0",
     "@io-arc/yaml2json": "^0.0.0",
+    "commander": "^5.1.0",
     "kleur": "^3.0.3",
     "node-watch": "^0.6.3",
     "watch": "^1.0.2"

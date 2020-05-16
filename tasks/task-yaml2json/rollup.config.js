@@ -2,6 +2,7 @@ import typescript from 'rollup-plugin-typescript2'
 import { terser } from 'rollup-plugin-terser'
 import pkg from './package.json'
 import lerna from '../../lerna.json'
+import json from '@rollup/plugin-json'
 
 const banner = `/*!
 Yaml2Json
@@ -37,6 +38,11 @@ ${banner}`
   ],
 
   plugins: [
+    json({
+      preferConst: true,
+      indent: ' ',
+      compact: true
+    }),
     typescript({
       useTsconfigDeclarationDir: true
     }),
