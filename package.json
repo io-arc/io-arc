@@ -13,6 +13,7 @@
     "tasks/*"
   ],
   "devDependencies": {
+    "@rollup/plugin-json": "4.0.3",
     "@types/jest": "25.1.4",
     "@typescript-eslint/eslint-plugin": "2.24.0",
     "@typescript-eslint/parser": "2.24.0",
