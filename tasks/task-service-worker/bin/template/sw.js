@@ -5,7 +5,10 @@ module.exports = {
 
   // Manifest: https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-build#.generateSW
   manifest: {
+    ignoreURLParametersMatching: [/^utm_/],
     directoryIndex: 'index.html',
-    globIgnores: ['node_modules/**/*']
+    globFollow: true,
+    globIgnores: ['node_modules/**/*'],
+    sourcemap: false
   }
 }

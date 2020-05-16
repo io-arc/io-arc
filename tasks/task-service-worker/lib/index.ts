@@ -1,17 +1,20 @@
 import { program } from 'commander'
 import { version } from '../package.json'
 import GenerateServiceWorker from './modules/GenerateServiceWorker'
+import { templateCreate } from './modules/Template'
+;(() => {
+  program
+    .version(version)
+    .option('-t, --template', 'generate template')
+    .parse(process.argv)
 
-program
-  .version(version)
-  .option('-t, --template', 'generate template')
-  .parse(process.argv)
+  // Create a template
+  if (program.template) {
+    templateCreate()
+    return
+  }
 
-// TODO: 引数でテンプレート作成
-if (program.template) {
-  process.exit(0)
-}
-
-// create a service-worker
-const generate = new GenerateServiceWorker()
-generate.run()
+  // create a service-worker
+  const generate = new GenerateServiceWorker()
+  generate.run()
+})()
