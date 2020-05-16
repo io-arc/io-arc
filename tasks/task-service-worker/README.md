@@ -61,5 +61,5 @@ module.exports = {
 
 ## Create a template
 
-command is `$ ia-sw -t` or `$ ia-sw --template`.  
+Command is `$ ia-sw -t` or `$ ia-sw --template`.  
 Create a `sw.js` underneath the `src`.
