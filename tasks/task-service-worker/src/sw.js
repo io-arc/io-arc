@@ -8,6 +8,7 @@ module.exports = {
     ignoreURLParametersMatching: [/^utm_/],
     directoryIndex: 'index.html',
     globFollow: true,
-    globIgnores: ['node_modules/**/*']
+    globIgnores: ['node_modules/**/*'],
+    sourcemap: false
   }
 }

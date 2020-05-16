@@ -9,7 +9,7 @@ program
 
 // TODO: 引数でテンプレート作成
 if (program.template) {
-  process.exit(1)
+  process.exit(0)
 }
 
 // create a service-worker

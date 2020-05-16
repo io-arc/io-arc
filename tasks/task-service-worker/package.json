@@ -33,7 +33,8 @@
   "scripts": {
     "prebuild": "eslint lib/*.ts",
     "build": "rollup -c",
-    "sw:once": "NODE_ENV=development MODE_ENV=once ia-sw"
+    "sw:once": "NODE_ENV=development MODE_ENV=once ia-sw",
+    "sw:prod": "NODE_ENV=production MODE_ENV=once ia-sw"
   },
   "bin": {
     "ia-sw": "bin/index.js"
