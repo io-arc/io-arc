@@ -47,6 +47,7 @@ Default: [`DIST`](https://github.com/io-arc/io-arc/packages/env#dist)/
 
 ### `serveStatic`
 
+Only if [`SITE_ROOT`](https://github.com/io-arc/io-arc/packages/env#site_root) isn't a `/`.
+
 Default: `{ route: [SITE_ROOT], dir: DIST}`
 
-\* [`SITE_ROOT`](https://github.com/io-arc/io-arc/packages/env#site_root) don't `/`
