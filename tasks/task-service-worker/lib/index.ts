@@ -2,7 +2,7 @@ import { program } from 'commander'
 import { version } from '../package.json'
 import GenerateServiceWorker from './modules/GenerateServiceWorker'
 import { templateCreate } from './modules/Template'
-;(() => {
+;((): void => {
   program
     .version(version)
     .option('-t, --template', 'generate template')

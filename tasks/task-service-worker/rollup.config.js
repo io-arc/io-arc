@@ -26,14 +26,6 @@ export default [
         sourcemap: false,
         banner: `#!/usr/bin/env node
 ${banner}`
-      },
-      {
-        file: 'index.js',
-        format: 'umd',
-        indent: false,
-        name: 'ServiceWorker',
-        sourcemap: false,
-        banner
       }
     ],
 
