@@ -5,7 +5,7 @@
   "author": "arc one",
   "homepage": "https://github.com/io-arc/io-arc/tasks/task-yaml2json",
   "license": "ISC",
-  "main": "index.js",
+  "main": "",
   "bin": {
     "ia-yaml2json": "bin/index.js"
   },
@@ -15,9 +15,7 @@
     "test": "tests"
   },
   "files": [
-    "bin",
-    "lib",
-    "index.js"
+    "bin"
   ],
   "publishConfig": {
     "access": "public"

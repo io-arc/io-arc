@@ -14,7 +14,7 @@ import Yaml2Json from '@io-arc/yaml2json'
 import { green, red } from 'kleur'
 import watch from 'node-watch'
 import path from 'path'
-;(() => {
+;((): void => {
   program.version(version).parse(process.argv)
 
   const y2j = new Yaml2Json(WS_YAML2JSON_ARRAY, DEPLOY_YAML2JSON_ARRAY)

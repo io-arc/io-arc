@@ -5,16 +5,14 @@
   "author": "arc one",
   "homepage": "https://github.com/io-arc/io-arc/tasks/clean",
   "license": "ISC",
-  "main": "index.js",
+  "main": "",
   "directories": {
     "bin": "bin",
     "lib": "lib",
     "test": "tests"
   },
   "files": [
-    "bin",
-    "lib",
-    "index.js"
+    "bin"
   ],
   "publishConfig": {
     "access": "public"

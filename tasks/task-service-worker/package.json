@@ -16,10 +16,7 @@
     "test": "tests"
   },
   "files": [
-    "bin",
-    "lib",
-    "src",
-    "index.js"
+    "bin"
   ],
   "publishConfig": {
     "access": "public"
