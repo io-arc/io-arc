@@ -1,0 +1,11 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "module": "esnext",
+    "declaration": true,
+    "declarationDir": "./types",
+    "typeRoots": ["node_modules/@types","types"]
+  },
+  "include": ["lib/**/*"],
+  "exclude": ["**/_*", "node_modules"]
+}

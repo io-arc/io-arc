@@ -1,13 +1,14 @@
 {
-  "name": "@io-arc/task-service-worker",
+  "name": "@io-arc/task-browser-sync",
   "version": "0.0.0",
-  "description": "Create a Service Worker",
+  "description": "Run BrowserSync",
   "keywords": [
-    "ServiceWorker",
-    "workbox"
+    "browsersync",
+    "server",
+    "localhost"
   ],
   "author": "arc one",
-  "homepage": "https://github.com/io-arc/io-arc/tasks/task-service-worker",
+  "homepage": "https://github.com/io-arc/io-arc/tasks/task-browser-sync",
   "license": "ISC",
   "main": "index.js",
   "types": "types/index.d.ts",
@@ -32,22 +33,19 @@
   },
   "scripts": {
     "prebuild": "eslint lib/*.ts",
-    "build": "rollup -c",
-    "sw:once": "NODE_ENV=development MODE_ENV=once ia-sw",
-    "sw:prod": "NODE_ENV=production MODE_ENV=once ia-sw"
+    "build": "rollup -c"
   },
   "bin": {
-    "ia-sw": "bin/index.js"
+    "ia-browser-sync": "bin/index.js"
   },
   "dependencies": {
     "@io-arc/env": "^0.0.0",
-    "@io-arc/logger": "^0.0.0",
-    "@types/js-yaml": "^3.12.3",
+    "@io-arc/read-yaml": "^0.0.0",
+    "@io-arc/types": "^0.0.0",
+    "@types/browser-sync": "^2.26.1",
+    "browser-sync": "^2.26.7",
     "commander": "^5.1.0",
-    "cpx": "^1.5.0",
-    "kleur": "^3.0.3",
-    "make-dir": "^3.1.0",
-    "rxjs": "^6.5.5",
-    "workbox-build": "^5.1.3"
+    "connect-history-api-fallback": "^1.6.0",
+    "rxjs": "^6.5.5"
   }
 }
