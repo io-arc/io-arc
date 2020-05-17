@@ -6,7 +6,7 @@ import { TGlobPattern } from '@io-arc/types'
 import cpx from 'cpx'
 import { green, yellow } from 'kleur'
 import moment from 'moment'
-;(() => {
+;((): void => {
   program.version(version).parse(process.argv)
 
   const task = 'copy'

@@ -16,8 +16,6 @@
     "test": "tests"
   },
   "files": [
-    "lib",
-    "src",
     "types",
     "index.js",
     ".browserslistrc"

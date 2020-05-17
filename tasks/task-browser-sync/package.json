@@ -10,19 +10,14 @@
   "author": "arc one",
   "homepage": "https://github.com/io-arc/io-arc/tasks/task-browser-sync",
   "license": "ISC",
-  "main": "index.js",
-  "types": "types/index.d.ts",
+  "main": "",
   "directories": {
     "bin": "bin",
     "lib": "lib",
     "test": "tests"
   },
   "files": [
-    "bin",
-    "lib",
-    "src",
-    "types",
-    "index.js"
+    "bin"
   ],
   "publishConfig": {
     "access": "public"

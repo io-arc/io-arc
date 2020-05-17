@@ -19,8 +19,6 @@
     "test": "tests"
   },
   "files": [
-    "lib",
-    "src",
     "types",
     "lint",
     ".babelrc",

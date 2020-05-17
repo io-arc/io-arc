@@ -3,7 +3,7 @@ import { version } from '../package.json'
 import { DIST } from '@io-arc/env'
 import Logger from '@io-arc/logger'
 import rimraf from 'rimraf'
-;(() => {
+;((): void => {
   program.version(version).parse(process.argv)
 
   const task = 'clean'

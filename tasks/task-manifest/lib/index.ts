@@ -52,7 +52,7 @@ interface ManifestJSON {
   scope?: string
 }
 
-;(() => {
+;((): void => {
   program.version(version).parse(process.argv)
 
   const create = (target: string[]): Observable<TFilePath> => {

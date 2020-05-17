@@ -4,7 +4,17 @@ import pkg from './package.json'
 import lerna from '../../lerna.json'
 import json from '@rollup/plugin-json'
 
-const banner = `/*!
+export default {
+  input: 'lib/index.ts',
+
+  output: {
+    file: 'bin/index.js',
+    format: 'commonjs',
+    indent: false,
+    name: 'Manifest',
+    sourcemap: false,
+    banner: `#!/usr/bin/env node
+/*!
 ${pkg.description}
 
 ${pkg.homepage}
@@ -12,30 +22,7 @@ Version: ${lerna.version}
 License: ${pkg.license}
 Copyright (c) ${lerna.year} ${pkg.author}
 */`
-
-export default {
-  input: 'lib/index.ts',
-
-  output: [
-    {
-      file: 'bin/index.js',
-      format: 'commonjs',
-      indent: false,
-      name: 'Manifest',
-      sourcemap: false,
-      banner: `#!/usr/bin/env node
-${banner}`
-    },
-    {
-      file: 'index.js',
-      format: 'umd',
-      indent: false,
-      name: 'Manifest',
-      sourcemap: false,
-      banner
-    }
-  ],
-
+  },
   plugins: [
     json({
       preferConst: true,
