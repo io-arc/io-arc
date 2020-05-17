@@ -15,8 +15,6 @@
     "test": "tests"
   },
   "files": [
-    "lib",
-    "src",
     "lint",
     "index.js",
     ".babelrc",

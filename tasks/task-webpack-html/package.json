@@ -16,8 +16,6 @@
     "test": "tests"
   },
   "files": [
-    "src",
-    "lib",
     "types",
     "index.js"
   ],

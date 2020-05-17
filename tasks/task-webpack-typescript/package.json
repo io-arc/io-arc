@@ -16,9 +16,6 @@
     "test": "tests"
   },
   "files": [
-    "config",
-    "lib",
-    "src",
     "types",
     "index.js",
     "tsconfig.webpack.json",
