@@ -1,6 +1,6 @@
 {
   "name": "@io-arc/output-dir-diff",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Relative path to another directory from one directory",
   "author": "arc obe",
   "homepage": "https://github.com/io-arc/io-arc/packages/output-dir-diff",
@@ -29,7 +29,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@io-arc/path-build": "^0.0.1",
-    "@io-arc/types": "^0.0.1"
+    "@io-arc/path-build": "^0.0.2",
+    "@io-arc/types": "^0.0.2"
   }
 }
