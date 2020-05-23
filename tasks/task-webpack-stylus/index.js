@@ -2,7 +2,7 @@
 Stylus compile for webpack
 
 https://github.com/io-arc/io-arc/tasks/tasks-webpack-stylus
-Version: 0.0.0
+Version: 0.0.1
 License: ISC
 Copyright (c) 2020 arc one
 */

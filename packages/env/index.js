@@ -3,7 +3,7 @@ Environment
 Build environment define
 
 https://github.com/io-arc/io-arc/packages/env
-Version: 0.0.0
+Version: 0.0.1
 License: ISC
 Copyright (c) 2020 arc one
 */
