@@ -3,7 +3,7 @@ Image Loader
 Image deploy for using file-loader
 
 https://github.com/io-arc/io-arc/packages/webpack-loaders-image
-Version: 0.0.1
+Version: 0.0.2
 License: ISC
 Copyright (c) 2020 arc one
 */

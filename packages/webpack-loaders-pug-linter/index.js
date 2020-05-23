@@ -3,7 +3,7 @@ Pug Lint
 Pug linter for webpack loader
 
 https://github.com/io-arc/io-arc/packages/webpack-loaders-pug-linter
-Version: 0.0.1
+Version: 0.0.2
 License: ISC
 Copyright (c) 2020 arc one
 */
