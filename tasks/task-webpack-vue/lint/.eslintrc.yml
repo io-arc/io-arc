@@ -1,0 +1,60 @@
+root: true
+
+parser: vue-eslint-parser
+parserOptions:
+  parser: babel-eslint
+  ecmaVersion: 2018
+  sourceType: module
+  allowImportExportEverywhere: false
+  ecmaFeatures:
+    globalReturn: false
+  babelOptions:
+    configFile: .babelrc
+
+env:
+  browser: true
+  es6: true
+  worker: true
+  node: true
+
+extends:
+  - standard
+  - plugin:prettier/recommended
+  - plugin:vue/recommended
+  - prettier/vue
+
+overrides:
+  - files: ['*.vue']
+    rules:
+      indent: off
+
+plugins:
+  - vue
+  - babel
+
+rules:
+  no-mixed-spaces-and-tabs: error
+  eol-last: off
+  no-unused-vars: warn
+  semi: off
+
+  space-before-function-paren: off
+
+  prettier/prettier:
+    - error
+    - trailingComma: none
+      tabWidth: 2
+      singleQuote: true
+      semi: false
+      arrowParens: always
+
+  eofline: off
+
+globals:
+  Atomics: readonly
+  SharedArrayBuffer: readonly
+  IS_PRODUCTION: readonly
+  SITE_TITLE: readonly
+  SITE_URL: readonly
+  SITE_AUTHOR: readonly
+  SITE_ROOT: readonly

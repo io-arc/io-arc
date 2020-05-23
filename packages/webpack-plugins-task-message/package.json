@@ -1,0 +1,40 @@
+{
+  "name": "@io-arc/webpack-plugins-task-message",
+  "version": "0.0.0",
+  "description": "Task complete message for webpack",
+  "keywords": [
+    "webpack",
+    "log"
+  ],
+  "author": "arc one",
+  "homepage": "https://github.com/io-arc/io-arc/packages/webpack-plugins-task-message",
+  "license": "ISC",
+  "main": "index.js",
+  "types": "types/index.d.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "files": [
+    "types",
+    "index.js"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/io-arc/io-arc.git"
+  },
+  "scripts": {
+    "prebuild": "eslint lib/*.ts",
+    "build": "rollup -c",
+    "postbuild": "tsc --emitDeclarationOnly"
+  },
+  "dependencies": {
+    "@io-arc/logger": "^0.0.0",
+    "@io-arc/types": "^0.0.0",
+    "@types/webpack": "^4.41.10",
+    "webpack": "^4.42.1"
+  }
+}

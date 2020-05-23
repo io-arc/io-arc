@@ -1,0 +1,47 @@
+{
+  "name": "@io-arc/webpack-loaders-image",
+  "version": "0.0.0",
+  "description": "Image deploy for using file-loader",
+  "keywords": [
+    "webpack"
+  ],
+  "author": "arc one",
+  "homepage": "https://github.com/io-arc/io-arc/packages/webpack-loaders-image",
+  "license": "ISC",
+  "main": "index.js",
+  "types": "types/index.d.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "files": [
+    "types",
+    "index.js"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/io-arc/io-arc.git"
+  },
+  "scripts": {
+    "prebuild": "eslint lib/*.ts",
+    "build": "rollup -c",
+    "postbuild": "tsc --emitDeclarationOnly"
+  },
+  "dependencies": {
+    "@io-arc/env": "^0.0.0",
+    "@io-arc/output-dir-diff": "^0.0.0",
+    "@io-arc/types": "^0.0.0",
+    "@io-arc/utils": "^0.0.0",
+    "@types/webpack": "^4.41.10",
+    "file-loader": "^6.0.0",
+    "imagemin-gifsicle": "^7.0.0",
+    "imagemin-jpegtran": "^6.0.0",
+    "imagemin-pngquant": "^8.0.0",
+    "imagemin-svgo": "^7.1.0",
+    "imagemin-webpack": "^5.1.1",
+    "webpack": "^4.42.1"
+  }
+}

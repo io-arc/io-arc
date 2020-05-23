@@ -1,0 +1,12 @@
+# Site information
+
+title: Hello!
+
+# Site URL with no slash for last
+url: https://arc-one.jp
+
+author: arc one
+description: Web boilerplate
+
+# Slash the front and back.
+siteRoot: /

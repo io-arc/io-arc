@@ -1,0 +1,37 @@
+{
+  "name": "@io-arc/env",
+  "version": "0.0.0",
+  "description": "Build environment define",
+  "author": "arc one",
+  "homepage": "https://github.com/io-arc/io-arc/packages/env",
+  "license": "ISC",
+  "main": "index.js",
+  "types": "types/index.d.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "files": [
+    "types",
+    "index.js"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/io-arc/io-arc.git"
+  },
+  "scripts": {
+    "prebuild": "eslint lib/*.ts",
+    "build": "rollup -c",
+    "postbuild": "tsc --emitDeclarationOnly",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@io-arc/path-build": "^0.0.0",
+    "@io-arc/types": "^0.0.0",
+    "@types/config": "^0.0.36",
+    "config": "^3.3.0"
+  }
+}

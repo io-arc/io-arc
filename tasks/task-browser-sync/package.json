@@ -1,0 +1,46 @@
+{
+  "name": "@io-arc/task-browser-sync",
+  "version": "0.0.0",
+  "description": "Run BrowserSync",
+  "keywords": [
+    "browsersync",
+    "server",
+    "localhost"
+  ],
+  "author": "arc one",
+  "homepage": "https://github.com/io-arc/io-arc/tasks/task-browser-sync",
+  "license": "ISC",
+  "main": "",
+  "directories": {
+    "bin": "bin",
+    "lib": "lib",
+    "test": "tests"
+  },
+  "files": [
+    "bin"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/io-arc/io-arc.git"
+  },
+  "scripts": {
+    "prebuild": "eslint lib/*.ts",
+    "build": "rollup -c"
+  },
+  "bin": {
+    "ia-browser-sync": "bin/index.js"
+  },
+  "dependencies": {
+    "@io-arc/env": "^0.0.0",
+    "@io-arc/read-yaml": "^0.0.0",
+    "@io-arc/types": "^0.0.0",
+    "@types/browser-sync": "^2.26.1",
+    "browser-sync": "^2.26.7",
+    "commander": "^5.1.0",
+    "connect-history-api-fallback": "^1.6.0",
+    "rxjs": "^6.5.5"
+  }
+}

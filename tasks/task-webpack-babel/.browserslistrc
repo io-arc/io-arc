@@ -1,0 +1,9 @@
+# Specify the browser version(You can check the list of supported browsers with `npx browserslist`.)
+# Official：https://github.com/ai/browserslist
+last 2 versions
+not dead
+> 5%
+edge 16
+ie 11
+# Google crawler
+chrome 41

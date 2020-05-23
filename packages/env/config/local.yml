@@ -1,0 +1,81 @@
+# Build settings
+
+# build output
+outputDir: dist
+
+# working directory
+wsDir:
+  static: static
+  html: html
+  css: css
+  yaml2json: yaml2json
+  img: img
+  js: js
+
+# directory configuration
+# array is hierarchy
+deployDir:
+  json: [common, data]
+  img: [common, img]
+  css: [common, css]
+  js: [common, js]
+
+# build option
+options:
+  html:
+    minify: false
+
+  pug:
+    # php file output
+    php: false
+
+  css:
+    minify: false
+
+  js:
+    minify: true
+    tsconfig: tsconfig.json
+    splitFilename: assets
+    sourceMap: true
+    eslint: '.eslintrc'
+
+  json:
+    minify: true
+
+  # use file-loader
+  fileLoader:
+    html:
+      use: true
+      hash: true
+      target:
+        - tag: img
+          attribute: src
+          type: src
+        - tag: img
+          attribute: srcset
+          type: srcset
+        - tag: img
+          attribute: data-src
+          type: src
+        - tag: img
+          attribute: data-srcset
+          type: srcset
+        - tag: source
+          attribute: src
+          type: src
+
+    css:
+      use: true
+      hash: true
+
+    js:
+      use: true
+      hash: true
+
+    vue:
+      use: true
+      # vue-loader transformAssetUrls
+      loader:
+        video: [src, poster]
+        source: src
+        img: src

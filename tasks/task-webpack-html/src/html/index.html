@@ -1,0 +1,35 @@
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# website: http://ogp.me/ns/website#">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="google" content="notranslate">
+  <title>{{TITLE}}</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <meta name="format-detection" content="telephone=no, email=no, address=no">
+  <meta property="description" content="{{DESCRIPTION}}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{URL}}/">
+  <meta property="og:title" content="{{TITLE}}">
+  <meta property="og:site_title" content="{{TITLE}}">
+  <meta property="og:description" content="{{DESCRIPTION}}">
+  <meta property="og:image" content="{{URL}}/ogp.png">
+</head>
+<body>
+<p>Index</p>
+<p><img src="../img/arc-one-logo.png" alt=""></p>
+
+<p>Site author: {{AUTHOR}}</p>
+<p>Site Root: {{SITE_ROOT}}</p>
+<p>CSS directory: {{CSS_DIR}}</p>
+<p>JS directory: {{JS_DIR}}</p>
+<p>Image directory: {{IMG_DIR}}</p>
+<p>JSON directory: {{JSON_DIR}}</p>
+
+{{#if IS_PRODUCTION}}
+<p>production</p>
+{{else}}
+<p>other</p>
+{{/if}}
+</body>
+</html>

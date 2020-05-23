@@ -1,0 +1,34 @@
+@charset "UTF-8";
+/*@import '~bootstrap/dist/css/bootstrap-reboot.min.css';*/
+
+body {
+  background: url(../img/arc-one-logo.png);
+}
+
+@media screen and (max-width: 734px) {
+  body {
+    color: #000000;
+  }
+}
+
+@media screen and (max-width: 1068px) {
+  body {
+    color: #00cc00;
+  }
+}
+
+@media screen and (max-width: 1068px) {
+  p {
+    color: #00cc00;
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 20px 1fr;
+  grid-column-gap: 10px;
+}

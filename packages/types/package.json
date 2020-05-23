@@ -1,0 +1,21 @@
+{
+  "name": "@io-arc/types",
+  "version": "0.0.0",
+  "description": "Boilerplate TypeScript global types",
+  "author": "arc one",
+  "homepage": "https://github.com/io-arc/io-arc/packages/types",
+  "license": "ISC",
+  "main": "index.d.ts",
+  "directories": {},
+  "files": [
+    "index.d.ts"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/io-arc/io-arc.git"
+  },
+  "scripts": {}
+}

@@ -1,0 +1,18 @@
+name: Manifest Android
+
+scope: /android/
+
+icons:
+  - src: img/xxx.jpg
+    sizes: 144x144
+    type: image/jpeg
+
+site_url: ./?utm=xxx
+
+display: standalone
+
+orientation: portrait
+
+theme_color: '#000000'
+
+background_color: '#000000'

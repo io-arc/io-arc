@@ -1,0 +1,31 @@
+// using node_modules file
+//@import "~bootstrap/dist/css/bootstrap-reboot.min.css";
+
+$c: #000;
+
+body {
+  color: $c;
+  background: url(../img/arc-one-logo.png);
+  @media screen and (max-width: 734px) {
+    color: #cc0000;
+  }
+  @media screen and (max-width: 1068px) {
+    color: #00cc00;
+  }
+}
+
+p {
+  @media screen and (max-width: 1068px) {
+    color: #00cc00;
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 20px 1fr;
+  grid-column-gap: 10px;
+}

@@ -1,0 +1,43 @@
+{
+  "name": "@io-arc/task-yaml2json",
+  "version": "0.0.0",
+  "description": "YAML to JSON conversion",
+  "author": "arc one",
+  "homepage": "https://github.com/io-arc/io-arc/tasks/task-yaml2json",
+  "license": "ISC",
+  "main": "",
+  "bin": {
+    "ia-yaml2json": "bin/index.js"
+  },
+  "directories": {
+    "bin": "bin",
+    "lib": "lib",
+    "test": "tests"
+  },
+  "files": [
+    "bin"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com//io-arc/io-arc.git"
+  },
+  "scripts": {
+    "prebuild": "eslint lib/*.ts",
+    "build": "rollup -c",
+    "yaml2json:once": "NODE_ENV=development MODE_ENV=once ia-yaml2json",
+    "yaml2json:watch": "NODE_ENV=development MODE_ENV=watch ia-yaml2json"
+  },
+  "dependencies": {
+    "@io-arc/env": "^0.0.0",
+    "@io-arc/logger": "^0.0.0",
+    "@io-arc/types": "^0.0.0",
+    "@io-arc/yaml2json": "^0.0.0",
+    "commander": "^5.1.0",
+    "kleur": "^3.0.3",
+    "node-watch": "^0.6.3",
+    "watch": "^1.0.2"
+  }
+}

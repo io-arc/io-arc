@@ -1,0 +1,36 @@
+type: default
+
+# working directory
+wsDir:
+  js: js
+
+outputDir: dist
+
+deployDir:
+  js: [common, js]
+
+options:
+  js:
+    minify: false
+    tsconfig: tsconfig.json
+    splitFilename: assets
+    sourceMap: true
+    eslint: lint/.eslintrc.yml
+
+  # use file-loader
+  fileLoader:
+    css:
+      use: true
+      hash: false
+
+    js:
+      use: true
+      hash: true
+
+    vue:
+      use: true
+      # vue-loader transformAssetUrls
+      loader:
+        video: [src, poster]
+        source: src
+        img: src

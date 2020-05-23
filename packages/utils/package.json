@@ -1,0 +1,36 @@
+{
+  "name": "@io-arc/utils",
+  "version": "0.0.0",
+  "description": "Utility functions",
+  "author": "arc one",
+  "homepage": "https://github.com/io-arc/io-arc/packages/utils",
+  "license": "ISC",
+  "main": "index.js",
+  "types": "types/index.d.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "files": [
+    "types",
+    "index.js"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/io-arc/io-arc.git"
+  },
+  "scripts": {
+    "prebuild": "eslint lib/*.ts",
+    "build": "rollup -c",
+    "postbuild": "tsc --emitDeclarationOnly",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@io-arc/env": "^0.0.0",
+    "@io-arc/path-build": "^0.0.0",
+    "@io-arc/types": "^0.0.0"
+  }
+}

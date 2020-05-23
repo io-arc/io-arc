@@ -1,0 +1,54 @@
+{
+  "name": "@io-arc/task-webpack-html",
+  "version": "0.0.0",
+  "description": "HTML builds for webpack",
+  "keywords": [
+    "webpack",
+    "html"
+  ],
+  "author": "arc one",
+  "homepage": "https://github.com/io-arc/io-arc/tasks/task-webpack-html",
+  "license": "ISC",
+  "main": "index.js",
+  "types": "types/index.d.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "files": [
+    "types",
+    "index.js"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/io-arc/io-arc.git"
+  },
+  "scripts": {
+    "prebuild": "eslint lib/*.ts",
+    "build": "rollup -c",
+    "postbuild": "tsc --emitDeclarationOnly",
+    "webpack:once": "NODE_ENV=development MODE_ENV=once webpack",
+    "webpack:watch": "NODE_ENV=development MODE_ENV=watch webpack",
+    "webpack:prod": "NODE_ENV=production MODE_ENV=once webpack"
+  },
+  "dependencies": {
+    "@io-arc/env": "^0.0.0",
+    "@io-arc/file-list": "^0.0.0",
+    "@io-arc/types": "^0.0.0",
+    "@io-arc/webpack-loaders-image": "^0.0.0",
+    "@io-arc/webpack-plugins-task-message": "^0.0.0",
+    "@io-arc/webpack-settings": "^0.0.0",
+    "@types/config": "^0.0.36",
+    "config": "^3.3.1",
+    "extract-text-webpack-plugin": "4.0.0-beta.0",
+    "file-loader": "^6.0.0",
+    "handlebars": "^4.7.6",
+    "html-loader": "^1.1.0",
+    "progress-bar-webpack-plugin": "^2.1.0",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  }
+}

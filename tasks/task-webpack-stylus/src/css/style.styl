@@ -1,0 +1,27 @@
+@charset "UTF-8"
+
+// using node_modules file
+//@require "~bootstrap/dist/css/bootstrap-reboot.min.css"
+
+body
+  color: #000000
+  @media screen and (max-width: 734px)
+    color: #cc0000
+  @media screen and (max-width: 1068px)
+    color: #00cc00
+
+p
+  @media screen and (max-width: 1068px)
+    color: #00cc00
+
+
+.image
+  background: url(../img/arc-one-logo.png) no-repeat
+
+.flex
+  display: flex
+
+.grid
+  display: grid
+  grid-template-columns: 1fr 20px 1fr
+  grid-column-gap: 10px

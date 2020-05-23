@@ -1,0 +1,48 @@
+{
+  "name": "@io-arc/task-service-worker",
+  "version": "0.0.0",
+  "description": "Create a Service Worker",
+  "keywords": [
+    "serviceworker",
+    "workbox"
+  ],
+  "author": "arc one",
+  "homepage": "https://github.com/io-arc/io-arc/tasks/task-service-worker",
+  "license": "ISC",
+  "main": "",
+  "directories": {
+    "bin": "bin",
+    "lib": "lib",
+    "test": "tests"
+  },
+  "files": [
+    "bin"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/io-arc/io-arc.git"
+  },
+  "scripts": {
+    "prebuild": "eslint lib/*.ts",
+    "build": "rollup -c",
+    "sw:once": "NODE_ENV=development MODE_ENV=once ia-sw",
+    "sw:prod": "NODE_ENV=production MODE_ENV=once ia-sw"
+  },
+  "bin": {
+    "ia-sw": "bin/index.js"
+  },
+  "dependencies": {
+    "@io-arc/env": "^0.0.0",
+    "@io-arc/logger": "^0.0.0",
+    "@types/js-yaml": "^3.12.3",
+    "commander": "^5.1.0",
+    "cpx": "^1.5.0",
+    "kleur": "^3.0.3",
+    "make-dir": "^3.1.0",
+    "rxjs": "^6.5.5",
+    "workbox-build": "^5.1.3"
+  }
+}

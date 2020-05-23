@@ -1,0 +1,36 @@
+type: default
+
+# working directory
+wsDir:
+  html: html
+
+outputDir: dist
+
+options:
+  html:
+    minify: false
+
+  pug:
+    php: false
+
+  # use file-loader
+  fileLoader:
+    html:
+      use: true
+      hash: true
+      target:
+        - tag: img
+          attribute: src
+          type: src
+        - tag: img
+          attribute: srcset
+          type: srcset
+        - tag: img
+          attribute: data-src
+          type: src
+        - tag: img
+          attribute: data-srcset
+          type: srcset
+        - tag: source
+          attribute: src
+          type: src

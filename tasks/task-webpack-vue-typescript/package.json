@@ -1,0 +1,82 @@
+{
+  "name": "@io-arc/task-webpack-vue-typescript",
+  "version": "0.0.0",
+  "description": "Vue.js in TypeScript compile for webpack",
+  "keywords": [
+    "webpack",
+    "TypeScript",
+    "JavaScript",
+    "Vue"
+  ],
+  "author": "arc one",
+  "homepage": "https://github.com/io-arc/io-arc/tasks/tasks-webpack-vue-typescript",
+  "license": "ISC",
+  "main": "index.js",
+  "types": "types/index.d.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "files": [
+    "types",
+    "lint",
+    "index.js",
+    ".browserslistrc",
+    "tsconfig.webpack.json"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/io-arc/io-arc.git"
+  },
+  "scripts": {
+    "prebuild": "eslint lib/*.ts",
+    "build": "rollup -c",
+    "postbuild": "tsc --emitDeclarationOnly",
+    "webpack:once": "NODE_ENV=development MODE_ENV=once TS_NODE_PROJECT=\"tsconfig.webpack.json\" webpack"
+  },
+  "dependencies": {
+    "@io-arc/env": "^0.0.0",
+    "@io-arc/file-list": "^0.0.0",
+    "@io-arc/output-dir-diff": "^0.0.0",
+    "@io-arc/path-build": "^0.0.0",
+    "@io-arc/types": "^0.0.0",
+    "@io-arc/webpack-loaders-image": "^0.0.0",
+    "@io-arc/webpack-loaders-js": "^0.0.0",
+    "@io-arc/webpack-loaders-pug-linter": "^0.0.0",
+    "@io-arc/webpack-plugins-task-message": "^0.0.0",
+    "@io-arc/webpack-settings": "^0.0.0",
+    "@types/config": "^0.0.36",
+    "@types/node": "^13.13.4",
+    "@typescript-eslint/eslint-plugin": "^2.30.0",
+    "@typescript-eslint/parser": "^2.30.0",
+    "autoprefixer": "^9.7.6",
+    "babel-loader": "^8.1.0",
+    "config": "^3.3.1",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-prettier": "^3.1.3",
+    "css-loader": "^3.5.3",
+    "css-mqpacker": "^7.0.0",
+    "prettier": "^2.0.5",
+    "prettier-webpack-plugin": "^1.2.0",
+    "pug": "^2.0.4",
+    "pug-plain-loader": "^1.0.0",
+    "sass-loader": "^8.0.2",
+    "stylus": "^0.54.7",
+    "stylus-loader": "^3.0.2",
+    "vue": "^2.6.11",
+    "vue-loader": "^15.9.2",
+    "vue-pug-lint-loader": "^0.0.1",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-visualizer-plugin": "^0.1.11",
+    "worker-loader": "^2.0.0",
+    "yaml-loader": "^0.6.0"
+  }
+}

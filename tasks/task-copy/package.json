@@ -1,0 +1,44 @@
+{
+  "name": "@io-arc/task-copy",
+  "version": "0.0.0",
+  "description": "Copying files in a directory",
+  "author": "arc one",
+  "homepage": "https://github.com/io-arc/io-arc/tasks/copy",
+  "license": "ISC",
+  "main": "",
+  "directories": {
+    "bin": "bin",
+    "lib": "lib",
+    "test": "tests"
+  },
+  "files": [
+    "bin"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/io-arc/io-arc.git"
+  },
+  "scripts": {
+    "prebuild": "eslint lib/*.ts",
+    "build": "rollup -c",
+    "copy:once": "NODE_ENV=development MODE_ENV=once ia-copy",
+    "copy:watch": "NODE_ENV=development MODE_ENV=watch ia-copy"
+  },
+  "bin": {
+    "ia-copy": "bin/index.js"
+  },
+  "dependencies": {
+    "@io-arc/env": "^0.0.0",
+    "@io-arc/logger": "^0.0.0",
+    "@io-arc/types": "^0.0.0",
+    "@types/cpx": "^1.5.1",
+    "commander": "^5.1.0",
+    "core-js": "3",
+    "cpx": "^1.5.0",
+    "kleur": "^3.0.3",
+    "moment": "^2.24.0"
+  }
+}
