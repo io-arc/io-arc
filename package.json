@@ -10,7 +10,8 @@
   },
   "workspaces": [
     "packages/*",
-    "tasks/*"
+    "tasks/*",
+    "core/*"
   ],
   "devDependencies": {
     "@rollup/plugin-json": "4.0.3",
