@@ -1,6 +1,6 @@
 {
   "name": "@io-arc/webpack-loaders-js",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "JS loaders for webpack",
   "keywords": [
     "webpack",
@@ -35,8 +35,8 @@
     "postbuild": "tsc --emitDeclarationOnly"
   },
   "dependencies": {
-    "@io-arc/types": "^0.0.0",
-    "@io-arc/utils": "^0.0.0",
+    "@io-arc/types": "^0.0.1",
+    "@io-arc/utils": "^0.0.1",
     "webpack": "^4.43.0"
   }
 }
