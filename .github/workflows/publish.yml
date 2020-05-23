@@ -14,6 +14,9 @@ jobs:
   publish:
     name: NPM publish
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [10.x, 12.x]
     steps:
       - uses: actions/checkout@v1
       - name: checkout
@@ -21,7 +24,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v1
         with:
-          node-version: 12
+          node-version: ${{ matrix.node-version }}
           registry-url: 'https://registry.npmjs.org'
       - name: Yarn install
         uses: borales/actions-yarn@v2.0.0
