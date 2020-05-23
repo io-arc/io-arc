@@ -4,7 +4,7 @@
   "license": "ISC",
   "author": "arc one",
   "engines": {
-    "node": ">= 10.17.0",
+    "node": ">= 10.16.3",
     "npm": ">= 5.8.0",
     "yarn": ">= 1.7.0"
   },
