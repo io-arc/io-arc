@@ -4,6 +4,9 @@ import pkg from './package.json'
 import lerna from '../../lerna.json'
 import json from '@rollup/plugin-json'
 
+const start = 2020
+const year = lerna.year > start ? `${start}-${lerna.year}` : start
+
 export default {
   input: 'lib/index.ts',
 
@@ -20,7 +23,7 @@ ${pkg.description}
 ${pkg.homepage}
 Version: ${lerna.version}
 License: ${pkg.license}
-Copyright (c) ${lerna.year} ${pkg.author}
+Copyright (c) ${year} ${pkg.author}
 */`
   },
   plugins: [
