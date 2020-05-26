@@ -1,15 +1,24 @@
 import inquirer from 'inquirer'
 import BaseQuestions, { IoQuestions } from './BaseQuestions'
 
+/** CSS language */
+export const ALT_CSS_TYPE = {
+  CSS: 'css',
+  SASS: 'sass',
+  STYLUS: 'stylus'
+} as const
+
+export type ALT_CSS_TYPE = typeof ALT_CSS_TYPE[keyof typeof ALT_CSS_TYPE]
+
 export interface IoAltCss {
-  lang: 'css' | 'sass' | 'stylus'
+  lang: ALT_CSS_TYPE
 }
 
 export default class AltCss extends BaseQuestions implements IoQuestions {
-  #lang: IoAltCss['lang'] = 'css'
+  #lang: ALT_CSS_TYPE = ALT_CSS_TYPE.CSS
 
   /** Use CSS language */
-  public lang(): IoAltCss['lang'] {
+  public lang(): ALT_CSS_TYPE {
     return this.#lang
   }
 
@@ -24,9 +33,9 @@ export default class AltCss extends BaseQuestions implements IoQuestions {
           name: 'lang',
           message: 'CSS language',
           choices: [
-            { name: 'CSS (Vanilla)', value: 'css' },
-            { name: 'Sass (SASS/SCSS)', value: 'sass' },
-            { name: 'Stylus', value: 'stylus' }
+            { name: 'CSS (Vanilla)', value: ALT_CSS_TYPE.CSS },
+            { name: 'Sass (SASS/SCSS)', value: ALT_CSS_TYPE.SASS },
+            { name: 'Stylus', value: ALT_CSS_TYPE.STYLUS }
           ]
         }
       ])

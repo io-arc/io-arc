@@ -1,14 +1,30 @@
 import inquirer from 'inquirer'
 import BaseQuestions, { IoQuestions } from './BaseQuestions'
 
+/** HTML template engine */
+export const ALT_HTML_TYPE = {
+  HTML: 'html',
+  PUG: 'pug'
+} as const
+
+export type ALT_HTML_TYPE = typeof ALT_HTML_TYPE[keyof typeof ALT_HTML_TYPE]
+
+/** Build file extension */
+export const ALT_HTML_EXT = {
+  HTML: 'html',
+  PHP: 'php'
+} as const
+
+export type ALT_HTML_EXT = typeof ALT_HTML_EXT[keyof typeof ALT_HTML_EXT]
+
 export interface IoAltHtml {
-  engine: 'html' | 'pug'
-  ext: 'html' | 'php'
+  engine: ALT_HTML_TYPE
+  ext: ALT_HTML_EXT
 }
 
 export default class AltHtml extends BaseQuestions implements IoQuestions {
-  #engine: IoAltHtml['engine'] = 'html'
-  #ext: IoAltHtml['ext'] = 'html'
+  #engine: ALT_HTML_TYPE = ALT_HTML_TYPE.HTML
+  #ext: ALT_HTML_EXT = ALT_HTML_EXT.HTML
 
   /** HTML template engine */
   public engine(): IoAltHtml['engine'] {
@@ -30,8 +46,8 @@ export default class AltHtml extends BaseQuestions implements IoQuestions {
         name: 'engine',
         message: 'Template engine',
         choices: [
-          { name: 'None (Vanilla HTML)', value: 'html' },
-          { name: 'Pug', value: 'pug' }
+          { name: 'None (Vanilla HTML)', value: ALT_HTML_TYPE.HTML },
+          { name: 'Pug', value: ALT_HTML_TYPE.PUG }
         ]
       })
       .catch((e: Error): number => {
@@ -52,7 +68,7 @@ export default class AltHtml extends BaseQuestions implements IoQuestions {
    * If engine select to 'pug' then choice file extension
    * @param html
    */
-  #buildExt = async (html: IoAltHtml['engine']): Promise<void> => {
+  #buildExt = async (html: ALT_HTML_TYPE): Promise<void> => {
     if (html === 'html') return
 
     const res: IoAltHtml | number = await inquirer
@@ -61,8 +77,8 @@ export default class AltHtml extends BaseQuestions implements IoQuestions {
         name: 'ext',
         message: 'Build file extension',
         choices: [
-          { name: '.html', value: 'html' },
-          { name: '.php', value: 'php' }
+          { name: '.html', value: ALT_HTML_EXT.HTML },
+          { name: '.php', value: ALT_HTML_EXT.PHP }
         ]
       })
       .catch((e: Error): number => {

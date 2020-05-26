@@ -5,14 +5,14 @@ import NodeVersion from './modules/CheckNodeVersion'
 import Package from './modules/Package'
 import AltCss from './modules/questions/AltCss'
 import AltHtml from './modules/questions/AltHtml'
+import AltJs from './modules/questions/AltJs'
 import ProjectSetting from './modules/questions/ProjectSetting'
 import SiteSetting from './modules/questions/SiteSetting'
 
+process.stdin.resume()
 process.on('SIGINT', (): void => {
-  process.exit(0)
-})
-process.on('exit', (): void => {
   console.log(green('Bye !'))
+  process.exit(0)
 })
 ;(async (): Promise<void> => {
   program.version(version).parse(process.argv)
@@ -53,4 +53,10 @@ process.on('exit', (): void => {
   /* CSS language */
   const altCSS = new AltCss()
   await altCSS.questions()
+
+  console.log('')
+
+  /* JS preprocessor */
+  const altJS = new AltJs()
+  await altJS.questions()
 })()
