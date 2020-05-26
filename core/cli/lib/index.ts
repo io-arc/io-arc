@@ -3,6 +3,7 @@ import { green } from 'kleur'
 import { version } from '../package.json'
 import NodeVersion from './modules/CheckNodeVersion'
 import Package from './modules/Package'
+import AltHtml from './modules/questions/AltHtml'
 import ProjectSetting from './modules/questions/ProjectSetting'
 import SiteSetting from './modules/questions/SiteSetting'
 
@@ -39,4 +40,10 @@ process.on('exit', (): void => {
   /* Site */
   const site = new SiteSetting(project.author())
   await site.questions()
+
+  console.log('')
+
+  /* HTML template engine */
+  const altHTML = new AltHtml()
+  await altHTML.questions()
 })()

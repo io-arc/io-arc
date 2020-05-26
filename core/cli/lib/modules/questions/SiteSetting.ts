@@ -57,7 +57,7 @@ export default class SiteSetting extends BaseQuestions implements IoQuestions {
           name: 'url',
           message: `Release Site URL`,
           suffix: `\n${grey(`No final slash required\ne.g. https://foo.com`)}`,
-          validate: (input: string): boolean => /\/$/.test(input)
+          validate: (input: string): boolean => !/\/$/.test(input)
         },
         {
           type: 'input',
