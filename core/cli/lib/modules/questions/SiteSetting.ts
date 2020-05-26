@@ -1,9 +1,9 @@
 import inquirer from 'inquirer'
 import { grey } from 'kleur'
 import BaseQuestions, { IoQuestions } from './BaseQuestions'
-import { IoProjectQuestions } from './ProjectSetting'
+import { IoProjectSetting } from './ProjectSetting'
 
-export interface IoSiteQuestions {
+export interface IoSiteSetting {
   title: string
   url: string
   siteRoot: string
@@ -16,28 +16,28 @@ export default class SiteSetting extends BaseQuestions implements IoQuestions {
   #siteRoot = '/'
   #author = ''
 
-  constructor(author: IoProjectQuestions['author']) {
+  constructor(author: IoProjectSetting['author']) {
     super()
     this.#author = author
   }
 
   /** Site title */
-  public title(): IoSiteQuestions['title'] {
+  public title(): IoSiteSetting['title'] {
     return this.#title
   }
 
   /** Site URL */
-  public url(): IoSiteQuestions['url'] {
+  public url(): IoSiteSetting['url'] {
     return this.#url
   }
 
   /** Site root directory */
-  public siteRoot(): IoSiteQuestions['siteRoot'] {
+  public siteRoot(): IoSiteSetting['siteRoot'] {
     return this.#siteRoot
   }
 
   /** Site author */
-  public author(): IoSiteQuestions['author'] {
+  public author(): IoSiteSetting['author'] {
     return this.#author
   }
 
@@ -45,8 +45,8 @@ export default class SiteSetting extends BaseQuestions implements IoQuestions {
   async questions(): Promise<void> {
     this.startLog('Site settings')
 
-    const res: IoSiteQuestions | number = await inquirer
-      .prompt<IoSiteQuestions>([
+    const res: IoSiteSetting | number = await inquirer
+      .prompt<IoSiteSetting>([
         {
           type: 'input',
           name: 'title',

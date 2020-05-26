@@ -1,22 +1,22 @@
 import inquirer from 'inquirer'
 import BaseQuestions, { IoQuestions } from './BaseQuestions'
 
-export interface IoAltHtmlQuestions {
+export interface IoAltHtml {
   engine: 'html' | 'pug'
   ext: 'html' | 'php'
 }
 
 export default class AltHtml extends BaseQuestions implements IoQuestions {
-  #engine: IoAltHtmlQuestions['engine'] = 'html'
-  #ext: IoAltHtmlQuestions['ext'] = 'html'
+  #engine: IoAltHtml['engine'] = 'html'
+  #ext: IoAltHtml['ext'] = 'html'
 
   /** HTML template engine */
-  public engine(): IoAltHtmlQuestions['engine'] {
+  public engine(): IoAltHtml['engine'] {
     return this.#engine
   }
 
   /** Build file extension */
-  public ext(): IoAltHtmlQuestions['ext'] {
+  public ext(): IoAltHtml['ext'] {
     return this.#ext
   }
 
@@ -24,13 +24,13 @@ export default class AltHtml extends BaseQuestions implements IoQuestions {
   async questions(): Promise<void> {
     this.startLog('Select HTML template engine')
 
-    const res: IoAltHtmlQuestions | number = await inquirer
-      .prompt<IoAltHtmlQuestions>({
+    const res: IoAltHtml | number = await inquirer
+      .prompt<IoAltHtml>({
         type: 'list',
         name: 'engine',
         message: 'Template engine',
         choices: [
-          { name: 'none (plain HTML)', value: 'html' },
+          { name: 'None (Vanilla HTML)', value: 'html' },
           { name: 'Pug', value: 'pug' }
         ]
       })
@@ -52,11 +52,11 @@ export default class AltHtml extends BaseQuestions implements IoQuestions {
    * If engine select to 'pug' then choice file extension
    * @param html
    */
-  #buildExt = async (html: IoAltHtmlQuestions['engine']): Promise<void> => {
+  #buildExt = async (html: IoAltHtml['engine']): Promise<void> => {
     if (html === 'html') return
 
-    const res: IoAltHtmlQuestions | number = await inquirer
-      .prompt<IoAltHtmlQuestions>({
+    const res: IoAltHtml | number = await inquirer
+      .prompt<IoAltHtml>({
         type: 'list',
         name: 'ext',
         message: 'Build file extension',

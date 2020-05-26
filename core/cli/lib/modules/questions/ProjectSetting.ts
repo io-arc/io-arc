@@ -2,7 +2,7 @@ import path from 'path'
 import BaseQuestions, { IoQuestions } from './BaseQuestions'
 import inquirer from 'inquirer'
 
-export interface IoProjectQuestions {
+export interface IoProjectSetting {
   name: string
   version: string
   description: string
@@ -17,22 +17,22 @@ export default class ProjectSetting extends BaseQuestions
   #author = ''
 
   /** Project name */
-  public name(): IoProjectQuestions['name'] {
+  public name(): IoProjectSetting['name'] {
     return this.#name
   }
 
   /** Project version */
-  public version(): IoProjectQuestions['version'] {
+  public version(): IoProjectSetting['version'] {
     return this.#version
   }
 
   /** Project description */
-  public description(): IoProjectQuestions['description'] {
+  public description(): IoProjectSetting['description'] {
     return this.#description
   }
 
   /** Project author */
-  public author(): IoProjectQuestions['author'] {
+  public author(): IoProjectSetting['author'] {
     return this.#author
   }
 
@@ -40,8 +40,8 @@ export default class ProjectSetting extends BaseQuestions
   async questions(): Promise<void> {
     this.startLog('Project settings')
 
-    const res: IoProjectQuestions | number = await inquirer
-      .prompt<IoProjectQuestions>([
+    const res: IoProjectSetting | number = await inquirer
+      .prompt<IoProjectSetting>([
         {
           type: 'input',
           name: 'name',
