@@ -1,9 +1,8 @@
 import path from 'path'
 import BaseQuestions, { IoQuestions } from './BaseQuestions'
 import inquirer from 'inquirer'
-import { bold } from 'kleur'
 
-interface IoProjectQuestions {
+export interface IoProjectQuestions {
   name: string
   version: string
   description: string
@@ -12,34 +11,34 @@ interface IoProjectQuestions {
 
 export default class ProjectSetting extends BaseQuestions
   implements IoQuestions {
-  #name: string = path.basename(process.cwd())
-  #version: string = '1.0.0'
-  #description: string = ''
-  #author: string = ''
+  #name = path.basename(process.cwd())
+  #version = '1.0.0'
+  #description = ''
+  #author = ''
 
   /** Project name */
-  public name(): string {
+  public name(): IoProjectQuestions['name'] {
     return this.#name
   }
 
   /** Project version */
-  public version(): string {
+  public version(): IoProjectQuestions['version'] {
     return this.#version
   }
 
   /** Project description */
-  public description(): string {
+  public description(): IoProjectQuestions['description'] {
     return this.#description
   }
 
   /** Project author */
-  public author(): string {
+  public author(): IoProjectQuestions['author'] {
     return this.#author
   }
 
   /** Project questions */
   async questions(): Promise<void> {
-    console.log(bold().green('👉 Project settings'))
+    this.startLog('Project settings')
 
     const res: IoProjectQuestions | number = await inquirer
       .prompt<IoProjectQuestions>([
@@ -67,7 +66,7 @@ export default class ProjectSetting extends BaseQuestions
         }
       ])
       .catch((e: Error): number => {
-        console.log(e)
+        console.error(e)
         return 1
       })
 
