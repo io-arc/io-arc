@@ -69,7 +69,5 @@ export default class DeploySetting extends BaseQuestions
     this.#js = res.js.split('/').filter(Boolean)
     this.#img = res.img.split('/').filter(Boolean)
     this.#json = res.json.split('/').filter(Boolean)
-
-    console.log(this.#css, this.#js, this.#img, this.#json)
   }
 }
