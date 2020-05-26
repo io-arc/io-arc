@@ -6,6 +6,7 @@ import Package from './modules/Package'
 import AltCss from './modules/questions/AltCss'
 import AltHtml from './modules/questions/AltHtml'
 import AltJs from './modules/questions/AltJs'
+import DeploySetting from './modules/questions/DeploySetting'
 import ProjectSetting from './modules/questions/ProjectSetting'
 import SiteSetting from './modules/questions/SiteSetting'
 
@@ -59,4 +60,10 @@ process.on('SIGINT', (): void => {
   /* JS preprocessor */
   const altJS = new AltJs()
   await altJS.questions()
+
+  console.log('')
+
+  /* Deploy */
+  const deploy = new DeploySetting()
+  await deploy.questions()
 })()
