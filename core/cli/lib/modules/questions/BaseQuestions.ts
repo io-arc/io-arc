@@ -2,7 +2,11 @@ import { bold, red } from 'kleur'
 
 export interface IoQuestions {
   questions(): void
+  // taskLibrary(): void
 }
+
+/** task library name (@io-arc/xxx) */
+export type TLibraryName = string | null
 
 export default class BaseQuestions {
   /**

@@ -1,7 +1,7 @@
 {
   "name": "@io-arc/cli",
   "version": "0.0.2",
-  "description": "Web/PWA/SPA boilerplate CLI",
+  "description": "WEB/PWA/SPA boilerplate CLI",
   "keywords": [
     "web",
     "pwa",
@@ -21,7 +21,7 @@
     "serviceworker"
   ],
   "author": "arc one",
-  "homepage": "https://github.com/io-arc/io-arc/tree/master/core/cli",
+  "homepage": "https://github.com/io-arc/io-arc/",
   "license": "ISC",
   "main": "",
   "directories": {
@@ -51,11 +51,15 @@
   "dependencies": {
     "commander": "^5.1.0",
     "inquirer": "^7.1.0",
+    "json2yaml": "^1.1.0",
     "kleur": "^3.0.3",
+    "make-dir": "^3.1.0",
     "rxjs": "^6.5.5"
   },
   "devDependencies": {
+    "@io-arc/types": "^0.0.2",
     "@types/inquirer": "^6.5.0",
-    "cross-env": "^7.0.2"
+    "cross-env": "^7.0.2",
+    "npm-run-all": "^4.1.5"
   }
 }

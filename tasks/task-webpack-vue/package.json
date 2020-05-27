@@ -74,6 +74,7 @@
     "node-sass": "^4.14.0",
     "prettier": "^2.0.5",
     "prettier-webpack-plugin": "^1.2.0",
+    "progress-bar-webpack-plugin": "^2.1.0",
     "pug": "^2.0.4",
     "pug-plain-loader": "^1.0.0",
     "sass-loader": "^8.0.2",

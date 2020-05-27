@@ -70,4 +70,14 @@ export default class DeploySetting extends BaseQuestions
     this.#img = res.img.split('/').filter(Boolean)
     this.#json = res.json.split('/').filter(Boolean)
   }
+
+  /** Deploy directories */
+  public dir(): IoDeploySetting {
+    return {
+      css: this.#css,
+      js: this.#js,
+      img: this.#img,
+      json: this.#json
+    }
+  }
 }

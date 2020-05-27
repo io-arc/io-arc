@@ -2,7 +2,7 @@
 dns: []
 #  - //fonts.googleapis.com
 
-# Local Prefetch
+# LocalConfig Prefetch
 # Specify a path below the root (no slash at the beginning)
 local: []
 #  - common/img/foo.jpg

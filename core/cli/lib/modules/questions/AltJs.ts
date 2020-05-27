@@ -70,5 +70,6 @@ export default class AltJs extends BaseQuestions implements IoQuestions {
     }
 
     this.#preprocessor = res.preprocessor
+    this.#framework = res.framework
   }
 }
