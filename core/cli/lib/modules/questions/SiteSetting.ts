@@ -1,3 +1,4 @@
+import { TDirName } from '@io-arc/types'
 import inquirer from 'inquirer'
 import { grey } from 'kleur'
 import BaseQuestions, { IoQuestions } from './BaseQuestions'
@@ -6,15 +7,17 @@ import { IoProjectSetting } from './ProjectSetting'
 export interface IoSiteSetting {
   title: string
   url: string
-  siteRoot: string
   author: string
+  description: string
+  siteRoot: TDirName
 }
 
 export default class SiteSetting extends BaseQuestions implements IoQuestions {
   #title = ''
   #url = ''
-  #siteRoot = '/'
   #author = ''
+  #description = ''
+  #siteRoot = '/'
 
   constructor(author: IoProjectSetting['author']) {
     super()
@@ -41,6 +44,11 @@ export default class SiteSetting extends BaseQuestions implements IoQuestions {
     return this.#author
   }
 
+  /** Site description */
+  public description(): IoSiteSetting['description'] {
+    return this.#description
+  }
+
   /** Site questions */
   async questions(): Promise<void> {
     this.startLog('Site settings')
@@ -61,16 +69,21 @@ export default class SiteSetting extends BaseQuestions implements IoQuestions {
         },
         {
           type: 'input',
+          name: 'author',
+          message: 'Site author',
+          default: this.#author
+        },
+        {
+          type: 'input',
+          name: 'description',
+          message: 'Site description'
+        },
+        {
+          type: 'input',
           name: 'siteRoot',
           message: 'Site root directory',
           suffix: `\n${grey(`Always add a slash at the end`)}`,
           default: this.#siteRoot
-        },
-        {
-          type: 'input',
-          name: 'author',
-          message: 'Site author',
-          default: this.#author
         }
       ])
       .catch((e: Error): number => {
@@ -87,5 +100,6 @@ export default class SiteSetting extends BaseQuestions implements IoQuestions {
     this.#url = res.url
     this.#siteRoot = res.siteRoot
     this.#author = res.author
+    this.#description = res.description
   }
 }

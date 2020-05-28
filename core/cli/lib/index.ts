@@ -2,6 +2,7 @@ import { program } from 'commander'
 import { green } from 'kleur'
 import { version } from '../package.json'
 import NodeVersion from './modules/CheckNodeVersion'
+import DefaultConfig from './modules/config/DefaultConfig'
 import LocalConfig from './modules/config/LocalConfig'
 import Package from './modules/Package'
 import AltCss from './modules/questions/AltCss'
@@ -74,13 +75,21 @@ process.on('SIGINT', (): void => {
   localConfig$.pugToPHP(altHTML.engine(), altHTML.ext())
   localConfig$.jsFramework(altJS.framework())
   localConfig$.tsconfig(altJS.preprocessor())
-  await localConfig$.create()
 
-  // TODO: create config/default.yml
-  // TODO: create config/development.yml
-  // TODO: create config/production.yml
+  /* Config: default,development,production.yml */
+  const defaultConfig$ = new DefaultConfig(
+    site.title(),
+    site.url(),
+    site.author(),
+    site.description(),
+    site.siteRoot()
+  )
 
   // TODO: create .eslintrc.yml
   // TODO: create tsconfig.json
   // TODO: create src directory and template files
+
+  /* create */
+  await localConfig$.create()
+  await defaultConfig$.create()
 })()

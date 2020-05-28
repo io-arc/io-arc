@@ -1,5 +1,5 @@
 import { license, devDependencies, version as v } from '../../package.json'
-import { engines } from '../../../../package.json'
+import { engines, devDependencies as d } from '../../../../package.json'
 import { TLibraryName } from './questions/BaseQuestions'
 
 export interface IoPackage {
@@ -48,7 +48,12 @@ export default class Package {
       '@io-arc/task-service-worker': `^${v}`,
       '@io-arc/task-yaml2json': `^${v}`,
       'cross-env': devDependencies['cross-env'],
-      'npm-run-all': devDependencies['npm-run-all']
+      'npm-run-all': devDependencies['npm-run-all'],
+      eslint: d['eslint'],
+      'eslint-config-prettier': d['eslint-config-prettier'],
+      prettier: d['prettier'],
+      webpack: devDependencies['webpack'],
+      'webpack-cli': devDependencies['webpack-cli']
     }
 
     this.#body.scripts = {
