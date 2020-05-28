@@ -33,8 +33,10 @@
   "dependencies": {
     "@io-arc/env": "^0.0.2",
     "@io-arc/types": "^0.0.2",
+    "kleur": "^3.0.3"
+  },
+  "devDependencies": {
     "@types/webpack": "^4.41.10",
-    "kleur": "^3.0.3",
     "webpack": "^4.42.1"
   }
 }

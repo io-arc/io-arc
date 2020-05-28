@@ -34,11 +34,13 @@
     "@io-arc/env": "^0.0.2",
     "@io-arc/logger": "^0.0.2",
     "@io-arc/types": "^0.0.2",
-    "@types/cpx": "^1.5.1",
     "commander": "^5.1.0",
     "core-js": "3",
     "cpx": "^1.5.0",
     "kleur": "^3.0.3",
     "moment": "^2.24.0"
+  },
+  "devDependencies": {
+    "@types/cpx": "^1.5.1"
   }
 }

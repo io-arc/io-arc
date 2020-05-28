@@ -44,7 +44,6 @@
     "@io-arc/webpack-loaders-pug-linter": "^0.0.2",
     "@io-arc/webpack-plugins-task-message": "^0.0.2",
     "@io-arc/webpack-settings": "^0.0.2",
-    "@types/config": "^0.0.36",
     "config": "^3.3.1",
     "extract-text-webpack-plugin": "4.0.0-beta.0",
     "file-loader": "^6.0.0",
@@ -52,7 +51,10 @@
     "progress-bar-webpack-plugin": "^2.1.0",
     "pug-html-loader": "^1.1.5",
     "pug-lint-loader": "^0.0.4",
-    "pug-php-filter": "^0.0.1",
+    "pug-php-filter": "^0.0.1"
+  },
+  "devDependencies": {
+    "@types/config": "^0.0.36",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11"
   }

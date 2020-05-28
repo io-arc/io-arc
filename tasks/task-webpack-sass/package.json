@@ -42,25 +42,25 @@
     "@io-arc/webpack-loaders-image": "^0.0.2",
     "@io-arc/webpack-plugins-task-message": "^0.0.2",
     "@io-arc/webpack-settings": "^0.0.2",
-    "@types/config": "^0.0.36",
     "autoprefixer": "^9.7.6",
     "config": "^3.3.1",
     "css-loader": "^3.5.2",
     "css-mqpacker": "^7.0.0",
     "file-loader": "^6.0.0",
     "mini-css-extract-plugin": "^0.9.0",
-    "node-sass": "^4.14.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss-loader": "^3.0.0",
     "postcss-safe-parser": "^4.0.2",
     "progress-bar-webpack-plugin": "^2.1.0",
     "resolve-url-loader": "^3.1.1",
     "sass-loader": "^8.0.2",
-    "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11",
     "webpack-fix-style-only-entries": "^0.4.0"
   },
   "devDependencies": {
-    "bootstrap": "^4.4.1"
+    "@types/config": "^0.0.36",
+    "bootstrap": "^4.4.1",
+    "node-sass": "^4.14.0",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
   }
 }

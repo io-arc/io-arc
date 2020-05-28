@@ -31,7 +31,9 @@
   "dependencies": {
     "@io-arc/path-build": "^0.0.2",
     "@io-arc/types": "^0.0.2",
-    "@types/config": "^0.0.36",
     "config": "^3.3.0"
+  },
+  "devDependencies": {
+    "@types/config": "^0.0.36"
   }
 }

@@ -32,8 +32,10 @@
   "dependencies": {
     "@io-arc/env": "^0.0.2",
     "@io-arc/logger": "^0.0.2",
-    "@types/rimraf": "^3.0.0",
     "commander": "^5.1.0",
     "rimraf": "^3.0.2"
+  },
+  "devDependencies": {
+    "@types/rimraf": "^3.0.0"
   }
 }

@@ -29,9 +29,11 @@
   },
   "dependencies": {
     "@io-arc/types": "^0.0.2",
-    "@types/node-notifier": "^6.0.0",
     "kleur": "^3.0.3",
     "moment": "^2.24.0",
     "node-notifier": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/node-notifier": "^6.0.0"
   }
 }

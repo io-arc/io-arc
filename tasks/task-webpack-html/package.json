@@ -41,13 +41,15 @@
     "@io-arc/webpack-loaders-image": "^0.0.2",
     "@io-arc/webpack-plugins-task-message": "^0.0.2",
     "@io-arc/webpack-settings": "^0.0.2",
-    "@types/config": "^0.0.36",
     "config": "^3.3.1",
     "extract-text-webpack-plugin": "4.0.0-beta.0",
     "file-loader": "^6.0.0",
     "handlebars": "^4.7.6",
     "html-loader": "^1.1.0",
-    "progress-bar-webpack-plugin": "^2.1.0",
+    "progress-bar-webpack-plugin": "^2.1.0"
+  },
+  "devDependencies": {
+    "@types/config": "^0.0.36",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11"
   }

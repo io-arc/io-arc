@@ -36,7 +36,9 @@
   },
   "dependencies": {
     "@io-arc/types": "^0.0.2",
-    "@io-arc/utils": "^0.0.2",
+    "@io-arc/utils": "^0.0.2"
+  },
+  "devDependencies": {
     "webpack": "^4.43.0"
   }
 }
