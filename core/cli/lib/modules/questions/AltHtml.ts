@@ -1,5 +1,5 @@
 import inquirer from 'inquirer'
-import BaseQuestions, { IoQuestions, TLibraryName } from './BaseQuestions'
+import BaseQuestions, { IoQuestions } from './BaseQuestions'
 
 /** HTML template engine */
 export const ALT_HTML_TYPE = {
@@ -26,12 +26,12 @@ export default class AltHtml extends BaseQuestions implements IoQuestions {
   #engine: ALT_HTML_TYPE = ALT_HTML_TYPE.HTML
   #ext: ALT_HTML_EXT = ALT_HTML_EXT.HTML
 
-  /** HTML template engine */
+  /** Choice HTML template engine */
   public engine(): ALT_HTML_TYPE {
     return this.#engine
   }
 
-  /** Build file extension */
+  /** Choice build file extension */
   public ext(): ALT_HTML_EXT {
     return this.#ext
   }
@@ -65,11 +65,11 @@ export default class AltHtml extends BaseQuestions implements IoQuestions {
   }
 
   /** Get task library name */
-  public taskLibrary(): TLibraryName {
+  public taskLibrary() {
     switch (this.#engine) {
-      case 'html':
+      case ALT_HTML_TYPE.HTML:
         return '@io-arc/task-webpack-html'
-      case 'pug':
+      case ALT_HTML_TYPE.PUG:
         return '@io-arc/task-webpack-pug'
       default:
         return null

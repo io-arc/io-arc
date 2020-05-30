@@ -1,6 +1,8 @@
-import { license, devDependencies, version as v } from '../../package.json'
-import { engines, devDependencies as d } from '../../../../package.json'
+import fs from 'fs'
+import { devDependencies as d, engines } from '../../../../package.json'
+import { devDependencies, license, version as v } from '../../package.json'
 import { TLibraryName } from './questions/BaseQuestions'
+import { FileCreateError } from './Utils'
 
 export interface IoPackage {
   name: string
@@ -72,8 +74,53 @@ export default class Package {
     }
   }
 
+  /**
+   * Adding library in devDependencies
+   * @param library - @io-arc library
+   */
   public addDevDependencies(library: TLibraryName): void {
-    if (library === null) return
+    if (library == null) return
     this.#body.devDependencies[library] = `^${v}`
+  }
+
+  /**
+   * Adding library in devDependencies
+   * @param library - library object
+   */
+  public addDevDependenciesObject(
+    library: { [p: string]: string } | null
+  ): void {
+    if (library == null) return
+    this.#body.devDependencies = { ...this.#body.devDependencies, ...library }
+  }
+
+  /**
+   * Create package.json
+   */
+  public create(): void {
+    this.#body.devDependencies = this.#sortByKey(this.#body.devDependencies)
+    this.#body.dependencies = this.#sortByKey(this.#body.dependencies)
+
+    try {
+      fs.writeFileSync('package.json', JSON.stringify(this.#body, null, 2))
+    } catch (e) {
+      FileCreateError('package.json', e)
+      process.exit(1)
+    }
+  }
+
+  /**
+   * Sort object by key
+   * @param base
+   */
+  #sortByKey = (base: { [p: string]: string }): { [p: string]: string } => {
+    const ordered: { [p: string]: string } = {}
+    Object.keys(base)
+      .sort()
+      .forEach((key): void => {
+        ordered[key] = base[key]
+      })
+
+    return ordered
   }
 }

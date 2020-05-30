@@ -58,11 +58,18 @@ process.on('SIGINT', (): void => {
   const altCSS = new AltCss()
   await altCSS.questions()
 
+  package$.addDevDependencies(altCSS.taskLibrary())
+  package$.addDevDependenciesObject(altCSS.dependencies())
+
   console.log('')
 
   /* JS preprocessor */
   const altJS = new AltJs()
   await altJS.questions()
+
+  package$.addDevDependencies(altJS.preprocessorTaskLibrary())
+  package$.addDevDependencies(altJS.frameworkTaskLibrary())
+  package$.addDevDependenciesObject(altJS.dependencies())
 
   console.log('')
 
@@ -87,9 +94,12 @@ process.on('SIGINT', (): void => {
 
   // TODO: create .eslintrc.yml
   // TODO: create tsconfig.json
+  // TODO: custom.d.ts
   // TODO: create src directory and template files
+  // TODO: webpack.config.js
 
   /* create */
   await localConfig$.create()
   await defaultConfig$.create()
+  package$.create()
 })()

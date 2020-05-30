@@ -1,5 +1,10 @@
 import inquirer from 'inquirer'
 import BaseQuestions, { IoQuestions } from './BaseQuestions'
+import { devDependencies as vueDep } from '../../../../../tasks/task-webpack-vue/package.json'
+import { devDependencies as vueTsDep } from '../../../../../tasks/task-webpack-vue-typescript/package.json'
+import { devDependencies as tsDep } from '../../../../../tasks/task-webpack-typescript/package.json'
+import { devDependencies as babelDep } from '../../../../../tasks/task-webpack-babel/package.json'
+import { devDependencies } from '../../../../../package.json'
 
 /** JavaScript preprocessor */
 export const ALT_JS_TYPE = {
@@ -26,15 +31,17 @@ export default class AltJs extends BaseQuestions implements IoQuestions {
   #preprocessor: ALT_JS_TYPE = ALT_JS_TYPE.TS
   #framework: JS_FRAMEWORK = JS_FRAMEWORK.NONE
 
-  /** JavaScript preprocessor */
+  /** Choice JavaScript preprocessor */
   public preprocessor(): ALT_JS_TYPE {
     return this.#preprocessor
   }
 
+  /** Choice JavaScript framework */
   public framework(): JS_FRAMEWORK {
     return this.#framework
   }
 
+  /** Choice JavaScript preprocessor & framework */
   async questions(): Promise<void> {
     this.startLog('Select JavaScript preprocessor')
 
@@ -71,5 +78,67 @@ export default class AltJs extends BaseQuestions implements IoQuestions {
 
     this.#preprocessor = res.preprocessor
     this.#framework = res.framework
+  }
+
+  /** Get preprocessor task library name */
+  public preprocessorTaskLibrary() {
+    switch (this.#preprocessor) {
+      case ALT_JS_TYPE.TS:
+        return '@io-arc/task-webpack-typescript'
+      case ALT_JS_TYPE.BABEL:
+        return '@io-arc/task-webpack-babel'
+      default:
+        return null
+    }
+  }
+
+  /** Get framework task library name */
+  public frameworkTaskLibrary() {
+    if (this.#framework !== JS_FRAMEWORK.VUE) return null
+
+    switch (this.#preprocessor) {
+      case ALT_JS_TYPE.TS:
+        return '@io-arc/task-webpack-vue-typescript'
+      case ALT_JS_TYPE.BABEL:
+        return '@io-arc/task-webpack-vue'
+      default:
+        return null
+    }
+  }
+
+  /** Get library for dependencies */
+  public dependencies(): { [p: string]: string } {
+    let dep: { [p: string]: string } = {}
+
+    if (this.#framework === JS_FRAMEWORK.VUE) {
+      switch (this.#preprocessor) {
+        case ALT_JS_TYPE.TS:
+          dep = { ...dep, ...vueTsDep }
+          break
+        case ALT_JS_TYPE.BABEL:
+          dep = { ...dep, ...vueDep }
+          break
+        default:
+          break
+      }
+    }
+
+    switch (this.#preprocessor) {
+      case ALT_JS_TYPE.TS:
+        dep = {
+          ...dep,
+          ...tsDep,
+          typescript: devDependencies['typescript'],
+          'ts-node': devDependencies['ts-node']
+        }
+        break
+      case ALT_JS_TYPE.BABEL:
+        dep = { ...dep, ...babelDep }
+        break
+      default:
+        break
+    }
+
+    return dep
   }
 }

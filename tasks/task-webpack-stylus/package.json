@@ -58,7 +58,6 @@
   },
   "devDependencies": {
     "stylus": "^0.54.7",
-    "@types/config": "^0.0.36",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11"
   }

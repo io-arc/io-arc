@@ -1,13 +1,18 @@
 import { TFileNameKey } from '@io-arc/types'
+import fs from 'fs'
 import makeDir from 'make-dir'
 import path from 'path'
-import fs from 'fs'
-import { red } from 'kleur'
+import { FileCreateError } from '../Utils'
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const YAML = require('json2yaml')
 
 export default class BaseConfig {
+  /**
+   * Create config file
+   * @param key
+   * @param data
+   */
   protected async create<T>(key: TFileNameKey, data: T): Promise<void> {
     const filename = `config/${key}.yml`
     const body = YAML.stringify(data)
@@ -18,8 +23,7 @@ export default class BaseConfig {
     try {
       fs.writeFileSync(filename, body)
     } catch (e) {
-      console.log(red(`Oops X(\nFile create failed for ${filename}`))
-      console.error(e)
+      FileCreateError(filename, e)
       process.exit(1)
     }
   }

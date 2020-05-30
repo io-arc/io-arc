@@ -1,5 +1,7 @@
 import inquirer from 'inquirer'
 import BaseQuestions, { IoQuestions } from './BaseQuestions'
+import { devDependencies as sassDep } from '../../../../../tasks/task-webpack-sass/package.json'
+import { devDependencies as stylusDep } from '../../../../../tasks/task-webpack-stylus/package.json'
 
 /** CSS language */
 export const ALT_CSS_TYPE = {
@@ -17,12 +19,12 @@ export interface IoAltCss {
 export default class AltCss extends BaseQuestions implements IoQuestions {
   #lang: ALT_CSS_TYPE = ALT_CSS_TYPE.CSS
 
-  /** Use CSS language */
+  /** Choice CSS language */
   public lang(): ALT_CSS_TYPE {
     return this.#lang
   }
 
-  /** Select CSS language */
+  /** Choice CSS language */
   async questions(): Promise<void> {
     this.startLog('Select CSS Language')
 
@@ -50,5 +52,31 @@ export default class AltCss extends BaseQuestions implements IoQuestions {
     }
 
     this.#lang = res.lang
+  }
+
+  /** Get task library name */
+  public taskLibrary() {
+    switch (this.#lang) {
+      case ALT_CSS_TYPE.CSS:
+        return '@io-arc/task-webpack-css'
+      case ALT_CSS_TYPE.SASS:
+        return '@io-arc/task-webpack-sass'
+      case ALT_CSS_TYPE.STYLUS:
+        return '@io-arc/task-webpack-stylus'
+      default:
+        return null
+    }
+  }
+
+  /** Get library for dependencies */
+  public dependencies(): { [p: string]: string } | null {
+    switch (this.#lang) {
+      case ALT_CSS_TYPE.SASS:
+        return sassDep
+      case ALT_CSS_TYPE.STYLUS:
+        return stylusDep
+      default:
+        return null
+    }
   }
 }
