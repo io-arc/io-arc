@@ -84,7 +84,7 @@ export default class Package {
   }
 
   /**
-   * Adding library in devDependencies
+   * Adding library object in devDependencies
    * @param library - library object
    */
   public addDevDependenciesObject(
@@ -95,9 +95,19 @@ export default class Package {
   }
 
   /**
+   * Adding library object in dependencies
+   * @param library
+   */
+  public addDependenciesObject(library: { [p: string]: string } | null): void {
+    if (library == null) return
+    this.#body.dependencies = { ...this.#body.dependencies, ...library }
+  }
+
+  /**
    * Create package.json
    */
   public create(): void {
+    this.#devDepToDep()
     this.#body.devDependencies = this.#sortByKey(this.#body.devDependencies)
     this.#body.dependencies = this.#sortByKey(this.#body.dependencies)
 
@@ -122,5 +132,23 @@ export default class Package {
       })
 
     return ordered
+  }
+
+  /**
+   * Convert devDependencies to dependencies
+   */
+  #devDepToDep = (): void => {
+    const target = ['vue']
+    const keys = Object.keys(this.#body.devDependencies)
+    const arr: { [p: string]: string } = {}
+
+    for (const key of keys) {
+      if (!target.includes(key)) continue
+
+      arr[key] = this.#body.devDependencies[key]
+      delete this.#body.devDependencies[key]
+    }
+
+    this.addDependenciesObject(arr)
   }
 }
