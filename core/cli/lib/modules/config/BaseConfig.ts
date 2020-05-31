@@ -2,7 +2,7 @@ import { TFileNameKey } from '@io-arc/types'
 import fs from 'fs'
 import makeDir from 'make-dir'
 import path from 'path'
-import { FileCreateError } from '../Utils'
+import { FileCreateError, FileCreateSuccess } from '../Utils'
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const YAML = require('json2yaml')
@@ -22,9 +22,10 @@ export default class BaseConfig {
     await makeDir(path.dirname(filename))
     try {
       fs.writeFileSync(filename, body)
+      FileCreateSuccess(filename)
     } catch (e) {
       FileCreateError(filename, e)
-      process.exit(1)
+      // process.exit(1)
     }
   }
 }

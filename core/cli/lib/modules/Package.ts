@@ -2,7 +2,7 @@ import fs from 'fs'
 import { devDependencies as d, engines } from '../../../../package.json'
 import { devDependencies, license, version as v } from '../../package.json'
 import { TLibraryName } from './questions/BaseQuestions'
-import { FileCreateError } from './Utils'
+import { FileCreateError, FileCreateSuccess } from './Utils'
 
 export interface IoPackage {
   name: string
@@ -113,6 +113,7 @@ export default class Package {
 
     try {
       fs.writeFileSync('package.json', JSON.stringify(this.#body, null, 2))
+      FileCreateSuccess('package.json')
     } catch (e) {
       FileCreateError('package.json', e)
       process.exit(1)

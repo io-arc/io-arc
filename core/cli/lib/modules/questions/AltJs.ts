@@ -1,4 +1,5 @@
 import inquirer from 'inquirer'
+import { IoTemplateFiles, templateDir } from '../Files'
 import BaseQuestions, { IoQuestions } from './BaseQuestions'
 import { devDependencies as vueDep } from '../../../../../tasks/task-webpack-vue/package.json'
 import { devDependencies as vueTsDep } from '../../../../../tasks/task-webpack-vue-typescript/package.json'
@@ -140,5 +141,49 @@ export default class AltJs extends BaseQuestions implements IoQuestions {
     }
 
     return dep
+  }
+
+  /** Get template files */
+  public files(): IoTemplateFiles[] {
+    switch (this.#preprocessor) {
+      case ALT_JS_TYPE.TS:
+        return this.#tsFiles()
+      case ALT_JS_TYPE.BABEL:
+        return this.#babelFiles()
+      default:
+        return []
+    }
+  }
+
+  #babelFiles = (): IoTemplateFiles[] => {
+    const files: IoTemplateFiles[] = []
+
+    // eslint
+    const eslintDir = this.#framework === JS_FRAMEWORK.VUE ? 'vue' : 'babel'
+    files.push({
+      source: `${templateDir}/lint/js/${eslintDir}/.eslintrc.yml`,
+      output: ''
+    })
+
+    // babelrc
+    files.push({ source: `${templateDir}/.babelrc`, output: '' })
+
+    return files
+  }
+
+  #tsFiles = (): IoTemplateFiles[] => {
+    const files: IoTemplateFiles[] = []
+
+    // eslint
+    const eslintDir = this.#framework === JS_FRAMEWORK.VUE ? 'vue-ts' : 'ts'
+    files.push({
+      source: `${templateDir}/lint/js/${eslintDir}/.eslintrc.yml`,
+      output: ''
+    })
+
+    // tsconfig
+    files.push({ source: `${templateDir}/tsconfig.json`, output: '' })
+
+    return files
   }
 }

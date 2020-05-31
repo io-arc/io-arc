@@ -4,11 +4,12 @@ import { version } from '../package.json'
 import NodeVersion from './modules/CheckNodeVersion'
 import DefaultConfig from './modules/config/DefaultConfig'
 import LocalConfig from './modules/config/LocalConfig'
+import CustomTypes from './modules/CustumTypes'
 import Files from './modules/Files'
 import Package from './modules/Package'
 import AltCss from './modules/questions/AltCss'
 import AltHtml from './modules/questions/AltHtml'
-import AltJs from './modules/questions/AltJs'
+import AltJs, { ALT_JS_TYPE, JS_FRAMEWORK } from './modules/questions/AltJs'
 import DeploySetting from './modules/questions/DeploySetting'
 import ProjectSetting from './modules/questions/ProjectSetting'
 import SiteSetting from './modules/questions/SiteSetting'
@@ -63,8 +64,6 @@ process.on('SIGINT', (): void => {
   package$.addDevDependencies(altCSS.taskLibrary())
   package$.addDevDependenciesObject(altCSS.dependencies())
 
-  files$.add(altCSS.files())
-
   console.log('')
 
   /* JS preprocessor */
@@ -74,6 +73,8 @@ process.on('SIGINT', (): void => {
   package$.addDevDependencies(altJS.preprocessorTaskLibrary())
   package$.addDevDependencies(altJS.frameworkTaskLibrary())
   package$.addDevDependenciesObject(altJS.dependencies())
+
+  files$.add(altJS.files())
 
   console.log('')
 
@@ -96,14 +97,19 @@ process.on('SIGINT', (): void => {
     site.siteRoot()
   )
 
-  // TODO: create .eslintrc.yml
-  // TODO: create tsconfig.json
-  // TODO: custom.d.ts
-  // TODO: create src directory and template files
+  // TODO: create template files
+  // TODO: README
   // TODO: webpack.config.js
 
   /* create */
   await localConfig$.create()
   await defaultConfig$.create()
   package$.create()
+  await files$.create(localConfig$.workingDirectories())
+
+  if (altJS.preprocessor() === ALT_JS_TYPE.TS) {
+    const customType$ = new CustomTypes()
+    if (altJS.framework() === JS_FRAMEWORK.VUE) customType$.addVue()
+    await customType$.create()
+  }
 })()

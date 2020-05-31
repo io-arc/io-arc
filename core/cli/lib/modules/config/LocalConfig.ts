@@ -132,6 +132,18 @@ export default class LocalConfig extends BaseConfig {
     }
   }
 
+  /** Working directories */
+  public workingDirectories(): string[] {
+    const arr: string[] = []
+
+    const keys: string[] = Object.keys(this.#data.wsDir)
+    keys.forEach((key) => {
+      arr.push(this.#data.wsDir[key as keyof IoLocalConfigBase['wsDir']])
+    })
+
+    return arr
+  }
+
   /**
    * Using Pug and build extension to PHP
    * @param engine - HTML template engine

@@ -1,8 +1,7 @@
 import inquirer from 'inquirer'
-import { IoTemplateFiles, templateDir } from '../Files'
-import BaseQuestions, { IoQuestions } from './BaseQuestions'
 import { devDependencies as sassDep } from '../../../../../tasks/task-webpack-sass/package.json'
 import { devDependencies as stylusDep } from '../../../../../tasks/task-webpack-stylus/package.json'
+import BaseQuestions, { IoQuestions } from './BaseQuestions'
 
 /** CSS language */
 export const ALT_CSS_TYPE = {
@@ -79,10 +78,5 @@ export default class AltCss extends BaseQuestions implements IoQuestions {
       default:
         return null
     }
-  }
-
-  /** Get template files */
-  public files(): IoTemplateFiles[] {
-    return [{ source: `${templateDir}/.browserslistrc`, output: './' }]
   }
 }
