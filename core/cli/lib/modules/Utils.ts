@@ -30,17 +30,29 @@ const bracket = (glob: TGlobPattern): void => {
   })
 }
 
+// type: xx/**
+const lastWildcard = (glob: TGlobPattern): void => {
+  const directory = glob.replace('/**', '')
+  console.log(white(completeSuffix) + green(directory))
+}
+
 /**
  * File create success log
  * @param name
  * @constructor
  */
 export const FileCreateSuccess = (name: string): void => {
-  // Not Glob pattern
-  if (!/{(.*)}/.test(name)) {
-    console.log(white(completeSuffix) + green(name))
+  // Bracket Glob pattern
+  if (/{(.*)}/.test(name)) {
+    bracket(name)
     return
   }
 
-  bracket(name)
+  // Last wildcard
+  if (/\*\*$/.test(name)) {
+    lastWildcard(name)
+    return
+  }
+
+  console.log(white(completeSuffix) + green(name))
 }

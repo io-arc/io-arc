@@ -1,0 +1,3 @@
+each v in [192]
+  - const sizes = `${v}x${v}`
+  link(rel="icon", type="image/png", href=`${SITE_ROOT}icon/icon-${sizes}.png`, sizes=sizes)

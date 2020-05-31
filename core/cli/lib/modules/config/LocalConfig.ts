@@ -1,3 +1,4 @@
+import { TDirNameKey } from '@io-arc/types'
 import { ALT_HTML_EXT, ALT_HTML_TYPE } from '../questions/AltHtml'
 import { ALT_JS_TYPE, JS_FRAMEWORK } from '../questions/AltJs'
 import { IoDeploySetting } from '../questions/DeploySetting'
@@ -185,6 +186,11 @@ export default class LocalConfig extends BaseConfig {
     }
 
     return
+  }
+
+  /** HTML working directory */
+  public wsHTML(): TDirNameKey {
+    return this.#data.wsDir.html
   }
 
   /** YAML file create */

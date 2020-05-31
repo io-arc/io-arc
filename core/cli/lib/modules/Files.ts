@@ -7,6 +7,9 @@ import { FileCreateSuccess } from './Utils'
 export interface IoTemplateFiles {
   source: TFilePath | TGlobPattern
   output: TDirPathKey
+
+  /** create log value */
+  logValue?: string
 }
 
 const dir =
@@ -67,7 +70,7 @@ export default class Files {
           return
         }
 
-        const filename = f.source.split('/').pop() as string
+        const filename = f.logValue || (f.source.split('/').pop() as string)
         const name = /(.+)/.test(f.output)
           ? /\/$/.test(f.output)
             ? f.output + filename

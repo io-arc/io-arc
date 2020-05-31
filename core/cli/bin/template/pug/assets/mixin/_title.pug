@@ -1,0 +1,5 @@
+mixin title(title)
+  if title === undefined || title === '' || title === TITLE
+    title= TITLE
+  else
+    title= `${title} | ${TITLE}`

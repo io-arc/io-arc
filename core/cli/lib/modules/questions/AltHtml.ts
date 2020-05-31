@@ -1,4 +1,6 @@
+import { TDirNameKey } from '@io-arc/types'
 import inquirer from 'inquirer'
+import { IoTemplateFiles, templateDir } from '../Files'
 import BaseQuestions, { IoQuestions } from './BaseQuestions'
 
 /** HTML template engine */
@@ -25,6 +27,7 @@ export interface IoAltHtml {
 export default class AltHtml extends BaseQuestions implements IoQuestions {
   #engine: ALT_HTML_TYPE = ALT_HTML_TYPE.HTML
   #ext: ALT_HTML_EXT = ALT_HTML_EXT.HTML
+  #createTemplate = false
 
   /** Choice HTML template engine */
   public engine(): ALT_HTML_TYPE {
@@ -37,7 +40,7 @@ export default class AltHtml extends BaseQuestions implements IoQuestions {
   }
 
   /** Choice HTML template engine */
-  async questions(): Promise<void> {
+  public async questions(): Promise<void> {
     this.startLog('Select HTML template engine')
 
     const res: IoAltHtml | number = await inquirer
@@ -77,6 +80,58 @@ export default class AltHtml extends BaseQuestions implements IoQuestions {
   }
 
   /**
+   * Create a template?
+   */
+  public async createTemplateQuestion(): Promise<void> {
+    const msg = ((): string => {
+      switch (this.#engine) {
+        case ALT_HTML_TYPE.HTML:
+          return 'HTML'
+        case ALT_HTML_TYPE.PUG:
+          return 'Pug'
+        default:
+          return ''
+      }
+    })()
+
+    if (msg === '') return
+
+    const res: { template: boolean } | number = await inquirer
+      .prompt<{ template: boolean }>({
+        type: 'confirm',
+        name: 'template',
+        message: `${msg} template create?`,
+        default: false
+      })
+      .catch((e: Error): number => {
+        console.error(e)
+        return 1
+      })
+
+    if (typeof res === 'number') {
+      this.fail()
+      return
+    }
+
+    this.#createTemplate = res.template
+  }
+
+  /**
+   * Get template files
+   * @param dir - HTML working directory
+   */
+  public template(dir: TDirNameKey): IoTemplateFiles[] {
+    switch (this.#engine) {
+      case ALT_HTML_TYPE.HTML:
+        return this.#htmlTemplate(dir)
+      case ALT_HTML_TYPE.PUG:
+        return this.#pugTemplate(dir)
+      default:
+        return []
+    }
+  }
+
+  /**
    * If engine select to 'pug' then choice file extension
    * @param html
    */
@@ -104,5 +159,41 @@ export default class AltHtml extends BaseQuestions implements IoQuestions {
     }
 
     this.#ext = res.ext
+  }
+
+  #htmlTemplate = (dir: TDirNameKey): IoTemplateFiles[] => {
+    const arr: IoTemplateFiles[] = [
+      { source: `${templateDir}/html/README.md`, output: `src/${dir}` }
+    ]
+
+    if (this.#createTemplate) {
+      arr.push({
+        source: `${templateDir}/html/index.html`,
+        output: `src/${dir}`
+      })
+    }
+
+    return arr
+  }
+
+  #pugTemplate = (dir: TDirNameKey): IoTemplateFiles[] => {
+    const arr: IoTemplateFiles[] = [
+      { source: `${templateDir}/pug/README.md`, output: `src/${dir}` }
+    ]
+
+    if (this.#createTemplate) {
+      arr.push(
+        ...[
+          {
+            source: `${templateDir}/pug/assets/**`,
+            output: `src/${dir}`,
+            logValue: 'assets'
+          },
+          { source: `${templateDir}/pug/index.pug`, output: `src/${dir}` }
+        ]
+      )
+    }
+
+    return arr
   }
 }

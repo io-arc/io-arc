@@ -20,6 +20,7 @@ process.on('SIGINT', (): void => {
   process.exit(0)
 })
 ;(async (): Promise<void> => {
+  // TODO: テンプレート生成コマンド追加
   program.version(version).parse(process.argv)
 
   /* Check Node.js version */
@@ -97,19 +98,26 @@ process.on('SIGINT', (): void => {
     site.siteRoot()
   )
 
-  // TODO: create template files
-  // TODO: README
-  // TODO: webpack.config.js
+  console.log('')
+
+  /* template */
+  // TODO: create template files (Questionでテンプレート生成を行うか確認)
+  await altHTML.createTemplateQuestion()
+  files$.add(altHTML.template(localConfig$.wsHTML()))
+  await files$.create(localConfig$.workingDirectories())
 
   /* create */
   await localConfig$.create()
   await defaultConfig$.create()
   package$.create()
-  await files$.create(localConfig$.workingDirectories())
 
   if (altJS.preprocessor() === ALT_JS_TYPE.TS) {
     const customType$ = new CustomTypes()
     if (altJS.framework() === JS_FRAMEWORK.VUE) customType$.addVue()
     await customType$.create()
   }
+
+  // TODO: README
+  // TODO: webpack.config.js
+  // TODO: install command
 })()
