@@ -4,6 +4,7 @@ import { version } from '../package.json'
 import NodeVersion from './modules/CheckNodeVersion'
 import DefaultConfig from './modules/config/DefaultConfig'
 import LocalConfig from './modules/config/LocalConfig'
+import Files from './modules/Files'
 import Package from './modules/Package'
 import AltCss from './modules/questions/AltCss'
 import AltHtml from './modules/questions/AltHtml'
@@ -26,6 +27,7 @@ process.on('SIGINT', (): void => {
     nodeVersion.fail()
     return
   }
+  const files$ = new Files()
 
   /* Project */
   const project = new ProjectSetting()
@@ -60,6 +62,8 @@ process.on('SIGINT', (): void => {
 
   package$.addDevDependencies(altCSS.taskLibrary())
   package$.addDevDependenciesObject(altCSS.dependencies())
+
+  files$.add(altCSS.files())
 
   console.log('')
 

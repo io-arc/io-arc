@@ -15,10 +15,8 @@
     "test": "tests"
   },
   "files": [
-    "lint",
-    "index.js",
-    ".babelrc",
-    ".browserslistrc"
+    "tyes",
+    "index.js"
   ],
   "publishConfig": {
     "access": "public"
