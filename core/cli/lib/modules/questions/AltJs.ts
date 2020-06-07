@@ -147,13 +147,13 @@ export default class AltJs extends BaseQuestions implements IoQuestions {
       case ALT_JS_TYPE.TS:
         return this.#tsFiles(dir)
       case ALT_JS_TYPE.BABEL:
-        return this.#babelFiles()
+        return this.#babelFiles(dir)
       default:
         return []
     }
   }
 
-  #babelFiles = (): IoTemplateFiles[] => {
+  #babelFiles = (dir: TDirNameKey): IoTemplateFiles[] => {
     const files: IoTemplateFiles[] = []
 
     // eslint
@@ -164,8 +164,8 @@ export default class AltJs extends BaseQuestions implements IoQuestions {
           source: `${templateDir}/lint/js/${eslintDir}/.eslintrc.yml`,
           output: ''
         },
-        { source: `${templateDir}/.babelrc`, output: '' }
-        // TODO: adding README.md
+        { source: `${templateDir}/.babelrc`, output: '' },
+        { source: `${templateDir}/js/README.md`, output: `src/${dir}` }
       ]
     )
 

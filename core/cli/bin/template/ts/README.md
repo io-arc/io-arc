@@ -1,6 +1,7 @@
 # TypeScript
 
-Reference see [@io-arc/task-webpack-typescript](https://github.com/io-arc/io-arc/tree/master/tasks/task-webpack-typescript)
+Reference see [@io-arc/task-webpack-typescript](https://github.com/io-arc/io-arc/tree/master/tasks/task-webpack-typescript).  
+If using a [Vue.js](https://vuejs.org/index.html) then see [@io-arc/task-webpack-vue-typescript](https://github.com/io-arc/io-arc/tree/master/tasks/task-webpack-vue-typescript).
 
 ## Tips
 
