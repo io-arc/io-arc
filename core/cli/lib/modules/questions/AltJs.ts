@@ -83,7 +83,7 @@ export default class AltJs extends BaseQuestions implements IoQuestions {
   }
 
   /** Get preprocessor task library name */
-  public preprocessorTaskLibrary() {
+  public taskLibrary() {
     if (this.#framework === JS_FRAMEWORK.VUE) {
       switch (this.#preprocessor) {
         case ALT_JS_TYPE.TS:

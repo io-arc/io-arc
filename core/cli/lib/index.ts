@@ -13,6 +13,7 @@ import AltJs, { ALT_JS_TYPE, JS_FRAMEWORK } from './modules/questions/AltJs'
 import DeploySetting from './modules/questions/DeploySetting'
 import ProjectSetting from './modules/questions/ProjectSetting'
 import SiteSetting from './modules/questions/SiteSetting'
+import WebpackFile from './modules/WebpackFile'
 
 process.stdin.resume()
 process.on('SIGINT', (): void => {
@@ -71,7 +72,7 @@ process.on('SIGINT', (): void => {
   const altJS = new AltJs()
   await altJS.questions()
 
-  package$.addDevDependencies(altJS.preprocessorTaskLibrary())
+  package$.addDevDependencies(altJS.taskLibrary())
   package$.addDevDependenciesObject(altJS.dependencies())
 
   console.log('')
@@ -116,6 +117,13 @@ process.on('SIGINT', (): void => {
     if (altJS.framework() === JS_FRAMEWORK.VUE) customType$.addVue()
     await customType$.create()
   }
+
+  const webpack$ = new WebpackFile(
+    altHTML.taskLibrary(),
+    altCSS.taskLibrary(),
+    altJS.taskLibrary()
+  )
+  webpack$.create()
 
   // TODO: README
   // TODO: webpack.config.js
