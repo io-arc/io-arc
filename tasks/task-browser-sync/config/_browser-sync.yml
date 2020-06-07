@@ -1,0 +1,8 @@
+# 複数デバイスとの操作同期
+ghostMode:
+  clicks: false
+  scroll: false
+  forms:
+    submit: false
+    inputs: false
+    toggles: false

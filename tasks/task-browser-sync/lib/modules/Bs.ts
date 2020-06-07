@@ -18,18 +18,13 @@ export default class Bs {
     this.#filename = this.#checkFile('browser-sync.yml')
     if (this.#filename !== undefined) return
 
-    this.#filename = this.#checkFile('browser-sync.yaml')
-    if (this.#filename !== undefined) return
-
     this.#filename = this.#checkFile('bs.yml')
     if (this.#filename !== undefined) return
-
-    this.#filename = this.#checkFile('bs.yaml')
   }
 
   public run(): void {
     const ops = this.#filename
-      ? ReadYaml<Options>(this.#filename, ['config'])
+      ? ReadYaml<Options>(this.#filename.replace('.yml', ''), ['config'])
       : {}
 
     this.#options(ops).subscribe((o: Options): void => {
@@ -93,7 +88,7 @@ export default class Bs {
           const historyApiFallback = require('connect-history-api-fallback')
           const middleware = historyApiFallback({ index: this.#history })
 
-          o.middleware = [...middleware]
+          o.middleware = [middleware]
           o.single = true
           return o
         }

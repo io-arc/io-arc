@@ -28,9 +28,7 @@ The configuration file is be placed in the `config` directory.
 ### Valid file name
 
 - browser-sync.yml
-- browser-sync.yaml
 - bs.yml
-- bs.yaml
 
 If there are more than one valid files, they are prioritized in the order listed above.  
 Options see: [BrowserSync option](https://browsersync.io/docs/options)
