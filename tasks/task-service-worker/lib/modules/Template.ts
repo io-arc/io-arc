@@ -1,27 +1,12 @@
-import cpx from 'cpx'
-import path from 'path'
-import Logger from '@io-arc/logger'
-import { red, blue } from 'kleur'
 import { WS_ROOT } from '@io-arc/env'
+import Logger from '@io-arc/logger'
+import cpx from 'cpx'
+import { blue } from 'kleur'
+import path from 'path'
 
 export function templateCreate(): void {
-  if (process.mainModule == null) {
-    Logger.message('Missing main module', red)
-    process.exit(1)
-    return
-  }
+  cpx.copySync(`${path.dirname(__filename)}/template/sw.js`, WS_ROOT)
 
-  cpx.copy(
-    `${path.dirname(process.mainModule.filename)}/template/sw.js`,
-    WS_ROOT,
-    (err: Error | null) => {
-      if (err) {
-        Logger.failed('create a service-worker', err)
-        process.exit(1)
-        return
-      }
-      Logger.message('done !', blue)
-      process.exit(0)
-    }
-  )
+  Logger.message('done !', blue)
+  process.exit(0)
 }

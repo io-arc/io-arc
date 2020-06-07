@@ -12,11 +12,7 @@ export interface IoTemplateFiles {
   logValue?: string
 }
 
-const dir =
-  process.mainModule === undefined
-    ? './'
-    : path.dirname(process.mainModule.filename)
-export const templateDir = `${dir}/template`
+export const templateDir = `${path.dirname(__filename)}/template`
 
 export default class Files {
   #template: IoTemplateFiles[]
