@@ -1,11 +1,12 @@
 import { program } from 'commander'
-import { green } from 'kleur'
+import { green, bold } from 'kleur'
 import { version } from '../package.json'
 import NodeVersion from './modules/CheckNodeVersion'
 import DefaultConfig from './modules/config/DefaultConfig'
 import LocalConfig from './modules/config/LocalConfig'
 import CustomTypes from './modules/CustumTypes'
 import Files from './modules/Files'
+import Install from './modules/Install'
 import Package from './modules/Package'
 import AltCss from './modules/questions/AltCss'
 import AltHtml from './modules/questions/AltHtml'
@@ -21,7 +22,7 @@ process.on('SIGINT', (): void => {
   process.exit(0)
 })
 ;(async (): Promise<void> => {
-  // TODO: テンプレート生成コマンド追加
+  // TODO: add template create command
   program.version(version).parse(process.argv)
 
   /* Check Node.js version */
@@ -99,7 +100,6 @@ process.on('SIGINT', (): void => {
   console.log('')
 
   /* template */
-  // TODO: create template files (Questionでテンプレート生成を行うか確認)
   await altHTML.createTemplateQuestion()
   files$.add(altHTML.template(localConfig$.wsHTML()))
   files$.add(localConfig$.template())
@@ -125,7 +125,15 @@ process.on('SIGINT', (): void => {
   )
   webpack$.create()
 
-  // TODO: README
-  // TODO: webpack.config.js
-  // TODO: install command
+  /* library install */
+  console.log('')
+  const successLog = bold().blue(`Done!\nEnjoy create!!`)
+  const install$ = new Install()
+  await install$.questions()
+  if (install$.isInstall()) {
+    await install$.packageManager()
+    install$.start(() => console.log(successLog))
+  } else {
+    console.log(successLog)
+  }
 })()

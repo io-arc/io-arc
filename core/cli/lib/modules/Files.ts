@@ -63,22 +63,16 @@ export default class Files {
     await this.#makeSrc(workingDirectories)
 
     this.#template.forEach((f) => {
-      cpx.copy(f.source, f.output, (e) => {
-        if (e != null) {
-          console.error(e)
-          process.exit(1)
-          return
-        }
+      cpx.copySync(f.source, f.output)
 
-        const filename = f.logValue || (f.source.split('/').pop() as string)
-        const name = /(.+)/.test(f.output)
-          ? /\/$/.test(f.output)
-            ? f.output + filename
-            : `${f.output}/${filename}`
-          : filename
+      const filename = f.logValue || (f.source.split('/').pop() as string)
+      const name = /(.+)/.test(f.output)
+        ? /\/$/.test(f.output)
+          ? f.output + filename
+          : `${f.output}/${filename}`
+        : filename
 
-        FileCreateSuccess(name)
-      })
+      FileCreateSuccess(name)
     })
   }
 
