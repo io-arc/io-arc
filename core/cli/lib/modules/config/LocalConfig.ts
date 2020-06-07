@@ -1,4 +1,5 @@
 import { TDirNameKey } from '@io-arc/types'
+import { IoTemplateFiles, templateDir } from '../Files'
 import { ALT_HTML_EXT, ALT_HTML_TYPE } from '../questions/AltHtml'
 import { ALT_JS_TYPE, JS_FRAMEWORK } from '../questions/AltJs'
 import { IoDeploySetting } from '../questions/DeploySetting'
@@ -193,6 +194,11 @@ export default class LocalConfig extends BaseConfig {
     return this.#data.wsDir.html
   }
 
+  /** JS working directory */
+  public wsJS(): TDirNameKey {
+    return this.#data.wsDir.js
+  }
+
   /** YAML file create */
   public async create(): Promise<void> {
     await super.create('local', this.#data)
@@ -214,5 +220,17 @@ export default class LocalConfig extends BaseConfig {
         json: { minify: true }
       }
     })
+  }
+
+  /**
+   * Get template files
+   */
+  public template(): IoTemplateFiles[] {
+    return [
+      {
+        source: `${templateDir}/img/README.md`,
+        output: `src/${this.#data.wsDir.img}`
+      }
+    ]
   }
 }

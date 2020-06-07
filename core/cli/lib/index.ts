@@ -72,10 +72,7 @@ process.on('SIGINT', (): void => {
   await altJS.questions()
 
   package$.addDevDependencies(altJS.preprocessorTaskLibrary())
-  package$.addDevDependencies(altJS.frameworkTaskLibrary())
   package$.addDevDependenciesObject(altJS.dependencies())
-
-  files$.add(altJS.files())
 
   console.log('')
 
@@ -104,6 +101,9 @@ process.on('SIGINT', (): void => {
   // TODO: create template files (Questionでテンプレート生成を行うか確認)
   await altHTML.createTemplateQuestion()
   files$.add(altHTML.template(localConfig$.wsHTML()))
+  files$.add(localConfig$.template())
+  files$.add(altJS.template(localConfig$.wsJS()))
+
   await files$.create(localConfig$.workingDirectories())
 
   /* create */

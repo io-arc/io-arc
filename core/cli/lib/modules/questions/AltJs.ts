@@ -1,3 +1,4 @@
+import { TDirNameKey } from '@io-arc/types'
 import inquirer from 'inquirer'
 import { IoTemplateFiles, templateDir } from '../Files'
 import BaseQuestions, { IoQuestions } from './BaseQuestions'
@@ -83,27 +84,24 @@ export default class AltJs extends BaseQuestions implements IoQuestions {
 
   /** Get preprocessor task library name */
   public preprocessorTaskLibrary() {
-    switch (this.#preprocessor) {
-      case ALT_JS_TYPE.TS:
-        return '@io-arc/task-webpack-typescript'
-      case ALT_JS_TYPE.BABEL:
-        return '@io-arc/task-webpack-babel'
-      default:
-        return null
-    }
-  }
-
-  /** Get framework task library name */
-  public frameworkTaskLibrary() {
-    if (this.#framework !== JS_FRAMEWORK.VUE) return null
-
-    switch (this.#preprocessor) {
-      case ALT_JS_TYPE.TS:
-        return '@io-arc/task-webpack-vue-typescript'
-      case ALT_JS_TYPE.BABEL:
-        return '@io-arc/task-webpack-vue'
-      default:
-        return null
+    if (this.#framework === JS_FRAMEWORK.VUE) {
+      switch (this.#preprocessor) {
+        case ALT_JS_TYPE.TS:
+          return '@io-arc/task-webpack-vue-typescript'
+        case ALT_JS_TYPE.BABEL:
+          return '@io-arc/task-webpack-vue'
+        default:
+          return null
+      }
+    } else {
+      switch (this.#preprocessor) {
+        case ALT_JS_TYPE.TS:
+          return '@io-arc/task-webpack-typescript'
+        case ALT_JS_TYPE.BABEL:
+          return '@io-arc/task-webpack-babel'
+        default:
+          return null
+      }
     }
   }
 
@@ -144,10 +142,10 @@ export default class AltJs extends BaseQuestions implements IoQuestions {
   }
 
   /** Get template files */
-  public files(): IoTemplateFiles[] {
+  public template(dir: TDirNameKey): IoTemplateFiles[] {
     switch (this.#preprocessor) {
       case ALT_JS_TYPE.TS:
-        return this.#tsFiles()
+        return this.#tsFiles(dir)
       case ALT_JS_TYPE.BABEL:
         return this.#babelFiles()
       default:
@@ -160,29 +158,34 @@ export default class AltJs extends BaseQuestions implements IoQuestions {
 
     // eslint
     const eslintDir = this.#framework === JS_FRAMEWORK.VUE ? 'vue' : 'babel'
-    files.push({
-      source: `${templateDir}/lint/js/${eslintDir}/.eslintrc.yml`,
-      output: ''
-    })
-
-    // babelrc
-    files.push({ source: `${templateDir}/.babelrc`, output: '' })
+    files.push(
+      ...[
+        {
+          source: `${templateDir}/lint/js/${eslintDir}/.eslintrc.yml`,
+          output: ''
+        },
+        { source: `${templateDir}/.babelrc`, output: '' }
+        // TODO: adding README.md
+      ]
+    )
 
     return files
   }
 
-  #tsFiles = (): IoTemplateFiles[] => {
+  #tsFiles = (dir: TDirNameKey): IoTemplateFiles[] => {
     const files: IoTemplateFiles[] = []
 
-    // eslint
     const eslintDir = this.#framework === JS_FRAMEWORK.VUE ? 'vue-ts' : 'ts'
-    files.push({
-      source: `${templateDir}/lint/js/${eslintDir}/.eslintrc.yml`,
-      output: ''
-    })
-
-    // tsconfig
-    files.push({ source: `${templateDir}/tsconfig.json`, output: '' })
+    files.push(
+      ...[
+        {
+          source: `${templateDir}/lint/js/${eslintDir}/.eslintrc.yml`,
+          output: ''
+        },
+        { source: `${templateDir}/tsconfig.json`, output: '' },
+        { source: `${templateDir}/ts/README.md`, output: `src/${dir}` }
+      ]
+    )
 
     return files
   }
