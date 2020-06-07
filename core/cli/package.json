@@ -1,0 +1,69 @@
+{
+  "name": "@io-arc/cli",
+  "version": "0.1.0",
+  "description": "WEB/PWA/SPA boilerplate CLI",
+  "keywords": [
+    "web",
+    "pwa",
+    "spa",
+    "boilerplate",
+    "cli",
+    "html",
+    "css",
+    "javascript",
+    "pug",
+    "sass",
+    "scss",
+    "stylus",
+    "babel",
+    "typescript",
+    "manifest",
+    "serviceworker"
+  ],
+  "author": "arc one",
+  "homepage": "https://github.com/io-arc/io-arc/",
+  "license": "ISC",
+  "main": "",
+  "directories": {
+    "bin": "bin",
+    "lib": "lib",
+    "test": "tests"
+  },
+  "files": [
+    "lib",
+    "bin"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/io-arc/io-arc.git"
+  },
+  "scripts": {
+    "prebuild": "eslint lib/*.ts",
+    "build": "rollup -c",
+    "io": "io-arc"
+  },
+  "bin": {
+    "io-arc": "bin/index.js"
+  },
+  "dependencies": {
+    "commander": "^5.1.0",
+    "cpx": "^1.5.0",
+    "inquirer": "^7.1.0",
+    "json2yaml": "^1.1.0",
+    "kleur": "^3.0.3",
+    "make-dir": "^3.1.0",
+    "rxjs": "^6.5.5"
+  },
+  "devDependencies": {
+    "@io-arc/types": "^0.1.0",
+    "@types/cpx": "^1.5.1",
+    "@types/inquirer": "^6.5.0",
+    "cross-env": "^7.0.2",
+    "npm-run-all": "^4.1.5",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  }
+}

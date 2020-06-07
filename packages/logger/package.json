@@ -1,6 +1,6 @@
 {
   "name": "@io-arc/logger",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "console logging",
   "author": "arc one",
   "homepage": "https://github.com/io-arc/io-arc/packages/logger",
@@ -28,10 +28,12 @@
     "postbuild": "tsc --emitDeclarationOnly"
   },
   "dependencies": {
-    "@io-arc/types": "^0.0.2",
-    "@types/node-notifier": "^6.0.0",
+    "@io-arc/types": "^0.1.0",
     "kleur": "^3.0.3",
     "moment": "^2.24.0",
     "node-notifier": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/node-notifier": "^6.0.0"
   }
 }

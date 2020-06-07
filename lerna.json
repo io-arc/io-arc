@@ -3,8 +3,9 @@
   "useWorkspaces": true,
   "packages": [
     "packages/*",
-    "tasks/*"
+    "tasks/*",
+    "core/*"
   ],
   "year": 2020,
-  "version": "0.0.2"
+  "version": "0.1.0"
 }

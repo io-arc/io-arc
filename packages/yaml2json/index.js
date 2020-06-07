@@ -3,7 +3,7 @@ Yaml2Json
 YAML to JSON conversion
 
 https://github.com/io-arc/io-arc/packages/yaml2json
-Version: 0.0.2
+Version: 0.1.0
 License: ISC
 Copyright (c) 2020 arc one
 */

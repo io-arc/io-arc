@@ -42,7 +42,7 @@ Constants configure to [config](https://www.npmjs.com/package/node-config).
 | `URL`           | `url` and `siteRoot`                                | Site URL                                      | [`SITE_URL`](https://github.com/io-arc/io-arc/packages/env#site_url)                   |
 | `AUTHOR`        | `author`                                            | Site author                                   | [`SITE_AUTHOR`](https://github.com/io-arc/io-arc/packages/env#site_author)             |
 | `DESCRIPTION`   | `description`                                       | Site description                              | [`SITE_DESCRIPTION`](https://github.com/io-arc/io-arc/packages/env#site_description)   |
-| `SITE_ROOT`     | `siteRoot`                                          | Site root path (e.g. /)                       | [`SITE_DESCRIPTION`](https://github.com/io-arc/io-arc/packages/env#site_description)   |
+| `SITE_ROOT`     | `siteRoot`                                          | Site root path (e.g. `/`)                       | [`SITE_DESCRIPTION`](https://github.com/io-arc/io-arc/packages/env#site_description)   |
 | `CSS_DIR`       | `deployDir.css`                                     | CSS directory path (e.g. /common/css)         | [`OUTPUT_CSS_ARRAY`](https://github.com/io-arc/io-arc/packages/env#output_css_array)   |
 | `IMG_DIR`       | `deployDir.img`                                     | Image directory path (e.g. /common/img)       | [`OUTPUT_IMG_ARRAY`](https://github.com/io-arc/io-arc/packages/env#output_img_array)   |
 | `JS_DIR`        | `deployDir.js`                                      | JavaScript directory path (e.g. /common/js)   | [`OUTPUT_JS_ARRAY`](https://github.com/io-arc/io-arc/packages/env#output_js_array)     |

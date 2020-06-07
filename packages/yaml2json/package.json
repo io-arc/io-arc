@@ -1,6 +1,6 @@
 {
   "name": "@io-arc/yaml2json",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "YAML to JSON conversion",
   "author": "arc one",
   "homepage": "https://github.com/io-arc/io-arc/packages/yaml2json",
@@ -29,12 +29,14 @@
     "test": "jest"
   },
   "dependencies": {
-    "@io-arc/path-build": "^0.0.2",
-    "@io-arc/types": "^0.0.2",
-    "@types/js-yaml": "^3.12.3",
+    "@io-arc/path-build": "^0.1.0",
+    "@io-arc/types": "^0.1.0",
     "glob": "^7.1.6",
     "js-yaml": "^3.13.1",
     "make-dir": "^3.0.2",
     "rxjs": "^6.5.4"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^3.12.3"
   }
 }

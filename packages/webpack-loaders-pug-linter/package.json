@@ -1,6 +1,6 @@
 {
   "name": "@io-arc/webpack-loaders-pug-linter",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Pug linter for webpack loader",
   "keywords": [
     "webpack",
@@ -32,7 +32,7 @@
     "build": "rollup -c",
     "postbuild": "tsc --emitDeclarationOnly"
   },
-  "dependencies": {
+  "devDependencies": {
     "@types/webpack": "^4.41.10",
     "webpack": "^4.42.1"
   }
