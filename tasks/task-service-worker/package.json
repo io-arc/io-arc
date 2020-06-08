@@ -1,6 +1,6 @@
 {
   "name": "@io-arc/task-service-worker",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Create a Service Worker",
   "keywords": [
     "serviceworker",
@@ -35,8 +35,8 @@
     "ia-sw": "bin/index.js"
   },
   "dependencies": {
-    "@io-arc/env": "^0.1.0",
-    "@io-arc/logger": "^0.1.0",
+    "@io-arc/env": "^0.1.1",
+    "@io-arc/logger": "^0.1.1",
     "commander": "^5.1.0",
     "cpx": "^1.5.0",
     "kleur": "^3.0.3",

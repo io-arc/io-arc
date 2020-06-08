@@ -186,7 +186,7 @@ export default class AltHtml extends BaseQuestions implements IoQuestions {
         ...[
           {
             source: `${templateDir}/pug/assets/**`,
-            output: `src/${dir}`,
+            output: `src/${dir}/assets`,
             logValue: 'assets'
           },
           { source: `${templateDir}/pug/index.pug`, output: `src/${dir}` }
