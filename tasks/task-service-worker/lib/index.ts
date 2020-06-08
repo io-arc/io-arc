@@ -16,5 +16,5 @@ import { templateCreate } from './modules/Template'
 
   // create a service-worker
   const generate = new GenerateServiceWorker()
-  generate.run()
+  if (generate.exist()) generate.run()
 })()
