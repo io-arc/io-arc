@@ -1,4 +1,4 @@
-# `@io-arc/copy`
+# `@io-arc/task-copy`
 
 Copying files in a directory.
 
