@@ -2,7 +2,7 @@
 WebpackLoadersJS
 JS loaders for webpack
 
-https://github.com/io-arc/io-arc/packages/webpack-loaders-js
+https://github.com/io-arc/io-arc/tree/master/packages/webpack-loaders-js
 Version: 0.1.1
 License: ISC
 Copyright (c) 2020 arc one

@@ -3,7 +3,7 @@
   "version": "0.1.1",
   "description": "Clean build directory",
   "author": "arc one",
-  "homepage": "https://github.com/io-arc/io-arc/tasks/clean",
+  "homepage": "https://github.com/io-arc/io-arc/tree/master/tasks/clean",
   "license": "ISC",
   "main": "",
   "directories": {

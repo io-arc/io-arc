@@ -3,7 +3,7 @@
   "version": "0.1.1",
   "description": "Utility functions",
   "author": "arc one",
-  "homepage": "https://github.com/io-arc/io-arc/packages/utils",
+  "homepage": "https://github.com/io-arc/io-arc/tree/master/packages/utils",
   "license": "ISC",
   "main": "index.js",
   "types": "types/index.d.ts",

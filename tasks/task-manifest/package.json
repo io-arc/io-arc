@@ -6,7 +6,7 @@
     "manifest"
   ],
   "author": "arc one",
-  "homepage": "https://github.com/io-arc/io-arc/tasks/task-manifest",
+  "homepage": "https://github.com/io-arc/io-arc/tree/master/tasks/task-manifest",
   "license": "ISC",
   "main": "",
   "directories": {

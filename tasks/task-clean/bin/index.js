@@ -3,7 +3,7 @@
 Clean directory
 Clean build directory
 
-https://github.com/io-arc/io-arc/tasks/clean
+https://github.com/io-arc/io-arc/tree/master/tasks/clean
 Version: 0.1.1
 License: ISC
 Copyright (c) 2020 arc one

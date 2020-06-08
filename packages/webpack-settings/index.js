@@ -2,7 +2,7 @@
 Webpack Settings
 Webpack build settings
 
-https://github.com/io-arc/io-arc/packages/webpack-settings
+https://github.com/io-arc/io-arc/tree/master/packages/webpack-settings
 Version: 0.1.1
 License: ISC
 Copyright (c) 2020 arc one

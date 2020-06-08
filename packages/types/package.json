@@ -3,7 +3,7 @@
   "version": "0.1.1",
   "description": "Boilerplate TypeScript global types",
   "author": "arc one",
-  "homepage": "https://github.com/io-arc/io-arc/packages/types",
+  "homepage": "https://github.com/io-arc/io-arc/tree/master/packages/types",
   "license": "ISC",
   "main": "index.d.ts",
   "directories": {},

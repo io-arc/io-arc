@@ -9,7 +9,7 @@
     "Vue"
   ],
   "author": "arc one",
-  "homepage": "https://github.com/io-arc/io-arc/tasks/tasks-webpack-vue-typescript",
+  "homepage": "https://github.com/io-arc/io-arc/tree/master/tasks/tasks-webpack-vue-typescript",
   "license": "ISC",
   "main": "index.js",
   "types": "types/index.d.ts",

@@ -3,7 +3,7 @@
   "version": "0.1.1",
   "description": "Get file list",
   "author": "arc one",
-  "homepage": "https://github.com/io-arc/io-arc/packages/file-list",
+  "homepage": "https://github.com/io-arc/io-arc/tree/master/packages/file-list",
   "license": "ISC",
   "main": "index.js",
   "types": "types/index.d.ts",

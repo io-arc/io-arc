@@ -7,7 +7,7 @@
     "html"
   ],
   "author": "arc one",
-  "homepage": "https://github.com/io-arc/io-arc/tasks/task-webpack-html",
+  "homepage": "https://github.com/io-arc/io-arc/tree/master/tasks/task-webpack-html",
   "license": "ISC",
   "main": "index.js",
   "types": "types/index.d.ts",

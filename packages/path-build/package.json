@@ -3,7 +3,7 @@
   "version": "0.1.1",
   "description": "Path create to relative or absolute",
   "author": "arc one",
-  "homepage": "https://github.com/io-arc/io-arc/packages/path-build",
+  "homepage": "https://github.com/io-arc/io-arc/tree/master/packages/path-build",
   "license": "ISC",
   "main": "index.js",
   "types": "types/index.d.ts",

@@ -10,7 +10,7 @@
     "JavaScript"
   ],
   "author": "arc one",
-  "homepage": "https://github.com/io-arc/io-arc/tasks/tasks-webpack-vue",
+  "homepage": "https://github.com/io-arc/io-arc/tree/master/tasks/tasks-webpack-vue",
   "license": "ISC",
   "main": "index.js",
   "types": "types/index.d.ts",

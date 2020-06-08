@@ -1,7 +1,7 @@
 /*!
 TypeScript compile for webpack
 
-https://github.com/io-arc/io-arc/tasks/tasks-webpack-typescript
+https://github.com/io-arc/io-arc/tree/master/tasks/tasks-webpack-typescript
 Version: 0.1.1
 License: ISC
 Copyright (c) 2020 arc one

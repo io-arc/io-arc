@@ -2,7 +2,7 @@
 /*!
 Create a Service Worker
 
-https://github.com/io-arc/io-arc/tasks/task-service-worker
+https://github.com/io-arc/io-arc/tree/master/tasks/task-service-worker
 Version: 0.1.1
 License: ISC
 Copyright (c) 2020 arc one

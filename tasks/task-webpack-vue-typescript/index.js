@@ -1,7 +1,7 @@
 /*!
 Vue.js in TypeScript compile for webpack
 
-https://github.com/io-arc/io-arc/tasks/tasks-webpack-vue-typescript
+https://github.com/io-arc/io-arc/tree/master/tasks/tasks-webpack-vue-typescript
 Version: 0.1.1
 License: ISC
 Copyright (c) 2020 arc one

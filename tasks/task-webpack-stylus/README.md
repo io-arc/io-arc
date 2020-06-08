@@ -21,13 +21,13 @@ Config key is `wsDir.css`.
 ## Build option
 
 [config](https://www.npmjs.com/package/node-config) to configure the build option.  
-Reference to [@io-arc/env](https://github.com/io-arc/io-arc/packages/env).
+Reference to [@io-arc/env](https://github.com/io-arc/io-arc/tree/master/packages/env).
 
 | options           | define                                                                                              |
 | ----------------- | --------------------------------------------------------------------------------------------------- |
-| minify            | [`CSS_MINIFY`](https://github.com/io-arc/io-arc/packages/env#css_minify)                            |
-| using file-loader | [`USE_CSS_FILE_LOADER`](https://github.com/io-arc/io-arc/packages/env#use_css_file_loader)          |
-| image hash        | [`IS_HASH_CSS_FILE_LOADER`](https://github.com/io-arc/io-arc/packages/env#use_hash_css_file_loader) |
+| minify            | [`CSS_MINIFY`](https://github.com/io-arc/io-arc/tree/master/packages/env#css_minify)                            |
+| using file-loader | [`USE_CSS_FILE_LOADER`](https://github.com/io-arc/io-arc/tree/master/packages/env#use_css_file_loader)          |
+| image hash        | [`IS_HASH_CSS_FILE_LOADER`](https://github.com/io-arc/io-arc/tree/master/packages/env#use_hash_css_file_loader) |
 
 ## Features
 

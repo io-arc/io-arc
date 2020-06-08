@@ -6,7 +6,7 @@
     "webpack"
   ],
   "author": "arc one",
-  "homepage": "https://github.com/io-arc/io-arc/packages/webpack-loaders-image",
+  "homepage": "https://github.com/io-arc/io-arc/tree/master/packages/webpack-loaders-image",
   "license": "ISC",
   "main": "index.js",
   "types": "types/index.d.ts",

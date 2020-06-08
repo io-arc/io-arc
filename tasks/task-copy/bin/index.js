@@ -3,7 +3,7 @@
 File copy
 Copying files in a directory
 
-https://github.com/io-arc/io-arc/tasks/copy
+https://github.com/io-arc/io-arc/tree/master/tasks/copy
 Version: 0.1.1
 License: ISC
 Copyright (c) 2020 arc one

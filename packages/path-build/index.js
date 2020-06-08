@@ -2,7 +2,7 @@
 BuildPath
 Path create to relative or absolute
 
-https://github.com/io-arc/io-arc/packages/path-build
+https://github.com/io-arc/io-arc/tree/master/packages/path-build
 Version: 0.1.1
 License: ISC
 Copyright (c) 2020 arc one

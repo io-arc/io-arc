@@ -2,7 +2,7 @@
 Logger
 console logging
 
-https://github.com/io-arc/io-arc/packages/logger
+https://github.com/io-arc/io-arc/tree/master/packages/logger
 Version: 0.1.1
 License: ISC
 Copyright (c) 2020 arc one

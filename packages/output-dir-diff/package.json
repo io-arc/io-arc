@@ -3,7 +3,7 @@
   "version": "0.1.1",
   "description": "Relative path to another directory from one directory",
   "author": "arc obe",
-  "homepage": "https://github.com/io-arc/io-arc/packages/output-dir-diff",
+  "homepage": "https://github.com/io-arc/io-arc/tree/master/packages/output-dir-diff",
   "license": "ISC",
   "main": "index.js",
   "types": "types/index.d.ts",

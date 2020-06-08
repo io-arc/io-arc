@@ -2,7 +2,7 @@
 /*!
 Run BrowserSync
 
-https://github.com/io-arc/io-arc/tasks/task-browser-sync
+https://github.com/io-arc/io-arc/tree/master/tasks/task-browser-sync
 Version: 0.1.1
 License: ISC
 Copyright (c) 2020 arc one

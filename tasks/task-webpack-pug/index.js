@@ -1,7 +1,7 @@
 /*!
 Pug compile for webpack
 
-https://github.com/io-arc/io-arc/tasks/tasks-webpack-pug
+https://github.com/io-arc/io-arc/tree/master/tasks/tasks-webpack-pug
 Version: 0.1.1
 License: ISC
 Copyright (c) 2020 arc one

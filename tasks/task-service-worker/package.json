@@ -7,7 +7,7 @@
     "workbox"
   ],
   "author": "arc one",
-  "homepage": "https://github.com/io-arc/io-arc/tasks/task-service-worker",
+  "homepage": "https://github.com/io-arc/io-arc/tree/master/tasks/task-service-worker",
   "license": "ISC",
   "main": "",
   "directories": {

@@ -3,7 +3,7 @@
   "version": "0.1.1",
   "description": "YAML to JSON conversion",
   "author": "arc one",
-  "homepage": "https://github.com/io-arc/io-arc/tasks/task-yaml2json",
+  "homepage": "https://github.com/io-arc/io-arc/tree/master/tasks/task-yaml2json",
   "license": "ISC",
   "main": "",
   "bin": {

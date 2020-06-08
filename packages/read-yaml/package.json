@@ -3,7 +3,7 @@
   "version": "0.1.1",
   "description": "Transpile YAML to JSON",
   "author": "arc one",
-  "homepage": "https://github.com/io-arc/io-arc/packages/read-yaml",
+  "homepage": "https://github.com/io-arc/io-arc/tree/master/packages/read-yaml",
   "license": "ISC",
   "main": "index.js",
   "types": "types/index.d.ts",

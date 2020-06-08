@@ -2,7 +2,7 @@
 /*!
 Create a manifest.json
 
-https://github.com/io-arc/io-arc/tasks/task-manifest
+https://github.com/io-arc/io-arc/tree/master/tasks/task-manifest
 Version: 0.1.1
 License: ISC
 Copyright (c) 2020 arc one
