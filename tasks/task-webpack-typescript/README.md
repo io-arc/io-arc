@@ -22,8 +22,8 @@ Config key is `wsDir.js`.
 [config](https://www.npmjs.com/package/node-config) to configure the build option.  
 Reference to [@io-arc/env](https://github.com/io-arc/io-arc/tree/master/packages/env).
 
-| options               | define                                                                                            |
-| --------------------- | ------------------------------------------------------------------------------------------------- |
+| options               | define                                                                                                        |
+| --------------------- | ------------------------------------------------------------------------------------------------------------- |
 | minify                | [`JS_MINIFY`](https://github.com/io-arc/io-arc/tree/master/packages/env#js_minify)                            |
 | using file-loader     | [`USE_JS_FILE_LOADER`](https://github.com/io-arc/io-arc/tree/master/packages/env#use_js_file_loader)          |
 | image hash            | [`IS_HASH_JS_FILE_LOADER`](https://github.com/io-arc/io-arc/tree/master/packages/env#use_hash_js_file_loader) |
@@ -45,13 +45,14 @@ You can specify the file name of the common logic.
 
 Constants configure to [config](https://www.npmjs.com/package/node-config).
 
-| constants       | config key                                          | description                                   | @io-arc/env                                                                          |
-| --------------- | --------------------------------------------------- | --------------------------------------------- | ------------------------------------------------------------------------------------ |
-| `IS_PRODUCTION` | `NODE_ENV=production(development)` in `npm scripts` | Whether the build mode is "production" or not | [`IS_PRODUCTION`](https://github.com/io-arc/io-arc/tree/master/packages/env#is_production)       |
-| `SITE_TITLE`    | `title`                                             | Site title                                    | [`SITE_TITLE`](https://github.com/io-arc/io-arc/tree/master/packages/env#site_title)             |
-| `URL`           | `url` and `siteRoot`                                | Site URL                                      | [`SITE_URL`](https://github.com/io-arc/io-arc/tree/master/packages/env#site_url)                 |
-| `SITE_AUTHOR`   | `author`                                            | Site author                                   | [`SITE_AUTHOR`](https://github.com/io-arc/io-arc/tree/master/packages/env#site_author)           |
-| `SITE_ROOT`     | `siteRoot`                                          | Site root path (e.g. /)                       | [`SITE_DESCRIPTION`](https://github.com/io-arc/io-arc/tree/master/packages/env#site_description) |
+| constants          | config key                                          | description                                   | @io-arc/env                                                                                      |
+| ------------------ | --------------------------------------------------- | --------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| `IS_PRODUCTION`    | `NODE_ENV=production(development)` in `npm scripts` | Whether the build mode is "production" or not | [`IS_PRODUCTION`](https://github.com/io-arc/io-arc/tree/master/packages/env#is_production)       |
+| `SITE_TITLE`       | `title`                                             | Site title                                    | [`SITE_TITLE`](https://github.com/io-arc/io-arc/tree/master/packages/env#site_title)             |
+| `URL`              | `url` and `siteRoot`                                | Site URL                                      | [`SITE_URL`](https://github.com/io-arc/io-arc/tree/master/packages/env#site_url)                 |
+| `SITE_AUTHOR`      | `author`                                            | Site author                                   | [`SITE_AUTHOR`](https://github.com/io-arc/io-arc/tree/master/packages/env#site_author)           |
+| `SITE_DESCRIPTION` | `description`                                       | Site description                              | [`SITE_DESCRIPTION`](https://github.com/io-arc/io-arc/tree/master/packages/env#site_description) |
+| `SITE_ROOT`        | `siteRoot`                                          | Site root path (e.g. /)                       | [`SITE_ROOT`](https://github.com/io-arc/io-arc/tree/master/packages/env#site_root)               |
 
 ### Using library visualizer
 
