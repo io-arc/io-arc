@@ -94,7 +94,7 @@ export default class AltHtml extends BaseQuestions implements IoQuestions {
       }
     })()
 
-    if (msg === '') return
+    if (this.#engine !== ALT_HTML_TYPE.PUG) return
 
     const res: { template: boolean } | number = await inquirer
       .prompt<{ template: boolean }>({
@@ -162,18 +162,13 @@ export default class AltHtml extends BaseQuestions implements IoQuestions {
   }
 
   #htmlTemplate = (dir: TDirNameKey): IoTemplateFiles[] => {
-    const arr: IoTemplateFiles[] = [
-      { source: `${templateDir}/html/README.md`, output: `src/${dir}` }
-    ]
-
-    if (this.#createTemplate) {
-      arr.push({
+    return [
+      { source: `${templateDir}/html/README.md`, output: `src/${dir}` },
+      {
         source: `${templateDir}/html/index.html`,
         output: `src/${dir}`
-      })
-    }
-
-    return arr
+      }
+    ]
   }
 
   #pugTemplate = (dir: TDirNameKey): IoTemplateFiles[] => {
@@ -192,6 +187,11 @@ export default class AltHtml extends BaseQuestions implements IoQuestions {
           { source: `${templateDir}/pug/index.pug`, output: `src/${dir}` }
         ]
       )
+    } else {
+      arr.push({
+        source: `${templateDir}/pug/no-template/index.pug`,
+        output: `src/${dir}`
+      })
     }
 
     return arr

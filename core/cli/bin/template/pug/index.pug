@@ -6,19 +6,19 @@ prepend consts
     const $lang = 'en'
 
     // Page title
-    const $title = TITLE
+    const $title = SITE_TITLE
 
     // Page description
-    const $description = DESCRIPTION
+    const $description = SITE_DESCRIPTION
 
     // OGP settings
     const $ogp = {
       use: true, // insert flag (require)
       type: 'website',
       url: `${URL}/`,
-      title: TITLE,
+      title: SITE_TITLE,
       image: `${URL}/ogp.png`
     }
 
 block body
-  p= TITLE
+  p= SITE_TITLE
