@@ -17,10 +17,7 @@
   },
   "files": [
     "types",
-    "index.js",
-    "tsconfig.webpack.json",
-    ".eslintrc.yml",
-    ".prettierrc"
+    "index.js"
   ],
   "publishConfig": {
     "access": "public"

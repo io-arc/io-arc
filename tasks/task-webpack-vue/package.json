@@ -20,9 +20,6 @@
   },
   "files": [
     "types",
-    "lint",
-    ".babelrc",
-    ".browserslistrc",
     "index.js"
   ],
   "publishConfig": {

@@ -17,8 +17,7 @@
   },
   "files": [
     "types",
-    "index.js",
-    ".browserslistrc"
+    "index.js"
   ],
   "publishConfig": {
     "access": "public"

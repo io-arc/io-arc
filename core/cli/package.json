@@ -30,7 +30,6 @@
     "test": "tests"
   },
   "files": [
-    "lib",
     "bin"
   ],
   "publishConfig": {

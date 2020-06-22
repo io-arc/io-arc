@@ -19,10 +19,7 @@
   },
   "files": [
     "types",
-    "lint",
-    "index.js",
-    ".browserslistrc",
-    "tsconfig.webpack.json"
+    "index.js"
   ],
   "publishConfig": {
     "access": "public"
