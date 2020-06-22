@@ -54,10 +54,10 @@
     "progress-bar-webpack-plugin": "^2.1.0",
     "resolve-url-loader": "^3.1.1",
     "sass-loader": "^8.0.2",
+    "node-sass": "^4.14.0",
     "webpack-fix-style-only-entries": "^0.4.0"
   },
   "devDependencies": {
-    "node-sass": "^4.14.0",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11"
   }
