@@ -10,6 +10,10 @@ $ ia-browser-sync
 
 ## Command options
 
+### `ia-browser-sync`
+
+Browser-Sync start.
+
 ### `ia-browser-sync -p <ip address>` or `ia-browser-sync --proxy <ip address>`
 
 Using proxy.  
@@ -48,4 +52,3 @@ Default: [`DIST`](https://github.com/io-arc/io-arc/tree/master/packages/env#dist
 Only if [`SITE_ROOT`](https://github.com/io-arc/io-arc/tree/master/packages/env#site_root) isn't a `/`.
 
 Default: `{ route: [SITE_ROOT], dir: DIST}`
-
