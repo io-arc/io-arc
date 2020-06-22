@@ -50,8 +50,23 @@ Automatically available in selected preprocessors.
 - File copy
 - YAML to JSON file build
 - Build directory clean
+- Stats for library used
 - Create manifest.json
 - Create service-worker (Use [WorkBox](https://developers.google.com/web/tools/workbox/modules/workbox-build))
+
+### How to create manifest.json
+
+Put manifest.yml or manifest\*\*.yml(e.g. manifest-ios.yml) directly under the workspace.  
+If the file name is prefix with '\_'(e.g. `_manifest.yml`), it is not applicable.
+
+Reference See: [@io-arc/task-manifest](./tasks/task-manifest#specification)
+
+### How to create service-worker file
+
+Execute `src/sw.js` if it exists.  
+It is created using `generateSW` of [WorkBox](https://developers.google.com/web/tools/workbox/modules/workbox-build).
+
+Reference See: [@io-arc/task-service-worker](./tasks/task-service-worker#usage)
 
 ## Directory structure
 
