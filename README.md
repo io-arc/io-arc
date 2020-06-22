@@ -24,6 +24,8 @@ $ io-arc
 - HTML (with handlebars)
 - Pug
 
+The global constants that are available: [HTML (with handlebars)](./tasks/task-webpack-html#features), [Pug](./tasks/task-webpack-pug#features)
+
 ### CSS language
 
 - CSS

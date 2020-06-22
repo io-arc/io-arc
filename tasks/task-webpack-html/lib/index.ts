@@ -75,10 +75,10 @@ export const html: Configuration = {
                     // Use Handlebars to output the same result as webpack.DefinePlugin
                     result = handlebars.compile(content)({
                       IS_PRODUCTION: IS_PRODUCTION,
-                      TITLE: SITE_TITLE,
-                      URL: SITE_URL,
-                      AUTHOR: SITE_AUTHOR,
-                      DESCRIPTION: SITE_DESCRIPTION,
+                      SITE_TITLE: SITE_TITLE,
+                      SITE_URL: SITE_URL,
+                      SITE_AUTHOR: SITE_AUTHOR,
+                      SITE_DESCRIPTION: SITE_DESCRIPTION,
                       SITE_ROOT: SITE_ROOT,
                       CSS_DIR: AssetsDirPath(OUTPUT_CSS_ARRAY),
                       IMG_DIR: AssetsDirPath(OUTPUT_IMG_ARRAY),
