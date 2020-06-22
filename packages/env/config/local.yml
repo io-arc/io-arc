@@ -34,19 +34,30 @@ options:
 
   js:
     minify: true
+
+    # tsconfig.json which is specified at the time of webpack build
     tsconfig: tsconfig.json
+
+    # file names that combine the same logic
     splitFilename: assets
+
     sourceMap: true
+
+    # The ESLint file to specify when building webpack
     eslint: '.eslintrc'
 
   json:
     minify: true
 
-  # use file-loader
+  # file-loader settings
   fileLoader:
     html:
+      # false is not use a file-loader
       use: true
+
+      # adding 6-digit hash for image path.
       hash: true
+
       target:
         - tag: img
           attribute: src
