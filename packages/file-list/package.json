@@ -1,6 +1,6 @@
 {
   "name": "@io-arc/file-list",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Get file list",
   "author": "arc one",
   "homepage": "https://github.com/io-arc/io-arc/tree/master/packages/file-list",
@@ -29,7 +29,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@io-arc/types": "^0.1.1",
+    "@io-arc/types": "^0.2.0",
     "glob": "^7.1.6"
   }
 }

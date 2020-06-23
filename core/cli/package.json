@@ -1,6 +1,6 @@
 {
   "name": "@io-arc/cli",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "WEB/PWA/SPA boilerplate CLI",
   "keywords": [
     "web",
@@ -57,7 +57,7 @@
     "rxjs": "^6.5.5"
   },
   "devDependencies": {
-    "@io-arc/types": "^0.1.1",
+    "@io-arc/types": "^0.2.0",
     "@types/cpx": "^1.5.1",
     "@types/inquirer": "^6.5.0",
     "cross-env": "^7.0.2",
