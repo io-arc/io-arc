@@ -1,4 +1,4 @@
-<div align="center"><img src="images/cover.png" width="800" height="600" alt="io arc -web boilerplate CLI-"></div>
+<div align="center"><img src="images/cover.png" width="800" height="440" alt="io arc -web boilerplate CLI-"></div>
 
 ## Install
 
