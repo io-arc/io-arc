@@ -1,6 +1,4 @@
-# io-arc
-
-Web Boilerplate CLI
+<h1 align="center"><img src="images/cover.png" width="1280" height="640" alt="io arc -web boilerplate CLI-"></h1>
 
 ## Install
 
