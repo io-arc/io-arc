@@ -85,7 +85,7 @@ Create directory structure below.
     │   ├ local.yml (build settings)
     │   ├ local-development.yml
     │   └ local-production.yml
-    ├ src/
+    ├ src/ (working directory)
     │   ├ css/
     │   ├ html/
     │   ├ img/ (using file-loader)
