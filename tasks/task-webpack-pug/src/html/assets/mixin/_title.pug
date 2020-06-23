@@ -1,5 +1,5 @@
 mixin title(title)
-  if title === undefined || title === '' || title === TITLE
-    title= TITLE
+  if title === undefined || title === '' || title === SITE_TITLE
+    title= SITE_TITLE
   else
-    title= `${title} | ${TITLE}`
+    title= `${title} | ${SITE_TITLE}`

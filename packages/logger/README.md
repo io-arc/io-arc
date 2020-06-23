@@ -4,10 +4,11 @@ Console logging.
 
 ## Usage
 
-```
-import Logger from '@io-arc/logging'
+```typescript
+import { blue } from 'kleur'
+import Logger from '@io-arc/logger'
 
-Logger.message('Success !!!!')
+Logger.message('Success !!!!', blue)
 ```
 
 ## Methods
@@ -18,7 +19,7 @@ This class is static function.
 ### `Logger.message(message: string, color: Color): void`
 
 General purpose log.  
-`color` use the [kluer](https://github.com/lukeed/kleur)
+`color` use the [kluer](https://github.com/lukeed/kleur).
 
 ### `Logger.start(task: string[, isBr: boolean = false]): void`
 

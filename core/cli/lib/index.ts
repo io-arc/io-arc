@@ -102,8 +102,9 @@ process.on('SIGINT', (): void => {
   /* template */
   await altHTML.createTemplateQuestion()
   files$.add(altHTML.template(localConfig$.wsHTML()))
-  files$.add(localConfig$.template())
+  files$.add(altCSS.template(localConfig$.wsCSS()))
   files$.add(altJS.template(localConfig$.wsJS()))
+  files$.add(localConfig$.template())
 
   await files$.create(localConfig$.workingDirectories())
 

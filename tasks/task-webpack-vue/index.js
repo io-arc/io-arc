@@ -1,8 +1,8 @@
 /*!
 Vue.js compile for webpack
 
-https://github.com/io-arc/io-arc/tasks/tasks-webpack-vue
-Version: 0.1.1
+https://github.com/io-arc/io-arc/tree/master/tasks/tasks-webpack-vue
+Version: 0.2.0
 License: ISC
 Copyright (c) 2020 arc one
 */

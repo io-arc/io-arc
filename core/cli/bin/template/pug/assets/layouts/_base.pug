@@ -41,10 +41,10 @@ html(lang=_lang_.code)
     //- One 180x180, no problem
       link(rel="apple-touch-icon", href=`${SITE_ROOT}touch.png`, sizes="180x180")
 
-    if AUTHOR
-      meta(name="author", content=AUTHOR)
+    if SITE_AUTHOR
+      meta(name="author", content=SITE_AUTHOR)
 
-    - const _description_ = $description || DESCRIPTION
+    - const _description_ = $description || SITE_DESCRIPTION
     if _description_
       meta(name="description", content=_description_)
 

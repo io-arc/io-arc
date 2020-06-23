@@ -1,0 +1,31 @@
+doctype html
+html(lang="en")
+  head(prefix="og: http://ogp.me/ns# website: http://ogp.me/ns/website#")
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+
+    //-
+      @see: https://developers.google.com/web/tools/lighthouse/audits/has-viewport-meta-tag
+      Should not be used "user-scalable=no,maximum-scale=1"
+      "viewport-fit=cover" corresponds to iphone X safe area
+    meta(name="viewport", content="width=device-width,initial-scale=1,viewport-fit=cover")
+
+    //- Don't show Google translation bar
+    meta(name="google", content="notranslate")
+
+    title= SITE_TITLE
+
+    link(rel="icon", type="image/x-icon", href="/favicon.ico")
+
+    //- Auto link
+    meta(name="format-detection", content="telephone=no, email=no, address=no")
+
+    meta(property="og:type", content="website")
+    meta(property="og:url", content=SITE_URL)
+    meta(property="og:title", content=SITE_TITLE)
+    meta(property="og:site_title", content=SITE_TITLE)
+    meta(property="og:description", content=SITE_DESCRIPTION)
+    meta(property="og:image", content=`${SITE_URL}/ogp.png`)
+
+  body
+    p Index

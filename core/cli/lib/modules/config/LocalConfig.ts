@@ -194,6 +194,11 @@ export default class LocalConfig extends BaseConfig {
     return this.#data.wsDir.html
   }
 
+  /** CSS working directory */
+  public wsCSS(): TDirNameKey {
+    return this.#data.wsDir.css
+  }
+
   /** JS working directory */
   public wsJS(): TDirNameKey {
     return this.#data.wsDir.js
@@ -230,6 +235,14 @@ export default class LocalConfig extends BaseConfig {
       {
         source: `${templateDir}/img/README.md`,
         output: `src/${this.#data.wsDir.img}`
+      },
+      {
+        source: `${templateDir}/static/README.md`,
+        output: `src/${this.#data.wsDir.static}`
+      },
+      {
+        source: `${templateDir}/yaml2json/README.md`,
+        output: `src/${this.#data.wsDir.yaml2json}`
       }
     ]
   }

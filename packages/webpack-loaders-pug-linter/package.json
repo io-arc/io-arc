@@ -1,6 +1,6 @@
 {
   "name": "@io-arc/webpack-loaders-pug-linter",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Pug linter for webpack loader",
   "keywords": [
     "webpack",
@@ -8,7 +8,7 @@
     "linter"
   ],
   "author": "arc one",
-  "homepage": "https://github.com/io-arc/io-arc/packages/webpack-loaders-pug-linter",
+  "homepage": "https://github.com/io-arc/io-arc/tree/master/packages/webpack-loaders-pug-linter",
   "license": "ISC",
   "main": "index.js",
   "types": "types/index.d.ts",

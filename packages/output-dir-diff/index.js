@@ -2,8 +2,8 @@
 Output directory diff
 Relative path to another directory from one directory
 
-https://github.com/io-arc/io-arc/packages/output-dir-diff
-Version: 0.1.1
+https://github.com/io-arc/io-arc/tree/master/packages/output-dir-diff
+Version: 0.2.0
 License: ISC
 Copyright (c) 2020 arc obe
 */

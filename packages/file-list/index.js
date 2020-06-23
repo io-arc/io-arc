@@ -2,8 +2,8 @@
 Get file list object
 Get file list
 
-https://github.com/io-arc/io-arc/packages/file-list
-Version: 0.1.1
+https://github.com/io-arc/io-arc/tree/master/packages/file-list
+Version: 0.2.0
 License: ISC
 Copyright (c) 2020 arc one
 */

@@ -1,6 +1,8 @@
+import { TDirNameKey } from '@io-arc/types'
 import inquirer from 'inquirer'
 import { devDependencies as sassDep } from '../../../../../tasks/task-webpack-sass/package.json'
 import { devDependencies as stylusDep } from '../../../../../tasks/task-webpack-stylus/package.json'
+import { IoTemplateFiles, templateDir } from '../Files'
 import BaseQuestions, { IoQuestions } from './BaseQuestions'
 
 /** CSS language */
@@ -78,5 +80,43 @@ export default class AltCss extends BaseQuestions implements IoQuestions {
       default:
         return null
     }
+  }
+
+  /**
+   * Get template files
+   * @param dir - CSS working directory
+   */
+  public template(dir: TDirNameKey): IoTemplateFiles[] {
+    switch (this.#lang) {
+      case ALT_CSS_TYPE.CSS:
+        return this.#cssTemplate(dir)
+      case ALT_CSS_TYPE.SASS:
+        return this.#sassTemplate(dir)
+      case ALT_CSS_TYPE.STYLUS:
+        return this.#stylusTemplate(dir)
+      default:
+        return []
+    }
+  }
+
+  #cssTemplate = (dir: TDirNameKey): IoTemplateFiles[] => {
+    return [
+      { source: `${templateDir}/css/README.md`, output: `src/${dir}` },
+      { source: `${templateDir}/css/style.css`, output: `src/${dir}` }
+    ]
+  }
+
+  #sassTemplate = (dir: TDirNameKey): IoTemplateFiles[] => {
+    return [
+      { source: `${templateDir}/sass/README.md`, output: `src/${dir}` },
+      { source: `${templateDir}/sass/style.scss`, output: `src/${dir}` }
+    ]
+  }
+
+  #stylusTemplate = (dir: TDirNameKey): IoTemplateFiles[] => {
+    return [
+      { source: `${templateDir}/stylus/README.md`, output: `src/${dir}` },
+      { source: `${templateDir}/stylus/style.styl`, output: `src/${dir}` }
+    ]
   }
 }

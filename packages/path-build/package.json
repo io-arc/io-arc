@@ -1,9 +1,9 @@
 {
   "name": "@io-arc/path-build",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Path create to relative or absolute",
   "author": "arc one",
-  "homepage": "https://github.com/io-arc/io-arc/packages/path-build",
+  "homepage": "https://github.com/io-arc/io-arc/tree/master/packages/path-build",
   "license": "ISC",
   "main": "index.js",
   "types": "types/index.d.ts",
@@ -29,6 +29,6 @@
     "test": "jest"
   },
   "dependencies": {
-    "@io-arc/types": "^0.1.1"
+    "@io-arc/types": "^0.2.0"
   }
 }

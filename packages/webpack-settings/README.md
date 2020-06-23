@@ -32,11 +32,11 @@ Global constant for webpack.
 
 | variable        | @io-arc/env                                                                    |
 | --------------- | ------------------------------------------------------------------------------ |
-| `IS_PRODUCTION` | [`IS_PRODUCTION`](https://github.com/io-arc/io-arc/packages/env#is_production) |
-| `SITE_TITLE`         | [`SITE_TITLE`](https://github.com/io-arc/io-arc/packages/env#site_title)       |
-| `SITE_URL`           | [`SITE_URL`](https://github.com/io-arc/io-arc/packages/env#site_url)           |
-| `SITE_AUTHOR`        | [`SITE_AUTHOR`](https://github.com/io-arc/io-arc/packages/env#site_author)     |
-| `SITE_ROOT`     | [`SITE_ROOT`](https://github.com/io-arc/io-arc/packages/env#site_root)         |
+| `IS_PRODUCTION` | [`IS_PRODUCTION`](https://github.com/io-arc/io-arc/tree/master/packages/env#is_production) |
+| `SITE_TITLE`         | [`SITE_TITLE`](https://github.com/io-arc/io-arc/tree/master/packages/env#site_title)       |
+| `SITE_URL`           | [`SITE_URL`](https://github.com/io-arc/io-arc/tree/master/packages/env#site_url)           |
+| `SITE_AUTHOR`        | [`SITE_AUTHOR`](https://github.com/io-arc/io-arc/tree/master/packages/env#site_author)     |
+| `SITE_ROOT`     | [`SITE_ROOT`](https://github.com/io-arc/io-arc/tree/master/packages/env#site_root)         |
 
 ## Functions
 
