@@ -3,7 +3,7 @@ Read YAML
 Transpile YAML to JSON
 
 https://github.com/io-arc/io-arc/tree/master/packages/read-yaml
-Version: 0.2.0
+Version: 0.2.1
 License: ISC
 Copyright (c) 2020 arc one
 */
