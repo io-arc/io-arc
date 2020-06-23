@@ -1,6 +1,6 @@
 {
   "name": "@io-arc/task-webpack-stylus",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Stylus compile for webpack",
   "keywords": [
     "webpack",
@@ -35,12 +35,12 @@
     "webpack:prod": "NODE_ENV=production MODE_ENV=once webpack"
   },
   "dependencies": {
-    "@io-arc/env": "^0.2.0",
-    "@io-arc/file-list": "^0.2.0",
-    "@io-arc/types": "^0.2.0",
-    "@io-arc/webpack-loaders-image": "^0.2.0",
-    "@io-arc/webpack-plugins-task-message": "^0.2.0",
-    "@io-arc/webpack-settings": "^0.2.0",
+    "@io-arc/env": "^0.2.1",
+    "@io-arc/file-list": "^0.2.1",
+    "@io-arc/types": "^0.2.1",
+    "@io-arc/webpack-loaders-image": "^0.2.1",
+    "@io-arc/webpack-plugins-task-message": "^0.2.1",
+    "@io-arc/webpack-settings": "^0.2.1",
     "autoprefixer": "^9.7.6",
     "config": "^3.3.1",
     "css-loader": "^3.5.2",
