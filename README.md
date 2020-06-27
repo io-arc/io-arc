@@ -102,7 +102,7 @@ Create directory structure below.
     ├ .prettierrc
     ├ tsconfig.json (select TypeScript only)
     ├ package.json
-    └ webpack.config.json
+    └ webpack.config.js
 ```
 
 ## Build options
