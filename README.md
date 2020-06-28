@@ -118,3 +118,19 @@ See example for [default.yml](./packages/env/config/default.yml).
 
 The build configuration is be done in `local.yml`.  
 See example for [local.yml](./packages/env/config/local.yml).
+
+## Using undefined [node-config](https://www.npmjs.com/package/node-config) data on the client side
+
+If you want to use global constants other than those available in [TypeScript](https://github.com/io-arc/io-arc/tree/master/tasks/task-webpack-typescript#constants) and [Babel](https://github.com/io-arc/io-arc/tree/master/tasks/task-webpack-babel#constants), you can use `CONFIG` global constants.
+
+```yaml
+# config/local-development.yml
+api: https://foo.com
+```
+
+```javascript
+console.log(CONFIG.api)
+// result => https://foo.com
+```
+
+\* If you are using TypeScript, please define the type by yourself.

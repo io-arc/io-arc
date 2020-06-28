@@ -1,4 +1,6 @@
 options:
   js:
-    minify: true
+    minify: false
     sourceMap: false
+
+api: https://bbb

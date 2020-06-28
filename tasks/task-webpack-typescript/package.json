@@ -45,6 +45,7 @@
     "@io-arc/webpack-plugins-task-message": "^0.2.1",
     "@io-arc/webpack-settings": "^0.2.1",
     "config": "^3.3.1",
+    "config-webpack": "^1.0.4",
     "prettier-webpack-plugin": "^1.2.0",
     "progress-bar-webpack-plugin": "^2.1.0",
     "terser-webpack-plugin": "^3.0.0",

@@ -110,6 +110,8 @@ const progressBarPlugin = require('progress-bar-webpack-plugin')
 const PrettierPlugin = require('prettier-webpack-plugin')
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const ConfigWebpackPlugin = require('config-webpack')
 
 export const js: Configuration = {
   mode: 'none',
@@ -223,6 +225,7 @@ export const js: Configuration = {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.yaml', '.yml', '.vue']
     }),
     new VueLoaderPlugin(),
+    new ConfigWebpackPlugin(),
     ...plugins
   ],
   devtool: JS_SOURCE_MAP ? 'source-map' : false,
