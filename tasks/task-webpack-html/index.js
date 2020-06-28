@@ -2,7 +2,7 @@
 HTML builds for webpack
 
 https://github.com/io-arc/io-arc/tree/master/tasks/task-webpack-html
-Version: 0.2.1
+Version: 0.2.2
 License: ISC
 Copyright (c) 2020 arc one
 */

@@ -1,6 +1,6 @@
 {
   "name": "@io-arc/task-webpack-babel",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Babel compile for webpack",
   "keywords": [
     "webpack",
@@ -34,15 +34,15 @@
     "webpack:prod": "NODE_ENV=production MODE_ENV=once webpack"
   },
   "dependencies": {
-    "@io-arc/env": "^0.2.1",
-    "@io-arc/file-list": "^0.2.1",
-    "@io-arc/output-dir-diff": "^0.2.1",
-    "@io-arc/path-build": "^0.2.1",
-    "@io-arc/types": "^0.2.1",
-    "@io-arc/webpack-loaders-image": "^0.2.1",
-    "@io-arc/webpack-loaders-js": "^0.2.1",
-    "@io-arc/webpack-plugins-task-message": "^0.2.1",
-    "@io-arc/webpack-settings": "^0.2.1",
+    "@io-arc/env": "^0.2.2",
+    "@io-arc/file-list": "^0.2.2",
+    "@io-arc/output-dir-diff": "^0.2.2",
+    "@io-arc/path-build": "^0.2.2",
+    "@io-arc/types": "^0.2.2",
+    "@io-arc/webpack-loaders-image": "^0.2.2",
+    "@io-arc/webpack-loaders-js": "^0.2.2",
+    "@io-arc/webpack-plugins-task-message": "^0.2.2",
+    "@io-arc/webpack-settings": "^0.2.2",
     "babel-loader": "^8.1.0",
     "config": "^3.3.1",
     "core-js": "3",

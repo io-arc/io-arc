@@ -1,6 +1,6 @@
 {
   "name": "@io-arc/types",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Boilerplate TypeScript global types",
   "author": "arc one",
   "homepage": "https://github.com/io-arc/io-arc/tree/master/packages/types",

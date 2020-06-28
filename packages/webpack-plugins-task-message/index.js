@@ -3,7 +3,7 @@ Task Message
 Task complete message for webpack
 
 https://github.com/io-arc/io-arc/tree/master/packages/webpack-plugins-task-message
-Version: 0.2.1
+Version: 0.2.2
 License: ISC
 Copyright (c) 2020 arc one
 */
