@@ -3,7 +3,7 @@ Get file list object
 Get file list
 
 https://github.com/io-arc/io-arc/tree/master/packages/file-list
-Version: 0.2.1
+Version: 0.2.2
 License: ISC
 Copyright (c) 2020 arc one
 */

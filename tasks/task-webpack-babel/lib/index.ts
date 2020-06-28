@@ -77,9 +77,10 @@ if (MODE_ENV === MODE.ONCE) {
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const progressBarPlugin = require('progress-bar-webpack-plugin')
-
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const PrettierPlugin = require('prettier-webpack-plugin')
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const ConfigWebpackPlugin = require('config-webpack')
 
 export const js: Configuration = {
   mode: 'none',
@@ -114,6 +115,7 @@ export const js: Configuration = {
     new PrettierPlugin({
       extensions: ['.js', '.jsx', '.yaml', '.json']
     }),
+    new ConfigWebpackPlugin(),
     ...plugins
   ],
   devtool: JS_SOURCE_MAP ? 'source-map' : false,
