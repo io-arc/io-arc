@@ -2,7 +2,7 @@
 
 It's so easy! build in 5 minutes! WEB/PWA/SPA boilerplate CLI.
 
-<div align="center"><img src="images/cover.png" width="800" height="440" alt="io arc -WEB/PWA/SPA boilerplate CLI-"></div>
+<div align="center"><img src="images/logo.png" width="150" height="150" alt="io arc -WEB/PWA/SPA boilerplate CLI-"></div>
 
 ## Install
 
