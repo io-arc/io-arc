@@ -1,6 +1,6 @@
 {
   "name": "@io-arc/webpack-settings",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Webpack build settings",
   "keywords": [
     "webpack"
@@ -31,8 +31,8 @@
     "postbuild": "tsc --emitDeclarationOnly"
   },
   "dependencies": {
-    "@io-arc/env": "^0.2.2",
-    "@io-arc/types": "^0.2.2",
+    "@io-arc/env": "^0.2.3",
+    "@io-arc/types": "^0.2.3",
     "kleur": "^3.0.3"
   },
   "devDependencies": {

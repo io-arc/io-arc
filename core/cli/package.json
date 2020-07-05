@@ -1,6 +1,6 @@
 {
   "name": "@io-arc/cli",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "WEB/PWA/SPA boilerplate CLI",
   "keywords": [
     "web",
@@ -58,7 +58,7 @@
     "update-notifier": "^4.1.0"
   },
   "devDependencies": {
-    "@io-arc/types": "^0.2.2",
+    "@io-arc/types": "^0.2.3",
     "@types/cpx": "^1.5.1",
     "@types/inquirer": "^6.5.0",
     "@types/update-notifier": "^4.1.0",

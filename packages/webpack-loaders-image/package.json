@@ -1,6 +1,6 @@
 {
   "name": "@io-arc/webpack-loaders-image",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Image deploy for using file-loader",
   "keywords": [
     "webpack"
@@ -31,10 +31,10 @@
     "postbuild": "tsc --emitDeclarationOnly"
   },
   "dependencies": {
-    "@io-arc/env": "^0.2.2",
-    "@io-arc/output-dir-diff": "^0.2.2",
-    "@io-arc/types": "^0.2.2",
-    "@io-arc/utils": "^0.2.2",
+    "@io-arc/env": "^0.2.3",
+    "@io-arc/output-dir-diff": "^0.2.3",
+    "@io-arc/types": "^0.2.3",
+    "@io-arc/utils": "^0.2.3",
     "file-loader": "^6.0.0",
     "imagemin-gifsicle": "^7.0.0",
     "imagemin-jpegtran": "^6.0.0",
