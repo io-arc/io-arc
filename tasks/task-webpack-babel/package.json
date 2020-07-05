@@ -45,6 +45,7 @@
     "@io-arc/webpack-settings": "^0.2.2",
     "babel-loader": "^8.1.0",
     "config": "^3.3.1",
+    "config-webpack": "^1.0.4",
     "core-js": "3",
     "eslint-loader": "^4.0.2",
     "prettier-webpack-plugin": "^1.2.0",
