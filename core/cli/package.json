@@ -54,12 +54,14 @@
     "json2yaml": "^1.1.0",
     "kleur": "^3.0.3",
     "make-dir": "^3.1.0",
-    "rxjs": "^6.5.5"
+    "rxjs": "^6.5.5",
+    "update-notifier": "^4.1.0"
   },
   "devDependencies": {
     "@io-arc/types": "^0.2.2",
     "@types/cpx": "^1.5.1",
     "@types/inquirer": "^6.5.0",
+    "@types/update-notifier": "^4.1.0",
     "cross-env": "^7.0.2",
     "npm-run-all": "^4.1.5",
     "webpack": "^4.43.0",
