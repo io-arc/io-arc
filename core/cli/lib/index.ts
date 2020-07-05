@@ -1,6 +1,7 @@
 import { program } from 'commander'
-import { green, bold } from 'kleur'
-import { version } from '../package.json'
+import { bold, green } from 'kleur'
+import updateNotifier from 'update-notifier'
+import pkg, { version } from '../package.json'
 import NodeVersion from './modules/CheckNodeVersion'
 import DefaultConfig from './modules/config/DefaultConfig'
 import LocalConfig from './modules/config/LocalConfig'
@@ -137,4 +138,6 @@ process.on('SIGINT', (): void => {
   } else {
     console.log(successLog)
   }
+
+  updateNotifier({ pkg }).notify()
 })()
