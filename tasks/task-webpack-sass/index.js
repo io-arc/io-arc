@@ -2,7 +2,7 @@
 Sass compile for webpack
 
 https://github.com/io-arc/io-arc/tree/master/tasks/tasks-webpack-sass
-Version: 0.2.4
+Version: 0.2.5
 License: ISC
 Copyright (c) 2020 arc one
 */

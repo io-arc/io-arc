@@ -1,6 +1,6 @@
 {
   "name": "@io-arc/read-yaml",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "Transpile YAML to JSON",
   "author": "arc one",
   "homepage": "https://github.com/io-arc/io-arc/tree/master/packages/read-yaml",
@@ -29,7 +29,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@io-arc/path-build": "^0.2.4",
+    "@io-arc/path-build": "^0.2.5",
     "js-yaml": "^3.13.1"
   },
   "devDependencies": {
