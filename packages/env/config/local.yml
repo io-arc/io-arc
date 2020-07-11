@@ -29,6 +29,12 @@ options:
     # php file output
     php: false
 
+    # lint configuration file
+    lint: '.pug-lintrc.json'
+
+    # lint configuration file for using by vue
+    vuePugLint: 'config-vue/.pug-lintrc.json'
+
   css:
     minify: false
 

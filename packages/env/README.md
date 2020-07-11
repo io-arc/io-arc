@@ -187,7 +187,7 @@ First string is `process.cwd()` and build for `WS_HTML_ARRAY` constant.
 
 ### `OUTPUT_IN_PHP`
 
-[pug](https://pugjs.org/) compile output to PHP.
+[Pug](https://pugjs.org/) compile output to PHP.
 
 Define using [config](https://www.npmjs.com/package/node-config).
 
@@ -195,6 +195,17 @@ Define using [config](https://www.npmjs.com/package/node-config).
 | ---------- | ----------------- |
 | config key | `options.pug.php` |
 | default    | `false`           |
+
+### `PUG_LINT_FILE`
+
+[Pug](https://pugjs.org/) lint file name.
+
+Define using [config](https://www.npmjs.com/package/node-config).
+
+| data       | value              |
+| ---------- | ------------------ |
+| config key | `options.pug.lint` |
+| default    | `'.pug-lintrc'`    |
 
 ### `USE_HTML_FILE_LOADER`
 

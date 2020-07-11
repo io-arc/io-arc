@@ -141,11 +141,18 @@ export const WS_HTML_PATH_ABSOLUTE: TDirPathKey = PathBuild.absolute(
 )
 
 /**
- * pug compile output to PHP
+ * Pug compile output to PHP
  *
  * @default false
  */
 export const OUTPUT_IN_PHP = getConfig<boolean>('options.pug.php', false)
+
+/**
+ * Pug lint configure filename
+ *
+ * @default null
+ */
+export const PUG_LINT_FILE = getConfig<string | null>('options.pug.lint', null)
 
 /**
  * HTML build using file-loader
@@ -364,6 +371,16 @@ export const OUTPUT_JS_PATH_ABSOLUTE: TDirPathKey = PathBuild.absolute([
   DIST,
   ...OUTPUT_JS_ARRAY
 ])
+
+/**
+ * Pug lint filename for use by Vue
+ *
+ * @default null
+ */
+export const VUE_PUG_LINT_FILE = getConfig<string | null>(
+  'options.pug.vuePugLint',
+  null
+)
 
 /**
  * vue-loader transformAssetUrls option
