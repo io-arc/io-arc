@@ -1,6 +1,6 @@
 {
   "name": "@io-arc/task-webpack-css",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "CSS build for webpack",
   "keywords": [
     "webpack",
@@ -35,12 +35,12 @@
     "webpack:prod": "NODE_ENV=production MODE_ENV=once webpack"
   },
   "dependencies": {
-    "@io-arc/env": "^0.2.3",
-    "@io-arc/file-list": "^0.2.3",
-    "@io-arc/types": "^0.2.3",
-    "@io-arc/webpack-loaders-image": "^0.2.3",
-    "@io-arc/webpack-plugins-task-message": "^0.2.3",
-    "@io-arc/webpack-settings": "^0.2.3",
+    "@io-arc/env": "^0.2.4",
+    "@io-arc/file-list": "^0.2.4",
+    "@io-arc/types": "^0.2.4",
+    "@io-arc/webpack-loaders-image": "^0.2.4",
+    "@io-arc/webpack-plugins-task-message": "^0.2.4",
+    "@io-arc/webpack-settings": "^0.2.4",
     "autoprefixer": "^9.7.6",
     "config": "^3.3.1",
     "css-loader": "^3.5.2",
