@@ -85,7 +85,7 @@ process.on('SIGINT', (): void => {
 
   /* Config: local.yml */
   const localConfig$ = new LocalConfig(deploy.dir())
-  localConfig$.pugToPHP(altHTML.engine(), altHTML.ext())
+  localConfig$.pugToPHP(altHTML.engine(), altHTML.ext(), altJS.framework())
   localConfig$.jsFramework(altJS.framework())
   localConfig$.tsconfig(altJS.preprocessor())
 

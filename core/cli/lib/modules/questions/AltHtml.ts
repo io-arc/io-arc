@@ -173,7 +173,8 @@ export default class AltHtml extends BaseQuestions implements IoQuestions {
 
   #pugTemplate = (dir: TDirNameKey): IoTemplateFiles[] => {
     const arr: IoTemplateFiles[] = [
-      { source: `${templateDir}/pug/README.md`, output: `src/${dir}` }
+      { source: `${templateDir}/pug/README.md`, output: `src/${dir}` },
+      { source: `${templateDir}/.pug-lintrc.json`, output: '' }
     ]
 
     if (this.#createTemplate) {
