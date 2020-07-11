@@ -12,6 +12,7 @@ options:
 
   pug:
     php: false
+    lint: '.pug-lintrc.json'
 
   # use file-loader
   fileLoader:
