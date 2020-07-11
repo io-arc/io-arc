@@ -3,14 +3,17 @@
     p.tmp-context {{pst}}
     p.tmp-result {{plus(1)}}
     p.tmp-title {{title}}
+    p: img(:src="url", :alt="alt")
 </template>
 
 <script lang="ts">
 export default {
-  data(): { pst: string; title: string } {
+  data(): { pst: string; title: string; url: string; alt: string } {
     return {
       pst: 'pug-stylus-typescript',
-      title: SITE_TITLE
+      title: SITE_TITLE,
+      url: '/cccc/p.png',
+      alt: 'aaaa'
     }
   },
   methods: {

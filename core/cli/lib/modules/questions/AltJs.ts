@@ -165,7 +165,11 @@ export default class AltJs extends BaseQuestions implements IoQuestions {
           output: ''
         },
         { source: `${templateDir}/.babelrc`, output: '' },
-        { source: `${templateDir}/js/README.md`, output: `src/${dir}` }
+        { source: `${templateDir}/js/README.md`, output: `src/${dir}` },
+        {
+          source: `${templateDir}/config-vue/.pug-lintrc.json`,
+          output: `config-vue`
+        }
       ]
     )
 
@@ -183,7 +187,11 @@ export default class AltJs extends BaseQuestions implements IoQuestions {
           output: ''
         },
         { source: `${templateDir}/tsconfig.json`, output: '' },
-        { source: `${templateDir}/ts/README.md`, output: `src/${dir}` }
+        { source: `${templateDir}/ts/README.md`, output: `src/${dir}` },
+        {
+          source: `${templateDir}/config-vue/.pug-lintrc.json`,
+          output: `config-vue`
+        }
       ]
     )
 

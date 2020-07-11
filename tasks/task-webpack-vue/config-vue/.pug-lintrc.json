@@ -1,0 +1,10 @@
+{
+  "validateIndentation": 2,
+  "requireClassLiteralsBeforeAttributes": true,
+  "requireIdLiteralsBeforeAttributes": true,
+  "requireLowerCaseAttributes": true,
+  "requireLowerCaseTags": true,
+  "requireSpaceAfterCodeOperator": true,
+  "requireSpecificAttributes": [],
+  "requireStrictEqualityOperators": true
+}

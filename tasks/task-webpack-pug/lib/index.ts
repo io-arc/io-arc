@@ -14,6 +14,7 @@ import {
   OUTPUT_IN_PHP,
   OUTPUT_JS_ARRAY,
   OUTPUT_JSON_ARRAY,
+  PUG_LINT_FILE,
   SITE_AUTHOR,
   SITE_DESCRIPTION,
   SITE_ROOT,
@@ -82,6 +83,8 @@ const ext = OUTPUT_IN_PHP ? 'php' : 'html'
 const extractTextPlugin = require('extract-text-webpack-plugin')
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const progressBarPlugin = require('progress-bar-webpack-plugin')
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const pugLint = PUG_LINT_FILE ? require(`./${PUG_LINT_FILE}`) : null
 
 export const html: Configuration = {
   mode: NODE_ENV as TWebpackMode,
@@ -99,7 +102,7 @@ export const html: Configuration = {
   },
   module: {
     rules: [
-      PugLintLoader(/^(?!_).*\.pug$/i, 'pug-lint-loader'),
+      PugLintLoader(/^(?!_).*\.pug$/i, 'pug-lint-loader', pugLint),
       {
         test: /\.pug$/i,
         use: extractTextPlugin.extract({

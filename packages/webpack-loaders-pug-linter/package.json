@@ -1,6 +1,6 @@
 {
   "name": "@io-arc/webpack-loaders-pug-linter",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Pug linter for webpack loader",
   "keywords": [
     "webpack",

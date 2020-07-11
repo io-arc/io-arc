@@ -76,7 +76,9 @@ interface IoLocalConfigBase {
 
   options: {
     pug?: {
-      php: boolean
+      php?: boolean
+      lint?: string
+      vuePugLint?: string
     }
     js: {
       splitFilename: string
@@ -150,12 +152,23 @@ export default class LocalConfig extends BaseConfig {
    * Using Pug and build extension to PHP
    * @param engine - HTML template engine
    * @param ext - build extension
+   * @param jsFramework - Use JavaScript framework
    */
-  public pugToPHP(engine: ALT_HTML_TYPE, ext: ALT_HTML_EXT): void {
-    if (engine !== ALT_HTML_TYPE.PUG) return
+  public pugToPHP(
+    engine: ALT_HTML_TYPE,
+    ext: ALT_HTML_EXT,
+    jsFramework: JS_FRAMEWORK
+  ): void {
+    if (engine === ALT_HTML_TYPE.PUG) {
+      this.#data.options.pug = {
+        php: ext === ALT_HTML_EXT.PHP,
+        lint: '.pug-lintrc.json'
+      }
+    }
 
-    this.#data.options.pug = {
-      php: ext === ALT_HTML_EXT.PHP
+    if (jsFramework === JS_FRAMEWORK.VUE) {
+      if (this.#data.options.pug === undefined) this.#data.options.pug = {}
+      this.#data.options.pug.vuePugLint = 'config-vue/.pug-lintrc.json'
     }
   }
 

@@ -30,6 +30,21 @@ Reference to [@io-arc/env](https://github.com/io-arc/io-arc/tree/master/packages
 | using file-loader  | [`USE_HTML_FILE_LOADER`](https://github.com/io-arc/io-arc/tree/master/packages/env#use_html_file_loader)          |
 | image build target | [`TARGET_HTML_FILE_LOADER`](https://github.com/io-arc/io-arc/tree/master/packages/env#target_html_file_loader)    |
 | image hash         | [`IS_HASH_HTML_FILE_LOADER`](https://github.com/io-arc/io-arc/tree/master/packages/env#uis_hash_html_file_loader) |
+| pug lint setting   | [`PUG_LINT_FILE`](https://github.com/io-arc/io-arc/tree/master/packages/env#pug_lint_file)                        |
+
+### Lint
+
+You can use `pug-lintrc.json` or `.pug-lintrc.js` for Pug's Lint.
+Enable it by going to `config/local.yml > options > pug > lint`.
+
+```yaml
+options:
+  pug:
+    # File from the project root
+    lint: '.pug-lintrc.json'
+```
+
+See: [pug lint options](https://github.com/pugjs/pug-lint#configuration-file)
 
 ## Features
 

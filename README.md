@@ -85,6 +85,8 @@ Create directory structure below.
     │   ├ local.yml (build settings)
     │   ├ local-development.yml
     │   └ local-production.yml
+    ├ config-vue/ (select Vue only)
+    │   └ .pug-lintrc.json
     ├ src/ (working directory)
     │   ├ css/
     │   ├ html/
@@ -97,6 +99,7 @@ Create directory structure below.
     ├ .browserslistrc
     ├ .editorconfig
     ├ .eslintrc.yml
+    ├ .pug-lintrc.json (select Pug only)
     ├ .gitignore
     ├ .npmrc
     ├ .prettierrc

@@ -22,6 +22,7 @@ import {
   OUTPUT_JS_ARRAY,
   OUTPUT_JS_PATH_ABSOLUTE,
   OUTPUT_JSON_ARRAY,
+  PUG_LINT_FILE,
   SITE_AUTHOR,
   SITE_DESCRIPTION,
   SITE_DOMAIN,
@@ -34,6 +35,7 @@ import {
   USE_HTML_FILE_LOADER,
   USE_JS_FILE_LOADER,
   VUE_LOADER_ASSETS,
+  VUE_PUG_LINT_FILE,
   WS_CSS_ARRAY,
   WS_CSS_PATH,
   WS_CSS_PATH_ABSOLUTE,
@@ -98,6 +100,10 @@ test('HTML workspace absolute path', () => {
 
 test('Pug compile output to PHP', () => {
   expect(OUTPUT_IN_PHP).toBe(false)
+})
+
+test('Get Pug lint file name', () => {
+  expect(PUG_LINT_FILE).toBe('.pug-lintrc.json')
 })
 
 test('HTML build using file-loader', () => {
@@ -220,6 +226,10 @@ test('Output JavaScript directory name array', () => {
 
 test('Output JS directory absolute path', () => {
   expect(OUTPUT_JS_PATH_ABSOLUTE).toBe(`${process.cwd()}/${DIST}/common/js`)
+})
+
+test('Pug lint filename for use by Vue', () => {
+  expect(VUE_PUG_LINT_FILE).toBe('config-vue/.pug-lintrc.json')
 })
 
 test('vue-loader transformAssetUrls', () => {

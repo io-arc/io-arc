@@ -1,6 +1,7 @@
 <template lang="pug">
   .paa
     .paa-context {{paa}}
+    img(src="../../img/arc-one-logo.png", :alt="paa")
 </template>
 
 <script>
