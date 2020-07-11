@@ -114,7 +114,9 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin')
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const ConfigWebpackPlugin = require('config-webpack')
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const pugLint = VUE_PUG_LINT_FILE ? require(`./${VUE_PUG_LINT_FILE}`) : null
+const pugLint = VUE_PUG_LINT_FILE
+  ? require(`${process.cwd()}/${VUE_PUG_LINT_FILE}`)
+  : null
 
 export const js: Configuration = {
   mode: 'none',

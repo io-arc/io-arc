@@ -84,7 +84,9 @@ const extractTextPlugin = require('extract-text-webpack-plugin')
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const progressBarPlugin = require('progress-bar-webpack-plugin')
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const pugLint = PUG_LINT_FILE ? require(`./${PUG_LINT_FILE}`) : null
+const pugLint = PUG_LINT_FILE
+  ? require(`${process.cwd()}/${PUG_LINT_FILE}`)
+  : null
 
 export const html: Configuration = {
   mode: NODE_ENV as TWebpackMode,
