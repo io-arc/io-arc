@@ -10,6 +10,9 @@ deployDir:
   js: [common, js]
 
 options:
+  pug:
+    vuePugLint: 'config-vue/.pug-lintrc.json'
+
   js:
     minify: false
     tsconfig: tsconfig.json

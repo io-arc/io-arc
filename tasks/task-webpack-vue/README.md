@@ -31,6 +31,7 @@ Reference to [@io-arc/env](https://github.com/io-arc/io-arc/tree/master/packages
 | split common filename | [`JS_SPLIT_FILENAME`](https://github.com/io-arc/io-arc/tree/master/packages/env#js_split_filename)            |
 | source map            | [`JS_SOURCE_MAP`](https://github.com/io-arc/io-arc/tree/master/packages/env#js_source_map)                    |
 | eslint file           | [`ESLINT`](https://github.com/io-arc/io-arc/tree/master/packages/env#eslint)                                  |
+| pug lint file         | [`VUE_PUG_LINT_FILE`](https://github.com/io-arc/io-arc/tree/master/packages/env#vue_pug_lint_file)            |
 
 ## Features
 
@@ -52,6 +53,20 @@ div
   p ...
 </template>
 ```
+
+#### Lint
+
+You can use `pug-lintrc.json` or `.pug-lintrc.js` for Pug's Lint.
+Enable it by going to `config/local.yml > options > pug > vuePugLint`.
+
+```yaml
+options:
+  pug:
+    # File from the project root
+    vuePugLint: 'config-vue/.pug-lintrc.json'
+```
+
+See: [pug lint options](https://github.com/pugjs/pug-lint#configuration-file)
 
 ### Use AltCSS
 

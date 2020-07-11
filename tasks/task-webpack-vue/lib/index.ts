@@ -1,4 +1,3 @@
-import webpack, { Configuration, RuleSetLoader } from 'webpack'
 import {
   DIST,
   ESLINT,
@@ -13,12 +12,22 @@ import {
   USE_CSS_FILE_LOADER,
   USE_JS_FILE_LOADER,
   VUE_LOADER_ASSETS,
+  VUE_PUG_LINT_FILE,
   WS_JS_PATH_ABSOLUTE,
   WS_ROOT_ABSOLUTE
 } from '@io-arc/env'
-import { TFileName } from '@io-arc/types'
 import { FileListObject } from '@io-arc/file-list'
+import OutputDirDiff from '@io-arc/output-dir-diff'
 import PathBuild from '@io-arc/path-build'
+import { TFileName } from '@io-arc/types'
+import { ImageLoader } from '@io-arc/webpack-loaders-image'
+import {
+  EslintLoader,
+  workerLoader,
+  yamlLoader
+} from '@io-arc/webpack-loaders-js'
+import { PugLintLoader } from '@io-arc/webpack-loaders-pug-linter'
+import TaskMessage from '@io-arc/webpack-plugins-task-message'
 import {
   jsSplitChunks,
   performance,
@@ -26,15 +35,7 @@ import {
   stats,
   webpackDefine
 } from '@io-arc/webpack-settings'
-import TaskMessage from '@io-arc/webpack-plugins-task-message'
-import OutputDirDiff from '@io-arc/output-dir-diff'
-import {
-  EslintLoader,
-  workerLoader,
-  yamlLoader
-} from '@io-arc/webpack-loaders-js'
-import { ImageLoader } from '@io-arc/webpack-loaders-image'
-import { PugLintLoader } from '@io-arc/webpack-loaders-pug-linter'
+import webpack, { Configuration, RuleSetLoader } from 'webpack'
 
 const cssLoader: RuleSetLoader = {
   loader: 'css-loader',
@@ -112,6 +113,8 @@ const PrettierPlugin = require('prettier-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const ConfigWebpackPlugin = require('config-webpack')
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const pugLint = VUE_PUG_LINT_FILE ? require(`./${VUE_PUG_LINT_FILE}`) : null
 
 export const js: Configuration = {
   mode: 'none',
@@ -211,7 +214,7 @@ export const js: Configuration = {
       ...rules,
       yamlLoader,
       EslintLoader(ESLINT),
-      PugLintLoader(/\.vue$/, 'vue-pug-lint-loader')
+      PugLintLoader(/\.vue$/, 'vue-pug-lint-loader', pugLint)
     ]
   },
   plugins: [
