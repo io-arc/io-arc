@@ -13,6 +13,7 @@ import {
   USE_CSS_FILE_LOADER,
   USE_JS_FILE_LOADER,
   VUE_LOADER_ASSETS,
+  VUE_PUG_LINT_FILE,
   WS_JS_PATH_ABSOLUTE,
   WS_ROOT_ABSOLUTE
 } from '@io-arc/env'
@@ -112,6 +113,8 @@ const PrettierPlugin = require('prettier-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const ConfigWebpackPlugin = require('config-webpack')
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const pugLint = VUE_PUG_LINT_FILE ? require(`./${VUE_PUG_LINT_FILE}`) : null
 
 export const js: Configuration = {
   mode: 'none',
@@ -205,7 +208,7 @@ export const js: Configuration = {
       ...rules,
       yamlLoader,
       EslintLoader(ESLINT),
-      PugLintLoader(/\.vue$/, 'vue-pug-lint-loader')
+      PugLintLoader(/\.vue$/, 'vue-pug-lint-loader', pugLint)
     ]
   },
   plugins: [

@@ -65,11 +65,17 @@ export declare const WS_HTML_PATH: TDirPathKey;
  */
 export declare const WS_HTML_PATH_ABSOLUTE: TDirPathKey;
 /**
- * pug compile output to PHP
+ * Pug compile output to PHP
  *
  * @default false
  */
 export declare const OUTPUT_IN_PHP: boolean;
+/**
+ * Pug lint configure filename
+ *
+ * @default null
+ */
+export declare const PUG_LINT_FILE: string | null;
 /**
  * HTML build using file-loader
  *
@@ -210,6 +216,12 @@ export declare const JS_MINIFY: boolean;
 export declare const OUTPUT_JS_ARRAY: TDirNameKey[];
 /** JS output (including AltJS) absolute directory path */
 export declare const OUTPUT_JS_PATH_ABSOLUTE: TDirPathKey;
+/**
+ * Pug lint filename for use by Vue
+ *
+ * @default null
+ */
+export declare const VUE_PUG_LINT_FILE: string | null;
 /**
  * vue-loader transformAssetUrls option
  * Set options.fileLoader.vue.use to true to enable it
