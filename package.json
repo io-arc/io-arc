@@ -24,7 +24,7 @@
     "jest": "25.1.0",
     "lerna": "^3.20.2",
     "prettier": "^2.0.5",
-    "rollup": "2.1.0",
+    "rollup": "2.21.0",
     "rollup-plugin-commonjs": "10.1.0",
     "rollup-plugin-node-resolve": "5.2.0",
     "rollup-plugin-terser": "5.3.0",
