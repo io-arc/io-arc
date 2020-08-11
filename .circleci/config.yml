@@ -72,9 +72,25 @@ jobs:
           name: yaml2json
           command: |
             ./node_modules/.bin/lerna run yaml2json:once
+  libs:
+    executor:
+      name: default
+    steps:
+      - checkout
+      - restore_npm
+      - run: yarn install
+      - run:
+          name: bootstrap
+          command: |
+            ./node_modules/.bin/lerna bootstrap
+      - run:
+          name: build
+          command: |
+            ./node_modules/.bin/lerna run build
 
 workflows:
   check_flow:
     jobs:
       - test
       - build
+      - libs
