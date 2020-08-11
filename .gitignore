@@ -165,3 +165,4 @@ dist
 .tern-port
 
 stats/
+/process.yml

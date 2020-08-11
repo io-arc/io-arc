@@ -24,8 +24,8 @@
   "scripts": {
     "prebuild": "eslint lib/*.ts",
     "build": "rollup -c",
-    "copy:once": "NODE_ENV=development MODE_ENV=once ia-copy",
-    "copy:watch": "NODE_ENV=development MODE_ENV=watch ia-copy"
+    "copy:once": "NODE_ENV=development MODE_ENV=once bin/index.js",
+    "copy:watch": "NODE_ENV=development MODE_ENV=watch bin/index.js"
   },
   "bin": {
     "ia-copy": "bin/index.js"
