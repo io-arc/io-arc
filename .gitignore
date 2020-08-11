@@ -165,3 +165,5 @@ dist
 .tern-port
 
 stats/
+/process.yml
+RELEASE_MEMO.md

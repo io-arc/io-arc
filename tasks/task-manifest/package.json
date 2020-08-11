@@ -27,8 +27,8 @@
   "scripts": {
     "prebuild": "eslint lib/*.ts",
     "build": "rollup -c",
-    "manifest:once": "NODE_ENV=development MODE_ENV=once ia-manifest",
-    "manifest:watch": "NODE_ENV=development MODE_ENV=watch ia-manifest"
+    "manifest:once": "NODE_ENV=development MODE_ENV=once bin/index.js",
+    "manifest:watch": "NODE_ENV=development MODE_ENV=watch bin/index.js"
   },
   "bin": {
     "ia-manifest": "bin/index.js"

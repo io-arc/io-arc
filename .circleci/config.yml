@@ -1,0 +1,80 @@
+version: 2.1
+
+# local command:
+# circleci config process .circleci/config.yml > process.yml && circleci local execute -c process.yml --job JOB_NAME
+
+executors:
+  default:
+    working_directory: ~/repo
+    docker:
+      - image: circleci/node:10.17
+
+commands:
+  restore_npm:
+    steps:
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+
+  save_npm:
+    steps:
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+jobs:
+  test:
+    executor:
+      name: default
+    steps:
+      - checkout
+      - restore_npm
+      - run: yarn install
+      - run:
+          name: bootstrap
+          command: |
+            ./node_modules/.bin/lerna bootstrap
+      - run:
+          name: bootstrap
+          command: |
+            ./node_modules/.bin/lerna run test
+  build:
+    executor:
+      name: default
+    steps:
+      - checkout
+      - restore_npm
+      - run: yarn install
+      - run:
+          name: bootstrap
+          command: |
+            ./node_modules/.bin/lerna bootstrap
+      - run:
+          name: webpack
+          command: |
+            ./node_modules/.bin/lerna run webpack:once
+      - run:
+          name: copy
+          command: |
+            ./node_modules/.bin/lerna run copy:once
+      - run:
+          name: manifest
+          command: |
+            ./node_modules/.bin/lerna run manifest:once
+      - run:
+          name: serviceWorker
+          command: |
+            ./node_modules/.bin/lerna run sw:once
+      - run:
+          name: yaml2json
+          command: |
+            ./node_modules/.bin/lerna run yaml2json:once
+
+workflows:
+  check_flow:
+    jobs:
+      - test
+      - build
