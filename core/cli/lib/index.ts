@@ -32,6 +32,10 @@ process.on('SIGINT', (): void => {
     nodeVersion.fail()
     return
   }
+
+  /* Update Library */
+  updateNotifier({ pkg }).notify()
+
   const files$ = new Files()
 
   /* Project */
@@ -138,6 +142,4 @@ process.on('SIGINT', (): void => {
   } else {
     console.log(successLog)
   }
-
-  updateNotifier({ pkg }).notify()
 })()
