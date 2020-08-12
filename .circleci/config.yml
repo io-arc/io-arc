@@ -53,6 +53,10 @@ jobs:
           command: |
             ./node_modules/.bin/lerna bootstrap
       - run:
+          name: build
+          command: |
+            ./node_modules/.bin/lerna run build
+      - run:
           name: webpack
           command: |
             ./node_modules/.bin/lerna run webpack:once

@@ -56,7 +56,7 @@
     "prettier-webpack-plugin": "^1.2.0",
     "progress-bar-webpack-plugin": "^2.1.0",
     "pug-plain-loader": "^1.0.0",
-    "sass-loader": "^8.0.2",
+    "sass-loader": "^9.0.2",
     "stylus-loader": "^3.0.2",
     "vue-loader": "^15.9.2",
     "vue-pug-lint-loader": "^0.0.1",
