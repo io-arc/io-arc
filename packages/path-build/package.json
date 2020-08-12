@@ -1,6 +1,6 @@
 {
   "name": "@io-arc/path-build",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "Path create to relative or absolute",
   "author": "arc one",
   "homepage": "https://github.com/io-arc/io-arc/tree/master/packages/path-build",
@@ -29,6 +29,6 @@
     "test": "jest"
   },
   "dependencies": {
-    "@io-arc/types": "^0.2.5"
+    "@io-arc/types": "^0.2.6"
   }
 }
