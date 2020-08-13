@@ -34,9 +34,13 @@ const extractTextPlugin = require('extract-text-webpack-plugin')
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const progressBarPlugin = require('progress-bar-webpack-plugin')
 
+const rules = []
+
 // User extends
 const extend = new WebpackExtend('html')
 const externals = extend.externals()
+const extendsLoaders = extend.loaders()
+if (extendsLoaders != null) rules.push(...extendsLoaders)
 
 export const html: Configuration = {
   mode: NODE_ENV as TWebpackMode,
@@ -101,7 +105,8 @@ export const html: Configuration = {
           ]
         })
       },
-      ImageLoader([], OUTPUT_IMG_ARRAY, IS_HASH_HTML_FILE_LOADER)
+      ImageLoader([], OUTPUT_IMG_ARRAY, IS_HASH_HTML_FILE_LOADER),
+      ...rules
     ]
   },
   plugins: [

@@ -1,8 +1,9 @@
 import fs from 'fs'
-import { ExternalsElement } from 'webpack'
+import { ExternalsElement, RuleSetRule } from 'webpack'
 
 interface IfWebpackExtend {
   externals?: ExternalsElement | ExternalsElement[]
+  loaders?: RuleSetRule[]
   [key: string]: any
 }
 
@@ -36,6 +37,14 @@ export class WebpackExtend {
   public externals(): IfWebpackExtend['externals'] | undefined {
     if (this.#data == null) return undefined
     return this.#data.externals || undefined
+  }
+
+  /**
+   * Get a module rule option
+   */
+  public loaders(): IfWebpackExtend['loaders'] | undefined {
+    if (this.#data == null) return undefined
+    return this.#data.loaders || undefined
   }
 
   /**

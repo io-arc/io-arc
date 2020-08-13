@@ -1,6 +1,7 @@
-import { ExternalsElement } from 'webpack';
+import { ExternalsElement, RuleSetRule } from 'webpack';
 interface IfWebpackExtend {
     externals?: ExternalsElement | ExternalsElement[];
+    loaders?: RuleSetRule[];
     [key: string]: any;
 }
 export declare class WebpackExtend {
@@ -14,5 +15,9 @@ export declare class WebpackExtend {
      * Get a externals define
      */
     externals(): IfWebpackExtend['externals'] | undefined;
+    /**
+     * Get a module rule option
+     */
+    loaders(): IfWebpackExtend['loaders'] | undefined;
 }
 export {};

@@ -21,4 +21,20 @@ describe('Webpack Extend', () => {
     const extend = new WebpackExtend('css')
     expect(extend.externals()).toBe(undefined)
   })
+
+  it('exist loaders', () => {
+    const extend = new WebpackExtend('js')
+    expect(extend.loaders()).toEqual([
+      {
+        test: /\.(graphql|gql)$/,
+        exclude: /node_modules/,
+        loader: 'graphql-tag/loader'
+      }
+    ])
+  })
+
+  it('no exist loaders', () => {
+    const extend = new WebpackExtend('html')
+    expect(extend.loaders()).toBe(undefined)
+  })
 })

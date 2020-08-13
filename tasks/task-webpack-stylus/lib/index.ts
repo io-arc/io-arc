@@ -91,9 +91,13 @@ const webpackFixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const progressBarPlugin = require('progress-bar-webpack-plugin')
 
+const rules = []
+
 // User extend
 const extend = new WebpackExtend('css')
 const externals = extend.externals()
+const extendsLoaders = extend.loaders()
+if (extendsLoaders != null) rules.push(...extendsLoaders)
 
 export const css: Configuration = {
   mode: NODE_ENV as TWebpackMode,
@@ -121,7 +125,8 @@ export const css: Configuration = {
           stylusLoader
         ]
       },
-      ImageLoader(OUTPUT_CSS_ARRAY, OUTPUT_IMG_ARRAY, IS_HASH_CSS_FILE_LOADER)
+      ImageLoader(OUTPUT_CSS_ARRAY, OUTPUT_IMG_ARRAY, IS_HASH_CSS_FILE_LOADER),
+      ...rules
     ]
   },
   plugins: [

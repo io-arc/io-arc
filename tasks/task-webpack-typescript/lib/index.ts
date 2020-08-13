@@ -86,6 +86,8 @@ const ConfigWebpackPlugin = require('config-webpack')
 // User extends
 const extend = new WebpackExtend('js')
 const externals = extend.externals()
+const extendsLoaders = extend.loaders()
+if (extendsLoaders != null) rules.push(...extendsLoaders)
 
 export const js: Configuration = {
   mode: 'none',
