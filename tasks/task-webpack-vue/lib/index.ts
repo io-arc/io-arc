@@ -20,6 +20,7 @@ import { FileListObject } from '@io-arc/file-list'
 import OutputDirDiff from '@io-arc/output-dir-diff'
 import PathBuild from '@io-arc/path-build'
 import { TFileName } from '@io-arc/types'
+import { WebpackExtend } from '@io-arc/utils'
 import { ImageLoader } from '@io-arc/webpack-loaders-image'
 import {
   EslintLoader,
@@ -118,6 +119,10 @@ const pugLint = VUE_PUG_LINT_FILE
   ? require(`${process.cwd()}/${VUE_PUG_LINT_FILE}`)
   : null
 
+// User extends
+const extend = new WebpackExtend('js')
+const externals = extend.externals()
+
 export const js: Configuration = {
   mode: 'none',
   context: WS_JS_PATH_ABSOLUTE,
@@ -133,6 +138,7 @@ export const js: Configuration = {
     chunkFilename: '[name].js'
   },
   optimization: jsSplitChunks,
+  externals,
   resolve: {
     extensions: ['.js', '.jsx', '.json', '.vue'],
     alias: {

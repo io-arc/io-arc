@@ -13,6 +13,7 @@ import {
   WS_JS_PATH_ABSOLUTE,
   WS_ROOT_ABSOLUTE
 } from '@io-arc/env'
+import { WebpackExtend } from '@io-arc/utils'
 import { ImageLoader } from '@io-arc/webpack-loaders-image'
 import webpack, { Configuration } from 'webpack'
 import { TFileName } from '@io-arc/types'
@@ -82,9 +83,14 @@ const PrettierPlugin = require('prettier-webpack-plugin')
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const ConfigWebpackPlugin = require('config-webpack')
 
+// User extends
+const extend = new WebpackExtend('js')
+const externals = extend.externals()
+
 export const js: Configuration = {
   mode: 'none',
   context: WS_JS_PATH_ABSOLUTE,
+  externals,
   entry: (): Promise<{ [p: string]: TFileName }> =>
     new Promise<{ [p: string]: TFileName }>((resolve): void => {
       const files1 = FileListObject(WS_JS_PATH_ABSOLUTE, 'ts', true)

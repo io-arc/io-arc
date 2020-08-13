@@ -26,14 +26,17 @@ import { FileListObject } from '@io-arc/file-list'
 import { ImageLoader } from '@io-arc/webpack-loaders-image'
 import { performance, progressBar, stats } from '@io-arc/webpack-settings'
 import TaskMessage from '@io-arc/webpack-plugins-task-message'
-import { AssetsDirPath } from '@io-arc/utils'
+import { AssetsDirPath, WebpackExtend } from '@io-arc/utils'
 import handlebars from 'handlebars'
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const extractTextPlugin = require('extract-text-webpack-plugin')
-
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const progressBarPlugin = require('progress-bar-webpack-plugin')
+
+// User extends
+const extend = new WebpackExtend('html')
+const externals = extend.externals()
 
 export const html: Configuration = {
   mode: NODE_ENV as TWebpackMode,
@@ -49,6 +52,7 @@ export const html: Configuration = {
     publicPath: '',
     filename: '[name].html'
   },
+  externals,
   module: {
     rules: [
       {

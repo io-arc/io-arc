@@ -26,7 +26,7 @@ import {
 } from '@io-arc/env'
 import { TFileName, TFilePath, TWebpackMode } from '@io-arc/types'
 import { FileListObject } from '@io-arc/file-list'
-import { AssetsDirPath } from '@io-arc/utils'
+import { AssetsDirPath, WebpackExtend } from '@io-arc/utils'
 import { ReadYaml } from '@io-arc/read-yaml'
 import { ImageLoader } from '@io-arc/webpack-loaders-image'
 import TaskMessage from '@io-arc/webpack-plugins-task-message'
@@ -88,6 +88,10 @@ const pugLint = PUG_LINT_FILE
   ? require(`${process.cwd()}/${PUG_LINT_FILE}`)
   : null
 
+// User extend
+const extend = new WebpackExtend('html')
+const externals = extend.externals()
+
 export const html: Configuration = {
   mode: NODE_ENV as TWebpackMode,
   context: WS_HTML_PATH_ABSOLUTE,
@@ -102,6 +106,7 @@ export const html: Configuration = {
     publicPath: '',
     filename: `[name].${ext}`
   },
+  externals,
   module: {
     rules: [
       PugLintLoader(/^(?!_).*\.pug$/i, 'pug-lint-loader', pugLint),
