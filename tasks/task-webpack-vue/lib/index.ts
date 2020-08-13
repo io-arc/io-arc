@@ -124,6 +124,8 @@ const extend = new WebpackExtend('js')
 const externals = extend.externals()
 const extendsLoaders = extend.loaders()
 if (extendsLoaders != null) rules.push(...extendsLoaders)
+const extendPlugins = extend.plugins()
+if (extendPlugins != null) plugins.push(...extendPlugins)
 
 export const js: Configuration = {
   mode: 'none',

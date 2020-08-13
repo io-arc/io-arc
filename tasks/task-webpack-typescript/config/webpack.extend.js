@@ -1,3 +1,5 @@
+const TaskMessage = require('@io-arc/webpack-plugins-task-message')
+
 module.exports = {
   js: {
     externals: {
@@ -9,6 +11,7 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'graphql-tag/loader'
       }
-    ]
+    ],
+    plugins: [new TaskMessage('hello'), new TaskMessage('OK')]
   }
 }

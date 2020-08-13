@@ -35,12 +35,15 @@ const extractTextPlugin = require('extract-text-webpack-plugin')
 const progressBarPlugin = require('progress-bar-webpack-plugin')
 
 const rules = []
+const plugins = []
 
 // User extends
 const extend = new WebpackExtend('html')
 const externals = extend.externals()
 const extendsLoaders = extend.loaders()
 if (extendsLoaders != null) rules.push(...extendsLoaders)
+const extendPlugins = extend.plugins()
+if (extendPlugins != null) plugins.push(...extendPlugins)
 
 export const html: Configuration = {
   mode: NODE_ENV as TWebpackMode,
@@ -116,7 +119,8 @@ export const html: Configuration = {
       disable: false,
       allChunks: true
     }),
-    new progressBarPlugin(progressBar('html'))
+    new progressBarPlugin(progressBar('html')),
+    ...plugins
   ],
   devtool: false,
   cache: true,

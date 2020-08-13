@@ -89,12 +89,15 @@ const pugLint = PUG_LINT_FILE
   : null
 
 const rules = []
+const plugins = []
 
 // User extend
 const extend = new WebpackExtend('html')
 const externals = extend.externals()
 const extendsLoaders = extend.loaders()
 if (extendsLoaders != null) rules.push(...extendsLoaders)
+const extendPlugins = extend.plugins()
+if (extendPlugins != null) plugins.push(...extendPlugins)
 
 export const html: Configuration = {
   mode: NODE_ENV as TWebpackMode,
@@ -133,7 +136,8 @@ export const html: Configuration = {
       disable: false,
       allChunks: true
     }),
-    new progressBarPlugin(progressBar('pug'))
+    new progressBarPlugin(progressBar('pug')),
+    ...plugins
   ],
   devtool: false,
   cache: true,

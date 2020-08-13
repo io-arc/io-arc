@@ -88,6 +88,8 @@ const extend = new WebpackExtend('css')
 const externals = extend.externals()
 const extendsLoaders = extend.loaders()
 if (extendsLoaders != null) rules.push(...extendsLoaders)
+const extendPlugins = extend.plugins()
+if (extendPlugins != null) plugins.push(...extendPlugins)
 
 export const css: Configuration = {
   mode: NODE_ENV as TWebpackMode,

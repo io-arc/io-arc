@@ -37,4 +37,14 @@ describe('Webpack Extend', () => {
     const extend = new WebpackExtend('html')
     expect(extend.loaders()).toBe(undefined)
   })
+
+  it('exist plugins', () => {
+    const extend = new WebpackExtend('js')
+    expect(extend.plugins()).toEqual(['New ABC()'])
+  })
+
+  it('no exist plugins', () => {
+    const extend = new WebpackExtend('html')
+    expect(extend.plugins()).toBe(undefined)
+  })
 })

@@ -1,7 +1,8 @@
-import { ExternalsElement, RuleSetRule } from 'webpack';
+import { ExternalsElement, RuleSetRule, Plugin } from 'webpack';
 interface IfWebpackExtend {
     externals?: ExternalsElement | ExternalsElement[];
     loaders?: RuleSetRule[];
+    plugins?: Plugin[];
     [key: string]: any;
 }
 export declare class WebpackExtend {
@@ -19,5 +20,6 @@ export declare class WebpackExtend {
      * Get a module rule option
      */
     loaders(): IfWebpackExtend['loaders'] | undefined;
+    plugins(): IfWebpackExtend['plugins'] | undefined;
 }
 export {};
