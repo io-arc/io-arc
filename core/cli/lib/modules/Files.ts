@@ -22,6 +22,11 @@ export default class Files {
       {
         source: `${templateDir}/.{editorconfig,gitignore,npmrc,prettierrc,browserslistrc}`,
         output: ''
+      },
+      {
+        source: `${templateDir}/webpack.extend.js`,
+        output: 'config',
+        logValue: 'webpack.extend.js'
       }
     ]
   }
