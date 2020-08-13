@@ -32,5 +32,8 @@
     "@io-arc/env": "^0.2.6",
     "@io-arc/path-build": "^0.2.6",
     "@io-arc/types": "^0.2.6"
+  },
+  "devDependencies": {
+    "webpack": "^4.44.1"
   }
 }

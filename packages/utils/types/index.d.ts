@@ -9,3 +9,4 @@ export declare const AssetsDirPath: (dir: string[]) => string;
  * @param arr - Array for directory name
  */
 export declare const siteRootRelative: (arr: string[]) => string;
+export * from './modules/WebpackExtend';
