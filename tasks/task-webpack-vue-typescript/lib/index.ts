@@ -1,3 +1,4 @@
+import { WebpackExtend } from '@io-arc/utils'
 import webpack, { Configuration, RuleSetLoader } from 'webpack'
 import {
   DIST,
@@ -44,7 +45,7 @@ const cssLoader: RuleSetLoader = {
     url: USE_CSS_FILE_LOADER,
     sourceMap: false,
     import: true,
-    modules: true
+    modules: false
   }
 }
 
@@ -118,6 +119,14 @@ const pugLint = VUE_PUG_LINT_FILE
   ? require(`${process.cwd()}/${VUE_PUG_LINT_FILE}`)
   : null
 
+// User extends
+const extend = new WebpackExtend('js')
+const externals = extend.externals()
+const extendsLoaders = extend.loaders()
+if (extendsLoaders != null) rules.push(...extendsLoaders)
+const extendPlugins = extend.plugins()
+if (extendPlugins != null) plugins.push(...extendPlugins)
+
 export const js: Configuration = {
   mode: 'none',
   context: WS_JS_PATH_ABSOLUTE,
@@ -141,6 +150,7 @@ export const js: Configuration = {
       '@': WS_ROOT_ABSOLUTE
     }
   },
+  externals,
   module: {
     exprContextCritical: false,
     rules: [

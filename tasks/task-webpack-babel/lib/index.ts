@@ -1,3 +1,4 @@
+import { WebpackExtend } from '@io-arc/utils'
 import {
   babelLoader,
   EslintLoader,
@@ -82,6 +83,14 @@ const PrettierPlugin = require('prettier-webpack-plugin')
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const ConfigWebpackPlugin = require('config-webpack')
 
+// User Extends
+const extend = new WebpackExtend('js')
+const externals = extend.externals()
+const extendsLoaders = extend.loaders()
+if (extendsLoaders != null) rules.push(...extendsLoaders)
+const extendPlugins = extend.plugins()
+if (extendPlugins != null) plugins.push(...extendPlugins)
+
 export const js: Configuration = {
   mode: 'none',
   entry: (): Promise<{ [p: string]: TFileName }> =>
@@ -97,6 +106,7 @@ export const js: Configuration = {
     chunkFilename: '[name].js'
   },
   optimization: jsSplitChunks,
+  externals,
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
     alias: {

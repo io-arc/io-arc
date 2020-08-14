@@ -26,7 +26,7 @@ import {
 } from '@io-arc/env'
 import { TFileName, TFilePath, TWebpackMode } from '@io-arc/types'
 import { FileListObject } from '@io-arc/file-list'
-import { AssetsDirPath } from '@io-arc/utils'
+import { AssetsDirPath, WebpackExtend } from '@io-arc/utils'
 import { ReadYaml } from '@io-arc/read-yaml'
 import { ImageLoader } from '@io-arc/webpack-loaders-image'
 import TaskMessage from '@io-arc/webpack-plugins-task-message'
@@ -88,6 +88,17 @@ const pugLint = PUG_LINT_FILE
   ? require(`${process.cwd()}/${PUG_LINT_FILE}`)
   : null
 
+const rules = []
+const plugins = []
+
+// User extend
+const extend = new WebpackExtend('html')
+const externals = extend.externals()
+const extendsLoaders = extend.loaders()
+if (extendsLoaders != null) rules.push(...extendsLoaders)
+const extendPlugins = extend.plugins()
+if (extendPlugins != null) plugins.push(...extendPlugins)
+
 export const html: Configuration = {
   mode: NODE_ENV as TWebpackMode,
   context: WS_HTML_PATH_ABSOLUTE,
@@ -102,6 +113,7 @@ export const html: Configuration = {
     publicPath: '',
     filename: `[name].${ext}`
   },
+  externals,
   module: {
     rules: [
       PugLintLoader(/^(?!_).*\.pug$/i, 'pug-lint-loader', pugLint),
@@ -113,7 +125,8 @@ export const html: Configuration = {
           use: [htmlLoader, pugLoader]
         })
       },
-      ImageLoader([], OUTPUT_IMG_ARRAY, IS_HASH_HTML_FILE_LOADER)
+      ImageLoader([], OUTPUT_IMG_ARRAY, IS_HASH_HTML_FILE_LOADER),
+      ...rules
     ]
   },
   plugins: [
@@ -123,7 +136,8 @@ export const html: Configuration = {
       disable: false,
       allChunks: true
     }),
-    new progressBarPlugin(progressBar('pug'))
+    new progressBarPlugin(progressBar('pug')),
+    ...plugins
   ],
   devtool: false,
   cache: true,

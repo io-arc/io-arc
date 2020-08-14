@@ -1,3 +1,4 @@
+import $ from 'jquery'
 import yaml from '../data/a.yml'
 import b from '../data/b.json'
 import logo from '../img/arc-one-logo.png'
@@ -19,3 +20,6 @@ worker.addEventListener('message', (event) => {})
 
 const a = 0
 console.log(SITE_TITLE)
+
+const data = $('#abc')
+console.log(data)

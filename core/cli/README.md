@@ -1,6 +1,3 @@
-# `@io-arc/cli`
+# io arc CLI
 
-Web Boilerplate CLI!
-
-
-
+[Document](https://github.com/io-arc/io-arc)

@@ -13,15 +13,24 @@
     "tasks/*",
     "core/*"
   ],
+  "scripts": {
+    "update": "lerna version --no-git-tag-version",
+    "ci:test": "circleci config process .circleci/config.yml > process.yml && circleci local execute -c process.yml --job test",
+    "ci:build": "circleci config process .circleci/config.yml > process.yml && circleci local execute -c process.yml --job build"
+  },
   "devDependencies": {
     "@rollup/plugin-json": "4.0.3",
     "@types/jest": "25.1.4",
+    "@types/jquery": "3.5.1",
     "@typescript-eslint/eslint-plugin": "2.24.0",
     "@typescript-eslint/parser": "2.24.0",
     "eslint": "7.6.0",
     "eslint-config-prettier": "6.10.0",
     "eslint-plugin-prettier": "3.1.4",
+    "graphql": "15.3.0",
+    "graphql-tag": "2.11.0",
     "jest": "25.1.0",
+    "jquery": "3.5.1",
     "lerna": "^3.20.2",
     "prettier": "^2.0.5",
     "rollup": "2.23.1",

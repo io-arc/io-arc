@@ -122,6 +122,19 @@ See example for [default.yml](./packages/env/config/default.yml).
 The build configuration is be done in `local.yml`.  
 See example for [local.yml](./packages/env/config/local.yml).
 
+## Extending the webpack build
+
+There are several extensions available on the user side as well.  
+The extension is be configured in `<project>/config/webpack.extend.js`.
+
+The extensible webpack options are as follows.
+
+- [externals](https://webpack.js.org/configuration/externals/)
+- [module rule](https://webpack.js.org/configuration/module/#rule)
+- [plugins](https://webpack.js.org/configuration/plugins/)
+
+See [example](example/config/webpack.extend.js).
+
 ## Using undefined [node-config](https://www.npmjs.com/package/node-config) data on the client side
 
 If you want to use global constants other than those available in [TypeScript](https://github.com/io-arc/io-arc/tree/master/tasks/task-webpack-typescript#constants) and [Babel](https://github.com/io-arc/io-arc/tree/master/tasks/task-webpack-babel#constants), you can use `CONFIG` global constants.

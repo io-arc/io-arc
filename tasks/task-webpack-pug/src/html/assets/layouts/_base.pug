@@ -24,7 +24,10 @@ html(lang=_lang_.code)
       @see: https://developers.google.com/web/tools/lighthouse/audits/has-viewport-meta-tag
       Should not be used "user-scalable=no,maximum-scale=1"
       "viewport-fit=cover" corresponds to iphone X safe area
-    meta(name="viewport", content="width=device-width,initial-scale=1,viewport-fit=cover")
+    meta(
+      name="viewport",
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    )
 
     //- Don't show Google translation bar
     meta(name="google", content="notranslate")
@@ -44,7 +47,7 @@ html(lang=_lang_.code)
     if SITE_AUTHOR
       meta(name="author", content=SITE_AUTHOR)
 
-    - const _description_ = $description || SITE_DESCRIPTION
+    - const _description_ = $description || SITE_DESCRIPTION;
     if _description_
       meta(name="description", content=_description_)
 

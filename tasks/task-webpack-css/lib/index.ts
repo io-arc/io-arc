@@ -1,3 +1,4 @@
+import { WebpackExtend } from '@io-arc/utils'
 import { Configuration, RuleSetLoader } from 'webpack'
 import {
   CSS_MINIFY,
@@ -81,6 +82,15 @@ const webpackFixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const progressBarPlugin = require('progress-bar-webpack-plugin')
 
+const rules = []
+// User extends
+const extend = new WebpackExtend('css')
+const externals = extend.externals()
+const extendsLoaders = extend.loaders()
+if (extendsLoaders != null) rules.push(...extendsLoaders)
+const extendPlugins = extend.plugins()
+if (extendPlugins != null) plugins.push(...extendPlugins)
+
 export const css: Configuration = {
   mode: NODE_ENV as TWebpackMode,
   context: WS_CSS_PATH_ABSOLUTE,
@@ -93,6 +103,7 @@ export const css: Configuration = {
   output: {
     path: OUTPUT_CSS_PATH_ABSOLUTE
   },
+  externals,
   module: {
     rules: [
       {
@@ -105,7 +116,8 @@ export const css: Configuration = {
           postCssLoader
         ]
       },
-      ImageLoader(OUTPUT_CSS_ARRAY, OUTPUT_IMG_ARRAY, IS_HASH_CSS_FILE_LOADER)
+      ImageLoader(OUTPUT_CSS_ARRAY, OUTPUT_IMG_ARRAY, IS_HASH_CSS_FILE_LOADER),
+      ...rules
     ]
   },
   plugins: [

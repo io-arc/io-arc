@@ -26,14 +26,24 @@ import { FileListObject } from '@io-arc/file-list'
 import { ImageLoader } from '@io-arc/webpack-loaders-image'
 import { performance, progressBar, stats } from '@io-arc/webpack-settings'
 import TaskMessage from '@io-arc/webpack-plugins-task-message'
-import { AssetsDirPath } from '@io-arc/utils'
+import { AssetsDirPath, WebpackExtend } from '@io-arc/utils'
 import handlebars from 'handlebars'
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const extractTextPlugin = require('extract-text-webpack-plugin')
-
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const progressBarPlugin = require('progress-bar-webpack-plugin')
+
+const rules = []
+const plugins = []
+
+// User extends
+const extend = new WebpackExtend('html')
+const externals = extend.externals()
+const extendsLoaders = extend.loaders()
+if (extendsLoaders != null) rules.push(...extendsLoaders)
+const extendPlugins = extend.plugins()
+if (extendPlugins != null) plugins.push(...extendPlugins)
 
 export const html: Configuration = {
   mode: NODE_ENV as TWebpackMode,
@@ -49,6 +59,7 @@ export const html: Configuration = {
     publicPath: '',
     filename: '[name].html'
   },
+  externals,
   module: {
     rules: [
       {
@@ -97,7 +108,8 @@ export const html: Configuration = {
           ]
         })
       },
-      ImageLoader([], OUTPUT_IMG_ARRAY, IS_HASH_HTML_FILE_LOADER)
+      ImageLoader([], OUTPUT_IMG_ARRAY, IS_HASH_HTML_FILE_LOADER),
+      ...rules
     ]
   },
   plugins: [
@@ -107,7 +119,8 @@ export const html: Configuration = {
       disable: false,
       allChunks: true
     }),
-    new progressBarPlugin(progressBar('html'))
+    new progressBarPlugin(progressBar('html')),
+    ...plugins
   ],
   devtool: false,
   cache: true,

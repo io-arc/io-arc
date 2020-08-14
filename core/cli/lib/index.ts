@@ -9,6 +9,7 @@ import CustomTypes from './modules/CustumTypes'
 import Files from './modules/Files'
 import Install from './modules/Install'
 import Package from './modules/Package'
+import PrettierConfigFile from './modules/PrettierConfigFile'
 import AltCss from './modules/questions/AltCss'
 import AltHtml from './modules/questions/AltHtml'
 import AltJs, { ALT_JS_TYPE, JS_FRAMEWORK } from './modules/questions/AltJs'
@@ -62,6 +63,7 @@ process.on('SIGINT', (): void => {
   await altHTML.questions()
 
   package$.addDevDependencies(altHTML.taskLibrary())
+  package$.addDevDependenciesObject(altHTML.dependencies())
 
   console.log('')
 
@@ -123,6 +125,10 @@ process.on('SIGINT', (): void => {
     if (altJS.framework() === JS_FRAMEWORK.VUE) customType$.addVue()
     await customType$.create()
   }
+
+  const prettier$ = new PrettierConfigFile(altHTML.isPug())
+  prettier$.addPug(altHTML.isPug())
+  prettier$.create()
 
   const webpack$ = new WebpackFile(
     altHTML.taskLibrary(),

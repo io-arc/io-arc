@@ -17,3 +17,5 @@ export const AssetsDirPath = (dir: TDirNameKey[]): TDirPathKey => {
  */
 export const siteRootRelative = (arr: TDirNameKey[]): TDirPathKey =>
   arr.length === 0 ? SITE_ROOT : `${SITE_ROOT + PathBuild.relative(arr)}/`
+
+export * from './modules/WebpackExtend'
