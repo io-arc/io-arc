@@ -44,7 +44,7 @@ const cssLoader: RuleSetLoader = {
     url: USE_CSS_FILE_LOADER,
     sourceMap: false,
     import: true,
-    modules: true
+    modules: false
   }
 }
 
