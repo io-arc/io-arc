@@ -13,6 +13,11 @@
     "tasks/*",
     "core/*"
   ],
+  "scripts": {
+    "update": "lerna version --no-git-tag-version",
+    "ci:test": "circleci config process .circleci/config.yml > process.yml && circleci local execute -c process.yml --job test",
+    "ci:build": "circleci config process .circleci/config.yml > process.yml && circleci local execute -c process.yml --job build"
+  },
   "devDependencies": {
     "@rollup/plugin-json": "4.0.3",
     "@types/jest": "25.1.4",
