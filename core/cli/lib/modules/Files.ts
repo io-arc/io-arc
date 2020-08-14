@@ -20,7 +20,7 @@ export default class Files {
   constructor() {
     this.#template = [
       {
-        source: `${templateDir}/.{editorconfig,gitignore,npmrc,prettierrc,browserslistrc}`,
+        source: `${templateDir}/.{editorconfig,gitignore,npmrc,browserslistrc}`,
         output: ''
       },
       {

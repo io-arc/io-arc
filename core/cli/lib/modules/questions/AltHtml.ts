@@ -2,6 +2,7 @@ import { TDirNameKey } from '@io-arc/types'
 import inquirer from 'inquirer'
 import { IoTemplateFiles, templateDir } from '../Files'
 import BaseQuestions, { IoQuestions } from './BaseQuestions'
+import { devDependencies as pugDep } from '../../../../../tasks/task-webpack-pug/package.json'
 
 /** HTML template engine */
 export const ALT_HTML_TYPE = {
@@ -37,6 +38,11 @@ export default class AltHtml extends BaseQuestions implements IoQuestions {
   /** Choice build file extension */
   public ext(): ALT_HTML_EXT {
     return this.#ext
+  }
+
+  /** Choice HTML template engine is Pug */
+  public isPug(): boolean {
+    return this.#engine === ALT_HTML_TYPE.PUG
   }
 
   /** Choice HTML template engine */
@@ -76,6 +82,15 @@ export default class AltHtml extends BaseQuestions implements IoQuestions {
         return '@io-arc/task-webpack-pug'
       default:
         return null
+    }
+  }
+
+  /** Get library for dependencies */
+  public dependencies(): { [p: string]: string } | null {
+    if (this.#engine !== ALT_HTML_TYPE.PUG) return null
+
+    return {
+      '@prettier/plugin-pug': pugDep['@prettier/plugin-pug']
     }
   }
 
