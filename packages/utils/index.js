@@ -2,7 +2,7 @@
 Utility functions
 
 https://github.com/io-arc/io-arc/tree/master/packages/utils
-Version: 0.2.6
+Version: 0.3.0
 License: ISC
 Copyright (c) 2020 arc one
 */
