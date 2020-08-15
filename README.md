@@ -84,7 +84,8 @@ Create directory structure below.
     │   ├ production.yml
     │   ├ local.yml (build settings)
     │   ├ local-development.yml
-    │   └ local-production.yml
+    │   ├ local-production.yml
+    │   └ webpack.extend.js
     ├ config-vue/ (select Vue only)
     │   └ .pug-lintrc.json
     ├ src/ (working directory)
