@@ -18,14 +18,18 @@ import ProjectSetting from './modules/questions/ProjectSetting'
 import SiteSetting from './modules/questions/SiteSetting'
 import WebpackFile from './modules/WebpackFile'
 
+/* Update Library */
+updateNotifier({ pkg }).notify()
+
 process.stdin.resume()
 process.on('SIGINT', (): void => {
   console.log(green('Bye !'))
   process.exit(0)
 })
+
+program.version(version).parse(process.argv)
 ;(async (): Promise<void> => {
   // TODO: add template create command
-  program.version(version).parse(process.argv)
 
   /* Check Node.js version */
   const nodeVersion = new NodeVersion()
@@ -33,9 +37,6 @@ process.on('SIGINT', (): void => {
     nodeVersion.fail()
     return
   }
-
-  /* Update Library */
-  updateNotifier({ pkg }).notify()
 
   const files$ = new Files()
 
