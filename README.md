@@ -47,7 +47,7 @@ Automatically available in selected preprocessors.
 
 ## Local Server
 
-- [BrowserSync](https://browsersync.io/)
+- [BrowserSync](https://browsersync.io/) ([Launch option](./tasks/task-browser-sync))
 
 ## Other default use
 
