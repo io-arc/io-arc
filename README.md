@@ -68,9 +68,26 @@ Reference See: [@io-arc/task-manifest](./tasks/task-manifest#specification)
 ### How to create service-worker file
 
 Execute `src/sw.js` if it exists.  
-It is created using `generateSW` of [WorkBox](https://developers.google.com/web/tools/workbox/modules/workbox-build).
+It is created using `generateSW` of [WorkBox](https://developers.google.com/web/tools/workbox/modules/workbox-build).  
+[More Reference](./tasks/task-service-worker#readme)
 
-Reference See: [@io-arc/task-service-worker](./tasks/task-service-worker#usage)
+To make the Service Worker work, put the following in the `<head>`.
+
+```javascript
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker
+    .register('/sw.js')
+    .then(function (registration) {
+      console.log(
+        'ServiceWorker registration successful with scope: ',
+        registration.scope
+      )
+    })
+    .catch(function (err) {
+      console.error('ServiceWorker registration failed: ', err)
+    })
+}
+```
 
 ## Directory structure
 

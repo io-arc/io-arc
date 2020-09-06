@@ -5,7 +5,7 @@ Create a Service Worker.
 ## Usage
 
 ```shell script
-$ NODE_ENV=development ia-sw
+$ ia-sw
 ```
 
 \* There's no watch mode.
