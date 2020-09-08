@@ -74,6 +74,7 @@ It is created using `generateSW` of [WorkBox](https://developers.google.com/web/
 To make the Service Worker work, put the following in the `<head>`.
 
 ```javascript
+// example
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker
     .register('/sw.js')
@@ -84,7 +85,7 @@ if ('serviceWorker' in navigator) {
       )
     })
     .catch(function (err) {
-      console.error('ServiceWorker registration failed: ', err)
+      console.log('ServiceWorker registration failed: ', err)
     })
 }
 ```
