@@ -1,6 +1,6 @@
 {
   "name": "@io-arc/utils",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Utility functions",
   "author": "arc one",
   "homepage": "https://github.com/io-arc/io-arc/tree/master/packages/utils",
@@ -29,9 +29,9 @@
     "test": "jest"
   },
   "dependencies": {
-    "@io-arc/env": "^0.3.0",
-    "@io-arc/path-build": "^0.3.0",
-    "@io-arc/types": "^0.3.0"
+    "@io-arc/env": "^0.3.1",
+    "@io-arc/path-build": "^0.3.1",
+    "@io-arc/types": "^0.3.1"
   },
   "devDependencies": {
     "webpack": "^4.44.1"
