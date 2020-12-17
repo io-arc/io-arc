@@ -56,7 +56,8 @@ Automatically available in selected preprocessors.
 - Build directory clean
 - Stats for library used
 - Create manifest.json
-- Create service-worker (Use [WorkBox](https://developers.google.com/web/tools/workbox/modules/workbox-build))
+- Create Web Worker (Use [worker-loader](https://github.com/webpack-contrib/worker-loader))
+- Create Service Worker (Use [WorkBox](https://developers.google.com/web/tools/workbox/modules/workbox-build))
 
 ### How to create manifest.json
 
