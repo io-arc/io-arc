@@ -47,7 +47,7 @@ Automatically available in selected preprocessors.
 
 ## Local Server
 
-- [BrowserSync](https://browsersync.io/)
+- [BrowserSync](https://browsersync.io/) ([Launch option](./tasks/task-browser-sync))
 
 ## Other default use
 
@@ -56,7 +56,8 @@ Automatically available in selected preprocessors.
 - Build directory clean
 - Stats for library used
 - Create manifest.json
-- Create service-worker (Use [WorkBox](https://developers.google.com/web/tools/workbox/modules/workbox-build))
+- Create Web Worker (Use [worker-loader](https://github.com/webpack-contrib/worker-loader))
+- Create Service Worker (Use [WorkBox](https://developers.google.com/web/tools/workbox/modules/workbox-build))
 
 ### How to create manifest.json
 
@@ -68,9 +69,27 @@ Reference See: [@io-arc/task-manifest](./tasks/task-manifest#specification)
 ### How to create service-worker file
 
 Execute `src/sw.js` if it exists.  
-It is created using `generateSW` of [WorkBox](https://developers.google.com/web/tools/workbox/modules/workbox-build).
+It is created using `generateSW` of [WorkBox](https://developers.google.com/web/tools/workbox/modules/workbox-build).  
+[More Reference](./tasks/task-service-worker#readme)
 
-Reference See: [@io-arc/task-service-worker](./tasks/task-service-worker#usage)
+To make the Service Worker work, put the following in the `<head>`.
+
+```javascript
+// example
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker
+    .register('/sw.js')
+    .then(function (registration) {
+      console.log(
+        'ServiceWorker registration successful with scope: ',
+        registration.scope
+      )
+    })
+    .catch(function (err) {
+      console.log('ServiceWorker registration failed: ', err)
+    })
+}
+```
 
 ## Directory structure
 

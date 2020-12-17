@@ -3,3 +3,10 @@ tabWidth: 2
 semi: false
 singleQuote: true
 arrowParens: always
+overrides:
+  - files: '*.pug'
+    options:
+      parser: pug
+      bracketSpacing: false
+      semi: true
+      singleQuote: false

@@ -1,4 +1,4 @@
-- const prefetch = readYAML('assets/data/prefetch.yml')
+- var prefetch = readYAML('assets/data/prefetch.yml');
 
 if prefetch.dns && prefetch.dns.length > 0
   meta(http-equiv="x-dns-prefetch-control", content="on")
