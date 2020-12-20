@@ -1,4 +1,5 @@
 import {
+  CSS_POSTCSS_MQ_PACKER,
   DIST,
   ESLINT,
   IS_HASH_JS_FILE_LOADER,
@@ -53,15 +54,15 @@ const autoprefixer = require('autoprefixer')
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const mqpacker = require('css-mqpacker')
 
+const postCssPlugins = [autoprefixer({ grid: 'autoplace', flexbox: 'no-2009' })]
+if (CSS_POSTCSS_MQ_PACKER) postCssPlugins.push(mqpacker())
+
 const postCssLoader: RuleSetLoader = {
   loader: 'postcss-loader',
   options: {
     sourceMap: false,
     // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-    plugins: () => [
-      autoprefixer({ grid: 'autoplace', flexbox: 'no-2009' }),
-      mqpacker()
-    ]
+    plugins: () => postCssPlugins
   }
 }
 
