@@ -12,6 +12,8 @@ deployDir:
 options:
   css:
     minify: false
+    postcss:
+      mqpacker: false
 
   # use file-loader
   fileLoader:

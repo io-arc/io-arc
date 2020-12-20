@@ -37,6 +37,9 @@ options:
 
   css:
     minify: false
+    postcss:
+      # using node-css-mqpacker for postcss
+      mqpacker: true
 
   js:
     minify: true

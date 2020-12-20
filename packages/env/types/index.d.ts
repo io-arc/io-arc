@@ -139,6 +139,13 @@ export declare const IS_HASH_CSS_FILE_LOADER: boolean;
  */
 export declare const CSS_MINIFY: boolean;
 /**
+ * Using mqpacker of postcss
+ *
+ * @default true
+ * @see {@link https://github.com/hail2u/node-css-mqpacker node-css-mqpacker}
+ */
+export declare const CSS_POSTCSS_MQ_PACKER: boolean;
+/**
  * CSS output (including AltCSS) directory name array
  *
  * config key: deployDir.css
