@@ -80,6 +80,11 @@ interface IoLocalConfigBase {
       lint?: string
       vuePugLint?: string
     }
+    css: {
+      postcss: {
+        mqpacker: boolean
+      }
+    }
     js: {
       splitFilename: string
       eslint: string
@@ -107,6 +112,9 @@ export default class LocalConfig extends BaseConfig {
       },
       deployDir,
       options: {
+        css: {
+          postcss: { mqpacker: true }
+        },
         js: {
           splitFilename: 'asset',
           eslint: '.eslintrc.yml'
