@@ -37,6 +37,8 @@ options:
 
   css:
     minify: false
+    postcss:
+      mqpacker: true
 
   js:
     minify: true

@@ -254,6 +254,17 @@ export const CSS_MINIFY: boolean = getConfig<boolean>(
 )
 
 /**
+ * Using mqpacker of postcss
+ *
+ * @default true
+ * @see {@link https://github.com/hail2u/node-css-mqpacker node-css-mqpacker}
+ */
+export const CSS_POSTCSS_MQ_PACKER: boolean = getConfig<boolean>(
+  'options.css.postcss.mqpacker',
+  true
+)
+
+/**
  * CSS output (including AltCSS) directory name array
  *
  * config key: deployDir.css

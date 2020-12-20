@@ -1,5 +1,5 @@
 import {
-  CSS_MINIFY,
+  CSS_MINIFY, CSS_POSTCSS_MQ_PACKER,
   DEPLOY_IMG_ARRAY,
   DEPLOY_YAML2JSON_ARRAY,
   DIST,
@@ -170,6 +170,10 @@ test('Judgement to adding 6-digit hash for image path in CSS', () => {
 
 test('CSS build minify option', () => {
   expect(CSS_MINIFY).toBe(false)
+})
+
+test('Using mqpacker of postcss', ()=>{
+  expect(CSS_POSTCSS_MQ_PACKER).toBe(true)
 })
 
 test('Output CSS directory name array', () => {
