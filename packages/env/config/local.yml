@@ -47,7 +47,7 @@ options:
     # If minify is true to enabled
     terser:
       parallel: true
-      extractComments: some
+      extractComments: false
       terserOptions:
         compress:
           drop_console: true

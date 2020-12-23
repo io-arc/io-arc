@@ -374,7 +374,7 @@ export const JS_MINIFY = getConfig<boolean>('options.js.minify', false)
  */
 export const JS_TERSER = getConfig<TerserPluginOptions>('options.js.terser', {
   parallel: true,
-  extractComments: 'some',
+  extractComments: false,
   // eslint-disable-next-line @typescript-eslint/camelcase
   terserOptions: { compress: { drop_console: true } }
 })

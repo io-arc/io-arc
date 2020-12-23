@@ -395,7 +395,7 @@ Terser plugin configuration if `JS_MINIFY` is true.
 // Default
 {
   parallel: true,
-  extractComments: 'some',
+  extractComments: false,
   terserOptions: { compress: { drop_console: true } }
 }
 ```

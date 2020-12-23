@@ -229,7 +229,7 @@ test('JS build minify option', () => {
 test('JS Terser plugin option', () => {
   expect(JS_TERSER).toEqual({
     parallel: true,
-    extractComments: 'some',
+    extractComments: false,
     terserOptions: { compress: { drop_console: true } }
   })
 })
