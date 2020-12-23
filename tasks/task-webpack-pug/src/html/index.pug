@@ -20,6 +20,11 @@ block prepend consts
       image: `${SITE_URL}/ogp.png`
     }
 
+    var _api = config('api')
+    var _layout = config('layout')
+
 block body
   p= SITE_TITLE
   p: img(src="../img/arc-one-logo.png", alt="")
+  p= _api
+  p= _layout
