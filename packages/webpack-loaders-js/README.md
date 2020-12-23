@@ -62,18 +62,18 @@ worker.onmessage = (event) => {}
 worker.addEventListener('message', (event) => {})
 ```
 
-## (variable) `babelLoader`
+### (variable) `babelLoader`
 
-Babel loader.
+Babel loader.  
 Using [babel-loader](https://github.com/babel/babel-loader).
 
-## `TypescriptLoader(vue: boolean = false)`
+### `TypescriptLoader(vue: boolean = false)`
 
 TypeScript loader.  
 Using [ts-loader](https://github.com/TypeStrong/ts-loader).  
 Parameter `true` is adding `.vue`.
 
-## `EslintLoader(eslint: string = '')`
+### `EslintLoader(eslint: string = '')`
 
 ESLint loader.  
 Using [eslint-loader](https://github.com/webpack-contrib/eslint-loader)  

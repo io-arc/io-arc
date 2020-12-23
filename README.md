@@ -23,54 +23,54 @@ $ io-arc
 
 ### HTML template engine
 
-- HTML (with handlebars)
-- Pug
+- HTML (with handlebars) - [Task document](tasks/task-webpack-html)
+- Pug - [Task document](tasks/task-webpack-pug)
 
-The global constants that are available: [HTML (with handlebars)](./tasks/task-webpack-html#features), [Pug](./tasks/task-webpack-pug#features)
+The global constants that are available: [HTML (with handlebars)](tasks/task-webpack-html#features), [Pug](tasks/task-webpack-pug#features)
 
 ### CSS language
 
-- CSS
-- SASS(SASS/SCSS)
-- Stylus
+- CSS - [Task document](tasks/task-webpack-css)
+- SASS(SASS/SCSS) - [Task document](tasks/task-webpack-sass)
+- Stylus - [Task document](tasks/task-webpack-stylus)
 
 ### JS preprocessor
 
-- Babel
-- TypeScript
+- Babel - [Task document](tasks/task-webpack-babel)
+- TypeScript - [Task document](tasks/task-webpack-typescript)
 
 #### JS framework
 
 Automatically available in selected preprocessors.
 
-- Vue (Babel/TypeScript)
+- Vue (Babel/TypeScript) - [Task document (Vue)](tasks/task-webpack-vue), [Task document (TypeScript)](tasks/task-webpack-vue-typescript)
 
 ## Local Server
 
-- [BrowserSync](https://browsersync.io/) ([Launch option](./tasks/task-browser-sync))
+- [BrowserSync](https://browsersync.io/) - [Task document](tasks/task-browser-sync)
 
 ## Other default use
 
-- File copy
-- YAML to JSON file build
-- Build directory clean
+- File copy - [Task document](tasks/task-copy)
+- YAML to JSON file build - [Task document](tasks/task-yaml2json)
+- Build directory clean - [Task document](tasks/task-clean)
 - Stats for library used
-- Create manifest.json
-- Create Web Worker (Use [worker-loader](https://github.com/webpack-contrib/worker-loader))
-- Create Service Worker (Use [WorkBox](https://developers.google.com/web/tools/workbox/modules/workbox-build))
+- Create manifest.json - [Task document](tasks/task-manifest)
+- Create Web Worker (Use [worker-loader](https://github.com/webpack-contrib/worker-loader)) - [Task document](packages/webpack-loaders-js#variable-workerloader)
+- Create Service Worker (Use [WorkBox](https://developers.google.com/web/tools/workbox/modules/workbox-build)) - [Task document](tasks/task-service-worker)
 
 ### How to create manifest.json
 
 Put manifest.yml or manifest\*\*.yml(e.g. manifest-ios.yml) directly under the workspace.  
 If the file name is prefix with '\_'(e.g. `_manifest.yml`), it is not applicable.
 
-Reference See: [@io-arc/task-manifest](./tasks/task-manifest#specification)
+[Task document](tasks/task-manifest#specification)
 
 ### How to create service-worker file
 
 Execute `src/sw.js` if it exists.  
 It is created using `generateSW` of [WorkBox](https://developers.google.com/web/tools/workbox/modules/workbox-build).  
-[More Reference](./tasks/task-service-worker#readme)
+[Task document](tasks/task-service-worker)
 
 To make the Service Worker work, put the following in the `<head>`.
 
@@ -135,17 +135,17 @@ Internally, the build can be tweaked using the [node-config](https://www.npmjs.c
 ### Site settings
 
 Settings related to the website, such as the site title, are specified in the `default.yml` or `development.yml` or `production.yml`.  
-See example for [default.yml](./packages/env/config/default.yml).
+See example for [default.yml](packages/env/config/default.yml).
 
 ### Build settings
 
-The build configuration is be done in `local.yml`.  
-See example for [local.yml](./packages/env/config/local.yml).
+The build configuration is done in `local.yml`.  
+See example for [local.yml](packages/env/config/local.yml).
 
 ## Extending the webpack build
 
 There are several extensions available on the user side as well.  
-The extension is be configured in `<project>/config/webpack.extend.js`.
+The extension is configured in `<project>/config/webpack.extend.js`.
 
 The extensible webpack options are as follows.
 
