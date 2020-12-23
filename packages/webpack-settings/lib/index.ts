@@ -54,7 +54,7 @@ const splitChunks: Optimization =
         splitChunks: {
           name: JS_SPLIT_FILENAME,
           chunks: 'all',
-          minChunks: 1
+          minChunks: 2
         }
       }
 

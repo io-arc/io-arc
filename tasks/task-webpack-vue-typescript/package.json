@@ -32,7 +32,8 @@
     "prebuild": "eslint lib/*.ts",
     "build": "rollup -c",
     "postbuild": "tsc --emitDeclarationOnly",
-    "webpack:once": "NODE_ENV=development MODE_ENV=once TS_NODE_PROJECT=\"tsconfig.webpack.json\" webpack"
+    "webpack:once": "NODE_ENV=development MODE_ENV=once TS_NODE_PROJECT=\"tsconfig.webpack.json\" webpack",
+    "webpack:prod": "NODE_ENV=production MODE_ENV=once TS_NODE_PROJECT=\"tsconfig.webpack.json\" webpack"
   },
   "dependencies": {
     "@io-arc/env": "^0.3.1",

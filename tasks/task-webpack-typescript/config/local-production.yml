@@ -1,6 +1,6 @@
 options:
   js:
-    minify: false
+    minify: true
     sourceMap: false
 
 api: https://bbb
