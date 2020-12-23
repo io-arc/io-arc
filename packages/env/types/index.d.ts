@@ -1,4 +1,5 @@
 import { TDirName, TDirNameKey, TDirPathKey, TFileName, TUrl } from '@io-arc/types';
+import { TerserPluginOptions } from 'terser-webpack-plugin';
 export declare const BUILD: {
     readonly DEVELOPMENT: "development";
     readonly PRODUCTION: "production";
@@ -214,6 +215,12 @@ export declare const IS_HASH_JS_FILE_LOADER: boolean;
  * @default false
  */
 export declare const JS_MINIFY: boolean;
+/**
+ * Terser plugin configuration if minify is true
+ *
+ * @default {parallel: true, extractComments: 'some', terserOptions: { compress: { drop_console: true } }}
+ */
+export declare const JS_TERSER: TerserPluginOptions;
 /**
  * JavaScript output (including AltJS) directory name array
  *

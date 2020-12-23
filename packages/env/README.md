@@ -241,11 +241,9 @@ Define using [config](https://www.npmjs.com/package/node-config).
 | data       | value                            |
 | ---------- | -------------------------------- |
 | config key | `options.fileLoader.html.target` |
-| default    | below                            |
-
-#### Default
 
 ```
+// Default
 [
   { tag: 'img', attribute: 'src', type: 'src' },
   { tag: 'img', attribute: 'srcset', type: 'srcset' },
@@ -374,6 +372,33 @@ Build for `WS_JS_ARRAY` to path.
 
 Working space for JS (including AltJS) directory absolute path.  
 First string is `process.cwd()` and build for `WS_JS_ARRAY` constant.
+
+### `JS_MINIFY`
+
+Babel/TypeScript build minify option.
+Define using [config](https://www.npmjs.com/package/node-config).
+
+| data       | value               |
+| ---------- | ------------------- |
+| config key | `options.js.minify` |
+| default    | `false`             |
+
+### `JS_TERSER`
+
+Terser plugin configuration if `JS_MINIFY` is true.
+
+| data       | value               |
+| ---------- | ------------------- |
+| config key | `options.js.terser` |
+
+```
+// Default
+{
+  parallel: true,
+  extractComments: 'some',
+  terserOptions: { compress: { drop_console: true } }
+}
+```
 
 ### `TSCONFIG`
 
