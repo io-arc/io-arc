@@ -21,7 +21,7 @@ export default class DeploySetting extends BaseQuestions
   #css: IoDeploySetting['css'] = ['common', 'css']
   #js: IoDeploySetting['js'] = ['common', 'js']
   #img: IoDeploySetting['img'] = ['common', 'img']
-  #json: IoDeploySetting['json'] = ['common', 'json']
+  #json: IoDeploySetting['json'] = ['common', 'data']
 
   async questions(): Promise<void> {
     this.startLog('Deploy settings')
