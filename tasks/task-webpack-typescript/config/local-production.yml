@@ -1,6 +1,12 @@
 options:
   js:
-    minify: false
+    minify: true
     sourceMap: false
+    terser:
+      parallel: true
+      extractComments: false
+      terserOptions:
+        compress:
+          drop_console: true
 
 api: https://bbb

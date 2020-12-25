@@ -2,6 +2,7 @@ import { WebpackExtend } from '@io-arc/utils'
 import { Configuration, RuleSetLoader } from 'webpack'
 import {
   CSS_MINIFY,
+  CSS_POSTCSS_MQ_PACKER,
   IS_HASH_CSS_FILE_LOADER,
   MODE,
   MODE_ENV,
@@ -48,15 +49,15 @@ const autoprefixer = require('autoprefixer')
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const mqpacker = require('css-mqpacker')
 
+const postCssPlugins = [autoprefixer({ grid: 'autoplace', flexbox: 'no-2009' })]
+if (CSS_POSTCSS_MQ_PACKER) postCssPlugins.push(mqpacker())
+
 const postCssLoader: RuleSetLoader = {
   loader: 'postcss-loader',
   options: {
     sourceMap: false,
     // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-    plugins: () => [
-      autoprefixer({ grid: 'autoplace', flexbox: 'no-2009' }),
-      mqpacker()
-    ]
+    plugins: () => postCssPlugins
   }
 }
 

@@ -74,6 +74,11 @@ export default class Logger {
       : 'Oops...'
 
     const notifier = new NotificationCenter()
-    notifier.notify({ message, title: `${task} error X(`, sound: 'Glass' })
+    notifier.notify({
+      message,
+      title: `${task} error X(`,
+      sound: true,
+      wait: true
+    })
   }
 }

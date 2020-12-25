@@ -2,3 +2,9 @@ options:
   js:
     minify: true
     sourceMap: false
+    terser:
+      parallel: true
+      extractComments: some
+      terserOptions:
+        compress:
+          drop_console: false

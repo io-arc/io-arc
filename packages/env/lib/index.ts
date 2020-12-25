@@ -7,6 +7,7 @@ import {
   TUrl
 } from '@io-arc/types'
 import config from 'config'
+import { TerserPluginOptions } from 'terser-webpack-plugin'
 
 export const BUILD = {
   DEVELOPMENT: 'development',
@@ -254,6 +255,17 @@ export const CSS_MINIFY: boolean = getConfig<boolean>(
 )
 
 /**
+ * Using mqpacker of postcss
+ *
+ * @default true
+ * @see {@link https://github.com/hail2u/node-css-mqpacker node-css-mqpacker}
+ */
+export const CSS_POSTCSS_MQ_PACKER: boolean = getConfig<boolean>(
+  'options.css.postcss.mqpacker',
+  true
+)
+
+/**
  * CSS output (including AltCSS) directory name array
  *
  * config key: deployDir.css
@@ -354,6 +366,18 @@ export const IS_HASH_JS_FILE_LOADER = getConfig<boolean>(
  * @default false
  */
 export const JS_MINIFY = getConfig<boolean>('options.js.minify', false)
+
+/**
+ * Terser plugin configuration if minify is true
+ *
+ * @default {parallel: true, extractComments: 'some', terserOptions: { compress: { drop_console: true } }}
+ */
+export const JS_TERSER = getConfig<TerserPluginOptions>('options.js.terser', {
+  parallel: true,
+  extractComments: false,
+  // eslint-disable-next-line @typescript-eslint/camelcase
+  terserOptions: { compress: { drop_console: true } }
+})
 
 /**
  * JavaScript output (including AltJS) directory name array

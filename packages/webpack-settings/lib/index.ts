@@ -1,17 +1,20 @@
-import { TTaskName } from '@io-arc/types'
-import { Configuration } from 'webpack'
-import { webpackPerformanceDefault, webpackStatsDefault } from './data'
-import { blue, yellow, green } from 'kleur'
 import {
   BUILD,
   IS_PRODUCTION,
+  JS_MINIFY,
   JS_SPLIT_FILENAME,
+  JS_TERSER,
   NODE_ENV,
   SITE_AUTHOR,
   SITE_ROOT,
   SITE_TITLE,
   SITE_URL
 } from '@io-arc/env'
+import { TTaskName } from '@io-arc/types'
+import { blue, green, yellow } from 'kleur'
+import webpack, { Configuration } from 'webpack'
+import { webpackPerformanceDefault, webpackStatsDefault } from './data'
+import Optimization = webpack.Options.Optimization
 
 /**
  * webpack config stats
@@ -44,7 +47,7 @@ export const progressBar = (
 /**
  * Splitting the common logic
  */
-export const jsSplitChunks: object =
+const splitChunks: Optimization =
   NODE_ENV === BUILD.TEST || JS_SPLIT_FILENAME === null
     ? {}
     : {
@@ -54,6 +57,21 @@ export const jsSplitChunks: object =
           minChunks: 2
         }
       }
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const TerserPlugin = require('terser-webpack-plugin')
+
+const minimize: Optimization = JS_MINIFY
+  ? {
+      minimize: true,
+      minimizer: [new TerserPlugin(JS_TERSER)]
+    }
+  : {}
+
+/**
+ * Webpack optimization
+ */
+export const jsOptimization: Optimization = { ...minimize, ...splitChunks }
 
 /**
  * Global constant for webpack

@@ -1,8 +1,8 @@
 import {
+  CSS_POSTCSS_MQ_PACKER,
   DIST,
   ESLINT,
   IS_HASH_JS_FILE_LOADER,
-  JS_MINIFY,
   JS_SOURCE_MAP,
   MODE,
   MODE_ENV,
@@ -30,7 +30,7 @@ import {
 import { PugLintLoader } from '@io-arc/webpack-loaders-pug-linter'
 import TaskMessage from '@io-arc/webpack-plugins-task-message'
 import {
-  jsSplitChunks,
+  jsOptimization,
   performance,
   progressBar,
   stats,
@@ -53,15 +53,15 @@ const autoprefixer = require('autoprefixer')
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const mqpacker = require('css-mqpacker')
 
+const postCssPlugins = [autoprefixer({ grid: 'autoplace', flexbox: 'no-2009' })]
+if (CSS_POSTCSS_MQ_PACKER) postCssPlugins.push(mqpacker())
+
 const postCssLoader: RuleSetLoader = {
   loader: 'postcss-loader',
   options: {
     sourceMap: false,
     // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-    plugins: () => [
-      autoprefixer({ grid: 'autoplace', flexbox: 'no-2009' }),
-      mqpacker()
-    ]
+    plugins: () => postCssPlugins
   }
 }
 
@@ -74,24 +74,6 @@ if (USE_JS_FILE_LOADER) {
 }
 
 const plugins = []
-
-if (JS_MINIFY) {
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
-  const TerserPlugin = require('terser-webpack-plugin')
-
-  plugins.push(
-    new TerserPlugin({
-      parallel: true,
-      terserOptions: {
-        extractComments: 'all',
-        compress: {
-          // eslint-disable-next-line @typescript-eslint/camelcase
-          drop_console: true
-        }
-      }
-    })
-  )
-}
 
 if (MODE_ENV === MODE.ONCE) {
   const root = new OutputDirDiff([DIST, ...OUTPUT_JS_ARRAY], [])
@@ -141,7 +123,7 @@ export const js: Configuration = {
     publicPath: PathBuild.relative(OUTPUT_JS_ARRAY),
     chunkFilename: '[name].js'
   },
-  optimization: jsSplitChunks,
+  optimization: jsOptimization,
   externals,
   resolve: {
     extensions: ['.js', '.jsx', '.json', '.vue'],

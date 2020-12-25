@@ -18,24 +18,25 @@ export default {
 
 ## Variables
 
-### `jsSplitChunks`
+### `jsOptimization`
 
-Splitting the common logic for JavaScript.  
+Optimization configuration for JavaScript.  
 Define using [config](https://www.npmjs.com/package/node-config).  
-config key is `options.js.splitFilename`.
+config key is `options.js.splitFilename` and `options.js.terser`.
 
-If you don't want to split, delete the config key.
+File Split: If you don't want to split, delete the config key.  
+Terser Plugin option: Using variable is [`JS_TERSER`](https://github.com/io-arc/io-arc/tree/master/packages/env#js_terser) - [Reference](https://webpack.js.org/plugins/terser-webpack-plugin/)
 
 ### `webpackDefine`
 
 Global constant for webpack.
 
-| variable        | @io-arc/env                                                                    |
-| --------------- | ------------------------------------------------------------------------------ |
+| variable        | @io-arc/env                                                                                |
+| --------------- | ------------------------------------------------------------------------------------------ |
 | `IS_PRODUCTION` | [`IS_PRODUCTION`](https://github.com/io-arc/io-arc/tree/master/packages/env#is_production) |
-| `SITE_TITLE`         | [`SITE_TITLE`](https://github.com/io-arc/io-arc/tree/master/packages/env#site_title)       |
-| `SITE_URL`           | [`SITE_URL`](https://github.com/io-arc/io-arc/tree/master/packages/env#site_url)           |
-| `SITE_AUTHOR`        | [`SITE_AUTHOR`](https://github.com/io-arc/io-arc/tree/master/packages/env#site_author)     |
+| `SITE_TITLE`    | [`SITE_TITLE`](https://github.com/io-arc/io-arc/tree/master/packages/env#site_title)       |
+| `SITE_URL`      | [`SITE_URL`](https://github.com/io-arc/io-arc/tree/master/packages/env#site_url)           |
+| `SITE_AUTHOR`   | [`SITE_AUTHOR`](https://github.com/io-arc/io-arc/tree/master/packages/env#site_author)     |
 | `SITE_ROOT`     | [`SITE_ROOT`](https://github.com/io-arc/io-arc/tree/master/packages/env#site_root)         |
 
 ## Functions

@@ -22,15 +22,16 @@ Config key is `wsDir.js`.
 [config](https://www.npmjs.com/package/node-config) to configure the build option.  
 Reference to [@io-arc/env](https://github.com/io-arc/io-arc/tree/master/packages/env).
 
-| options               | define                                                                                                        |
-| --------------------- | ------------------------------------------------------------------------------------------------------------- |
-| minify                | [`JS_MINIFY`](https://github.com/io-arc/io-arc/tree/master/packages/env#js_minify)                            |
-| using file-loader     | [`USE_JS_FILE_LOADER`](https://github.com/io-arc/io-arc/tree/master/packages/env#use_js_file_loader)          |
-| image hash            | [`IS_HASH_JS_FILE_LOADER`](https://github.com/io-arc/io-arc/tree/master/packages/env#use_hash_js_file_loader) |
-| tsconfig              | [`TSCONFIG`](https://github.com/io-arc/io-arc/tree/master/packages/env#tsconfig)                              |
-| split common filename | [`JS_SPLIT_FILENAME`](https://github.com/io-arc/io-arc/tree/master/packages/env#js_split_filename)            |
-| source map            | [`JS_SOURCE_MAP`](https://github.com/io-arc/io-arc/tree/master/packages/env#js_source_map)                    |
-| eslint file           | [`ESLINT`](https://github.com/io-arc/io-arc/tree/master/packages/env#eslint)                                  |
+| options                                                                                                    | define                                                                                                        |
+| ---------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| minify                                                                                                     | [`JS_MINIFY`](https://github.com/io-arc/io-arc/tree/master/packages/env#js_minify)                            |
+| [Terser Plugin](https://webpack.js.org/plugins/terser-webpack-plugin/) option<br>\* if `JS_MINIFY` is true | [`JS_TERSER`](https://github.com/io-arc/io-arc/tree/master/packages/env#js_terser)                            |
+| using file-loader                                                                                          | [`USE_JS_FILE_LOADER`](https://github.com/io-arc/io-arc/tree/master/packages/env#use_js_file_loader)          |
+| image hash                                                                                                 | [`IS_HASH_JS_FILE_LOADER`](https://github.com/io-arc/io-arc/tree/master/packages/env#use_hash_js_file_loader) |
+| tsconfig                                                                                                   | [`TSCONFIG`](https://github.com/io-arc/io-arc/tree/master/packages/env#tsconfig)                              |
+| split common filename                                                                                      | [`JS_SPLIT_FILENAME`](https://github.com/io-arc/io-arc/tree/master/packages/env#js_split_filename)            |
+| source map                                                                                                 | [`JS_SOURCE_MAP`](https://github.com/io-arc/io-arc/tree/master/packages/env#js_source_map)                    |
+| eslint file                                                                                                | [`ESLINT`](https://github.com/io-arc/io-arc/tree/master/packages/env#eslint)                                  |
 
 ## Features
 
@@ -40,6 +41,10 @@ If two or more files have common logic, extract the common logic and put it in a
 For example, it's useful when you have a library like lodash or jQuery.
 
 You can specify the file name of the common logic.
+
+### Minify configuration
+
+You can set the options of the Terser Plugin to be used when `JS_MINIFY` is true.
 
 ### Constants
 

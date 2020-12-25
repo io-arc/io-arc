@@ -32,6 +32,7 @@ import { ImageLoader } from '@io-arc/webpack-loaders-image'
 import TaskMessage from '@io-arc/webpack-plugins-task-message'
 import { performance, progressBar, stats } from '@io-arc/webpack-settings'
 import { PugLintLoader } from '@io-arc/webpack-loaders-pug-linter'
+import config from 'config'
 
 const htmlLoader: RuleSetRule = {
   loader: 'html-loader',
@@ -72,6 +73,9 @@ const pugLoader: RuleSetRule = {
         const key = filename.replace(/.ya?ml$/i, '')
 
         return ReadYaml(key, [WS_HTML_PATH_ABSOLUTE, ...dir])
+      },
+      config: <T>(key: string): T | null => {
+        return config.has(key) ? config.get<T>(key) : null
       }
     }
   }

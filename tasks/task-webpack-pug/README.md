@@ -68,7 +68,7 @@ Constants configure to [config](https://www.npmjs.com/package/node-config).
 ```pug
 //- Usage
 head
-  meta(charset="UTF-8")
+  meta(charset='UTF-8')
   title= SITE_TITLE
 ```
 
@@ -77,9 +77,44 @@ head
 #### `readYAML(path: string)`
 
 Read YAML file.  
-e.g. `- const foo = readYAML('assets/data/foo.yml')`
+e.g. `- var foo = readYAML('assets/data/foo.yml')`
 
 The file path can only be specified below the pug workspace.
+
+#### `config(key: string)`
+
+Read node-config file (`config/xxx.yml`).  
+If the key does not exist, it will be null.
+
+```yaml
+# config/development.yml
+api: https://foo.com
+layout: default
+
+# config/production.yml
+api: https://bar.com
+```
+
+```pug
+-
+  var api = config('api')
+  var layout = config('layout')
+
+p= api
+p= layout
+```
+
+Compile to:
+
+```html
+<!-- NODE_ENV=development build -->
+<p>https://foo.com</p>
+<p>default</p>
+
+<!-- NODE_ENV=production build -->
+<p>https://bar.com</p>
+<p></p>
+```
 
 ### PHP filter
 
