@@ -34,6 +34,6 @@
     "node-notifier": "^8.0.1"
   },
   "devDependencies": {
-    "@types/node-notifier": "^6.0.0"
+    "@types/node-notifier": "^8.0.0"
   }
 }
