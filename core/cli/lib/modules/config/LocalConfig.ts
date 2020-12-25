@@ -1,4 +1,5 @@
 import { TDirNameKey } from '@io-arc/types'
+import { TerserPluginOptions } from 'terser-webpack-plugin'
 import { IoTemplateFiles, templateDir } from '../Files'
 import { ALT_HTML_EXT, ALT_HTML_TYPE } from '../questions/AltHtml'
 import { ALT_JS_TYPE, JS_FRAMEWORK } from '../questions/AltJs'
@@ -16,8 +17,8 @@ interface IoLocalConfigOption {
 
   js: {
     minify: boolean
-
     sourceMap: boolean
+    terser?: TerserPluginOptions
   }
 
   json: {
@@ -242,7 +243,16 @@ export default class LocalConfig extends BaseConfig {
       options: {
         html: { minify: true },
         css: { minify: true },
-        js: { minify: true, sourceMap: false },
+        js: {
+          minify: true,
+          terser: {
+            parallel: true,
+            extractComments: false,
+            // eslint-disable-next-line @typescript-eslint/camelcase
+            terserOptions: { compress: { drop_console: true } }
+          },
+          sourceMap: false
+        },
         json: { minify: true }
       }
     })

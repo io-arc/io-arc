@@ -1,15 +1,7 @@
-import { WebpackExtend } from '@io-arc/utils'
-import {
-  babelLoader,
-  EslintLoader,
-  workerLoader,
-  yamlLoader
-} from '@io-arc/webpack-loaders-js'
 import {
   DIST,
   ESLINT,
   IS_HASH_JS_FILE_LOADER,
-  JS_MINIFY,
   JS_SOURCE_MAP,
   MODE,
   MODE_ENV,
@@ -20,20 +12,27 @@ import {
   WS_JS_PATH_ABSOLUTE,
   WS_ROOT_ABSOLUTE
 } from '@io-arc/env'
-import { ImageLoader } from '@io-arc/webpack-loaders-image'
-import webpack, { Configuration } from 'webpack'
-import { TFileName } from '@io-arc/types'
 import { FileListObject } from '@io-arc/file-list'
+import OutputDirDiff from '@io-arc/output-dir-diff'
 import PathBuild from '@io-arc/path-build'
+import { TFileName } from '@io-arc/types'
+import { WebpackExtend } from '@io-arc/utils'
+import { ImageLoader } from '@io-arc/webpack-loaders-image'
 import {
-  jsSplitChunks,
+  babelLoader,
+  EslintLoader,
+  workerLoader,
+  yamlLoader
+} from '@io-arc/webpack-loaders-js'
+import TaskMessage from '@io-arc/webpack-plugins-task-message'
+import {
+  jsOptimization,
   performance,
   progressBar,
   stats,
   webpackDefine
 } from '@io-arc/webpack-settings'
-import TaskMessage from '@io-arc/webpack-plugins-task-message'
-import OutputDirDiff from '@io-arc/output-dir-diff'
+import webpack, { Configuration } from 'webpack'
 
 const rules = [babelLoader]
 
@@ -44,24 +43,6 @@ if (USE_JS_FILE_LOADER) {
 }
 
 const plugins = []
-
-if (JS_MINIFY) {
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
-  const TerserPlugin = require('terser-webpack-plugin')
-
-  plugins.push(
-    new TerserPlugin({
-      parallel: true,
-      terserOptions: {
-        extractComments: 'all',
-        compress: {
-          // eslint-disable-next-line @typescript-eslint/camelcase
-          drop_console: true
-        }
-      }
-    })
-  )
-}
 
 if (MODE_ENV === MODE.ONCE) {
   const root = new OutputDirDiff([DIST, ...OUTPUT_JS_ARRAY], [])
@@ -105,7 +86,7 @@ export const js: Configuration = {
     publicPath: PathBuild.relative(OUTPUT_JS_ARRAY),
     chunkFilename: '[name].js'
   },
-  optimization: jsSplitChunks,
+  optimization: jsOptimization,
   externals,
   resolve: {
     extensions: ['.js', '.jsx', '.json'],

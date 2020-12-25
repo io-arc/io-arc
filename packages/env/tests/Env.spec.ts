@@ -1,5 +1,6 @@
 import {
-  CSS_MINIFY, CSS_POSTCSS_MQ_PACKER,
+  CSS_MINIFY,
+  CSS_POSTCSS_MQ_PACKER,
   DEPLOY_IMG_ARRAY,
   DEPLOY_YAML2JSON_ARRAY,
   DIST,
@@ -13,6 +14,7 @@ import {
   JS_MINIFY,
   JS_SOURCE_MAP,
   JS_SPLIT_FILENAME,
+  JS_TERSER,
   JSON_MINIFY,
   NODE_ENV,
   OUTPUT_CSS_ARRAY,
@@ -172,7 +174,7 @@ test('CSS build minify option', () => {
   expect(CSS_MINIFY).toBe(false)
 })
 
-test('Using mqpacker of postcss', ()=>{
+test('Using mqpacker of postcss', () => {
   expect(CSS_POSTCSS_MQ_PACKER).toBe(true)
 })
 
@@ -222,6 +224,14 @@ test('Judgement to adding 6-digit hash for image path in JS', () => {
 
 test('JS build minify option', () => {
   expect(JS_MINIFY).toBe(true)
+})
+
+test('JS Terser plugin option', () => {
+  expect(JS_TERSER).toEqual({
+    parallel: true,
+    extractComments: false,
+    terserOptions: { compress: { drop_console: true } }
+  })
 })
 
 test('Output JavaScript directory name array', () => {

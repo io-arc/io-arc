@@ -44,6 +44,14 @@ options:
   js:
     minify: true
 
+    # If minify is true to enabled
+    terser:
+      parallel: true
+      extractComments: false
+      terserOptions:
+        compress:
+          drop_console: true
+
     # tsconfig.json which is specified at the time of webpack build
     tsconfig: tsconfig.json
 
