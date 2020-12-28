@@ -21,7 +21,7 @@ export default {
 ### `jsOptimization`
 
 Optimization configuration for JavaScript.  
-Define using [config](https://www.npmjs.com/package/node-config).  
+Define using [config](https://github.com/lorenwest/node-config).  
 config key is `options.js.splitFilename` and `options.js.terser`.
 
 File Split: If you don't want to split, delete the config key.  

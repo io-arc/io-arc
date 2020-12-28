@@ -37,7 +37,7 @@ readonly string
 
 Build environment.  
 Using `process.env.NODE_ENV`.  
-However, if `overrideEnv` is defined in using [config](https://www.npmjs.com/package/node-config), it can be overwritten.  
+However, if `overrideEnv` is defined in using [config](https://github.com/lorenwest/node-config), it can be overwritten.  
 Default is `BUILD.DEVELOPMENT`.
 
 #### Type
@@ -124,7 +124,7 @@ First string is `process.cwd()` and `WS_ROOT` constant.
 ### `DIST`
 
 Build output directory.  
-Define using [config](https://www.npmjs.com/package/node-config).
+Define using [config](https://github.com/lorenwest/node-config).
 
 | data       | value       |
 | ---------- | ----------- |
@@ -141,7 +141,7 @@ First string is `process.cwd()` and `DIST` constant.
 Working space for copy directory name array.  
 Array first is `WS_ROOT` constant.
 
-Define using [config](https://www.npmjs.com/package/node-config).
+Define using [config](https://github.com/lorenwest/node-config).
 
 | data              | value                 |
 | ----------------- | --------------------- |
@@ -154,7 +154,7 @@ Define using [config](https://www.npmjs.com/package/node-config).
 Working space for copy directory path.  
 First string is `WS_ROOT` constant.
 
-Define using [config](https://www.npmjs.com/package/node-config).
+Define using [config](https://github.com/lorenwest/node-config).
 
 | data              | value               |
 | ----------------- | ------------------- |
@@ -167,7 +167,7 @@ Define using [config](https://www.npmjs.com/package/node-config).
 Working space for HTML (including AltHTML) directory name array.  
 Array first is `WS_ROOT` constant.
 
-Define using [config](https://www.npmjs.com/package/node-config).
+Define using [config](https://github.com/lorenwest/node-config).
 
 | data              | value               |
 | ----------------- | ------------------- |
@@ -189,7 +189,7 @@ First string is `process.cwd()` and build for `WS_HTML_ARRAY` constant.
 
 [Pug](https://pugjs.org/) compile output to PHP.
 
-Define using [config](https://www.npmjs.com/package/node-config).
+Define using [config](https://github.com/lorenwest/node-config).
 
 | data       | value             |
 | ---------- | ----------------- |
@@ -200,7 +200,7 @@ Define using [config](https://www.npmjs.com/package/node-config).
 
 [Pug](https://pugjs.org/) lint file name.
 
-Define using [config](https://www.npmjs.com/package/node-config).
+Define using [config](https://github.com/lorenwest/node-config).
 
 | data       | value              |
 | ---------- | ------------------ |
@@ -212,7 +212,7 @@ Define using [config](https://www.npmjs.com/package/node-config).
 HTML build using file-loader.  
 \* Including AltHTML
 
-Define using [config](https://www.npmjs.com/package/node-config).
+Define using [config](https://github.com/lorenwest/node-config).
 
 | data       | value                         |
 | ---------- | ----------------------------- |
@@ -224,7 +224,7 @@ Define using [config](https://www.npmjs.com/package/node-config).
 HTML build using file-loader then judgment to adding 6-digit hash for image path.  
 \* Including AltHTML
 
-Define using [config](https://www.npmjs.com/package/node-config).
+Define using [config](https://github.com/lorenwest/node-config).
 
 | data       | value                          |
 | ---------- | ------------------------------ |
@@ -236,7 +236,7 @@ Define using [config](https://www.npmjs.com/package/node-config).
 Image build target for file-loader at HTML.  
 \* Including AltHTML
 
-Define using [config](https://www.npmjs.com/package/node-config).
+Define using [config](https://github.com/lorenwest/node-config).
 
 | data       | value                            |
 | ---------- | -------------------------------- |
@@ -258,7 +258,7 @@ Define using [config](https://www.npmjs.com/package/node-config).
 HTML build minify option.  
 \* Including AltHTML
 
-Define using [config](https://www.npmjs.com/package/node-config).
+Define using [config](https://github.com/lorenwest/node-config).
 
 | data       | value                 |
 | ---------- | --------------------- |
@@ -270,7 +270,7 @@ Define using [config](https://www.npmjs.com/package/node-config).
 Working space for CSS (including AltCSS) directory name array.  
 Array first is `WS_ROOT` constant.
 
-Define using [config](https://www.npmjs.com/package/node-config).
+Define using [config](https://github.com/lorenwest/node-config).
 
 | data              | value              |
 | ----------------- | ------------------ |
@@ -293,7 +293,7 @@ First string is `process.cwd()` and build for `WS_CSS_ARRAY` constant.
 CSS build using file-loader.  
 \* Including AltCSS
 
-Define using [config](https://www.npmjs.com/package/node-config).
+Define using [config](https://github.com/lorenwest/node-config).
 
 | data       | value                        |
 | ---------- | ---------------------------- |
@@ -305,7 +305,7 @@ Define using [config](https://www.npmjs.com/package/node-config).
 CSS build using file-loader then judgment to adding 6-digit hash for image path.  
 \* Including AltCSS
 
-Define using [config](https://www.npmjs.com/package/node-config).
+Define using [config](https://github.com/lorenwest/node-config).
 
 | data       | value                         |
 | ---------- | ----------------------------- |
@@ -317,7 +317,7 @@ Define using [config](https://www.npmjs.com/package/node-config).
 CSS build minify option.  
 \* Including AltCSS (e.g. Stylus)
 
-Define using [config](https://www.npmjs.com/package/node-config).
+Define using [config](https://github.com/lorenwest/node-config).
 
 | data       | value                |
 | ---------- | -------------------- |
@@ -338,7 +338,7 @@ Using [node-css-mqpacker](https://github.com/hail2u/node-css-mqpacker) of postcs
 CSS output directory name array.  
 \* Including AltCSS (e.g. Stylus)
 
-Define using [config](https://www.npmjs.com/package/node-config).
+Define using [config](https://github.com/lorenwest/node-config).
 
 | data       | value               |
 | ---------- | ------------------- |
@@ -355,7 +355,7 @@ First string is `process.cwd()` and `DIST` constant.
 Working space for JS (including AltJS) directory name array.  
 Array first is `WS_ROOT` constant.
 
-Define using [config](https://www.npmjs.com/package/node-config).
+Define using [config](https://github.com/lorenwest/node-config).
 
 | data              | value              |
 | ----------------- | ------------------ |
@@ -376,7 +376,7 @@ First string is `process.cwd()` and build for `WS_JS_ARRAY` constant.
 ### `JS_MINIFY`
 
 Babel/TypeScript build minify option.
-Define using [config](https://www.npmjs.com/package/node-config).
+Define using [config](https://github.com/lorenwest/node-config).
 
 | data       | value               |
 | ---------- | ------------------- |
@@ -403,7 +403,7 @@ Terser plugin configuration if `JS_MINIFY` is true.
 ### `TSCONFIG`
 
 TypeScript config file.  
-Define using [config](https://www.npmjs.com/package/node-config).
+Define using [config](https://github.com/lorenwest/node-config).
 
 | data       | value                 |
 | ---------- | --------------------- |
@@ -413,7 +413,7 @@ Define using [config](https://www.npmjs.com/package/node-config).
 ### `JS_SPLIT_FILENAME`
 
 File names for splitting the common logic.  
-Define using [config](https://www.npmjs.com/package/node-config).
+Define using [config](https://github.com/lorenwest/node-config).
 
 | data       | value                      |
 | ---------- | -------------------------- |
@@ -423,7 +423,7 @@ Define using [config](https://www.npmjs.com/package/node-config).
 ### `JS_SOURCE_MAP`
 
 JS build source map output option.  
-Define using [config](https://www.npmjs.com/package/node-config).
+Define using [config](https://github.com/lorenwest/node-config).
 
 | data       | value                  |
 | ---------- | ---------------------- |
@@ -433,7 +433,7 @@ Define using [config](https://www.npmjs.com/package/node-config).
 ### `ESLINT`
 
 Only specified when not in the [ESLint](https://eslint.org/) configuration file format.  
-Define using [config](https://www.npmjs.com/package/node-config).
+Define using [config](https://github.com/lorenwest/node-config).
 
 | data       | value               |
 | ---------- | ------------------- |
@@ -445,7 +445,7 @@ Define using [config](https://www.npmjs.com/package/node-config).
 JS build using file-loader.  
 \* Including AltJS
 
-Define using [config](https://www.npmjs.com/package/node-config).
+Define using [config](https://github.com/lorenwest/node-config).
 
 | data       | value                       |
 | ---------- | --------------------------- |
@@ -457,7 +457,7 @@ Define using [config](https://www.npmjs.com/package/node-config).
 JS build using file-loader then judgment to adding 6-digit hash for image path.  
 \* Including AltCSS
 
-Define using [config](https://www.npmjs.com/package/node-config).
+Define using [config](https://github.com/lorenwest/node-config).
 
 | data       | value                        |
 | ---------- | ---------------------------- |
@@ -469,7 +469,7 @@ Define using [config](https://www.npmjs.com/package/node-config).
 JavaScript output directory name array.  
 \* Including AltJS (e.g. TypeScript)
 
-Define using [config](https://www.npmjs.com/package/node-config).
+Define using [config](https://github.com/lorenwest/node-config).
 
 | data       | value              |
 | ---------- | ------------------ |
@@ -486,7 +486,7 @@ First string is `process.cwd()` and `DIST` constant.
 [vue-loader](https://vue-loader.vuejs.org/) transformAssetUrls option.  
 If it is not used, set `options.fileLoader.vue.use` to `false` to disable it.
 
-Define using [config](https://www.npmjs.com/package/node-config).
+Define using [config](https://github.com/lorenwest/node-config).
 
 | data                    | value                                          |
 | ----------------------- | ---------------------------------------------- |
@@ -513,7 +513,7 @@ Define using [config](https://www.npmjs.com/package/node-config).
 Working space YAML to JSON directory path.  
 Array first is `WS_ROOT` constant.
 
-Define using [config](https://www.npmjs.com/package/node-config).
+Define using [config](https://github.com/lorenwest/node-config).
 
 | data              | value                    |
 | ----------------- | ------------------------ |
@@ -526,7 +526,7 @@ Define using [config](https://www.npmjs.com/package/node-config).
 Working space YAML to JSON directory path.  
 First string is `WS_ROOT` constant.
 
-Define using [config](https://www.npmjs.com/package/node-config).
+Define using [config](https://github.com/lorenwest/node-config).
 
 | data              | value                  |
 | ----------------- | ---------------------- |
@@ -538,7 +538,7 @@ Define using [config](https://www.npmjs.com/package/node-config).
 
 YAML to JSON convert minify option.
 
-Define using [config](https://www.npmjs.com/package/node-config).
+Define using [config](https://github.com/lorenwest/node-config).
 
 | data       | value                 |
 | ---------- | --------------------- |
@@ -549,7 +549,7 @@ Define using [config](https://www.npmjs.com/package/node-config).
 
 JSON output directory name array.
 
-Define using [config](https://www.npmjs.com/package/node-config).
+Define using [config](https://github.com/lorenwest/node-config).
 
 | data       | value                |
 | ---------- | -------------------- |
@@ -567,7 +567,7 @@ Result to `DIST` + `OUTPUT_JSON_ARRAY`.
 Image directory path for using [file-loader](https://github.com/webpack-contrib/file-loader).  
 First string is `process.cwd()` and `WS_ROOT` constant.
 
-Define using [config](https://www.npmjs.com/package/node-config).
+Define using [config](https://github.com/lorenwest/node-config).
 
 | data              | value                             |
 | ----------------- | --------------------------------- |
@@ -579,7 +579,7 @@ Define using [config](https://www.npmjs.com/package/node-config).
 
 Image output directory name array for using file-loader.
 
-Define using [config](https://www.npmjs.com/package/node-config).
+Define using [config](https://github.com/lorenwest/node-config).
 
 | data       | value               |
 | ---------- | ------------------- |
@@ -597,7 +597,7 @@ Result to `DIST` + `OUTPUT_IMG_ARRAY`.
 Website domain url.  
 Site URL with no slash for last.
 
-Define using [config](https://www.npmjs.com/package/node-config).
+Define using [config](https://github.com/lorenwest/node-config).
 
 | data       | value |
 | ---------- | ----- |
@@ -618,7 +618,7 @@ url: https://arc-one.jp
 Website root.  
 Slash the front and back.
 
-Define using [config](https://www.npmjs.com/package/node-config).
+Define using [config](https://github.com/lorenwest/node-config).
 
 | data       | value      |
 | ---------- | ---------- |
@@ -676,7 +676,7 @@ siteRoot: /io-arc/
 
 Website title.
 
-Define using [config](https://www.npmjs.com/package/node-config).
+Define using [config](https://github.com/lorenwest/node-config).
 
 | data       | value   |
 | ---------- | ------- |
@@ -687,7 +687,7 @@ Define using [config](https://www.npmjs.com/package/node-config).
 
 Website author.
 
-Define using [config](https://www.npmjs.com/package/node-config).
+Define using [config](https://github.com/lorenwest/node-config).
 
 | data       | value    |
 | ---------- | -------- |
@@ -698,7 +698,7 @@ Define using [config](https://www.npmjs.com/package/node-config).
 
 Website description.
 
-Define using [config](https://www.npmjs.com/package/node-config).
+Define using [config](https://github.com/lorenwest/node-config).
 
 | data       | value         |
 | ---------- | ------------- |

@@ -15,7 +15,7 @@ $ NODE_ENV=development MODE=once ia-yaml2json
 
 ## Specification
 
-The directory where the file copied from uses [config](https://www.npmjs.com/package/node-config).  
+The directory where the file copied from uses [config](https://github.com/lorenwest/node-config).
 
 ### Default
 
@@ -36,14 +36,14 @@ wsDir:
 outputDir: dist
 
 deployDir:
-  json: [json] 
+  json: [json]
 
 options:
   json:
     minify: true
 ```
 
-Result:  
+Result:
 
 - Working space: `<project>/src/y2j`
 - Output directory: `<project>/dist`

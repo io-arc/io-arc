@@ -23,12 +23,12 @@ Property see is the [MDN](https://developer.mozilla.org/ja/docs/Web/Manifest).
 ## Default
 
 If not specified in manifest.yml  
-Default using [config](https://www.npmjs.com/package/node-config).  
+Default using [config](https://github.com/lorenwest/node-config).  
 Reference a [@io-arc/env](https://github.com/io-arc/io-arc/tree/master/packages/env).
 
-| property             | default                                                                   |
-| -------------------- | ------------------------------------------------------------------------- |
+| property             | default                                                                              |
+| -------------------- | ------------------------------------------------------------------------------------ |
 | name                 | [`SITE_TITLE`](https://github.com/io-arc/io-arc/tree/master/packages/env#site_title) |
 | short_name           | [`SITE_TITLE`](https://github.com/io-arc/io-arc/tree/master/packages/env#site_title) |
-| scope                | [`SITE_ROOT`](https://github.com/io-arc/io-arc/tree/master/packages/env#site_root)    |
-| related_applications | `[]`                                                                      |
+| scope                | [`SITE_ROOT`](https://github.com/io-arc/io-arc/tree/master/packages/env#site_root)   |
+| related_applications | `[]`                                                                                 |

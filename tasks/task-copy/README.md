@@ -15,7 +15,7 @@ $ NODE_ENV=development MODE=once ia-copy
 
 ## Specification
 
-The directory where the file copied from uses [config](https://www.npmjs.com/package/node-config).
+The directory where the file copied from uses [config](https://github.com/lorenwest/node-config).
 
 ### Default
 

@@ -15,12 +15,12 @@ module.exports = html
 
 Workspace is `src/html`.
 
-If need for change the workspace then set in [config](https://www.npmjs.com/package/node-config).  
+If need for change the workspace then set in [config](https://github.com/lorenwest/node-config).  
 Config key is `wsDir.html`.
 
 ## Build option
 
-[config](https://www.npmjs.com/package/node-config) to configure the build option.  
+[config](https://github.com/lorenwest/node-config) to configure the build option.  
 Reference to [@io-arc/env](https://github.com/io-arc/io-arc/tree/master/packages/env).
 
 | options            | define                                                                                                            |
@@ -50,7 +50,7 @@ See: [pug lint options](https://github.com/pugjs/pug-lint#configuration-file)
 
 ### Constants
 
-Constants configure to [config](https://www.npmjs.com/package/node-config).
+Constants configure to [config](https://github.com/lorenwest/node-config).
 
 | constants          | config key                                          | description                                   | @io-arc/env                                                                                        |
 | ------------------ | --------------------------------------------------- | --------------------------------------------- | -------------------------------------------------------------------------------------------------- |
