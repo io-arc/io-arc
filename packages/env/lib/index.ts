@@ -499,7 +499,7 @@ export const DEPLOY_YAML2JSON_ARRAY: TDirNameKey[] = [
  * First string is '<OS root>/src/' to absolutely
  */
 export const WS_IMG_PATH_ABSOLUTE: TDirNameKey = getWsAbsolutePath(
-  'wsDir.imgLoader',
+  'wsDir.img',
   'img'
 )
 
