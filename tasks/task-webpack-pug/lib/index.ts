@@ -26,7 +26,7 @@ import {
 } from '@io-arc/env'
 import { TFileName, TFilePath, TWebpackMode } from '@io-arc/types'
 import { FileListObject } from '@io-arc/file-list'
-import { AssetsDirPath, WebpackExtend } from '@io-arc/utils'
+import { AssetsDirPath, WebpackExtends } from '@io-arc/utils'
 import { ReadYaml } from '@io-arc/read-yaml'
 import { ImageLoader } from '@io-arc/webpack-loaders-image'
 import TaskMessage from '@io-arc/webpack-plugins-task-message'
@@ -96,7 +96,7 @@ const rules = []
 const plugins = []
 
 // User extend
-const extend = new WebpackExtend('html')
+const extend = new WebpackExtends('html')
 const externals = extend.externals()
 const extendsLoaders = extend.loaders()
 if (extendsLoaders != null) rules.push(...extendsLoaders)

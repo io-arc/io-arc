@@ -1,16 +1,16 @@
 import fs from 'fs'
 import { ExternalsElement, RuleSetRule, Plugin } from 'webpack'
 
-interface IfWebpackExtend {
+interface IfWebpackExtends {
   externals?: ExternalsElement | ExternalsElement[]
   loaders?: RuleSetRule[]
   plugins?: Plugin[]
   [key: string]: any
 }
 
-export class WebpackExtend {
-  readonly #filename = `${process.cwd()}/config/webpack.extend.js`
-  readonly #data: IfWebpackExtend | null
+export class WebpackExtends {
+  readonly #filename = `${process.cwd()}/config/webpack.extends.js`
+  readonly #data: IfWebpackExtends | null
 
   constructor(target: string) {
     const exist = this.#checkFile()
@@ -28,14 +28,14 @@ export class WebpackExtend {
   /**
    * Extend Data
    */
-  public data(): IfWebpackExtend | null {
+  public data(): IfWebpackExtends | null {
     return this.#data
   }
 
   /**
    * Get a externals define
    */
-  public externals(): IfWebpackExtend['externals'] | undefined {
+  public externals(): IfWebpackExtends['externals'] | undefined {
     if (this.#data == null) return undefined
     return this.#data.externals || undefined
   }
@@ -43,12 +43,12 @@ export class WebpackExtend {
   /**
    * Get a module rule option
    */
-  public loaders(): IfWebpackExtend['loaders'] | undefined {
+  public loaders(): IfWebpackExtends['loaders'] | undefined {
     if (this.#data == null) return undefined
     return this.#data.loaders || undefined
   }
 
-  public plugins(): IfWebpackExtend['plugins'] | undefined {
+  public plugins(): IfWebpackExtends['plugins'] | undefined {
     if (this.#data == null) return undefined
     return this.#data.plugins || undefined
   }
@@ -71,9 +71,9 @@ export class WebpackExtend {
    * @param target
    */
   #targetData = (
-    data: IfWebpackExtend | null,
+    data: IfWebpackExtends | null,
     target: string
-  ): IfWebpackExtend | null => {
+  ): IfWebpackExtends | null => {
     if (data == null) return null
     return target in data ? data[target] : null
   }

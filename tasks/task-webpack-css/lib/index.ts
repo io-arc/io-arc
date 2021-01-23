@@ -1,4 +1,4 @@
-import { WebpackExtend } from '@io-arc/utils'
+import { WebpackExtends } from '@io-arc/utils'
 import { Configuration, RuleSetLoader } from 'webpack'
 import {
   CSS_MINIFY,
@@ -85,7 +85,7 @@ const progressBarPlugin = require('progress-bar-webpack-plugin')
 
 const rules = []
 // User extends
-const extend = new WebpackExtend('css')
+const extend = new WebpackExtends('css')
 const externals = extend.externals()
 const extendsLoaders = extend.loaders()
 if (extendsLoaders != null) rules.push(...extendsLoaders)

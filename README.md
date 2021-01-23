@@ -74,7 +74,7 @@ Create directory structure below.
     │   ├ local.yml (build settings)
     │   ├ local-development.yml
     │   ├ local-production.yml
-    │   └ webpack.extend.js
+    │   └ webpack.extends.js
     ├ config-vue/ (select Vue only)
     │   └ .pug-lintrc.json
     ├ src/ (working directory)
@@ -119,7 +119,7 @@ See example for [local.yml](packages/env/config/local.yml).
 ## Extending the webpack build
 
 There are several extensions available on the user side as well.  
-The extension is configured in `<project>/config/webpack.extend.js`.
+The extension is configured in `<project>/config/webpack.extends.js`.
 
 The extensible webpack options are as follows.
 
@@ -127,7 +127,7 @@ The extensible webpack options are as follows.
 - [module rule](https://webpack.js.org/configuration/module/#rule)
 - [plugins](https://webpack.js.org/configuration/plugins/)
 
-See [example](example/config/webpack.extend.js).
+See [example](example/config/webpack.extends.js).
 
 [See documents](https://io-arc.tech/configuration/webpack.html).
 

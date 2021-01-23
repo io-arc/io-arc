@@ -20,7 +20,7 @@ import { FileListObject } from '@io-arc/file-list'
 import OutputDirDiff from '@io-arc/output-dir-diff'
 import PathBuild from '@io-arc/path-build'
 import { TFileName } from '@io-arc/types'
-import { WebpackExtend } from '@io-arc/utils'
+import { WebpackExtends } from '@io-arc/utils'
 import { ImageLoader } from '@io-arc/webpack-loaders-image'
 import {
   EslintLoader,
@@ -102,7 +102,7 @@ const pugLint = VUE_PUG_LINT_FILE
   : null
 
 // User extends
-const extend = new WebpackExtend('js')
+const extend = new WebpackExtends('js')
 const externals = extend.externals()
 const extendsLoaders = extend.loaders()
 if (extendsLoaders != null) rules.push(...extendsLoaders)

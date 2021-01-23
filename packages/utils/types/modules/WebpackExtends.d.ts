@@ -1,25 +1,25 @@
 import { ExternalsElement, RuleSetRule, Plugin } from 'webpack';
-interface IfWebpackExtend {
+interface IfWebpackExtends {
     externals?: ExternalsElement | ExternalsElement[];
     loaders?: RuleSetRule[];
     plugins?: Plugin[];
     [key: string]: any;
 }
-export declare class WebpackExtend {
+export declare class WebpackExtends {
     #private;
     constructor(target: string);
     /**
      * Extend Data
      */
-    data(): IfWebpackExtend | null;
+    data(): IfWebpackExtends | null;
     /**
      * Get a externals define
      */
-    externals(): IfWebpackExtend['externals'] | undefined;
+    externals(): IfWebpackExtends['externals'] | undefined;
     /**
      * Get a module rule option
      */
-    loaders(): IfWebpackExtend['loaders'] | undefined;
-    plugins(): IfWebpackExtend['plugins'] | undefined;
+    loaders(): IfWebpackExtends['loaders'] | undefined;
+    plugins(): IfWebpackExtends['plugins'] | undefined;
 }
 export {};

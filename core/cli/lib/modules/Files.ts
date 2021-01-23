@@ -24,9 +24,9 @@ export default class Files {
         output: ''
       },
       {
-        source: `${templateDir}/webpack.extend.js`,
+        source: `${templateDir}/webpack.extends.js`,
         output: 'config',
-        logValue: 'webpack.extend.js'
+        logValue: 'webpack.extends.js'
       }
     ]
   }

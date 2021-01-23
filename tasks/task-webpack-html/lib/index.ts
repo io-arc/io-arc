@@ -26,7 +26,7 @@ import { FileListObject } from '@io-arc/file-list'
 import { ImageLoader } from '@io-arc/webpack-loaders-image'
 import { performance, progressBar, stats } from '@io-arc/webpack-settings'
 import TaskMessage from '@io-arc/webpack-plugins-task-message'
-import { AssetsDirPath, WebpackExtend } from '@io-arc/utils'
+import { AssetsDirPath, WebpackExtends } from '@io-arc/utils'
 import handlebars from 'handlebars'
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -38,7 +38,7 @@ const rules = []
 const plugins = []
 
 // User extends
-const extend = new WebpackExtend('html')
+const extend = new WebpackExtends('html')
 const externals = extend.externals()
 const extendsLoaders = extend.loaders()
 if (extendsLoaders != null) rules.push(...extendsLoaders)
