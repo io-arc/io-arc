@@ -2,4 +2,4 @@
 
 It can be built with both SCSS(`.scss`) and SASS(`.sass`).
 
-Reference [See](https://github.com/io-arc/io-arc/tree/master/tasks/task-webpack-sass#features)
+[Reference documents](https://io-arc.tech/build/css.html).

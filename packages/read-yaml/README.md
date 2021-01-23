@@ -2,6 +2,14 @@
 
 Transpile YAML to JSON.
 
+See the [documents](https://io-arc.tech/plugins/module-read-yaml.html).
+
+## Install
+
+```shell
+$ npm i @io-arc/read-yaml
+```
+
 ## Usage
 
 ```typescript

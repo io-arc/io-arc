@@ -2,33 +2,16 @@
 
 Create a manifest.json.
 
+See the [documents](https://io-arc.tech/plugins/task-manifest.html).
+
+## Install
+
+```shell
+$ npm i -D @io-arc/task-manifest
+```
+
 ## Usage
 
 ```
 $ NODE_ENV=development MODE=once ia-manifest
 ```
-
-## Parameters
-
-`MODE=once`: Once run.  
-`MODE=watch`: Watch run.
-
-## Specification
-
-Put manifest.yml or manifest\*\*.yml(e.g. manifest-ios.yml) directly under the workspace.  
-If the file name is prefix with '\_'(e.g. `_manifest.yml`), it is not applicable.
-
-Property see is the [MDN](https://developer.mozilla.org/ja/docs/Web/Manifest).
-
-## Default
-
-If not specified in manifest.yml  
-Default using [config](https://github.com/lorenwest/node-config).  
-Reference a [@io-arc/env](https://github.com/io-arc/io-arc/tree/master/packages/env).
-
-| property             | default                                                                              |
-| -------------------- | ------------------------------------------------------------------------------------ |
-| name                 | [`SITE_TITLE`](https://github.com/io-arc/io-arc/tree/master/packages/env#site_title) |
-| short_name           | [`SITE_TITLE`](https://github.com/io-arc/io-arc/tree/master/packages/env#site_title) |
-| scope                | [`SITE_ROOT`](https://github.com/io-arc/io-arc/tree/master/packages/env#site_root)   |
-| related_applications | `[]`                                                                                 |

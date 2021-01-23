@@ -1,27 +1,25 @@
 # `@io-arc/webpack-loaders-pug-linter`
 
-Pug linter for webpack loader.
+A webpack loader that handles Pug's Lint.
+
+See the [documents](https://io-arc.tech/plugins/module-webpack-loaders-pug-linter.html).
+
+## Install
+
+```shell
+$ npm i @io-arc/webpack-loaders-pug-linter
+```
 
 ## Usage
 
 ```typescript
 import PugLintLoader from '@io-arc/webpack-loaders-pug-linter'
-import lint from '../.pug-lintrc.json'
+import lint from './.pug-lintrc.json'
 
 export default {
   // (abbreviation)
   module: {
-    rules: [
-      PugLintLoader(/^(?!_).*\.pug$/, 'pug-lint-loader', lint)
-    ]
+    rules: [PugLintLoader(/^(?!_).*\.pug$/, 'pug-lint-loader', lint)]
   }
 }
 ```
-
-## Methods
-
-### `PugLintLoader(regex: RegExp, loarder: string[, linter: object])`
-
-`loader` is pug lint loader name.  
-`linter` is not required.  
-Where `linter` is specified, refer to [pug-lint](https://github.com/pugjs/pug-lint).
