@@ -14,13 +14,14 @@ $ npm i @io-arc/webpack-loaders-image
 ## Usage
 
 ```typescript
-import { ImageLoader } from '@io-arc/webpack-loaders-image'
+import { ImageLoader, ImageMinPlugin } from '@io-arc/webpack-loaders-image'
 import { DEPLOY_IMG_ARRAY } from '@io-arc/env'
 
 export default {
   // (abbreviation)
   module: {
     rules: [ImageLoader([], DEPLOY_IMG_ARRAY, true)]
-  }
+  },
+  plugins: [ImageMinPlugin]
 }
 ```

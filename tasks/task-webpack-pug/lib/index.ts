@@ -1,5 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-import { Configuration, RuleSetRule } from 'webpack'
 import {
   DIST,
   DIST_ABSOLUTE,
@@ -24,15 +22,16 @@ import {
   USE_HTML_FILE_LOADER,
   WS_HTML_PATH_ABSOLUTE
 } from '@io-arc/env'
-import { TFileName, TFilePath, TWebpackMode } from '@io-arc/types'
 import { FileListObject } from '@io-arc/file-list'
-import { AssetsDirPath, WebpackExtends } from '@io-arc/utils'
 import { ReadYaml } from '@io-arc/read-yaml'
-import { ImageLoader } from '@io-arc/webpack-loaders-image'
+import { TFileName, TFilePath, TWebpackMode } from '@io-arc/types'
+import { AssetsDirPath, WebpackExtends } from '@io-arc/utils'
+import { ImageLoader, ImageMinPlugin } from '@io-arc/webpack-loaders-image'
+import { PugLintLoader } from '@io-arc/webpack-loaders-pug-linter'
 import TaskMessage from '@io-arc/webpack-plugins-task-message'
 import { performance, progressBar, stats } from '@io-arc/webpack-settings'
-import { PugLintLoader } from '@io-arc/webpack-loaders-pug-linter'
 import config from 'config'
+import { Configuration, RuleSetRule } from 'webpack'
 
 const htmlLoader: RuleSetRule = {
   loader: 'html-loader',
@@ -94,6 +93,8 @@ const pugLint = PUG_LINT_FILE
 
 const rules = []
 const plugins = []
+
+plugins.push(ImageMinPlugin)
 
 // User extend
 const extend = new WebpackExtends('html')

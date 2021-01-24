@@ -36,11 +36,11 @@
     "@io-arc/types": "^0.4.0",
     "@io-arc/utils": "^0.4.0",
     "file-loader": "^6.0.0",
+    "image-minimizer-webpack-plugin": "1.0.0",
     "imagemin-gifsicle": "^7.0.0",
     "imagemin-jpegtran": "^7.0.0",
-    "imagemin-pngquant": "^8.0.0",
-    "imagemin-svgo": "^8.0.0",
-    "imagemin-webpack": "^5.1.1"
+    "imagemin-optipng": "^8.0.0",
+    "imagemin-svgo": "^8.0.0"
   },
   "devDependencies": {
     "@types/webpack": "^4.41.10",

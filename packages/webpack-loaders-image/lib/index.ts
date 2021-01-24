@@ -1,11 +1,11 @@
 import { WS_IMG_PATH_ABSOLUTE } from '@io-arc/env'
 import OutputDirDiff from '@io-arc/output-dir-diff'
 import { TDirNameKey, TFileName } from '@io-arc/types'
-import { RuleSetRule } from 'webpack'
 import { siteRootRelative } from '@io-arc/utils'
+import { RuleSetRule } from 'webpack'
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const imageminLoader = require('imagemin-webpack').loader
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin')
 
 export const ImageLoader = (
   base: TDirNameKey[],
@@ -16,7 +16,7 @@ export const ImageLoader = (
   const inputPath = new RegExp(`${WS_IMG_PATH_ABSOLUTE}/`)
 
   return {
-    test: /\.(png|jpe?g|gif|svg)$/i,
+    test: /\.(png|jpe?g|gif|svg|webp)$/i,
     use: [
       {
         loader: 'file-loader',
@@ -35,22 +35,20 @@ export const ImageLoader = (
           esModule: false,
           emitFile: true
         }
-      },
-      {
-        loader: imageminLoader,
-        options: {
-          cache: true,
-          bail: false,
-          imageminOptions: {
-            plugins: [
-              ['gifsicle', { interlaced: true }],
-              ['jpegtran', { progressive: true }],
-              ['pngquant', { quality: [0.8, 1] }],
-              ['svgo', { removeViewBox: true }]
-            ]
-          }
-        }
       }
     ]
   }
 }
+
+export const ImageMinPlugin = new ImageMinimizerPlugin({
+  test: /\.(jpe?g|png|gif|tif|webp|svg|avif)$/i,
+  severityError: 'warning',
+  minimizerOptions: {
+    plugins: [
+      ['gifsicle', { interlaced: true }],
+      ['jpegtran', { progressive: true }],
+      ['optipng', { optimizationLevel: 5 }],
+      ['svgo', { plugins: [{ removeViewBox: true }] }]
+    ]
+  }
+})
