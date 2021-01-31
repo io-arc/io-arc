@@ -1,0 +1,32 @@
+{
+  "name": "@io-arc/task-webp-converter",
+  "version": "0.4.0",
+  "description": "Convert an image to webp",
+  "keywords": [
+    "webp",
+    "convert"
+  ],
+  "author": "arc one",
+  "homepage": "https://github.com/io-arc/io-arc/tree/master/tasks/task-webp-convert",
+  "license": "ISC",
+  "main": "",
+  "bin": {
+    "ia-webp": "bin/index.js"
+  },
+  "directories": {
+    "bin": "bin",
+    "lib": "lib",
+    "test": "tests"
+  },
+  "files": [
+    "bin"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/io-arc/io-arc.git"
+  },
+  "scripts": {}
+}
