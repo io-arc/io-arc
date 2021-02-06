@@ -61,7 +61,7 @@ export default class WebpConverter {
     this.#regTarget = new RegExp(`^${this.#targetDir}`)
 
     // extension pattern
-    this.#extPattern = this.#createExtensionPattern(ext.png, ext.jpg, ext.gif)
+    this.#extPattern = this.#createExtensionsPattern(ext.png, ext.jpg, ext.gif)
     const pattern = this.#extPattern.join('|')
     this.#globExt = `+(${pattern})`
     this.#regExt = new RegExp(`.(${pattern})$`)
@@ -70,12 +70,27 @@ export default class WebpConverter {
     this.#gifOptions = gifOptions
   }
 
+  /** Batch conversion of specific extensions in a specified directory */
   public convertAll(): Observable<TFileName> {
     return this.#observableConvert(
       glob.sync(`${this.#targetDir}/**/[!_]*.${this.#globExt}`)
     )
   }
 
+  /**
+   * Single file conversion
+   * Output to the location specified by constructor
+   * Suppose to be used for file monitoring
+   * @param filename - target file for png or jpg or gif
+   */
+  public convert(filename: TFileName): Observable<TFileName> {
+    return this.#observableConvert([filename])
+  }
+
+  /**
+   * Convert process
+   * @param files
+   */
   #observableConvert = (files: TFileName[]): Observable<TFileName> => {
     return from(files).pipe(
       map(
@@ -115,7 +130,13 @@ export default class WebpConverter {
     )
   }
 
-  #createExtensionPattern = (
+  /**
+   * Create the extensions pattern
+   * @param png
+   * @param jpg
+   * @param gif
+   */
+  #createExtensionsPattern = (
     png: boolean,
     jpg: boolean,
     gif: boolean

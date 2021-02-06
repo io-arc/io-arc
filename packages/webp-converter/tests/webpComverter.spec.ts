@@ -1,4 +1,24 @@
+import { TFileName } from '@io-arc/types'
 import WebpConverter from '../lib'
+
+test('Webp target is none', (done) => {
+  const webp = new WebpConverter(['tests', 'img'], {
+    png: false,
+    jpg: false,
+    gif: false
+  })
+
+  const arr: TFileName[] = []
+
+  webp.convertAll().subscribe(
+    (filename) => arr.push(filename),
+    (error) => console.error(error),
+    () => {
+      expect(arr).toEqual([])
+      done()
+    }
+  )
+})
 
 test('Webp all convert: convert to same directory', (done) => {
   const webp = new WebpConverter(['tests', 'img'], {
@@ -15,9 +35,7 @@ test('Webp all convert: convert to same directory', (done) => {
   ]
 
   webp.convertAll().subscribe(
-    (filename) => {
-      expect(res.includes(filename)).toBeTruthy()
-    },
+    (filename) => expect(res.includes(filename)).toBeTruthy(),
     (error) => console.error(error),
     () => done()
   )
@@ -42,9 +60,21 @@ test('Webp all convert: convert to dist directory', (done) => {
   ]
 
   webp.convertAll().subscribe(
-    (filename) => {
-      expect(res.includes(filename)).toBeTruthy()
-    },
+    (filename) => expect(res.includes(filename)).toBeTruthy(),
+    (error) => console.error(error),
+    () => done()
+  )
+})
+
+test('Web single convert', (done) => {
+  const webp = new WebpConverter(['tests', 'img'], {
+    png: true,
+    jpg: true,
+    gif: true
+  })
+
+  webp.convert('tests/img/io-arc-ogp.png').subscribe(
+    (filename) => expect(filename).toBe('tests/img/io-arc-ogp.webp'),
     (error) => console.error(error),
     () => done()
   )
