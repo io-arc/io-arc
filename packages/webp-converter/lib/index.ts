@@ -1,5 +1,5 @@
 import PathBuild from '@io-arc/path-build'
-import { TDirNameKey, TFileName } from '@io-arc/types'
+import { IfGif2WebpOptions, TDirNameKey, TFileName } from '@io-arc/types'
 import fs from 'fs'
 import glob from 'glob'
 import imagemin from 'imagemin'
@@ -13,20 +13,6 @@ import { map } from 'rxjs/operators'
 interface IfFileObject {
   filename: TFileName
   convert: TFileName
-}
-
-interface IfGif2WebpOptions {
-  lossy?: boolean
-  mixed?: boolean
-  quality?: number
-  method?: number
-  minimize?: boolean
-  kmin?: number
-  kmax?: number
-  filter?: number
-  metadata?: string
-  multiThreading?: boolean
-  buffer?: Buffer
 }
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires

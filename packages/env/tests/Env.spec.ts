@@ -38,6 +38,7 @@ import {
   USE_JS_FILE_LOADER,
   VUE_LOADER_ASSETS,
   VUE_PUG_LINT_FILE,
+  WEBP_CONVERTER_CONFIG,
   WS_CSS_ARRAY,
   WS_CSS_PATH,
   WS_CSS_PATH_ABSOLUTE,
@@ -304,4 +305,20 @@ test('Website author', () => {
 
 test('Website description', () => {
   expect(SITE_DESCRIPTION).toBe('Web boilerplate')
+})
+
+test('Webp converter config', () => {
+  expect(WEBP_CONVERTER_CONFIG).toMatchObject([
+    {
+      target: ['src', 'img'],
+      ext: { png: true, jpg: true, gif: true },
+      options: { quality: 70 },
+      gifOptions: { lossy: true }
+    },
+    {
+      target: ['src', 'static'],
+      ext: { png: true, jpg: true, gif: true },
+      output: ['dist', 'common', 'img']
+    }
+  ])
 })
