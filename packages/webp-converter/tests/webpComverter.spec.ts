@@ -79,3 +79,43 @@ test('Web single convert', (done) => {
     () => done()
   )
 })
+
+test('Delete all webp files', (done) => {
+  const webp = new WebpConverter(['tests', 'img'], {
+    png: true,
+    jpg: true,
+    gif: true
+  })
+
+  const res: string[] = [
+    'tests/img/io-arc-ogp.webp',
+    'tests/img/ooo/io-arc-ogp.webp',
+    'tests/img/49735424706_7667261ef1_w.webp',
+    'tests/img/bird.webp'
+  ]
+
+  webp.convertAll().subscribe({
+    complete() {
+      webp.removeAll().subscribe(
+        (filename) => expect(res.includes(filename)).toBeTruthy(),
+        (error) => console.error(error),
+        () => done()
+      )
+    }
+  })
+})
+
+// test('Delete single webp file', (done) => {
+//   const webp = new WebpConverter(['tests', 'img'], {
+//     png: true,
+//     jpg: true,
+//     gif: true
+//   })
+//
+//   webp.convertAll().subscribe({
+//     next(filename) {
+//       console.log(filename)
+//     },
+//     complete() {}
+//   })
+// })

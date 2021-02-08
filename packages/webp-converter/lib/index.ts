@@ -1,5 +1,6 @@
 import PathBuild from '@io-arc/path-build'
 import { TDirNameKey, TFileName } from '@io-arc/types'
+import fs from 'fs'
 import glob from 'glob'
 import imagemin from 'imagemin'
 import imageminWebp from 'imagemin-webp'
@@ -86,6 +87,49 @@ export default class WebpConverter {
   public convert(filename: TFileName): Observable<TFileName> {
     return this.#observableConvert([filename])
   }
+
+  /**
+   * Deleting the output Webp files
+   */
+  public removeAll(): Observable<TFileName> {
+    return from(glob.sync(`${this.#outputDir}/**/*.webp`)).pipe(
+      map(
+        (filename: TFileName): TFileName => {
+          try {
+            fs.unlinkSync(filename)
+            return filename
+          } catch (e) {
+            throw new Error(e)
+          }
+        }
+      )
+    )
+  }
+
+  // public remove(target: TFilePath): Observable<TFileName> {
+  //   return of(target).pipe(
+  //     map(
+  //       (filepath: TFilePath): TFilePath => {
+  //         const t = filepath
+  //           .replace(this.#regTarget, '')
+  //           .replace(this.#regExt, '')
+  //
+  //         return PathBuild.relative([this.#outputDir, `${t}.webp`])
+  //       }
+  //     ),
+  //
+  //     map(
+  //       (filename: TFileName): TFileName => {
+  //         try {
+  //           fs.unlinkSync(filename)
+  //           return filename
+  //         } catch (e) {
+  //           throw new Error(e)
+  //         }
+  //       }
+  //     )
+  //   )
+  // }
 
   /**
    * Convert process
