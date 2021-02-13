@@ -1,6 +1,25 @@
 import { TFileName } from '@io-arc/types'
 import WebpConverter from '../lib'
 
+test('Get target directory', () => {
+  const webp = new WebpConverter(['tests', 'img'])
+  expect(webp.targetDirectory).toBe('tests/img')
+})
+
+test('Regular expressions for file extensions', () => {
+  const webp1 = new WebpConverter(['tests', 'img'])
+  expect(webp1.regExp4FileExtensions).toStrictEqual(/^(?!_).*\.(png|jpg|jpeg)$/)
+
+  const webp2 = new WebpConverter(['tests', 'img'], {
+    png: true,
+    jpg: true,
+    gif: true
+  })
+  expect(webp2.regExp4FileExtensions).toStrictEqual(
+    /^(?!_).*\.(png|jpg|jpeg|gif)$/
+  )
+})
+
 test('Webp target is none', (done) => {
   const webp = new WebpConverter(['tests', 'img'], {
     png: false,
@@ -105,17 +124,26 @@ test('Delete all webp files', (done) => {
   })
 })
 
-// test('Delete single webp file', (done) => {
-//   const webp = new WebpConverter(['tests', 'img'], {
-//     png: true,
-//     jpg: true,
-//     gif: true
-//   })
-//
-//   webp.convertAll().subscribe({
-//     next(filename) {
-//       console.log(filename)
-//     },
-//     complete() {}
-//   })
-// })
+test('Delete single webp file', (done) => {
+  const webp = new WebpConverter(
+    ['tests', 'img'],
+    {
+      png: true,
+      jpg: true,
+      gif: true
+    },
+    undefined,
+    undefined,
+    ['dist', 'img']
+  )
+
+  webp.convertAll().subscribe({
+    complete() {
+      webp.remove('tests/img/bird.gif').subscribe(
+        (filename) => expect(filename).toBe('dist/img/bird.webp'),
+        (error) => console.error(error),
+        () => done()
+      )
+    }
+  })
+})

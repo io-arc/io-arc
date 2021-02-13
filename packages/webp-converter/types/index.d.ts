@@ -1,20 +1,6 @@
-/// <reference types="node" />
-import { TDirNameKey, TFileName } from '@io-arc/types';
+import { IfGif2WebpOptions, TDirNameKey, TFileName, TFilePath } from '@io-arc/types';
 import imageminWebp from 'imagemin-webp';
 import { Observable } from 'rxjs';
-interface IfGif2WebpOptions {
-    lossy?: boolean;
-    mixed?: boolean;
-    quality?: number;
-    method?: number;
-    minimize?: boolean;
-    kmin?: number;
-    kmax?: number;
-    filter?: number;
-    metadata?: string;
-    multiThreading?: boolean;
-    buffer?: Buffer;
-}
 export default class WebpConverter {
     #private;
     constructor(targetDir: TDirNameKey[], ext?: {
@@ -22,6 +8,8 @@ export default class WebpConverter {
         jpg: boolean;
         gif: boolean;
     }, options?: imageminWebp.Options, gifOptions?: IfGif2WebpOptions, outputDir?: TDirNameKey[]);
+    get targetDirectory(): TDirNameKey;
+    get regExp4FileExtensions(): RegExp;
     /** Batch conversion of specific extensions in a specified directory */
     convertAll(): Observable<TFileName>;
     /**
@@ -35,5 +23,9 @@ export default class WebpConverter {
      * Deleting the output Webp files
      */
     removeAll(): Observable<TFileName>;
+    /**
+     * Delete a single file
+     * @param target
+     */
+    remove(target: TFilePath): Observable<TFileName>;
 }
-export {};

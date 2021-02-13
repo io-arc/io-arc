@@ -1,12 +1,17 @@
 import PathBuild from '@io-arc/path-build'
-import { IfGif2WebpOptions, TDirNameKey, TFileName } from '@io-arc/types'
+import {
+  IfGif2WebpOptions,
+  TDirNameKey,
+  TFileName,
+  TFilePath
+} from '@io-arc/types'
 import fs from 'fs'
 import glob from 'glob'
 import imagemin from 'imagemin'
 import imageminWebp from 'imagemin-webp'
 import mkdir from 'make-dir'
 import path from 'path'
-import { from, Observable } from 'rxjs'
+import { from, Observable, of } from 'rxjs'
 import { flatMap } from 'rxjs/internal/operators'
 import { map } from 'rxjs/operators'
 
@@ -51,10 +56,18 @@ export default class WebpConverter {
     this.#extPattern = this.#createExtensionsPattern(ext.png, ext.jpg, ext.gif)
     const pattern = this.#extPattern.join('|')
     this.#globExt = `+(${pattern})`
-    this.#regExt = new RegExp(`.(${pattern})$`)
+    this.#regExt = new RegExp(`\\.(${pattern})$`)
 
     this.#options = options
     this.#gifOptions = gifOptions
+  }
+
+  get targetDirectory(): TDirNameKey {
+    return this.#targetDir
+  }
+
+  get regExp4FileExtensions(): RegExp {
+    return new RegExp(`^(?!_).*\\.(${this.#extPattern.join('|')})$`)
   }
 
   /** Batch conversion of specific extensions in a specified directory */
@@ -92,30 +105,34 @@ export default class WebpConverter {
     )
   }
 
-  // public remove(target: TFilePath): Observable<TFileName> {
-  //   return of(target).pipe(
-  //     map(
-  //       (filepath: TFilePath): TFilePath => {
-  //         const t = filepath
-  //           .replace(this.#regTarget, '')
-  //           .replace(this.#regExt, '')
-  //
-  //         return PathBuild.relative([this.#outputDir, `${t}.webp`])
-  //       }
-  //     ),
-  //
-  //     map(
-  //       (filename: TFileName): TFileName => {
-  //         try {
-  //           fs.unlinkSync(filename)
-  //           return filename
-  //         } catch (e) {
-  //           throw new Error(e)
-  //         }
-  //       }
-  //     )
-  //   )
-  // }
+  /**
+   * Delete a single file
+   * @param target
+   */
+  public remove(target: TFilePath): Observable<TFileName> {
+    return of(target).pipe(
+      map(
+        (filepath: TFilePath): TFileName => {
+          const t = filepath
+            .replace(this.#regTarget, '')
+            .replace(this.#regExt, '')
+
+          return PathBuild.relative([this.#outputDir, `${t}.webp`])
+        }
+      ),
+
+      map(
+        (filename: TFileName): TFileName => {
+          try {
+            fs.unlinkSync(filename)
+            return filename
+          } catch (e) {
+            throw new Error(e)
+          }
+        }
+      )
+    )
+  }
 
   /**
    * Convert process
