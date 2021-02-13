@@ -313,12 +313,14 @@ test('Webp converter config', () => {
       target: ['src', 'img'],
       ext: { png: true, jpg: true, gif: true },
       options: { quality: 70 },
-      gifOptions: { lossy: true }
+      gifOptions: { lossy: true },
+      deleteBefore: true
     },
     {
       target: ['src', 'static'],
       ext: { png: true, jpg: true, gif: true },
-      output: ['dist', 'common', 'img']
+      output: ['dist', 'common', 'img'],
+      deleteBefore: false
     }
   ])
 })

@@ -1,7 +1,7 @@
 {
   "name": "@io-arc/task-webp-converter",
   "version": "0.4.0",
-  "description": "Convert an image to webp",
+  "description": "Convert an image to webp task",
   "keywords": [
     "webp",
     "convert"
@@ -28,5 +28,19 @@
     "type": "git",
     "url": "https://github.com/io-arc/io-arc.git"
   },
-  "scripts": {}
+  "scripts": {
+    "prebuild": "eslint lib/*.ts",
+    "build": "rollup -c",
+    "webp:once": "NODE_ENV=development MODE_ENV=once bin/index.js",
+    "webp:watch": "NODE_ENV=development MODE_ENV=watch bin/index.js"
+  },
+  "dependencies": {
+    "@io-arc/env": "^0.4.0",
+    "@io-arc/logger": "^0.4.0",
+    "@io-arc/types": "^0.4.0",
+    "@io-arc/webp-converter": "^0.4.0",
+    "commander": "^7.0.0",
+    "kleur": "^4.1.4",
+    "node-watch": "^0.7.1"
+  }
 }
