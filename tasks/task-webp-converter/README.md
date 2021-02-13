@@ -1,11 +1,17 @@
 # `@io-arc/task-convert-webp`
 
-> TODO: description
+PNG, JPG, GIF files to Webp files conversions.
+
+See the [documents](https://io-arc.tech/plugins/task-webp-converter.html).
+
+## Install
+
+```shell
+$ npm i -D @io-arc/task-webp-converter
+```
 
 ## Usage
 
 ```
-const taskConvertWebp = require('@io-arc/task-convert-webp');
-
-// TODO: DEMONSTRATE API
+$ MODE=once ia-webp
 ```
