@@ -1,4 +1,4 @@
-import { TDirName, TDirNameKey, TDirPathKey, TFileName, TUrl } from '@io-arc/types';
+import { IfWebpConverterConfig, TDirName, TDirNameKey, TDirPathKey, TFileName, TUrl } from '@io-arc/types';
 import { TerserPluginOptions } from 'terser-webpack-plugin';
 export declare const BUILD: {
     readonly DEVELOPMENT: "development";
@@ -335,3 +335,9 @@ export declare const SITE_AUTHOR: string;
  * @default ''
  */
 export declare const SITE_DESCRIPTION: string;
+/**
+ * Webp converter configure
+ *
+ * @default: []
+ */
+export declare const WEBP_CONVERTER_CONFIG: IfWebpConverterConfig[];

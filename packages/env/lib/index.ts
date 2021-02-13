@@ -1,5 +1,6 @@
 import PathBuild from '@io-arc/path-build'
 import {
+  IfWebpConverterConfig,
   TDirName,
   TDirNameKey,
   TDirPathKey,
@@ -564,3 +565,13 @@ export const SITE_AUTHOR: string = getConfig<string>('author', '')
  * @default ''
  */
 export const SITE_DESCRIPTION: string = getConfig<string>('description', '')
+
+/**
+ * Webp converter configure
+ *
+ * @default: []
+ */
+export const WEBP_CONVERTER_CONFIG = getConfig<IfWebpConverterConfig[]>(
+  'options.webp',
+  []
+)
