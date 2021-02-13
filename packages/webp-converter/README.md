@@ -1,4 +1,4 @@
-# `@io-arc/webp-vonverter`
+# `@io-arc/webp-converter`
 
 PNG, JPG, GIF files to Webp files conversions.  
 What's [Webp](https://developers.google.com/speed/webp)?
