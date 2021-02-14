@@ -1,4 +1,4 @@
-import { TDirNameKey } from '@io-arc/types'
+import { IfWebpConverterConfig, TDirNameKey } from '@io-arc/types'
 import { TerserPluginOptions } from 'terser-webpack-plugin'
 import { IoTemplateFiles, templateDir } from '../Files'
 import { ALT_HTML_EXT, ALT_HTML_TYPE } from '../questions/AltHtml'
@@ -92,6 +92,7 @@ interface IoLocalConfigBase {
       tsconfig?: string
     }
     fileLoader: IoLocalConfigOptionFileLoader
+    webp: IfWebpConverterConfig[]
   }
 }
 
@@ -140,7 +141,25 @@ export default class LocalConfig extends BaseConfig {
             use: true,
             hash: true
           }
-        }
+        },
+        webp: [
+          {
+            target: ['src', 'img'],
+            ext: { png: false, jpg: false, gif: false },
+            output: ['src', 'img'],
+            options: { quality: 75 },
+            gifOptions: { quality: 75 },
+            deleteBefore: true
+          },
+          {
+            target: ['src', 'static'],
+            ext: { png: false, jpg: false, gif: false },
+            output: ['src', 'static'],
+            options: { quality: 75 },
+            gifOptions: { quality: 75 },
+            deleteBefore: true
+          }
+        ]
       }
     }
   }

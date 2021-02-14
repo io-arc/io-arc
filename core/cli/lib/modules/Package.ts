@@ -49,6 +49,7 @@ export default class Package {
       '@io-arc/task-manifest': `^${v}`,
       '@io-arc/task-service-worker': `^${v}`,
       '@io-arc/task-yaml2json': `^${v}`,
+      '@io-arc/task-webp-converter': `^${v}`,
       'cross-env': devDependencies['cross-env'],
       'npm-run-all': devDependencies['npm-run-all'],
       eslint: d['eslint'],
@@ -59,14 +60,16 @@ export default class Package {
     }
 
     this.#body.scripts = {
-      start: 'cross-env NODE_ENV=development MODE_ENV=watch npm-run-all -p b:*',
+      start:
+        'cross-env NODE_ENV=development MODE_ENV=watch npm-run-all -p webp -p b:*',
       build:
-        'cross-env NODE_ENV=development MODE_ENV=once npm-run-all -s clean b:* service-worker',
+        'cross-env NODE_ENV=development MODE_ENV=once npm-run-all -s clean webp b:* service-worker',
       release:
-        'cross-env NODE_ENV=production MODE_ENV=once npm-run-all -s clean b:* service-worker',
+        'cross-env NODE_ENV=production MODE_ENV=once npm-run-all -s clean webp b:* service-worker',
       clean: 'ia-clean',
       server: 'ia-browser-sync',
       'service-worker': 'ia-sw',
+      webp: 'ia-webp',
       'b:copy': 'ia-copy',
       'b:yaml2json': 'ia-yaml2json',
       'b:manifest': 'ia-manifest',
