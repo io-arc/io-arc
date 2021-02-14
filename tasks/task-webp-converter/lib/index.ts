@@ -18,7 +18,8 @@ import { version } from '../package.json'
   const removeLog = (r: TFileName): void => {
     Logger.message(`remove for ${r}`, red)
   }
-  const completeLog = (): void => Logger.complete('webpConvert')
+  const completeLog = (path: string): void =>
+    Logger.complete(`webpConvert (${path})`)
   const errorLog = (e: Error): void => Logger.failed('webpConvert', e)
 
   /**
@@ -80,7 +81,11 @@ import { version } from '../package.json'
               .convertAll()
               .subscribe(createLog, errorLog, () => webpWatch(webp))
           } else {
-            webp.convertAll().subscribe(createLog, errorLog, completeLog)
+            webp
+              .convertAll()
+              .subscribe(createLog, errorLog, () =>
+                completeLog(webp.targetDirectory)
+              )
           }
         }
       })
@@ -92,7 +97,9 @@ import { version } from '../package.json'
     if (MODE_ENV === MODE.WATCH) {
       webp.convertAll().subscribe(createLog, errorLog, () => webpWatch(webp))
     } else {
-      webp.convertAll().subscribe(createLog, errorLog, completeLog)
+      webp
+        .convertAll()
+        .subscribe(createLog, errorLog, () => completeLog(webp.targetDirectory))
     }
   })
 })()
