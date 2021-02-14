@@ -16,7 +16,7 @@ export const ImageLoader = (
   const inputPath = new RegExp(`${WS_IMG_PATH_ABSOLUTE}/`)
 
   return {
-    test: /\.(png|jpe?g|gif|svg|webp)$/i,
+    test: /\.(png|jpe?g|gif|svg|webp|avif)$/i,
     use: [
       {
         loader: 'file-loader',
@@ -41,7 +41,7 @@ export const ImageLoader = (
 }
 
 export const ImageMinPlugin = new ImageMinimizerPlugin({
-  test: /\.(jpe?g|png|gif|tif|webp|svg|avif)$/i,
+  test: /\.(jpe?g|png|gif|svg)$/i,
   severityError: 'warning',
   minimizerOptions: {
     plugins: [
