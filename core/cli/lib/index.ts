@@ -16,6 +16,7 @@ import AltJs, { ALT_JS_TYPE, JS_FRAMEWORK } from './modules/questions/AltJs'
 import DeploySetting from './modules/questions/DeploySetting'
 import ProjectSetting from './modules/questions/ProjectSetting'
 import SiteSetting from './modules/questions/SiteSetting'
+import WebpConverter from './modules/questions/WebpConverter'
 import WebpackFile from './modules/WebpackFile'
 
 /* Update Library */
@@ -104,6 +105,17 @@ program.version(version).parse(process.argv)
     site.description(),
     site.siteRoot()
   )
+
+  console.log('')
+
+  /** Webp converter options (Fixed 'src' directory */
+  const webp$ = new WebpConverter(
+    ['src', localConfig$.wsImg()],
+    ['src', localConfig$.wsStatic()]
+  )
+
+  await webp$.questions()
+  localConfig$.webp(webp$.options())
 
   console.log('')
 
