@@ -32,11 +32,11 @@ import { version } from '../package.json'
   // watch
   const webpWatch = (webp: WebpConverter): void => {
     watch(
-      webp.targetDirectory,
+      webp.targetDirectory(),
       {
         recursive: true,
         filter: (f: TFilePath): boolean =>
-          webp.regExp4FileExtensions.test(path.basename(f))
+          webp.regExp4FileExtensions().test(path.basename(f))
       },
       (evt?: 'update' | 'remove', filePath?: TFilePath): void => {
         if (filePath == null) return
@@ -67,6 +67,9 @@ import { version } from '../package.json'
       config.output
     )
 
+    // Not target extensions
+    if (webp.notTarget()) return
+
     // If remove flag is true
     if (checkRemove(config.deleteBefore)) {
       webp.removeAll().subscribe({
@@ -84,7 +87,7 @@ import { version } from '../package.json'
             webp
               .convertAll()
               .subscribe(createLog, errorLog, () =>
-                completeLog(webp.targetDirectory)
+                completeLog(webp.targetDirectory())
               )
           }
         }
@@ -99,7 +102,9 @@ import { version } from '../package.json'
     } else {
       webp
         .convertAll()
-        .subscribe(createLog, errorLog, () => completeLog(webp.targetDirectory))
+        .subscribe(createLog, errorLog, () =>
+          completeLog(webp.targetDirectory())
+        )
     }
   })
 })()

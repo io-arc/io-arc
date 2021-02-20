@@ -62,11 +62,15 @@ export default class WebpConverter {
     this.#gifOptions = gifOptions
   }
 
-  get targetDirectory(): TDirNameKey {
+  public notTarget(): boolean {
+    return this.#extPattern.length === 0
+  }
+
+  public targetDirectory(): TDirNameKey {
     return this.#targetDir
   }
 
-  get regExp4FileExtensions(): RegExp {
+  public regExp4FileExtensions(): RegExp {
     return new RegExp(`^(?!_).*\\.(${this.#extPattern.join('|')})$`)
   }
 

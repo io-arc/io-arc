@@ -8,8 +8,9 @@ export default class WebpConverter {
         jpg: boolean;
         gif: boolean;
     }, options?: imageminWebp.Options, gifOptions?: IfGif2WebpOptions, outputDir?: TDirNameKey[]);
-    get targetDirectory(): TDirNameKey;
-    get regExp4FileExtensions(): RegExp;
+    notTarget(): boolean;
+    targetDirectory(): TDirNameKey;
+    regExp4FileExtensions(): RegExp;
     /** Batch conversion of specific extensions in a specified directory */
     convertAll(): Observable<TFileName>;
     /**
