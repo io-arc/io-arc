@@ -7,7 +7,7 @@
     "log"
   ],
   "author": "arc one",
-  "homepage": "https://github.com/io-arc/io-arc/tree/master/packages/webpack-plugins-task-message",
+  "homepage": "https://io-arc.tech/plugins/modules/webpack-plugins-task-message.html",
   "license": "ISC",
   "main": "index.js",
   "types": "types/index.d.ts",

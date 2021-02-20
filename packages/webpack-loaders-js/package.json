@@ -10,7 +10,7 @@
     "json"
   ],
   "author": "arc one",
-  "homepage": "https://github.com/io-arc/io-arc/tree/master/packages/webpack-loaders-js",
+  "homepage": "https://io-arc.tech/plugins/modules/webpack-loaders-js.html",
   "license": "ISC",
   "main": "index.js",
   "types": "types/index.d.ts",

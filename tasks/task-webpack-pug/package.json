@@ -7,7 +7,7 @@
     "pug"
   ],
   "author": "arc one",
-  "homepage": "https://github.com/io-arc/io-arc/tree/master/tasks/tasks-webpack-pug",
+  "homepage": "https://io-arc.tech/plugins/tasks/webpack-pug.html",
   "license": "ISC",
   "main": "index.js",
   "types": "types/index.d.ts",

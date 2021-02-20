@@ -7,7 +7,7 @@
     "typescript"
   ],
   "author": "arc one",
-  "homepage": "https://github.com/io-arc/io-arc/tree/master/tasks/tasks-webpack-typescript",
+  "homepage": "https://io-arc.tech/plugins/tasks/webpack-typescript.html",
   "license": "ISC",
   "main": "index.js",
   "types": "types/index.d.ts",

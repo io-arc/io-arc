@@ -7,7 +7,7 @@ Version: 0.4.0
 License: ISC
 
 Repository: https://github.com/io-arc/io-arc
-Documents: https://github.com/io-arc/io-arc/tree/master/tasks/task-manifest
+Documents: https://io-arc.tech/plugins/tasks/manifest.html
 
 Copyright (c) 2020-2021 arc one
 */

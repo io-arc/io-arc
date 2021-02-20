@@ -7,7 +7,7 @@
     "babel"
   ],
   "author": "arc one",
-  "homepage": "https://github.com/io-arc/io-arc/tree/master/tasks/task-webpack-babel",
+  "homepage": "https://io-arc.tech/plugins/tasks/webpack-babel.html",
   "license": "ISC",
   "main": "index.js",
   "directories": {

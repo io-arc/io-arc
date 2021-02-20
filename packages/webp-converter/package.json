@@ -7,7 +7,7 @@
     "convert"
   ],
   "author": "arc one",
-  "homepage": "https://github.com/io-arc/io-arc/tree/master/tasks/task-webp-convert",
+  "homepage": "https://io-arc.tech/plugins/modules/webp-converter.html",
   "license": "ISC",
   "main": "index.js",
   "types": "types/index.d.ts",

@@ -7,7 +7,7 @@ Using to [imagemin](https://github.com/imagemin/imagemin).
 PNG, JPG is [imagemin-webp](https://github.com/imagemin/imagemin-webp).  
 GIF is [imagemin-imagemin-gif2webp](https://github.com/imagemin/imagemin-gif2webp).
 
-See the [documents](https://io-arc.tech/plugins/webp-converter.html).
+See the [documents](https://io-arc.tech/plugins/modules/webp-converter.html).
 
 ## Install
 

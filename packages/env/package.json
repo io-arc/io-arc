@@ -3,7 +3,7 @@
   "version": "0.4.0",
   "description": "Build environment define",
   "author": "arc one",
-  "homepage": "https://github.com/io-arc/io-arc/tree/master/packages/env",
+  "homepage": "https://io-arc.tech/plugins/modules/env/",
   "license": "ISC",
   "main": "index.js",
   "types": "types/index.d.ts",

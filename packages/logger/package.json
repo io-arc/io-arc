@@ -3,7 +3,7 @@
   "version": "0.4.0",
   "description": "console logging",
   "author": "arc one",
-  "homepage": "https://github.com/io-arc/io-arc/tree/master/packages/logger",
+  "homepage": "https://io-arc.tech/plugins/modules/logger.html",
   "license": "ISC",
   "main": "index.js",
   "types": "types/index.d.ts",

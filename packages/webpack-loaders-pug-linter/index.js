@@ -6,7 +6,7 @@ Version: 0.4.0
 License: ISC
 
 Repository: https://github.com/io-arc/io-arc
-Documents: https://github.com/io-arc/io-arc/tree/master/packages/webpack-loaders-pug-linter
+Documents: https://io-arc.tech/plugins/modules/webpack-loaders-pug-linter.html
 
 Copyright (c) 2020-2021 arc one
 */

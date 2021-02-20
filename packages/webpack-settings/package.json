@@ -6,7 +6,7 @@
     "webpack"
   ],
   "author": "arc one",
-  "homepage": "https://github.com/io-arc/io-arc/tree/master/packages/webpack-settings",
+  "homepage": "https://io-arc.tech/plugins/modules/webpack-settings.html",
   "license": "ISC",
   "main": "index.js",
   "types": "types/index.d.ts",

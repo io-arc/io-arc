@@ -3,7 +3,7 @@
   "version": "0.4.0",
   "description": "Copying files in a directory",
   "author": "arc one",
-  "homepage": "https://github.com/io-arc/io-arc/tree/master/tasks/copy",
+  "homepage": "https://io-arc.tech/plugins/tasks/copy.html",
   "license": "ISC",
   "main": "",
   "directories": {

@@ -7,7 +7,7 @@
     "css"
   ],
   "author": "arc one",
-  "homepage": "https://github.com/io-arc/io-arc/tree/master/tasks/tasks-webpack-css",
+  "homepage": "https://io-arc.tech/plugins/tasks/webpack-css.html",
   "license": "ISC",
   "main": "index.js",
   "types": "types/index.d.ts",

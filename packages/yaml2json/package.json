@@ -3,7 +3,7 @@
   "version": "0.4.0",
   "description": "YAML to JSON conversion",
   "author": "arc one",
-  "homepage": "https://github.com/io-arc/io-arc/tree/master/packages/yaml2json",
+  "homepage": "https://io-arc.tech/plugins/modules/yaml2json.html",
   "license": "ISC",
   "main": "index.js",
   "types": "types/index.d.ts",

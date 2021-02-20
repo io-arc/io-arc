@@ -6,7 +6,7 @@ Version: 0.4.0
 License: ISC
 
 Repository: https://github.com/io-arc/io-arc
-Documents: https://github.com/io-arc/io-arc/tree/master/packages/read-yaml
+Documents: https://io-arc.tech/plugins/modules/read-yaml.html
 
 Copyright (c) 2020-2021 arc one
 */
