@@ -3,19 +3,21 @@ import WebpConverter from '../lib'
 
 test('Get target directory', () => {
   const webp = new WebpConverter(['tests', 'img'])
-  expect(webp.targetDirectory).toBe('tests/img')
+  expect(webp.targetDirectory()).toBe('tests/img')
 })
 
 test('Regular expressions for file extensions', () => {
   const webp1 = new WebpConverter(['tests', 'img'])
-  expect(webp1.regExp4FileExtensions).toStrictEqual(/^(?!_).*\.(png|jpg|jpeg)$/)
+  expect(webp1.regExp4FileExtensions()).toStrictEqual(
+    /^(?!_).*\.(png|jpg|jpeg)$/
+  )
 
   const webp2 = new WebpConverter(['tests', 'img'], {
     png: true,
     jpg: true,
     gif: true
   })
-  expect(webp2.regExp4FileExtensions).toStrictEqual(
+  expect(webp2.regExp4FileExtensions()).toStrictEqual(
     /^(?!_).*\.(png|jpg|jpeg|gif)$/
   )
 })
