@@ -1,6 +1,6 @@
 # Pug
 
-Reference see: [@io-arc/task-webpack-pug](https://github.com/io-arc/io-arc/tree/master/tasks/task-webpack-pug)
+[Reference documents](https://io-arc.tech/build/html.html).
 
 ## Features
 

@@ -1,44 +1,45 @@
 import typescript from 'rollup-plugin-typescript2'
 import { terser } from 'rollup-plugin-terser'
-import pkg from './package.json'
-import lerna from '../../lerna.json'
+import { name, description, homepage, author, license } from './package.json'
+import { year, repository, version } from '../../lerna.json'
 import json from '@rollup/plugin-json'
+import { banner } from '../../utils/banner'
 
 const start = 2020
-const year = lerna.year > start ? `${start}-${lerna.year}` : start
+const year$ = year > start ? `${start}-${year}` : start
 
-export default [
-  {
-    input: 'lib/index.ts',
+export default {
+  input: 'lib/index.ts',
 
-    output: {
-      file: 'bin/index.js',
-      format: 'commonjs',
-      indent: false,
-      name: 'ServiceWorker',
-      sourcemap: false,
-      banner: `#!/usr/bin/env node
-/*!
-${pkg.description}
-
-${pkg.homepage}
-Version: ${lerna.version}
-License: ${pkg.license}
-Copyright (c) ${year} ${pkg.author}
-*/`
-    },
-    plugins: [
-      json({
-        preferConst: true,
-        indent: ' ',
-        compact: true
-      }),
-      typescript({
-        useTsconfigDeclarationDir: true
-      }),
-      terser({
-        sourcemap: false
-      })
-    ]
-  }
-]
+  output: {
+    file: 'bin/index.js',
+    format: 'commonjs',
+    indent: false,
+    name: 'ServiceWorker',
+    sourcemap: false,
+    banner: banner(
+      name,
+      description,
+      repository,
+      homepage,
+      version,
+      year$,
+      license,
+      author,
+      true
+    )
+  },
+  plugins: [
+    json({
+      preferConst: true,
+      indent: ' ',
+      compact: true
+    }),
+    typescript({
+      useTsconfigDeclarationDir: true
+    }),
+    terser({
+      sourcemap: false
+    })
+  ]
+}

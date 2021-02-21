@@ -6,6 +6,7 @@
     "tasks/*",
     "core/*"
   ],
-  "year": 2020,
-  "version": "0.4.0"
+  "year": 2021,
+  "version": "1.0.0",
+  "repository": "https://github.com/io-arc/io-arc"
 }

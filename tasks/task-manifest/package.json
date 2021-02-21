@@ -1,12 +1,12 @@
 {
   "name": "@io-arc/task-manifest",
-  "version": "0.4.0",
+  "version": "1.0.0",
   "description": "Create a manifest.json",
   "keywords": [
     "manifest"
   ],
   "author": "arc one",
-  "homepage": "https://github.com/io-arc/io-arc/tree/master/tasks/task-manifest",
+  "homepage": "https://io-arc.tech/plugins/tasks/manifest.html",
   "license": "ISC",
   "main": "",
   "directories": {
@@ -34,11 +34,11 @@
     "ia-manifest": "bin/index.js"
   },
   "dependencies": {
-    "@io-arc/env": "^0.4.0",
-    "@io-arc/logger": "^0.4.0",
-    "@io-arc/path-build": "^0.4.0",
-    "@io-arc/types": "^0.4.0",
-    "@io-arc/yaml2json": "^0.4.0",
+    "@io-arc/env": "^1.0.0",
+    "@io-arc/logger": "^1.0.0",
+    "@io-arc/path-build": "^1.0.0",
+    "@io-arc/types": "^1.0.0",
+    "@io-arc/yaml2json": "^1.0.0",
     "commander": "^5.1.0",
     "glob": "^7.1.6",
     "js-yaml": "^3.13.1",

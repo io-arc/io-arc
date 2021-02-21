@@ -2,39 +2,16 @@
 
 Copying files in a directory.
 
+See the [documents](https://io-arc.tech/plugins/tasks/copy.html).
+
+## Install
+
+```shell
+$ npm i -D @io-arc/task-copy
+```
+
 ## Usage
 
 ```
 $ NODE_ENV=development MODE=once ia-copy
 ```
-
-## Parameters
-
-`MODE=once`: Once run.  
-`MODE=watch`: Watch run.
-
-## Specification
-
-The directory where the file copied from uses [config](https://github.com/lorenwest/node-config).
-
-### Default
-
-Default settings when no definition made.
-
-- Working space: `<project>/src/static`
-- Output directory: `<project>/dist`
-
-### example
-
-```yaml
-# default.yml
-wsDir:
-  static: static
-
-outputDir: dist
-```
-
-Result:
-
-- Working space: `<project>/src/static`
-- Output directory: `<project>/dist`

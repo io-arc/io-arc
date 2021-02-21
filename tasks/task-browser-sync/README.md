@@ -1,54 +1,19 @@
 # `@io-arc/task-browser-sync`
 
-Run BrowserSync
+Start the local server.
+
+See the [documents](https://io-arc.tech/plugins/tasks/browser-sync.html).
+
+## Install
+
+```shell
+$ npm i -D @io-arc/task-browser-sync
+```
 
 ## Usage
 
 ```shell script
-$ ia-browser-sync
+$ ia-browser-sync [options]
 ```
 
-## Command options
-
-### `ia-browser-sync`
-
-Browser-Sync start.
-
-### `ia-browser-sync -p <ip address>` or `ia-browser-sync --proxy <ip address>`
-
-Using proxy.  
-Specify an IP address for the argument.
-
-### `ia-browser-sync --history <file path>`
-
-File paths used by the HTML5 HistoryAPI.  
-e.g. /index.html
-
-## Configure file
-
-If you want to make detailed settings, please prepare and specify a configuration file.  
-The configuration file is be placed in the `config` directory.
-
-### Valid file name
-
-- browser-sync.yml
-- bs.yml
-
-If there are more than one valid files, they are prioritized in the order listed above.  
-Options see: [BrowserSync option](https://browsersync.io/docs/options)
-
-## Default
-
-Some parameters are be specified automatically if not specified.
-
-### `server`
-
-Default: [`DIST`](https://github.com/io-arc/io-arc/tree/master/packages/env#dist)/
-
-\* If proxy parameter exists then auto delete `server`
-
-### `serveStatic`
-
-Only if [`SITE_ROOT`](https://github.com/io-arc/io-arc/tree/master/packages/env#site_root) isn't a `/`.
-
-Default: `{ route: [SITE_ROOT], dir: DIST}`
+[Options reference](@io-arc/task-browser-sync).

@@ -1,9 +1,9 @@
 {
   "name": "@io-arc/task-clean",
-  "version": "0.4.0",
+  "version": "1.0.0",
   "description": "Clean build directory",
   "author": "arc one",
-  "homepage": "https://github.com/io-arc/io-arc/tree/master/tasks/clean",
+  "homepage": "https://io-arc.tech/plugins/tasks/clean.html",
   "license": "ISC",
   "main": "",
   "directories": {
@@ -30,8 +30,8 @@
     "ia-clean": "bin/index.js"
   },
   "dependencies": {
-    "@io-arc/env": "^0.4.0",
-    "@io-arc/logger": "^0.4.0",
+    "@io-arc/env": "^1.0.0",
+    "@io-arc/logger": "^1.0.0",
     "commander": "^5.1.0",
     "rimraf": "^3.0.2"
   },

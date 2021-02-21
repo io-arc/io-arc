@@ -1,0 +1,37 @@
+type: default
+
+options:
+  webp:
+    - target:
+        - src
+        - img
+      output:
+        - src
+        - img
+      ext:
+        png: true
+        jpg: true
+        gif: true
+      options:
+        quality: 70
+      gifOptions:
+        lossy: true
+      deleteBefore: true
+    - target:
+        - src
+        - static
+        - common
+        - img
+      output:
+        - dist
+        - common
+        - img
+      ext:
+        png: true
+        jpg: true
+        gif: true
+      options:
+        quality: 70
+      gifOptions:
+        lossy: true
+      deleteBefore: false

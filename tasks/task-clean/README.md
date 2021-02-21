@@ -1,14 +1,17 @@
 # `@io-arc/task-clean`
 
-Clean build directory
+Delete the contents of the output and stats directory.
+
+See the [documents](https://io-arc.tech/plugins/tasks/clean.html).
+
+## Install
+
+```shell
+$ npm i -D @io-arc/task-clean
+```
 
 ## Usage
 
 ```
 $ ia-clean
 ```
-
-## Specification
-
-The target directories are `stats` directory, and the output destination directory set by [config](https://github.com/lorenwest/node-config).  
-The build output destination is be set by `outputDir`.

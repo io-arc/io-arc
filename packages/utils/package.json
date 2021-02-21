@@ -1,9 +1,9 @@
 {
   "name": "@io-arc/utils",
-  "version": "0.4.0",
+  "version": "1.0.0",
   "description": "Utility functions",
   "author": "arc one",
-  "homepage": "https://github.com/io-arc/io-arc/tree/master/packages/utils",
+  "homepage": "https://io-arc.tech/plugins/modules/utils.html",
   "license": "ISC",
   "main": "index.js",
   "types": "types/index.d.ts",
@@ -29,9 +29,9 @@
     "test": "jest"
   },
   "dependencies": {
-    "@io-arc/env": "^0.4.0",
-    "@io-arc/path-build": "^0.4.0",
-    "@io-arc/types": "^0.4.0"
+    "@io-arc/env": "^1.0.0",
+    "@io-arc/path-build": "^1.0.0",
+    "@io-arc/types": "^1.0.0"
   },
   "devDependencies": {
     "webpack": "^4.44.1"

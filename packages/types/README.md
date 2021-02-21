@@ -2,6 +2,14 @@
 
 Boilerplate TypeScript global types.
 
+See the [documents](https://io-arc.tech/plugins/modules/types.html).
+
+## Install
+
+```shell
+$ npm i @io-arc/types
+```
+
 ## Usage
 
 ```

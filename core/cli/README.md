@@ -1,3 +1,3 @@
 # io arc CLI
 
-[Document](https://github.com/io-arc/io-arc)
+[GitHub](https://github.com/io-arc/io-arc) | [Documents](https://io-arc.tech)

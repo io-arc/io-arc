@@ -19,77 +19,48 @@ $ cd <Project Directory>
 $ io-arc
 ```
 
+[Documents](https://io-arc.tech/) | [Set up configuration](https://io-arc.tech/configuration/) | [Builds](https://io-arc.tech/build/)
+
 ## Select language and frameworks
 
 ### HTML template engine
 
-- HTML (with handlebars) - [Task document](tasks/task-webpack-html)
-- Pug - [Task document](tasks/task-webpack-pug)
+- HTML (with handlebars)
+- Pug
 
 The global constants that are available: [HTML (with handlebars)](tasks/task-webpack-html#features), [Pug](tasks/task-webpack-pug#features)
 
 ### CSS language
 
-- CSS - [Task document](tasks/task-webpack-css)
-- SASS(SASS/SCSS) - [Task document](tasks/task-webpack-sass)
-- Stylus - [Task document](tasks/task-webpack-stylus)
+- CSS
+- SASS(SASS/SCSS)
+- Stylus
 
 ### JS preprocessor
 
-- Babel - [Task document](tasks/task-webpack-babel)
-- TypeScript - [Task document](tasks/task-webpack-typescript)
+- Babel
+- TypeScript
 
 #### JS framework
 
 Automatically available in selected preprocessors.
 
-- Vue (Babel/TypeScript) - [Task document (Vue)](tasks/task-webpack-vue), [Task document (TypeScript)](tasks/task-webpack-vue-typescript)
+- Vue (Babel/TypeScript)
 
 ## Local Server
 
-- [BrowserSync](https://browsersync.io/) - [Task document](tasks/task-browser-sync)
+- [BrowserSync](https://browsersync.io/)
 
 ## Other default use
 
-- File copy - [Task document](tasks/task-copy)
-- YAML to JSON file build - [Task document](tasks/task-yaml2json)
-- Build directory clean - [Task document](tasks/task-clean)
+- File copy - ([documents](https://io-arc.tech/plugins/tasks/copy.html))
+- YAML to JSON file build - ([documents](https://io-arc.tech/plugins/tasks/yaml2json.html))
+- Build directory clean - ([documents](https://io-arc.tech/plugins/tasks/clean.html))
 - Stats for library used
-- Create manifest.json - [Task document](tasks/task-manifest)
-- Create Web Worker (Use [worker-loader](https://github.com/webpack-contrib/worker-loader)) - [Task document](packages/webpack-loaders-js#variable-workerloader)
-- Create Service Worker (Use [WorkBox](https://developers.google.com/web/tools/workbox/modules/workbox-build)) - [Task document](tasks/task-service-worker)
-
-### How to create manifest.json
-
-Put manifest.yml or manifest\*\*.yml(e.g. manifest-ios.yml) directly under the workspace.  
-If the file name is prefix with '\_'(e.g. `_manifest.yml`), it is not applicable.
-
-[Task document](tasks/task-manifest#specification)
-
-### How to create service-worker file
-
-Execute `src/sw.js` if it exists.  
-It is created using `generateSW` of [WorkBox](https://developers.google.com/web/tools/workbox/modules/workbox-build).  
-[Task document](tasks/task-service-worker)
-
-To make the Service Worker work, put the following in the `<head>`.
-
-```javascript
-// example
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker
-    .register('/sw.js')
-    .then(function (registration) {
-      console.log(
-        'ServiceWorker registration successful with scope: ',
-        registration.scope
-      )
-    })
-    .catch(function (err) {
-      console.log('ServiceWorker registration failed: ', err)
-    })
-}
-```
+- Create manifest.json - ([documents](https://io-arc.tech/plugins/tasks/manifest.html))
+- Create Web Worker (Use [worker-loader](https://github.com/webpack-contrib/worker-loader)) - ([documents](https://io-arc.tech/build/js.html#web-worker))
+- Create Service Worker (Use [WorkBox](https://developers.google.com/web/tools/workbox/modules/workbox-build)) - ([documents](https://io-arc.tech/plugins/tasks/service-worker.html))
+- PNG/JPG/GIF to Webp files - ([documents](https://io-arc.tech/plugins/tasks/webp-converter.html))
 
 ## Directory structure
 
@@ -104,7 +75,7 @@ Create directory structure below.
     │   ├ local.yml (build settings)
     │   ├ local-development.yml
     │   ├ local-production.yml
-    │   └ webpack.extend.js
+    │   └ webpack.extends.js
     ├ config-vue/ (select Vue only)
     │   └ .pug-lintrc.json
     ├ src/ (working directory)
@@ -137,15 +108,19 @@ Internally, the build can be tweaked using the [node-config](https://github.com/
 Settings related to the website, such as the site title, are specified in the `default.yml` or `development.yml` or `production.yml`.  
 See example for [default.yml](packages/env/config/default.yml).
 
+[See documents](https://io-arc.tech/configuration/site.html).
+
 ### Build settings
 
 The build configuration is done in `local.yml`.  
 See example for [local.yml](packages/env/config/local.yml).
 
+[See documents](https://io-arc.tech/configuration/build.html).
+
 ## Extending the webpack build
 
 There are several extensions available on the user side as well.  
-The extension is configured in `<project>/config/webpack.extend.js`.
+The extension is configured in `<project>/config/webpack.extends.js`.
 
 The extensible webpack options are as follows.
 
@@ -153,11 +128,13 @@ The extensible webpack options are as follows.
 - [module rule](https://webpack.js.org/configuration/module/#rule)
 - [plugins](https://webpack.js.org/configuration/plugins/)
 
-See [example](example/config/webpack.extend.js).
+See [example](example/config/webpack.extends.js).
+
+[See documents](https://io-arc.tech/configuration/webpack.html).
 
 ## Using undefined [node-config](https://github.com/lorenwest/node-config) data on the client side
 
-If you want to use global constants other than those available in [TypeScript](https://github.com/io-arc/io-arc/tree/master/tasks/task-webpack-typescript#constants) and [Babel](https://github.com/io-arc/io-arc/tree/master/tasks/task-webpack-babel#constants), you can use `CONFIG` global constants.
+If you want to use global constants other than those available in TypeScript and Babel, you can use `CONFIG` global constants.
 
 ```yaml
 # config/local-development.yml

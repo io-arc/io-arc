@@ -20,8 +20,8 @@ import { FileListObject } from '@io-arc/file-list'
 import OutputDirDiff from '@io-arc/output-dir-diff'
 import PathBuild from '@io-arc/path-build'
 import { TFileName } from '@io-arc/types'
-import { WebpackExtend } from '@io-arc/utils'
-import { ImageLoader } from '@io-arc/webpack-loaders-image'
+import { WebpackExtends } from '@io-arc/utils'
+import { ImageLoader, ImageMinPlugin } from '@io-arc/webpack-loaders-image'
 import {
   EslintLoader,
   TypescriptLoader,
@@ -75,6 +75,7 @@ if (USE_JS_FILE_LOADER) {
 }
 
 const plugins = []
+plugins.push(ImageMinPlugin)
 
 if (MODE_ENV === MODE.ONCE) {
   // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -102,7 +103,7 @@ const pugLint = VUE_PUG_LINT_FILE
   : null
 
 // User extends
-const extend = new WebpackExtend('js')
+const extend = new WebpackExtends('js')
 const externals = extend.externals()
 const extendsLoaders = extend.loaders()
 if (extendsLoaders != null) rules.push(...extendsLoaders)

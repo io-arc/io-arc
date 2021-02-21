@@ -1,4 +1,4 @@
-import { TDirNameKey } from '@io-arc/types'
+import { IfWebpConverterConfig, TDirNameKey } from '@io-arc/types'
 import { TerserPluginOptions } from 'terser-webpack-plugin'
 import { IoTemplateFiles, templateDir } from '../Files'
 import { ALT_HTML_EXT, ALT_HTML_TYPE } from '../questions/AltHtml'
@@ -92,6 +92,7 @@ interface IoLocalConfigBase {
       tsconfig?: string
     }
     fileLoader: IoLocalConfigOptionFileLoader
+    webp?: IfWebpConverterConfig[]
   }
 }
 
@@ -211,6 +212,10 @@ export default class LocalConfig extends BaseConfig {
     return
   }
 
+  public webp(options: IfWebpConverterConfig[]): void {
+    this.#data.options.webp = options
+  }
+
   /** HTML working directory */
   public wsHTML(): TDirNameKey {
     return this.#data.wsDir.html
@@ -224,6 +229,16 @@ export default class LocalConfig extends BaseConfig {
   /** JS working directory */
   public wsJS(): TDirNameKey {
     return this.#data.wsDir.js
+  }
+
+  /** Image working directory */
+  public wsImg(): TDirNameKey {
+    return this.#data.wsDir.img
+  }
+
+  /** Static working directory */
+  public wsStatic(): TDirNameKey {
+    return this.#data.wsDir.static
   }
 
   /** YAML file create */

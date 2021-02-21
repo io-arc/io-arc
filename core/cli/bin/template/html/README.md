@@ -1,8 +1,8 @@
 # HTML
 
-Reference see: [@io-arc/task-webpack-html](https://github.com/io-arc/io-arc/tree/master/tasks/task-webpack-html)
+[Reference documents](https://io-arc.tech/build/html.html)
 
-## Features
+## Constants
 
 [Handlebars](https://handlebarsjs.com/) can be used, and the following constants are also available.  
 The constants are be specified by [`config/default.yml`](../../config/default.yml).

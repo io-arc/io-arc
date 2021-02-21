@@ -1,4 +1,3 @@
-import { Configuration } from 'webpack'
 import {
   DIST,
   DIST_ABSOLUTE,
@@ -21,13 +20,14 @@ import {
   USE_HTML_FILE_LOADER,
   WS_HTML_PATH_ABSOLUTE
 } from '@io-arc/env'
-import { TFileName, TWebpackMode } from '@io-arc/types'
 import { FileListObject } from '@io-arc/file-list'
-import { ImageLoader } from '@io-arc/webpack-loaders-image'
-import { performance, progressBar, stats } from '@io-arc/webpack-settings'
+import { TFileName, TWebpackMode } from '@io-arc/types'
+import { AssetsDirPath, WebpackExtends } from '@io-arc/utils'
+import { ImageLoader, ImageMinPlugin } from '@io-arc/webpack-loaders-image'
 import TaskMessage from '@io-arc/webpack-plugins-task-message'
-import { AssetsDirPath, WebpackExtend } from '@io-arc/utils'
+import { performance, progressBar, stats } from '@io-arc/webpack-settings'
 import handlebars from 'handlebars'
+import { Configuration } from 'webpack'
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const extractTextPlugin = require('extract-text-webpack-plugin')
@@ -37,8 +37,10 @@ const progressBarPlugin = require('progress-bar-webpack-plugin')
 const rules = []
 const plugins = []
 
+plugins.push(ImageMinPlugin)
+
 // User extends
-const extend = new WebpackExtend('html')
+const extend = new WebpackExtends('html')
 const externals = extend.externals()
 const extendsLoaders = extend.loaders()
 if (extendsLoaders != null) rules.push(...extendsLoaders)

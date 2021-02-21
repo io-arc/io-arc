@@ -1,3 +1,5 @@
+import imageminWebp from 'imagemin-webp'
+
 /** Directory name with slash for last */
 export type TDirName = string
 
@@ -30,3 +32,34 @@ export type TUrl = string
 
 /** webpack mode */
 export type TWebpackMode = 'none' | 'development' | 'production'
+
+export interface IfGif2WebpOptions {
+  lossy?: boolean
+  mixed?: boolean
+  quality?: number
+  method?: number
+  minimize?: boolean
+  kmin?: number
+  kmax?: number
+  filter?: number
+  metadata?: string
+  multiThreading?: boolean
+  buffer?: Buffer
+}
+
+/** Webp converter configure */
+export interface IfWebpConverterConfig {
+  // Target directories name array for image files used converter
+  target: TDirNameKey[]
+  ext: {
+    png: boolean
+    jpg: boolean
+    gif: boolean
+  }
+  // Output directories name array
+  output?: TDirNameKey[]
+  options?: imageminWebp.Options
+  gifOptions?: IfGif2WebpOptions
+  // Delete the webp file before starting the task.
+  deleteBefore?: boolean
+}

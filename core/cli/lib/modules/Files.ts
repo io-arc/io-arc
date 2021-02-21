@@ -1,4 +1,9 @@
-import { TDirPathKey, TFilePath, TGlobPattern } from '@io-arc/types'
+import {
+  TDirNameKey,
+  TDirPathKey,
+  TFilePath,
+  TGlobPattern
+} from '@io-arc/types'
 import cpx from 'cpx'
 import makeDir from 'make-dir'
 import path from 'path'
@@ -24,11 +29,15 @@ export default class Files {
         output: ''
       },
       {
-        source: `${templateDir}/webpack.extend.js`,
+        source: `${templateDir}/webpack.extends.js`,
         output: 'config',
-        logValue: 'webpack.extend.js'
+        logValue: 'webpack.extends.js'
       }
     ]
+  }
+
+  public workingSpace(): TDirNameKey {
+    return 'src'
   }
 
   /**
@@ -78,9 +87,11 @@ export default class Files {
   }
 
   #makeSrc = async (dirs: string[]): Promise<void> => {
+    const ws = this.workingSpace()
+
     await Promise.all(
       dirs.map(async (dir) => {
-        await makeDir(`src/${dir}`)
+        await makeDir(`${ws}/${dir}`)
       })
     )
   }

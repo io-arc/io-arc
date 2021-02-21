@@ -1,6 +1,16 @@
 # `@io-arc/logger`
 
-Console logging.
+Logging output to Terminal console.  
+Use [Kleur](https://github.com/lukeed/kleur) to specify colors.  
+[Kleur](https://github.com/lukeed/kleur) is also bundled, so no installation is required.
+
+See the [documents](https://io-arc.tech/plugins/modules/logger.html).
+
+## Install
+
+```shell
+$ npm i @io-arc/logger
+```
 
 ## Usage
 
@@ -10,31 +20,3 @@ import Logger from '@io-arc/logger'
 
 Logger.message('Success !!!!', blue)
 ```
-
-## Methods
-
-No `New` instance.  
-This class is static function.
-
-### `Logger.message(message: string, color: Color): void`
-
-General purpose log.  
-`color` use the [kluer](https://github.com/lukeed/kleur).
-
-### `Logger.start(task: string[, isBr: boolean = false]): void`
-
-Task started log.  
-`isBr` is optional whether to start a new line.  
-Default: `false`
-
-### `Logger.completed(task: string[, isBr: boolean = false]): void`
-
-Task completed log in all green.  
-`isBr` is optional whether to start a new line.  
-Default: `false`
-
-### `Logger.failed(task: string, error: Error | string | null[, isNotify: boolean = true]): void`
-
-Task error log. 
-`error` is Error object or string or null.  
-`isNotify` is true, run Notify tools.

@@ -1,11 +1,12 @@
 import typescript from 'rollup-plugin-typescript2'
 import { terser } from 'rollup-plugin-terser'
-import pkg from './package.json'
-import lerna from '../../lerna.json'
+import { description, homepage, author, license } from './package.json'
+import { year, repository, version } from '../../lerna.json'
 import json from '@rollup/plugin-json'
+import { banner } from '../../utils/banner'
 
 const start = 2020
-const year = lerna.year > start ? `${start}-${lerna.year}` : start
+const year$ = year > start ? `${start}-${year}` : start
 
 export default {
   input: 'lib/index.ts',
@@ -16,16 +17,17 @@ export default {
     indent: false,
     name: 'ioArc',
     sourcemap: false,
-    banner: `#!/usr/bin/env node
-/*!
-io-arc
-${pkg.description}
-
-${pkg.homepage}
-Version: ${lerna.version}
-License: ${pkg.license}
-Copyright (c) ${year} ${pkg.author}
-*/`
+    banner: banner(
+      'io-arc',
+      description,
+      repository,
+      homepage,
+      version,
+      year$,
+      license,
+      author,
+      true
+    )
   },
 
   plugins: [

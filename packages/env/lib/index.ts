@@ -1,5 +1,6 @@
 import PathBuild from '@io-arc/path-build'
 import {
+  IfWebpConverterConfig,
   TDirName,
   TDirNameKey,
   TDirPathKey,
@@ -499,7 +500,7 @@ export const DEPLOY_YAML2JSON_ARRAY: TDirNameKey[] = [
  * First string is '<OS root>/src/' to absolutely
  */
 export const WS_IMG_PATH_ABSOLUTE: TDirNameKey = getWsAbsolutePath(
-  'wsDir.imgLoader',
+  'wsDir.img',
   'img'
 )
 
@@ -564,3 +565,13 @@ export const SITE_AUTHOR: string = getConfig<string>('author', '')
  * @default ''
  */
 export const SITE_DESCRIPTION: string = getConfig<string>('description', '')
+
+/**
+ * Webp converter configure
+ *
+ * @default: []
+ */
+export const WEBP_CONVERTER_CONFIG = getConfig<IfWebpConverterConfig[]>(
+  'options.webp',
+  []
+)

@@ -1,9 +1,9 @@
 {
   "name": "@io-arc/env",
-  "version": "0.4.0",
+  "version": "1.0.0",
   "description": "Build environment define",
   "author": "arc one",
-  "homepage": "https://github.com/io-arc/io-arc/tree/master/packages/env",
+  "homepage": "https://io-arc.tech/plugins/modules/env/",
   "license": "ISC",
   "main": "index.js",
   "types": "types/index.d.ts",
@@ -29,8 +29,8 @@
     "test": "jest"
   },
   "dependencies": {
-    "@io-arc/path-build": "^0.4.0",
-    "@io-arc/types": "^0.4.0",
+    "@io-arc/path-build": "^1.0.0",
+    "@io-arc/types": "^1.0.0",
     "config": "^3.3.0"
   },
   "devDependencies": {
