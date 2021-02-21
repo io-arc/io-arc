@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 /*!
 @io-arc/task-yaml2json
 YAML to JSON conversion

@@ -26,7 +26,7 @@ export default {
       year$,
       license,
       author,
-      false
+      true
     )
   },
   plugins: [
