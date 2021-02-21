@@ -2,7 +2,7 @@
 
 Task complete message for [webpack](https://webpack.js.org/) plugin.
 
-See the [documents](https://io-arc.tech/plugins/module-webpack-plugins-task-message.html).
+See the [documents](https://io-arc.tech/plugins/modules/webpack-plugins-task-message.html).
 
 ## Install
 

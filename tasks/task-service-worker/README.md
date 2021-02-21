@@ -2,7 +2,7 @@
 
 Create a Service Worker.
 
-See the [documents](https://io-arc.tech/plugins/task-service-worker.html).
+See the [documents](https://io-arc.tech/plugins/tasks/service-worker.html).
 
 ## Install
 

@@ -2,7 +2,7 @@
 
 HTML builds for [webpack](https://webpack.js.org/).
 
-See the [documents](https://io-arc.tech/plugins/task-webpack-html.html).
+See the [documents](https://io-arc.tech/plugins/tasks/webpack-html.html).
 
 ## Install
 

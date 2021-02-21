@@ -29,4 +29,4 @@ const webp = new WebpConverter(
 )
 ```
 
-More [documents](https://io-arc.tech/plugins/task-webp-converter.html).
+More [documents](https://io-arc.tech/plugins/tasks/webp-converter.html).

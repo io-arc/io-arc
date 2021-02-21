@@ -2,7 +2,7 @@
 
 A relative path to another directory from one directory.
 
-See the [documents](https://io-arc.tech/plugins/module-output-dir-diff.html).
+See the [documents](https://io-arc.tech/plugins/modules/output-dir-diff.html).
 
 ## Install
 

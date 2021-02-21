@@ -2,7 +2,7 @@
 
 Start the local server.
 
-See the [documents](https://io-arc.tech/plugins/task-browser-sync.html).
+See the [documents](https://io-arc.tech/plugins/tasks/browser-sync.html).
 
 ## Install
 

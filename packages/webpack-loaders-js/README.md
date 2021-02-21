@@ -2,7 +2,7 @@
 
 A webpack loader for handling Babel and TypeScript.
 
-See the [documents](https://io-arc.tech/plugins/module-webpack-loaders-js.html).
+See the [documents](https://io-arc.tech/plugins/modules/webpack-loaders-js.html).
 
 ## Install
 

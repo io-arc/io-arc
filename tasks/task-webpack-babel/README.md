@@ -2,7 +2,7 @@
 
 Babel compile for webpack.
 
-See the [documents](https://io-arc.tech/plugins/task-webpack-babel.html).
+See the [documents](https://io-arc.tech/plugins/tasks/webpack-babel.html).
 
 ## Install
 

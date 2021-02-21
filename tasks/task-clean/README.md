@@ -2,7 +2,7 @@
 
 Delete the contents of the output and stats directory.
 
-See the [documents](https://io-arc.tech/plugins/task-clean.html).
+See the [documents](https://io-arc.tech/plugins/tasks/clean.html).
 
 ## Install
 

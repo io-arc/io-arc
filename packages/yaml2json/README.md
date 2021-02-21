@@ -3,7 +3,7 @@
 YAML to JSON conversion.  
 Using [RxJS](https://rxjs-dev.firebaseapp.com/) (library included).
 
-See the [documents](https://io-arc.tech/plugins/module-yaml2json.html).
+See the [documents](https://io-arc.tech/plugins/modules/yaml2json.html).
 
 ## Install
 

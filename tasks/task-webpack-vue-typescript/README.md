@@ -3,7 +3,7 @@
 [Vue.js](https://vuejs.org/) in TypeScript compile for webpack.  
 Using [vue-loader](https://vue-loader.vuejs.org/).
 
-See the [documents](https://io-arc.tech/plugins/task-webpack-vue-typescript.html).
+See the [documents](https://io-arc.tech/plugins/tasks/webpack-vue-typescript.html).
 
 ## Install
 

@@ -3,7 +3,7 @@
 [Vue.js](https://vuejs.org/) in Babel compile for webpack.  
 Using [vue-loader](https://vue-loader.vuejs.org/).
 
-See the [documents](https://io-arc.tech/plugins/task-webpack-vue.html).
+See the [documents](https://io-arc.tech/plugins/tasks/webpack-vue.html).
 
 ## Install
 

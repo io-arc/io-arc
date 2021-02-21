@@ -2,7 +2,7 @@
 
 CSS build for webpack.
 
-See the [documents](https://io-arc.tech/plugins/task-webpack-css.html).
+See the [documents](https://io-arc.tech/plugins/tasks/webpack-css.html).
 
 ## Install
 

@@ -2,7 +2,7 @@
 
 Utility functions and webpack extends.
 
-See the [documents](https://io-arc.tech/plugins/module-utils.html).
+See the [documents](https://io-arc.tech/plugins/modules/utils.html).
 
 ## Install
 

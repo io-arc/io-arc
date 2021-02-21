@@ -53,13 +53,14 @@ Automatically available in selected preprocessors.
 
 ## Other default use
 
-- File copy - ([documents](https://io-arc.tech/plugins/task-copy.html))
-- YAML to JSON file build - ([documents](https://io-arc.tech/plugins/task-yaml2json.html))
-- Build directory clean - ([documents](https://io-arc.tech/plugins/task-clean.html))
+- File copy - ([documents](https://io-arc.tech/plugins/tasks/copy.html))
+- YAML to JSON file build - ([documents](https://io-arc.tech/plugins/tasks/yaml2json.html))
+- Build directory clean - ([documents](https://io-arc.tech/plugins/tasks/clean.html))
 - Stats for library used
-- Create manifest.json - ([documents](https://io-arc.tech/plugins/task-manifest.html))
+- Create manifest.json - ([documents](https://io-arc.tech/plugins/tasks/manifest.html))
 - Create Web Worker (Use [worker-loader](https://github.com/webpack-contrib/worker-loader)) - ([documents](https://io-arc.tech/build/js.html#web-worker))
-- Create Service Worker (Use [WorkBox](https://developers.google.com/web/tools/workbox/modules/workbox-build)) - ([documents](https://io-arc.tech/plugins/task-service-worker.html))
+- Create Service Worker (Use [WorkBox](https://developers.google.com/web/tools/workbox/modules/workbox-build)) - ([documents](https://io-arc.tech/plugins/tasks/service-worker.html))
+- PNG/JPG/GIF to Webp files - ([documents](https://io-arc.tech/plugins/tasks/webp-converter.html))
 
 ## Directory structure
 

@@ -2,7 +2,7 @@
 
 PNG, JPG, GIF files to Webp files conversions.
 
-See the [documents](https://io-arc.tech/plugins/task-webp-converter.html).
+See the [documents](https://io-arc.tech/plugins/tasks/webp-converter.html).
 
 ## Install
 

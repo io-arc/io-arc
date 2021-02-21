@@ -2,7 +2,7 @@
 
 Create a manifest.json.
 
-See the [documents](https://io-arc.tech/plugins/task-manifest.html).
+See the [documents](https://io-arc.tech/plugins/tasks/manifest.html).
 
 ## Install
 

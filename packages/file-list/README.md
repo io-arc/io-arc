@@ -2,7 +2,7 @@
 
 Get file list.
 
-See the [documents](https://io-arc.tech/plugins/module-file-list.html).
+See the [documents](https://io-arc.tech/plugins/modules/file-list.html).
 
 ## Install
 

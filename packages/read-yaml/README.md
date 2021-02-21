@@ -2,7 +2,7 @@
 
 Transpile YAML to JSON.
 
-See the [documents](https://io-arc.tech/plugins/module-read-yaml.html).
+See the [documents](https://io-arc.tech/plugins/modules/read-yaml.html).
 
 ## Install
 

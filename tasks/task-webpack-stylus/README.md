@@ -2,7 +2,7 @@
 
 Stylus compile for webpack.
 
-See the [documents](https://io-arc.tech/plugins/task-webpack-stylus.html).
+See the [documents](https://io-arc.tech/plugins/tasks/webpack-stylus.html).
 
 ## Install
 

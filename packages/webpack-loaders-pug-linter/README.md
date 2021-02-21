@@ -2,7 +2,7 @@
 
 A webpack loader that handles Pug's Lint.
 
-See the [documents](https://io-arc.tech/plugins/module-webpack-loaders-pug-linter.html).
+See the [documents](https://io-arc.tech/plugins/modules/webpack-loaders-pug-linter.html).
 
 ## Install
 

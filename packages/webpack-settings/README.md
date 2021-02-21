@@ -2,7 +2,7 @@
 
 Webpack build settings.
 
-See the [documents](https://io-arc.tech/plugins/module-webpack-settings.html).
+See the [documents](https://io-arc.tech/plugins/modules/webpack-settings.html).
 
 ## Install
 

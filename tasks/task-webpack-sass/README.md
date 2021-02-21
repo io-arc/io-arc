@@ -2,7 +2,7 @@
 
 Sass (SCSS/SASS) compile for webpack.
 
-See the [documents](https://io-arc.tech/plugins/task-webpack-sass.html).
+See the [documents](https://io-arc.tech/plugins/tasks/webpack-sass.html).
 
 ## Install
 

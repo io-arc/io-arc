@@ -2,7 +2,7 @@
 
 YAML to JSON conversion.
 
-See the [documents](https://io-arc.tech/plugins/task-yaml2json.html).
+See the [documents](https://io-arc.tech/plugins/tasks/yaml2json.html).
 
 ## Install
 

@@ -4,7 +4,7 @@ Logging output to Terminal console.
 Use [Kleur](https://github.com/lukeed/kleur) to specify colors.  
 [Kleur](https://github.com/lukeed/kleur) is also bundled, so no installation is required.
 
-See the [documents](https://io-arc.tech/plugins/module-logger.html).
+See the [documents](https://io-arc.tech/plugins/modules/logger.html).
 
 ## Install
 

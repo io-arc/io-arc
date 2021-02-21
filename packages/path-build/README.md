@@ -2,7 +2,7 @@
 
 Path create to relative or absolute.
 
-See the [documents](https://io-arc.tech/plugins/module-path-build.html).
+See the [documents](https://io-arc.tech/plugins/modules/path-build.html).
 
 ## Install
 

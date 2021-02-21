@@ -3,7 +3,7 @@
 Image deploy for using [file-loader](https://github.com/webpack-contrib/file-loader).  
 Auto insert image path to HTML, CSS and JavaScript.
 
-See the [documents](https://io-arc.tech/plugins/module-webpack-loaders-image.html).
+See the [documents](https://io-arc.tech/plugins/modules/webpack-loaders-image.html).
 
 ## Install
 

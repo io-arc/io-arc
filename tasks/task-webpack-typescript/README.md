@@ -2,7 +2,7 @@
 
 Typescript compile for webpack.
 
-See the [documents](https://io-arc.tech/plugins/task-webpack-typescript.html).
+See the [documents](https://io-arc.tech/plugins/tasks/webpack-typescript.html).
 
 ## Install
 

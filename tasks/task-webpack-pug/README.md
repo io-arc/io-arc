@@ -2,7 +2,7 @@
 
 Pug compile for webpack.
 
-See the [documents](https://io-arc.tech/plugins/task-webpack-pug.html).
+See the [documents](https://io-arc.tech/plugins/tasks/webpack-pug.html).
 
 ## Install
 

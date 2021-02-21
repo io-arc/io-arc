@@ -2,7 +2,7 @@
 
 Copying files in a directory.
 
-See the [documents](https://io-arc.tech/plugins/task-copy.html).
+See the [documents](https://io-arc.tech/plugins/tasks/copy.html).
 
 ## Install
 
