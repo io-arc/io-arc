@@ -1,6 +1,6 @@
 {
   "name": "@io-arc/task-webp-converter",
-  "version": "0.4.0",
+  "version": "1.0.0",
   "description": "Convert an image to webp task",
   "keywords": [
     "webp",
@@ -35,10 +35,10 @@
     "webp:watch": "NODE_ENV=development MODE_ENV=watch bin/index.js"
   },
   "dependencies": {
-    "@io-arc/env": "^0.4.0",
-    "@io-arc/logger": "^0.4.0",
-    "@io-arc/types": "^0.4.0",
-    "@io-arc/webp-converter": "^0.4.0",
+    "@io-arc/env": "^1.0.0",
+    "@io-arc/logger": "^1.0.0",
+    "@io-arc/types": "^1.0.0",
+    "@io-arc/webp-converter": "^1.0.0",
     "commander": "^7.0.0",
     "kleur": "^4.1.4",
     "node-watch": "^0.7.1"

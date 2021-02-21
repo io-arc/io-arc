@@ -1,6 +1,6 @@
 {
   "name": "@io-arc/task-copy",
-  "version": "0.4.0",
+  "version": "1.0.0",
   "description": "Copying files in a directory",
   "author": "arc one",
   "homepage": "https://io-arc.tech/plugins/tasks/copy.html",
@@ -31,9 +31,9 @@
     "ia-copy": "bin/index.js"
   },
   "dependencies": {
-    "@io-arc/env": "^0.4.0",
-    "@io-arc/logger": "^0.4.0",
-    "@io-arc/types": "^0.4.0",
+    "@io-arc/env": "^1.0.0",
+    "@io-arc/logger": "^1.0.0",
+    "@io-arc/types": "^1.0.0",
     "commander": "^5.1.0",
     "core-js": "3",
     "cpx": "^1.5.0",

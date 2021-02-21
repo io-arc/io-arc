@@ -1,8 +1,12 @@
 {
   "npmClient": "yarn",
   "useWorkspaces": true,
-  "packages": ["packages/*", "tasks/*", "core/*"],
+  "packages": [
+    "packages/*",
+    "tasks/*",
+    "core/*"
+  ],
   "year": 2021,
-  "version": "0.4.0",
+  "version": "1.0.0",
   "repository": "https://github.com/io-arc/io-arc"
 }
