@@ -1,6 +1,6 @@
 {
   "name": "@io-arc/logger",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "console logging",
   "author": "arc one",
   "homepage": "https://io-arc.tech/plugins/modules/logger.html",

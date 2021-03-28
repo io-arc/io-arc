@@ -1,6 +1,6 @@
 {
   "name": "@io-arc/webpack-settings",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Webpack build settings",
   "keywords": [
     "webpack"
@@ -31,7 +31,7 @@
     "postbuild": "tsc --emitDeclarationOnly"
   },
   "dependencies": {
-    "@io-arc/env": "^1.0.0",
+    "@io-arc/env": "^1.0.1",
     "@io-arc/types": "^1.0.0",
     "kleur": "^3.0.3",
     "terser-webpack-plugin": "^3.0.0"

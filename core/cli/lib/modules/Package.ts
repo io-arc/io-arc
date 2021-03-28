@@ -61,7 +61,7 @@ export default class Package {
 
     this.#body.scripts = {
       start:
-        'cross-env NODE_ENV=development MODE_ENV=watch npm-run-all -p webp -p b:*',
+        'cross-env NODE_ENV=development MODE_ENV=watch npm-run-all -p webp b:*',
       build:
         'cross-env NODE_ENV=development MODE_ENV=once npm-run-all -s clean webp b:* service-worker',
       release:

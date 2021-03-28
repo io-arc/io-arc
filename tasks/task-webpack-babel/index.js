@@ -2,7 +2,7 @@
 @io-arc/task-webpack-babel
 Babel compile for webpack
 
-Version: 1.0.0
+Version: 1.0.1
 License: ISC
 
 Repository: https://github.com/io-arc/io-arc

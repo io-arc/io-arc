@@ -2,7 +2,7 @@
 @io-arc/output-dir-diff
 Relative path to another directory from one directory
 
-Version: 1.0.0
+Version: 1.0.1
 License: ISC
 
 Repository: https://github.com/io-arc/io-arc
