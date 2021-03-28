@@ -2,7 +2,7 @@
 @io-arc/webp-converter
 Convert an image to webp
 
-Version: 1.0.0
+Version: 1.0.1
 License: ISC
 
 Repository: https://github.com/io-arc/io-arc

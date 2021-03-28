@@ -2,7 +2,7 @@
 @io-arc/utils
 Utility functions
 
-Version: 1.0.0
+Version: 1.0.1
 License: ISC
 
 Repository: https://github.com/io-arc/io-arc
