@@ -47,7 +47,7 @@
     "@io-arc/webpack-loaders-pug-linter": "^1.0.1",
     "@io-arc/webpack-plugins-task-message": "^1.0.1",
     "@io-arc/webpack-settings": "^1.0.1",
-    "autoprefixer": "^9.7.6",
+    "autoprefixer": "^10.2.5",
     "babel-loader": "^8.1.0",
     "config": "^3.3.1",
     "config-webpack": "^1.0.4",
