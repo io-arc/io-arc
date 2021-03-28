@@ -1,7 +1,14 @@
 import typescript from 'rollup-plugin-typescript2'
 import { terser } from 'rollup-plugin-terser'
-import { name, description, homepage, author, license } from './package.json'
-import { year, repository, version } from '../../lerna.json'
+import {
+  name,
+  description,
+  homepage,
+  author,
+  license,
+  version
+} from './package.json'
+import { year, repository } from '../../lerna.json'
 import json from '@rollup/plugin-json'
 import { banner } from '../../utils/banner'
 
