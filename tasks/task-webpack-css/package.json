@@ -42,7 +42,7 @@
     "@io-arc/webpack-loaders-image": "^1.0.1",
     "@io-arc/webpack-plugins-task-message": "^1.0.1",
     "@io-arc/webpack-settings": "^1.0.1",
-    "autoprefixer": "^9.7.6",
+    "autoprefixer": "^10.3.0",
     "config": "^3.3.1",
     "css-loader": "^3.5.2",
     "css-mqpacker": "^7.0.0",
