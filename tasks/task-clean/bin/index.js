@@ -11,4 +11,4 @@ Documents: https://io-arc.tech/plugins/tasks/clean.html
 
 Copyright (c) 2020-2021 arc one
 */
-"use strict";function e(e){return e&&"object"==typeof e&&"default"in e?e.default:e}var r=require("commander"),a=require("@io-arc/env"),i=e(require("@io-arc/logger")),o=e(require("rimraf"));(()=>{r.program.version("1.0.1").parse(process.argv);o(`{${a.DIST},stats}/*`,e=>{e?i.failed("clean",e):i.complete("clean")})})();
+"use strict";function e(e){return e&&"object"==typeof e&&"default"in e?e.default:e}var r=require("commander"),a=require("@io-arc/env"),i=e(require("@io-arc/logger")),o=e(require("rimraf"));(()=>{r.program.version("1.0.1").parse(process.argv);const e="clean";o(`{${a.DIST},stats}/*`,(r=>{r?i.failed(e,r):i.complete(e)}))})();
