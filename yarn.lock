@@ -15230,10 +15230,10 @@ vue-loader@^15.9.2:
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
 
-vue-pug-lint-loader@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/vue-pug-lint-loader/-/vue-pug-lint-loader-0.0.1.tgz#d880583354bb8b9a2cac5db54a69b1d025a0b6a8"
-  integrity sha512-uFp9HPwYNeWhwyKSfrR8MW/4KV92Qk13rfefRnh3qtxjHvzxRmibb3+wuYtXo9oYbgBrcFSe4W3Jny59sksCkA==
+vue-pug-lint-loader@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/vue-pug-lint-loader/-/vue-pug-lint-loader-0.0.2.tgz#c0a3b0888d1d46312139c6e28ebba9a3764943c5"
+  integrity sha512-b5Gj5qcaSM6hqM7f9DCquC6Z+TM4lCaTPnxEWGk74GOxVAttDISBdrdJVo0A3M3Lf9EP8Y9lZUpwfm6Nye5Fwg==
   dependencies:
     cheerio "^1.0.0-rc.2"
     htmlparser2 "^3.9.2"
