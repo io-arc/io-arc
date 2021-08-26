@@ -1,6 +1,6 @@
 {
   "name": "@io-arc/task-webpack-vue-typescript",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Vue.js in TypeScript compile for webpack",
   "keywords": [
     "webpack",
@@ -36,17 +36,17 @@
     "webpack:prod": "NODE_ENV=production MODE_ENV=once TS_NODE_PROJECT=\"tsconfig.webpack.json\" webpack"
   },
   "dependencies": {
-    "@io-arc/env": "^1.0.1",
-    "@io-arc/file-list": "^1.0.1",
-    "@io-arc/output-dir-diff": "^1.0.1",
-    "@io-arc/path-build": "^1.0.1",
+    "@io-arc/env": "^1.0.2",
+    "@io-arc/file-list": "^1.0.2",
+    "@io-arc/output-dir-diff": "^1.0.2",
+    "@io-arc/path-build": "^1.0.2",
     "@io-arc/types": "^1.0.0",
-    "@io-arc/utils": "^1.0.1",
-    "@io-arc/webpack-loaders-image": "^1.0.1",
-    "@io-arc/webpack-loaders-js": "^1.0.1",
-    "@io-arc/webpack-loaders-pug-linter": "^1.0.1",
-    "@io-arc/webpack-plugins-task-message": "^1.0.1",
-    "@io-arc/webpack-settings": "^1.0.1",
+    "@io-arc/utils": "^1.0.2",
+    "@io-arc/webpack-loaders-image": "^1.0.2",
+    "@io-arc/webpack-loaders-js": "^1.0.2",
+    "@io-arc/webpack-loaders-pug-linter": "^1.0.2",
+    "@io-arc/webpack-plugins-task-message": "^1.0.2",
+    "@io-arc/webpack-settings": "^1.0.2",
     "autoprefixer": "^9.7.6",
     "babel-loader": "^8.1.0",
     "config": "^3.3.1",
@@ -82,6 +82,6 @@
     "stylus": "^0.54.7",
     "vue": "^2.6.11",
     "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^4.7.2"
   }
 }

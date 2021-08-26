@@ -1,6 +1,6 @@
 {
   "name": "@io-arc/cli",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "WEB/PWA/SPA boilerplate CLI",
   "keywords": [
     "web",
@@ -50,7 +50,7 @@
   "dependencies": {
     "commander": "^5.1.0",
     "cpx": "^1.5.0",
-    "inquirer": "^7.1.0",
+    "inquirer": "8.1.2",
     "json2yaml": "^1.1.0",
     "kleur": "^3.0.3",
     "make-dir": "^3.1.0",
@@ -65,6 +65,6 @@
     "cross-env": "^7.0.2",
     "npm-run-all": "^4.1.5",
     "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^4.7.2"
   }
 }

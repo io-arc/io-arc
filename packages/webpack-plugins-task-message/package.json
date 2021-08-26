@@ -1,6 +1,6 @@
 {
   "name": "@io-arc/webpack-plugins-task-message",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Task complete message for webpack",
   "keywords": [
     "webpack",
@@ -32,7 +32,7 @@
     "postbuild": "tsc --emitDeclarationOnly"
   },
   "dependencies": {
-    "@io-arc/logger": "^1.0.1",
+    "@io-arc/logger": "^1.0.2",
     "@io-arc/types": "^1.0.0"
   },
   "devDependencies": {

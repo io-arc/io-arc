@@ -1,6 +1,6 @@
 {
   "name": "@io-arc/task-webpack-html",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "HTML builds for webpack",
   "keywords": [
     "webpack",
@@ -35,13 +35,13 @@
     "webpack:prod": "NODE_ENV=production MODE_ENV=once webpack"
   },
   "dependencies": {
-    "@io-arc/env": "^1.0.1",
-    "@io-arc/file-list": "^1.0.1",
+    "@io-arc/env": "^1.0.2",
+    "@io-arc/file-list": "^1.0.2",
     "@io-arc/types": "^1.0.0",
-    "@io-arc/utils": "^1.0.1",
-    "@io-arc/webpack-loaders-image": "^1.0.1",
-    "@io-arc/webpack-plugins-task-message": "^1.0.1",
-    "@io-arc/webpack-settings": "^1.0.1",
+    "@io-arc/utils": "^1.0.2",
+    "@io-arc/webpack-loaders-image": "^1.0.2",
+    "@io-arc/webpack-plugins-task-message": "^1.0.2",
+    "@io-arc/webpack-settings": "^1.0.2",
     "config": "^3.3.1",
     "extract-text-webpack-plugin": "4.0.0-beta.0",
     "file-loader": "^6.0.0",
@@ -52,6 +52,6 @@
   "devDependencies": {
     "@types/config": "^0.0.36",
     "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^4.7.2"
   }
 }

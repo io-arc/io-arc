@@ -46,8 +46,6 @@ export default {
     typescript({
       useTsconfigDeclarationDir: true
     }),
-    terser({
-      sourcemap: false
-    })
+    terser()
   ]
 }
