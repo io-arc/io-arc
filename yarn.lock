@@ -2305,9 +2305,9 @@
     "@types/node" "*"
 
 "@types/imagemin-webp@^5.1.1":
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/@types/imagemin-webp/-/imagemin-webp-5.1.1.tgz#f20eadcd3afba5d2ee81e9a69f4f3fe3f8e50b32"
-  integrity sha512-uJEBtA0popDfnUE2XnmLPYqEQYzB2qqwNRXUC/rvV7Y0wVR1jweezwGifkEuu3JNhEnUV3ZlnjfrsrrepaiOrQ==
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/@types/imagemin-webp/-/imagemin-webp-5.1.2.tgz#b426f93c7019f3799578c88e28ce6949d95b1690"
+  integrity sha512-elm1oHtWvpu56ucCgnlcP4uiaH9tO8icfF+Vqma4VzuS2b1dgchSRccf7iI1eDxWatvmRt91jHwP0MDwsHhnuA==
   dependencies:
     "@types/imagemin" "*"
 
