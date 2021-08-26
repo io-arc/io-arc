@@ -1,7 +1,7 @@
 /*!
 Vue.js in TypeScript compile for webpack
 
-Version: 1.0.1
+Version: 1.0.2
 License: ISC
 
 Repository: https://github.com/io-arc/io-arc

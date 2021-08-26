@@ -1,6 +1,6 @@
 {
   "name": "@io-arc/env",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Build environment define",
   "author": "arc one",
   "homepage": "https://io-arc.tech/plugins/modules/env/",
@@ -29,7 +29,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@io-arc/path-build": "^1.0.1",
+    "@io-arc/path-build": "^1.0.2",
     "@io-arc/types": "^1.0.0",
     "config": "^3.3.0"
   },
