@@ -61,7 +61,7 @@
     "@io-arc/types": "^1.0.0",
     "@types/cpx": "^1.5.1",
     "@types/inquirer": "^6.5.0",
-    "@types/update-notifier": "^4.1.0",
+    "@types/update-notifier": "^5.1.0",
     "cross-env": "^7.0.2",
     "npm-run-all": "^4.1.5",
     "webpack": "^4.43.0",
