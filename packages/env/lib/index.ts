@@ -575,3 +575,8 @@ export const WEBP_CONVERTER_CONFIG = getConfig<IfWebpConverterConfig[]>(
   'options.webp',
   []
 )
+
+/**
+ * Dummy directory to avoid duplicate file names for webpack5
+ */
+export const DUMMY_FILES_DIRECTORY = 'io-arc_r6g325'
