@@ -341,3 +341,7 @@ export declare const SITE_DESCRIPTION: string;
  * @default: []
  */
 export declare const WEBP_CONVERTER_CONFIG: IfWebpConverterConfig[];
+/**
+ * Dummy directory to avoid duplicate file names for webpack5
+ */
+export declare const DUMMY_FILES_DIRECTORY = "io-arc_r6g325";
