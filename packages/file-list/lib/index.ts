@@ -1,5 +1,6 @@
 import glob from 'glob'
 import { TDirNameKey, TFilePath } from '@io-arc/types'
+import path from 'path'
 
 /**
  * Get file list for directory
@@ -15,7 +16,7 @@ export const FileListObject = (
 ): { [p: string]: TFilePath } => {
   const target = rootOnly ? `${dir}/[!_]*.${ext}` : `${dir}/**/[!_]*.${ext}`
   const files = glob.sync(target)
-  const reg1 = new RegExp(`${dir}/`)
+  const reg1 = new RegExp(`${dir + path.sep}`)
   const reg2 = new RegExp(`.${ext}$`)
   const entries: { [p: string]: TFilePath } = {}
 

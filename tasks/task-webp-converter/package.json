@@ -1,6 +1,6 @@
 {
   "name": "@io-arc/task-webp-converter",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Convert an image to webp task",
   "keywords": [
     "webp",

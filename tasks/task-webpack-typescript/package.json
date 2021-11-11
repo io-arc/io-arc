@@ -1,6 +1,6 @@
 {
   "name": "@io-arc/task-webpack-typescript",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "TypeScript compile for webpack",
   "keywords": [
     "webpack",
@@ -36,7 +36,7 @@
   },
   "dependencies": {
     "@io-arc/env": "^1.0.2",
-    "@io-arc/file-list": "^1.0.2",
+    "@io-arc/file-list": "^1.0.3",
     "@io-arc/output-dir-diff": "^1.0.2",
     "@io-arc/path-build": "^1.0.2",
     "@io-arc/types": "^1.0.0",

@@ -1,6 +1,6 @@
 {
   "name": "@io-arc/task-manifest",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Create a manifest.json",
   "keywords": [
     "manifest"

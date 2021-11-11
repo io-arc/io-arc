@@ -1,6 +1,6 @@
 {
   "name": "@io-arc/yaml2json",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "YAML to JSON conversion",
   "author": "arc one",
   "homepage": "https://io-arc.tech/plugins/modules/yaml2json.html",

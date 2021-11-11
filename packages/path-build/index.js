@@ -2,7 +2,7 @@
 @io-arc/path-build
 Path create to relative or absolute
 
-Version: 1.0.2
+Version: 1.0.3
 License: ISC
 
 Repository: https://github.com/io-arc/io-arc
