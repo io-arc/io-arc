@@ -15,6 +15,7 @@
   ],
   "scripts": {
     "update": "lerna version --no-git-tag-version",
+    "build:all": "lerna run build",
     "ci:test": "circleci config process .circleci/config.yml > process.yml && circleci local execute -c process.yml --job test",
     "ci:build": "circleci config process .circleci/config.yml > process.yml && circleci local execute -c process.yml --job build"
   },
@@ -43,6 +44,5 @@
     "ts-jest": "25.5.1",
     "ts-node": "8.8.2",
     "typescript": "3.8.3"
-  },
-  "dependencies": {}
+  }
 }
