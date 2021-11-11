@@ -2,7 +2,7 @@
 @io-arc/file-list
 Get file list
 
-Version: 1.0.2
+Version: 1.0.3
 License: ISC
 
 Repository: https://github.com/io-arc/io-arc

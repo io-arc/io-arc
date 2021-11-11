@@ -1,6 +1,6 @@
 {
   "name": "@io-arc/cli",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "WEB/PWA/SPA boilerplate CLI",
   "keywords": [
     "web",
