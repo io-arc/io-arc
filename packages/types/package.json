@@ -19,6 +19,6 @@
   },
   "scripts": {},
   "dependencies": {
-    "@types/imagemin-webp": "^5.1.1"
+    "@types/imagemin-webp": "^7.0.0"
   }
 }
