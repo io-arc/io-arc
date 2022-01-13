@@ -4816,17 +4816,10 @@ config-webpack@^1.0.4:
   resolved "https://registry.yarnpkg.com/config-webpack/-/config-webpack-1.0.4.tgz#4768875d7394c799a135f9b6673be17e5ec04a1f"
   integrity sha512-7Eb3HfaS855sW01JUwldttWflh3UejJn/ZRfDPCSyv4p/ao8eHyGrfIR5Lyerbl5CHTEEKIRwArXPXJHIQ2X3g==
 
-config@^3.3.0:
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/config/-/config-3.3.0.tgz#574deb6ff1438807b7ecf6dbad20dd32dd5655ab"
-  integrity sha512-Xw++JjmYOLLX2HaYpySAveO8a9o+Af0jpDdEt1st8xtLeZI0bDfNsI90DGFyE/7mNnEjHiI8ivp/PieM6ODtdw==
-  dependencies:
-    json5 "^1.0.1"
-
-config@^3.3.1:
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/config/-/config-3.3.1.tgz#b6a70e2908a43b98ed20be7e367edf0cc8ed5a19"
-  integrity sha512-+2/KaaaAzdwUBE3jgZON11L1ggLLhpf2FsGrfqYFHZW22ySGv/HqYIXrBwKKvn+XZh1UBUjHwAcrfsSkSygT+Q==
+config@^3.3.0, config@^3.3.1:
+  version "3.3.7"
+  resolved "https://registry.yarnpkg.com/config/-/config-3.3.7.tgz#4310410dc2bf4e0effdca21a12a4035860a24ee4"
+  integrity sha512-mX/n7GKDYZMqvvkY6e6oBY49W8wxdmQt+ho/5lhwFDXqQW9gI+Ahp8EKp8VAbISPnmf2+Bv5uZK7lKXZ6pf1aA==
   dependencies:
     json5 "^2.1.1"
 
