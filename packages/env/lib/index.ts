@@ -575,3 +575,12 @@ export const WEBP_CONVERTER_CONFIG = getConfig<IfWebpConverterConfig[]>(
   'options.webp',
   []
 )
+
+/**
+ * Using imagemin plugin
+ * @default undefined
+ */
+export const USE_IMAGEMIN = getConfig<[string, object][] | undefined>(
+  'options.imagemin',
+  undefined
+)

@@ -341,3 +341,8 @@ export declare const SITE_DESCRIPTION: string;
  * @default: []
  */
 export declare const WEBP_CONVERTER_CONFIG: IfWebpConverterConfig[];
+/**
+ * Using imagemin plugin
+ * @default undefined
+ */
+export declare const USE_IMAGEMIN: [string, object][] | undefined;

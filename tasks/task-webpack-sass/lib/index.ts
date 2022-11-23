@@ -72,7 +72,9 @@ const sassLoader: RuleSetLoader = {
 }
 
 const plugins = []
-plugins.push(ImageMinPlugin)
+
+const imageminPlugin = ImageMinPlugin()
+if (imageminPlugin != null) plugins.push(ImageMinPlugin)
 
 if (CSS_MINIFY) {
   // eslint-disable-next-line @typescript-eslint/no-var-requires

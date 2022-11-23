@@ -92,6 +92,7 @@ interface IoLocalConfigBase {
       tsconfig?: string
     }
     fileLoader: IoLocalConfigOptionFileLoader
+    imagemin: [string, object][]
     webp?: IfWebpConverterConfig[]
   }
 }
@@ -141,7 +142,13 @@ export default class LocalConfig extends BaseConfig {
             use: true,
             hash: true
           }
-        }
+        },
+        imagemin: [
+          ['gifsicle', { interlaced: true, optimizationLevel: 1, colors: 256 }],
+          ['jpegtran', { progressive: true }],
+          ['optipng', { optimizationLevel: 5 }],
+          ['svgo', { plugins: [{ removeViewBox: true }] }]
+        ]
       }
     }
   }
