@@ -55,7 +55,7 @@
   },
   "devDependencies": {
     "@prettier/plugin-pug": "^1.5.1",
-    "@types/config": "^0.0.36",
+    "@types/config": "^3.3.0",
     "webpack": "^4.42.1",
     "webpack-cli": "^4.7.2"
   }
