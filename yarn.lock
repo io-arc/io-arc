@@ -2348,10 +2348,10 @@
     "@types/minimatch" "*"
     "@types/node" "*"
 
-"@types/imagemin-webp@^5.1.1":
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/@types/imagemin-webp/-/imagemin-webp-5.1.1.tgz#f20eadcd3afba5d2ee81e9a69f4f3fe3f8e50b32"
-  integrity sha512-uJEBtA0popDfnUE2XnmLPYqEQYzB2qqwNRXUC/rvV7Y0wVR1jweezwGifkEuu3JNhEnUV3ZlnjfrsrrepaiOrQ==
+"@types/imagemin-webp@^7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@types/imagemin-webp/-/imagemin-webp-7.0.0.tgz#8fa322c9a2f99a3b57d459aec6e80e06ce050afa"
+  integrity sha512-Lb1tjy2vEU7qYwM5iFB9o5k0J3mIpulw6Yftset5LLLugPu7+C16rLYRP1WEwr4QM8AeJZRjC2BGBLd9lGvRhQ==
   dependencies:
     "@types/imagemin" "*"
 

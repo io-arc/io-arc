@@ -36,7 +36,7 @@
     "@io-arc/path-build": "^1.0.2",
     "@io-arc/types": "^1.0.0",
     "@types/imagemin": "^7.0.0",
-    "@types/imagemin-webp": "^5.1.1",
+    "@types/imagemin-webp": "^7.0.0",
     "glob": "^7.1.6",
     "imagemin": "^7.0.1",
     "imagemin-gif2webp": "^3.0.0",
