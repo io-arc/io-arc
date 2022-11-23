@@ -2,7 +2,7 @@
 @io-arc/webpack-loaders-js
 JS loaders for webpack
 
-Version: 1.1.0
+Version: 1.1.1
 License: ISC
 
 Repository: https://github.com/io-arc/io-arc

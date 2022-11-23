@@ -1,6 +1,6 @@
 {
   "name": "@io-arc/task-webpack-stylus",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Stylus compile for webpack",
   "keywords": [
     "webpack",

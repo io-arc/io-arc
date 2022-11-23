@@ -1,6 +1,6 @@
 {
   "name": "@io-arc/task-copy",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Copying files in a directory",
   "author": "arc one",
   "homepage": "https://io-arc.tech/plugins/tasks/copy.html",
