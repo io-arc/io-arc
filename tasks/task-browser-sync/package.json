@@ -1,6 +1,6 @@
 {
   "name": "@io-arc/task-browser-sync",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Run BrowserSync",
   "keywords": [
     "browsersync",
@@ -34,7 +34,7 @@
     "ia-browser-sync": "bin/index.js"
   },
   "dependencies": {
-    "@io-arc/env": "^1.0.2",
+    "@io-arc/env": "^1.1.0",
     "@io-arc/read-yaml": "^1.0.2",
     "@io-arc/types": "^1.0.0",
     "browser-sync": "^2.26.7",

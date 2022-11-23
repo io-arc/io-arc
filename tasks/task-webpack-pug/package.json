@@ -1,6 +1,6 @@
 {
   "name": "@io-arc/task-webpack-pug",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Pug compile for webpack",
   "keywords": [
     "webpack",
@@ -35,15 +35,15 @@
     "webpack:prod": "NODE_ENV=production MODE_ENV=once webpack"
   },
   "dependencies": {
-    "@io-arc/env": "^1.0.2",
+    "@io-arc/env": "^1.1.0",
     "@io-arc/file-list": "^1.0.3",
     "@io-arc/read-yaml": "^1.0.2",
     "@io-arc/types": "^1.0.0",
-    "@io-arc/utils": "^1.0.2",
-    "@io-arc/webpack-loaders-image": "^1.0.2",
+    "@io-arc/utils": "^1.1.0",
+    "@io-arc/webpack-loaders-image": "^1.1.0",
     "@io-arc/webpack-loaders-pug-linter": "^1.0.2",
     "@io-arc/webpack-plugins-task-message": "^1.0.2",
-    "@io-arc/webpack-settings": "^1.0.2",
+    "@io-arc/webpack-settings": "^1.1.0",
     "config": "^3.3.1",
     "extract-text-webpack-plugin": "4.0.0-beta.0",
     "file-loader": "^6.0.0",

@@ -1,6 +1,6 @@
 {
   "name": "@io-arc/task-yaml2json",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "YAML to JSON conversion",
   "author": "arc one",
   "homepage": "https://io-arc.tech/plugins/tasks/yaml2json.html",
@@ -31,7 +31,7 @@
     "yaml2json:watch": "NODE_ENV=development MODE_ENV=watch bin/index.js"
   },
   "dependencies": {
-    "@io-arc/env": "^1.0.2",
+    "@io-arc/env": "^1.1.0",
     "@io-arc/logger": "^1.0.2",
     "@io-arc/types": "^1.0.0",
     "@io-arc/yaml2json": "^1.0.2",
