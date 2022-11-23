@@ -118,7 +118,7 @@ program.version(version).parse(process.argv)
   await webp$.questions()
   localConfig$.webp(webp$.options())
 
-  console.log('')
+  console.log(' ')
 
   /* template */
   await altHTML.createTemplateQuestion()
