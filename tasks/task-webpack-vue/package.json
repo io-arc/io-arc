@@ -83,7 +83,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "eslint-plugin-vue": "^6.2.2",
-    "node-sass": "^4.14.0",
+    "node-sass": "^8.0.0",
     "prettier": "^2.0.5",
     "pug": "^3.0.0",
     "stylus": "^0.54.7",
