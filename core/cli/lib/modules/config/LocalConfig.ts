@@ -84,6 +84,7 @@ interface IoLocalConfigBase {
     css: {
       postcss: {
         mqpacker: boolean
+        autoprefixer?: object
       }
     }
     js: {
@@ -116,7 +117,10 @@ export default class LocalConfig extends BaseConfig {
       deployDir,
       options: {
         css: {
-          postcss: { mqpacker: true }
+          postcss: {
+            mqpacker: true,
+            autoprefixer: { grid: 'autoplace' }
+          }
         },
         js: {
           splitFilename: 'asset',

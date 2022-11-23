@@ -267,6 +267,14 @@ export const CSS_POSTCSS_MQ_PACKER: boolean = getConfig<boolean>(
 )
 
 /**
+ * Autoprefixer option
+ * @default undefined
+ */
+export const CSS_POSTCSS_AUTOPREFIXER_OPTION: object | undefined = getConfig<
+  object | undefined
+>('options.css.postcss.autoprefixer', undefined)
+
+/**
  * CSS output (including AltCSS) directory name array
  *
  * config key: deployDir.css

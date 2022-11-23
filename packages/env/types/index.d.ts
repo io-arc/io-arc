@@ -147,6 +147,11 @@ export declare const CSS_MINIFY: boolean;
  */
 export declare const CSS_POSTCSS_MQ_PACKER: boolean;
 /**
+ * Autoprefixer option
+ * @default undefined
+ */
+export declare const CSS_POSTCSS_AUTOPREFIXER_OPTION: object | undefined;
+/**
  * CSS output (including AltCSS) directory name array
  *
  * config key: deployDir.css
