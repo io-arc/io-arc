@@ -37,7 +37,7 @@
     "@io-arc/yaml2json": "^1.0.2",
     "commander": "^5.1.0",
     "kleur": "^3.0.3",
-    "node-watch": "^0.6.3",
+    "node-watch": "^0.7.3",
     "watch": "^1.0.2"
   }
 }
