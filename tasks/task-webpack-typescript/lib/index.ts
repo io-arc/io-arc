@@ -43,7 +43,9 @@ if (USE_JS_FILE_LOADER) {
 }
 
 const plugins = []
-plugins.push(ImageMinPlugin)
+
+const imageminPlugin = ImageMinPlugin()
+if (imageminPlugin != null) plugins.push(ImageMinPlugin)
 
 if (MODE_ENV === MODE.ONCE) {
   const root = new OutputDirDiff([DIST, ...OUTPUT_JS_ARRAY], [])

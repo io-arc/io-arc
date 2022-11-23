@@ -84,6 +84,7 @@ interface IoLocalConfigBase {
     css: {
       postcss: {
         mqpacker: boolean
+        autoprefixer?: object
       }
     }
     js: {
@@ -92,6 +93,7 @@ interface IoLocalConfigBase {
       tsconfig?: string
     }
     fileLoader: IoLocalConfigOptionFileLoader
+    imagemin: [string, object][]
     webp?: IfWebpConverterConfig[]
   }
 }
@@ -115,7 +117,10 @@ export default class LocalConfig extends BaseConfig {
       deployDir,
       options: {
         css: {
-          postcss: { mqpacker: true }
+          postcss: {
+            mqpacker: true,
+            autoprefixer: { grid: 'autoplace' }
+          }
         },
         js: {
           splitFilename: 'asset',
@@ -141,7 +146,13 @@ export default class LocalConfig extends BaseConfig {
             use: true,
             hash: true
           }
-        }
+        },
+        imagemin: [
+          ['gifsicle', { interlaced: true, optimizationLevel: 1, colors: 256 }],
+          ['jpegtran', { progressive: true }],
+          ['optipng', { optimizationLevel: 5 }],
+          ['svgo', { plugins: [{ removeViewBox: true }] }]
+        ]
       }
     }
   }

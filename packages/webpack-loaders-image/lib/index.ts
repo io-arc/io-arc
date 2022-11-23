@@ -1,4 +1,4 @@
-import { WS_IMG_PATH_ABSOLUTE } from '@io-arc/env'
+import { USE_IMAGEMIN, WS_IMG_PATH_ABSOLUTE } from '@io-arc/env'
 import OutputDirDiff from '@io-arc/output-dir-diff'
 import { TDirNameKey, TFileName } from '@io-arc/types'
 import { siteRootRelative } from '@io-arc/utils'
@@ -40,15 +40,15 @@ export const ImageLoader = (
   }
 }
 
-export const ImageMinPlugin = new ImageMinimizerPlugin({
-  test: /\.(jpe?g|png|gif|svg)$/i,
-  severityError: 'warning',
-  minimizerOptions: {
-    plugins: [
-      ['gifsicle', { interlaced: true }],
-      ['jpegtran', { progressive: true }],
-      ['optipng', { optimizationLevel: 5 }],
-      ['svgo', { plugins: [{ removeViewBox: true }] }]
-    ]
-  }
-})
+export const ImageMinPlugin = (): object | undefined => {
+  if (USE_IMAGEMIN == null) return undefined
+  if (USE_IMAGEMIN.length === 0) return undefined
+
+  return new ImageMinimizerPlugin({
+    test: /\.(jpe?g|png|gif|svg)$/i,
+    severityError: 'warning',
+    minimizerOptions: {
+      plugins: USE_IMAGEMIN
+    }
+  })
+}

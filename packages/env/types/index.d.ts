@@ -147,6 +147,11 @@ export declare const CSS_MINIFY: boolean;
  */
 export declare const CSS_POSTCSS_MQ_PACKER: boolean;
 /**
+ * Autoprefixer option
+ * @default undefined
+ */
+export declare const CSS_POSTCSS_AUTOPREFIXER_OPTION: object | undefined;
+/**
  * CSS output (including AltCSS) directory name array
  *
  * config key: deployDir.css
@@ -341,3 +346,8 @@ export declare const SITE_DESCRIPTION: string;
  * @default: []
  */
 export declare const WEBP_CONVERTER_CONFIG: IfWebpConverterConfig[];
+/**
+ * Using imagemin plugin
+ * @default undefined
+ */
+export declare const USE_IMAGEMIN: [string, object][] | undefined;

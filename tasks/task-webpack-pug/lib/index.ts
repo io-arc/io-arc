@@ -94,7 +94,8 @@ const pugLint = PUG_LINT_FILE
 const rules = []
 const plugins = []
 
-plugins.push(ImageMinPlugin)
+const imageminPlugin = ImageMinPlugin()
+if (imageminPlugin != null) plugins.push(ImageMinPlugin)
 
 // User extend
 const extend = new WebpackExtends('html')

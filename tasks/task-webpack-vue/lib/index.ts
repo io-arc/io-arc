@@ -1,4 +1,5 @@
 import {
+  CSS_POSTCSS_AUTOPREFIXER_OPTION,
   CSS_POSTCSS_MQ_PACKER,
   DIST,
   ESLINT,
@@ -53,7 +54,7 @@ const autoprefixer = require('autoprefixer')
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const mqpacker = require('css-mqpacker')
 
-const postCssPlugins = [autoprefixer({ grid: 'autoplace', flexbox: 'no-2009' })]
+const postCssPlugins = [autoprefixer(CSS_POSTCSS_AUTOPREFIXER_OPTION)]
 if (CSS_POSTCSS_MQ_PACKER) postCssPlugins.push(mqpacker())
 
 const postCssLoader: RuleSetLoader = {
@@ -74,7 +75,9 @@ if (USE_JS_FILE_LOADER) {
 }
 
 const plugins = []
-plugins.push(ImageMinPlugin)
+
+const imageminPlugin = ImageMinPlugin()
+if (imageminPlugin != null) plugins.push(ImageMinPlugin)
 
 if (MODE_ENV === MODE.ONCE) {
   const root = new OutputDirDiff([DIST, ...OUTPUT_JS_ARRAY], [])

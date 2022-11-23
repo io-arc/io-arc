@@ -1,12 +1,13 @@
 import { TDirNameKey } from '@io-arc/types'
+import getLatestVersion from 'get-latest-version'
 import inquirer from 'inquirer'
+import { devDependencies } from '../../../../../package.json'
+import { devDependencies as babelDep } from '../../../../../tasks/task-webpack-babel/package.json'
+import { devDependencies as tsDep } from '../../../../../tasks/task-webpack-typescript/package.json'
+import { devDependencies as vueTsDep } from '../../../../../tasks/task-webpack-vue-typescript/package.json'
+import { devDependencies as vueDep } from '../../../../../tasks/task-webpack-vue/package.json'
 import { IoTemplateFiles, templateDir } from '../Files'
 import BaseQuestions, { IoQuestions } from './BaseQuestions'
-import { devDependencies as vueDep } from '../../../../../tasks/task-webpack-vue/package.json'
-import { devDependencies as vueTsDep } from '../../../../../tasks/task-webpack-vue-typescript/package.json'
-import { devDependencies as tsDep } from '../../../../../tasks/task-webpack-typescript/package.json'
-import { devDependencies as babelDep } from '../../../../../tasks/task-webpack-babel/package.json'
-import { devDependencies } from '../../../../../package.json'
 
 /** JavaScript preprocessor */
 export const ALT_JS_TYPE = {
@@ -106,7 +107,7 @@ export default class AltJs extends BaseQuestions implements IoQuestions {
   }
 
   /** Get library for dependencies */
-  public dependencies(): { [p: string]: string } {
+  public async dependencies(): Promise<{ [p: string]: string }> {
     let dep: { [p: string]: string } = {}
 
     if (this.#framework === JS_FRAMEWORK.VUE) {
@@ -124,10 +125,11 @@ export default class AltJs extends BaseQuestions implements IoQuestions {
 
     switch (this.#preprocessor) {
       case ALT_JS_TYPE.TS:
+        const typescriptVersion = await getLatestVersion('typescript')
         dep = {
           ...dep,
           ...tsDep,
-          typescript: devDependencies['typescript'],
+          typescript: typescriptVersion ?? devDependencies['typescript'],
           'ts-node': devDependencies['ts-node']
         }
         break
@@ -165,7 +167,10 @@ export default class AltJs extends BaseQuestions implements IoQuestions {
           output: ''
         },
         { source: `${templateDir}/.babelrc`, output: '' },
-        { source: `${templateDir}/js/README.md`, output: `src/${dir}` }
+        {
+          source: `${templateDir}/js/README.md`,
+          output: `src/${dir}`
+        }
       ]
     )
 
@@ -189,7 +194,10 @@ export default class AltJs extends BaseQuestions implements IoQuestions {
           output: ''
         },
         { source: `${templateDir}/tsconfig.json`, output: '' },
-        { source: `${templateDir}/ts/README.md`, output: `src/${dir}` }
+        {
+          source: `${templateDir}/ts/README.md`,
+          output: `src/${dir}`
+        }
       ]
     )
 

@@ -37,7 +37,8 @@ const progressBarPlugin = require('progress-bar-webpack-plugin')
 const rules = []
 const plugins = []
 
-plugins.push(ImageMinPlugin)
+const imageminPlugin = ImageMinPlugin()
+if (imageminPlugin != null) plugins.push(ImageMinPlugin)
 
 // User extends
 const extend = new WebpackExtends('html')

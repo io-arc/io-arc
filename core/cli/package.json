@@ -1,6 +1,6 @@
 {
   "name": "@io-arc/cli",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "WEB/PWA/SPA boilerplate CLI",
   "keywords": [
     "web",
@@ -50,6 +50,7 @@
   "dependencies": {
     "commander": "^5.1.0",
     "cpx": "^1.5.0",
+    "get-latest-version": "^4.0.0",
     "inquirer": "8.1.2",
     "json2yaml": "^1.1.0",
     "kleur": "^3.0.3",

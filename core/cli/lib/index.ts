@@ -83,7 +83,8 @@ program.version(version).parse(process.argv)
   await altJS.questions()
 
   package$.addDevDependencies(altJS.taskLibrary())
-  package$.addDevDependenciesObject(altJS.dependencies())
+  const altJSDependencies = await altJS.dependencies()
+  package$.addDevDependenciesObject(altJSDependencies)
 
   console.log('')
 
